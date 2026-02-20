@@ -436,13 +436,13 @@
       color: #94a3b8;
     }
 
-    /* ===== PORTFOLIO ===== */
-    .portfolio {
+    /* ===== GALLERY ===== */
+    .gallery {
       padding: 80px 24px;
       background: var(--bg-light);
     }
 
-    .portfolio-grid {
+    .gallery-grid {
       max-width: 1100px;
       margin: 0 auto;
       display: grid;
@@ -450,7 +450,7 @@
       gap: 16px;
     }
 
-    .portfolio-item {
+    .gallery-item {
       border-radius: var(--radius);
       overflow: hidden;
       aspect-ratio: 1;
@@ -459,32 +459,103 @@
       cursor: pointer;
     }
 
-    .portfolio-item img {
+    .gallery-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.4s;
     }
 
-    .portfolio-item:hover img {
+    .gallery-item:hover img {
       transform: scale(1.08);
     }
 
-    .portfolio-item .overlay {
+    .gallery-item .overlay {
       position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 16px;
-      background: linear-gradient(transparent, rgba(12,26,46,0.8));
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(12,26,46,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: var(--white);
-      font-size: 13px;
-      font-weight: 600;
+      font-size: 28px;
       opacity: 0;
       transition: opacity 0.3s;
     }
 
-    .portfolio-item:hover .overlay { opacity: 1; }
+    .gallery-item:hover .overlay { opacity: 1; }
+
+    .gallery-hidden { display: none; }
+
+    .gallery-toggle {
+      text-align: center;
+      margin-top: 32px;
+    }
+
+    /* ===== LIGHTBOX ===== */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 9999;
+      background: rgba(0,0,0,0.92);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox.active { display: flex; }
+
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 36px;
+      cursor: pointer;
+      z-index: 10;
+      line-height: 1;
+      padding: 4px 12px;
+    }
+
+    .lightbox-close:hover { color: var(--sky); }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.12);
+      border: none;
+      color: #fff;
+      font-size: 32px;
+      cursor: pointer;
+      padding: 12px 18px;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+
+    .lightbox-nav:hover { background: rgba(255,255,255,0.25); }
+    .lightbox-prev { left: 16px; }
+    .lightbox-next { right: 16px; }
+
+    .lightbox-counter {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #94a3b8;
+      font-size: 14px;
+      font-weight: 600;
+    }
 
     /* ===== QUOTE FORM ===== */
     .quote-section {
@@ -757,7 +828,7 @@
 
       .services-grid { grid-template-columns: 1fr; max-width: 400px; }
       .why-grid { grid-template-columns: 1fr; }
-      .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
 
       .form-row { grid-template-columns: 1fr; }
       .quote-container { padding: 32px 20px; }
@@ -842,7 +913,7 @@
     </div>
     <div class="services-grid">
       <div class="service-card fade-in">
-        <img class="service-img" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop" alt="Kitchen Remodeling" loading="lazy">
+        <img class="service-img" src="kitchen.jpeg" alt="Kitchen Remodeling" loading="lazy">
         <div class="service-body">
           <h3>Kitchen Remodeling</h3>
           <p>Custom cabinets, countertops, flooring, and complete kitchen transformations.</p>
@@ -850,7 +921,7 @@
         </div>
       </div>
       <div class="service-card fade-in">
-        <img class="service-img" src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&h=400&fit=crop" alt="Bathroom Remodeling" loading="lazy">
+        <img class="service-img" src="bathroom.jpeg" alt="Bathroom Remodeling" loading="lazy">
         <div class="service-body">
           <h3>Bathroom Remodeling</h3>
           <p>Walk-in showers, tub-to-shower conversions, tile, vanities, and full bath renovations.</p>
@@ -858,7 +929,7 @@
         </div>
       </div>
       <div class="service-card fade-in">
-        <img class="service-img" src="https://images.unsplash.com/photo-1635424710928-0544e8512eae?w=600&h=400&fit=crop" alt="Roofing" loading="lazy">
+        <img class="service-img" src="roofing.jpeg" alt="Roofing" loading="lazy">
         <div class="service-body">
           <h3>Roofing</h3>
           <p>New roofs, repairs, re-roofing, leak detection, and storm damage restoration.</p>
@@ -866,7 +937,7 @@
         </div>
       </div>
       <div class="service-card fade-in">
-        <img class="service-img" src="https://images.unsplash.com/photo-1655300256335-beef51a914fe?w=600&h=400&fit=crop" alt="Windows & Solar" loading="lazy">
+        <img class="service-img" src="general-remodeling.jpeg" alt="Windows & Solar" loading="lazy">
         <div class="service-body">
           <h3>Windows & Solar</h3>
           <p>Window replacements, solar panel installation, energy-efficient upgrades, and smart home solutions.</p>
@@ -874,7 +945,7 @@
         </div>
       </div>
       <div class="service-card fade-in">
-        <img class="service-img" src="https://images.unsplash.com/photo-1722881445875-bdd5f4d9e6fa?w=600&h=400&fit=crop" alt="Fencing" loading="lazy">
+        <img class="service-img" src="electrical.jpeg" alt="Fencing" loading="lazy">
         <div class="service-body">
           <h3>Fencing</h3>
           <p>Wood, vinyl, and metal fencing installation, gate systems, and privacy solutions.</p>
@@ -882,7 +953,7 @@
         </div>
       </div>
       <div class="service-card fade-in">
-        <img class="service-img" src="https://images.unsplash.com/photo-1675275698293-09d50d7f224d?w=600&h=400&fit=crop" alt="Paving" loading="lazy">
+        <img class="service-img" src="landscaping.jpeg" alt="Paving" loading="lazy">
         <div class="service-body">
           <h3>Paving</h3>
           <p>Driveways, walkways, patios, concrete, asphalt, and decorative pavers.</p>
@@ -945,32 +1016,88 @@
     </div>
   </section>
 
-  <!-- PORTFOLIO -->
-  <section class="portfolio" id="portfolio">
+  <!-- GALLERY — Meet Our Team -->
+  <section class="gallery" id="gallery">
     <div class="section-header fade-in">
-      <div class="section-label">Our Work</div>
-      <h2>Recent Projects</h2>
-      <p>See what we've built for homeowners just like you.</p>
+      <div class="section-label">Meet Our Team</div>
+      <h2>The People Behind Your Project</h2>
+      <p>Real people, real craftsmanship. A local crew proudly serving the Los Angeles community.</p>
     </div>
-    <div class="portfolio-grid fade-in">
-      <div class="portfolio-item">
-        <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=400&h=400&fit=crop" alt="Kitchen Remodel" loading="lazy">
-        <div class="overlay">Kitchen Remodel - Encino, CA</div>
+    <div class="gallery-grid fade-in" id="galleryGrid">
+      <div class="gallery-item" onclick="openLightbox(0)">
+        <img src="crew-01.jpeg" alt="Our crew on site" loading="lazy">
+        <div class="overlay">&#128269;</div>
       </div>
-      <div class="portfolio-item">
-        <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?w=400&h=400&fit=crop" alt="Bathroom Renovation" loading="lazy">
-        <div class="overlay">Bathroom Renovation - Encino</div>
+      <div class="gallery-item" onclick="openLightbox(1)">
+        <img src="crew-02.jpeg" alt="Our crew on site" loading="lazy">
+        <div class="overlay">&#128269;</div>
       </div>
-      <div class="portfolio-item">
-        <img src="https://images.unsplash.com/photo-1513880989635-6eb491ce7f5b?w=400&h=400&fit=crop" alt="Roofing Project" loading="lazy">
-        <div class="overlay">Roof Replacement - Sherman Oaks</div>
+      <div class="gallery-item" onclick="openLightbox(2)">
+        <img src="crew-03.jpeg" alt="Our crew on site" loading="lazy">
+        <div class="overlay">&#128269;</div>
       </div>
-      <div class="portfolio-item">
-        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=400&h=400&fit=crop" alt="Full Remodel" loading="lazy">
-        <div class="overlay">Full Home Remodel - Tarzana</div>
+      <div class="gallery-item" onclick="openLightbox(3)">
+        <img src="crew-04.jpeg" alt="Our crew on site" loading="lazy">
+        <div class="overlay">&#128269;</div>
       </div>
+      <div class="gallery-item gallery-hidden" onclick="openLightbox(4)">
+        <img src="crew-05.jpeg" alt="Our crew on site" loading="lazy">
+        <div class="overlay">&#128269;</div>
+      </div>
+      <div class="gallery-item gallery-hidden" onclick="openLightbox(5)">
+        <img src="crew-06.jpeg" alt="Our crew on site" loading="lazy">
+        <div class="overlay">&#128269;</div>
+      </div>
+      <div class="gallery-item gallery-hidden" onclick="openLightbox(6)">
+        <img src="crew-07.jpeg" alt="Team member" loading="lazy">
+        <div class="overlay">&#128269;</div>
+      </div>
+      <div class="gallery-item gallery-hidden" onclick="openLightbox(7)">
+        <img src="crew-08.jpeg" alt="Team member" loading="lazy">
+        <div class="overlay">&#128269;</div>
+      </div>
+      <div class="gallery-item gallery-hidden" onclick="openLightbox(8)">
+        <img src="crew-09.jpeg" alt="Team member" loading="lazy">
+        <div class="overlay">&#128269;</div>
+      </div>
+      <div class="gallery-item gallery-hidden" onclick="openLightbox(9)">
+        <img src="crew-10.jpeg" alt="Team member" loading="lazy">
+        <div class="overlay">&#128269;</div>
+      </div>
+      <div class="gallery-item gallery-hidden" onclick="openLightbox(10)">
+        <img src="crew-11.jpeg" alt="Team member" loading="lazy">
+        <div class="overlay">&#128269;</div>
+      </div>
+      <div class="gallery-item gallery-hidden" onclick="openLightbox(11)">
+        <img src="crew-12.jpeg" alt="Our work in progress" loading="lazy">
+        <div class="overlay">&#128269;</div>
+      </div>
+      <div class="gallery-item gallery-hidden" onclick="openLightbox(12)">
+        <img src="crew-13.jpeg" alt="Our work in progress" loading="lazy">
+        <div class="overlay">&#128269;</div>
+      </div>
+      <div class="gallery-item gallery-hidden" onclick="openLightbox(13)">
+        <img src="crew-14.jpeg" alt="Meeting with homeowner" loading="lazy">
+        <div class="overlay">&#128269;</div>
+      </div>
+      <div class="gallery-item gallery-hidden" onclick="openLightbox(14)">
+        <img src="crew-15.jpeg" alt="Meeting with homeowner" loading="lazy">
+        <div class="overlay">&#128269;</div>
+      </div>
+    </div>
+    <div class="gallery-toggle fade-in">
+      <button class="btn btn-blue btn-lg" id="galleryBtn" onclick="toggleGallery()">View Full Gallery (15 Photos)</button>
     </div>
   </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">&#8249;</button>
+    <img id="lightboxImg" src="" alt="Gallery photo">
+    <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">&#8250;</button>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+  </div>
 
   <!-- CTA BANNER -->
   <section class="cta-banner">
@@ -1185,6 +1312,55 @@
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
+    });
+
+    /* Gallery & Lightbox */
+    const galleryImages = [
+      'crew-01.jpeg','crew-02.jpeg','crew-03.jpeg','crew-04.jpeg','crew-05.jpeg',
+      'crew-06.jpeg','crew-07.jpeg','crew-08.jpeg','crew-09.jpeg','crew-10.jpeg',
+      'crew-11.jpeg','crew-12.jpeg','crew-13.jpeg','crew-14.jpeg','crew-15.jpeg'
+    ];
+    let galleryExpanded = false;
+    let currentLightbox = 0;
+
+    function toggleGallery() {
+      const hidden = document.querySelectorAll('.gallery-hidden');
+      const btn = document.getElementById('galleryBtn');
+      galleryExpanded = !galleryExpanded;
+      hidden.forEach(el => el.style.display = galleryExpanded ? 'block' : 'none');
+      btn.textContent = galleryExpanded ? 'Show Less' : 'View Full Gallery (15 Photos)';
+    }
+
+    function openLightbox(index) {
+      currentLightbox = index;
+      const lb = document.getElementById('lightbox');
+      document.getElementById('lightboxImg').src = galleryImages[index];
+      document.getElementById('lightboxCounter').textContent = (index + 1) + ' / ' + galleryImages.length;
+      lb.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function navLightbox(dir) {
+      currentLightbox = (currentLightbox + dir + galleryImages.length) % galleryImages.length;
+      document.getElementById('lightboxImg').src = galleryImages[currentLightbox];
+      document.getElementById('lightboxCounter').textContent = (currentLightbox + 1) + ' / ' + galleryImages.length;
+    }
+
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) closeLightbox();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      const lb = document.getElementById('lightbox');
+      if (!lb.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') navLightbox(-1);
+      if (e.key === 'ArrowRight') navLightbox(1);
     });
   </script>
 
