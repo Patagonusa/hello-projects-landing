@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get a Free Quote | Hello Projects Pro</title>
+  <meta name="description" content="Request a free, no-obligation estimate from Hello Projects Pro. Licensed remodeling & construction experts in the Los Angeles area.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0c1a2e;
+      --primary-light: #142d4f;
+      --blue: #2563eb;
+      --blue-hover: #1d4ed8;
+      --blue-light: #3b82f6;
+      --sky: #60a5fa;
+      --navy: #1e3a5f;
+      --accent: #f59e0b;
+      --accent-hover: #d97706;
+      --text: #1e293b;
+      --text-light: #64748b;
+      --bg-light: #f0f7ff;
+      --white: #fff;
+      --shadow: 0 4px 20px rgba(12,26,46,0.1);
+      --shadow-lg: 0 10px 40px rgba(12,26,46,0.18);
+      --radius: 12px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background: var(--bg-light);
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: var(--primary);
+      padding: 0;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+    }
+
+    .header-top {
+      background: linear-gradient(90deg, var(--blue), var(--blue-light));
+      color: var(--white);
+      text-align: center;
+      padding: 8px 16px;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
+
+    .header-main {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 24px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo img {
+      height: 56px;
+      width: auto;
+    }
+
+    .header-ctas {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .btn-blue { background: var(--blue); color: var(--white); }
+    .btn-blue:hover { background: var(--blue-hover); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(37,99,235,0.4); }
+
+    .btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.6); }
+    .btn-outline:hover { background: var(--white); color: var(--primary); border-color: var(--white); }
+
+    .lang-switch {
+      color: var(--sky);
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid rgba(96,165,250,0.4);
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+
+    .lang-switch:hover { background: rgba(96,165,250,0.15); color: var(--white); }
+
+    /* ===== MAIN CONTENT ===== */
+    .page-content {
+      margin-top: 100px;
+      padding: 48px 24px 80px;
+      min-height: calc(100vh - 200px);
+    }
+
+    .quote-container {
+      max-width: 700px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--navy) 100%);
+      border-radius: 20px;
+      padding: 48px 40px;
+      box-shadow: var(--shadow-lg);
+      color: var(--white);
+      border: 1px solid rgba(59,130,246,0.2);
+    }
+
+    .quote-container h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 32px;
+      font-weight: 900;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .quote-container .sub {
+      text-align: center;
+      color: #94a3b8;
+      margin-bottom: 32px;
+      font-size: 15px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .form-row-3 {
+      display: grid;
+      grid-template-columns: 1fr 80px 120px;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .form-group { margin-bottom: 16px; }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #94a3b8;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(59,130,246,0.25);
+      border-radius: 8px;
+      color: var(--white);
+      font-size: 15px;
+      font-family: inherit;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: #4a6080; }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--blue-light);
+      background: rgba(255,255,255,0.12);
+    }
+
+    .form-group select option { background: var(--primary); color: var(--white); }
+
+    .consent-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .consent-check input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      flex-shrink: 0;
+      accent-color: var(--blue);
+    }
+
+    .consent-check label {
+      font-size: 11px;
+      color: #4a6080;
+      line-height: 1.5;
+      text-transform: none;
+      letter-spacing: 0;
+      font-weight: 400;
+    }
+
+    .consent-check label a {
+      color: var(--sky);
+      text-decoration: underline;
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 18px;
+      font-size: 18px;
+      font-weight: 800;
+      margin-top: 8px;
+      background: linear-gradient(90deg, var(--blue), var(--blue-light));
+      color: var(--white);
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .form-submit:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,99,235,0.5); }
+
+    .form-note {
+      text-align: center;
+      font-size: 12px;
+      color: #4a6080;
+      margin-top: 16px;
+    }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .form-success h3 {
+      font-size: 28px;
+      margin-bottom: 12px;
+      color: var(--sky);
+    }
+
+    .form-success p {
+      color: #94a3b8;
+      font-size: 16px;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--primary);
+      color: #94a3b8;
+      padding: 48px 24px 24px;
+    }
+
+    .footer-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer h4 { color: var(--white); font-size: 16px; font-weight: 700; margin-bottom: 16px; }
+    .footer p, .footer a { font-size: 14px; color: #64748b; line-height: 1.8; }
+    .footer a { text-decoration: none; transition: color 0.2s; }
+    .footer a:hover { color: var(--sky); }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    .footer-bottom a { color: #4a6080; margin-left: 16px; }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 768px) {
+      .header-main { padding: 8px 16px; }
+      .logo img { height: 44px; }
+      .btn { padding: 10px 16px; font-size: 13px; }
+      .header-ctas .btn-outline { display: none; }
+      .page-content { margin-top: 90px; padding: 32px 16px 60px; }
+      .quote-container { padding: 32px 20px; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-row-3 { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-top">
+      LIMITED TIME: FREE ESTIMATES ON ALL PROJECTS &mdash; Call Now!
+    </div>
+    <div class="header-main">
+      <a href="index.html" class="logo">
+        <img src="logo.jpeg" alt="Hello Projects Pro">
+      </a>
+      <div class="header-ctas">
+        <a href="quote-es.html" class="lang-switch">Espa&ntilde;ol</a>
+        <a href="index.html" class="btn btn-blue">Home</a>
+        <a href="tel:+18887060080" class="btn btn-outline">Call (888) 706-0080</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="page-content">
+    <div class="quote-container">
+      <h1>Get Your FREE Quote</h1>
+      <p class="sub">Fill out the form below and we'll get back to you within 1 hour.</p>
+
+      <form id="quoteForm" onsubmit="return submitQuote(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name *</label>
+            <input type="text" name="first_name" placeholder="John" required>
+          </div>
+          <div class="form-group">
+            <label>Last Name *</label>
+            <input type="text" name="last_name" placeholder="Smith" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Phone Number *</label>
+            <input type="tel" name="phone" placeholder="(555) 123-4567" required>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="john@email.com">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Street Address</label>
+          <input type="text" name="address" placeholder="123 Main St">
+        </div>
+
+        <div class="form-row-3">
+          <div class="form-group">
+            <label>City</label>
+            <input type="text" name="city" placeholder="Los Angeles">
+          </div>
+          <div class="form-group">
+            <label>State</label>
+            <input type="text" name="state" placeholder="CA" value="CA">
+          </div>
+          <div class="form-group">
+            <label>Zip Code</label>
+            <input type="text" name="zip" placeholder="91335" maxlength="10" inputmode="numeric">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Project Type *</label>
+            <select name="project_type" id="projectType" required>
+              <option value="">Select a service...</option>
+              <option value="Kitchen Remodeling">Kitchen Remodeling</option>
+              <option value="Bathroom Remodeling">Bathroom Remodeling</option>
+              <option value="Roofing">Roofing</option>
+              <option value="General Remodeling">General Remodeling</option>
+              <option value="Residential Electrical">Residential Electrical</option>
+              <option value="Landscaping">Landscaping</option>
+              <option value="Plumbing">Plumbing</option>
+              <option value="Painting">Painting</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>How Soon?</label>
+            <select name="timeframe">
+              <option value="">Select timeframe...</option>
+              <option value="ASAP">ASAP / Emergency</option>
+              <option value="Within 1 week">Within 1 week</option>
+              <option value="Within 1 month">Within 1 month</option>
+              <option value="1-3 months">1-3 months</option>
+              <option value="Just exploring">Just exploring</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Tell Us About Your Project</label>
+          <textarea name="notes" rows="3" placeholder="Describe your project, dimensions, any special requirements..."></textarea>
+        </div>
+
+        <div class="consent-check">
+          <input type="checkbox" id="tcpaConsent" name="tcpa_consent" required>
+          <label for="tcpaConsent">
+            By checking this box, I give my express written consent to Hello Projects Pro to contact me by automated text messages and/or calls at the phone number provided, including for marketing purposes. I understand that consent is not a condition of any purchase. Message and data rates may apply. Message frequency varies. Reply STOP to opt out at any time. I have read and agree to the <a href="terms.html" target="_blank">Terms &amp; Conditions</a> and <a href="privacy.html" target="_blank">Privacy Policy</a>.
+          </label>
+        </div>
+
+        <button type="submit" class="btn form-submit" id="submitBtn">
+          Get My Free Quote Now
+        </button>
+
+        <p class="form-note">Your information is secure and will never be shared with third parties for promotional purposes.</p>
+      </form>
+
+      <div class="form-success" id="formSuccess">
+        <h3>Thank You!</h3>
+        <p>Your quote request has been received. One of our project specialists will contact you within 1 hour.</p>
+        <p style="margin-top: 16px;">Or call us now: <a href="tel:+18887060080" style="color: var(--sky); font-weight: 700;">(888) 706-0080</a></p>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <h4>Hello Projects Pro</h4>
+        <p>Premier remodeling & construction services. Licensed, bonded, and insured. CSLB #1135440.</p>
+        <p style="margin-top: 12px;">
+          <strong style="color: #fff;">Phone:</strong> <a href="tel:+18887060080">(888) 706-0080</a><br>
+          <strong style="color: #fff;">Email:</strong> <a href="mailto:info@helloprojectspro.com">info@helloprojectspro.com</a>
+        </p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <p><a href="index.html#services">Kitchen Remodeling</a></p>
+        <p><a href="index.html#services">Bathroom Remodeling</a></p>
+        <p><a href="index.html#services">Roofing</a></p>
+        <p><a href="index.html#services">General Remodeling</a></p>
+        <p><a href="index.html#services">Residential Electrical</a></p>
+        <p><a href="index.html#services">Landscaping</a></p>
+      </div>
+      <div>
+        <h4>Service Areas</h4>
+        <p>Los Angeles, CA</p>
+        <p>Reseda, CA</p>
+        <p>Encino, CA</p>
+        <p>Sherman Oaks, CA</p>
+        <p>Tarzana, CA</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Hello Projects Pro. All rights reserved.</span>
+      <div>
+        <a href="terms.html">Terms</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const CRM_WEBHOOK = 'https://patagon-crm.onrender.com/api/webhooks/lead';
+
+    // Pre-select service from URL param (e.g. quote.html?service=Roofing)
+    const urlParams = new URLSearchParams(window.location.search);
+    const preselect = urlParams.get('service');
+    if (preselect) {
+      const sel = document.getElementById('projectType');
+      if (sel) sel.value = preselect;
+    }
+
+    async function submitQuote(e) {
+      e.preventDefault();
+      const form = document.getElementById('quoteForm');
+      const btn = document.getElementById('submitBtn');
+      const formData = new FormData(form);
+
+      btn.disabled = true;
+      btn.textContent = 'Submitting...';
+
+      const payload = {
+        first_name: formData.get('first_name'),
+        last_name: formData.get('last_name'),
+        phone: formData.get('phone'),
+        email: formData.get('email') || null,
+        address: formData.get('address') || null,
+        city: formData.get('city') || null,
+        state: formData.get('state') || null,
+        zip: formData.get('zip') || null,
+        project_type: formData.get('project_type'),
+        timeframe: formData.get('timeframe') || null,
+        source: 'Landing Page',
+        form_name: 'Hello Projects Pro Landing Page',
+        campaign: 'HPP Landing Page',
+        notes: formData.get('notes') || null,
+        is_homeowner: 'Yes',
+      };
+
+      try {
+        const response = await fetch(CRM_WEBHOOK, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        if (response.ok) {
+          form.style.display = 'none';
+          document.getElementById('formSuccess').style.display = 'block';
+        } else {
+          throw new Error('Server error');
+        }
+      } catch (err) {
+        alert('Something went wrong. Please call us directly at (888) 706-0080.');
+        btn.disabled = false;
+        btn.textContent = 'Get My Free Quote Now';
+      }
+      return false;
+    }
+  </script>
+
+</body>
+</html>

@@ -907,13 +907,13 @@
     }
 
     .social-link.instagram {
-      background: linear-gradient(135deg, #f9ce34, #ee2a7b, #6228d7);
+      background: linear-gradient(135deg, #c9a023, #c4286a, #5222b0);
       color: #fff;
     }
 
     .social-link.instagram:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(238,42,123,0.35);
+      box-shadow: 0 8px 24px rgba(196,40,106,0.3);
     }
 
     .social-link.facebook {
@@ -924,6 +924,16 @@
     .social-link.facebook:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 24px rgba(24,119,242,0.35);
+    }
+
+    .social-link.yelp {
+      background: #AF0606;
+      color: #fff;
+    }
+
+    .social-link.yelp:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(175,6,6,0.35);
     }
 
     /* ===== CTA BANNER ===== */
@@ -1085,7 +1095,7 @@
       </a>
       <div class="header-ctas">
         <a href="es.html" class="lang-switch">Espa&ntilde;ol</a>
-        <a href="#quote" class="btn btn-blue">Get Free Quote</a>
+        <a href="quote.html" class="btn btn-blue">Get Free Quote</a>
         <a href="tel:+18887060080" class="btn btn-outline">Call (888) 706-0080</a>
       </div>
     </div>
@@ -1099,7 +1109,7 @@
       <h1>Built on Experience.<br><span>Trusted for Results.</span></h1>
       <p>Premier remodeling & construction services in the Los Angeles area. From kitchens to rooftops, we make your home vision a reality.</p>
       <div class="hero-btns">
-        <a href="#quote" class="btn btn-blue btn-lg">Get Your FREE Quote</a>
+        <a href="quote.html" class="btn btn-blue btn-lg">Get Your FREE Quote</a>
         <a href="tel:+18887060080" class="btn btn-accent btn-lg">Call (888) 706-0080</a>
       </div>
     </div>
@@ -1163,7 +1173,7 @@
         <div class="service-body">
           <h3>Kitchen Remodeling</h3>
           <p>Custom cabinets, countertops, flooring, and complete kitchen transformations.</p>
-          <a href="#quote" class="btn btn-blue" onclick="selectService('Kitchen Remodeling')">GET QUOTE</a>
+          <a href="quote.html?service=Kitchen+Remodeling" class="btn btn-blue">GET QUOTE</a>
         </div>
       </div>
       <div class="service-card fade-in">
@@ -1171,7 +1181,7 @@
         <div class="service-body">
           <h3>Bathroom Remodeling</h3>
           <p>Walk-in showers, tub-to-shower conversions, tile, vanities, and full bath renovations.</p>
-          <a href="#quote" class="btn btn-blue" onclick="selectService('Bathroom Remodeling')">GET QUOTE</a>
+          <a href="quote.html?service=Bathroom+Remodeling" class="btn btn-blue">GET QUOTE</a>
         </div>
       </div>
       <div class="service-card fade-in">
@@ -1179,7 +1189,7 @@
         <div class="service-body">
           <h3>Roofing</h3>
           <p>New roofs, repairs, re-roofing, leak detection, and storm damage restoration.</p>
-          <a href="#quote" class="btn btn-blue" onclick="selectService('Roofing')">GET QUOTE</a>
+          <a href="quote.html?service=Roofing" class="btn btn-blue">GET QUOTE</a>
         </div>
       </div>
       <div class="service-card fade-in">
@@ -1187,7 +1197,7 @@
         <div class="service-body">
           <h3>General Remodeling</h3>
           <p>Flooring, windows, doors, painting, and whole-house renovations.</p>
-          <a href="#quote" class="btn btn-blue" onclick="selectService('General Remodeling')">GET QUOTE</a>
+          <a href="quote.html?service=General+Remodeling" class="btn btn-blue">GET QUOTE</a>
         </div>
       </div>
       <div class="service-card fade-in">
@@ -1195,7 +1205,7 @@
         <div class="service-body">
           <h3>Residential Electrical</h3>
           <p>Panel upgrades, rewiring, lighting installation, EV chargers, and smart home electrical solutions.</p>
-          <a href="#quote" class="btn btn-blue" onclick="selectService('Residential Electrical')">GET QUOTE</a>
+          <a href="quote.html?service=Residential+Electrical" class="btn btn-blue">GET QUOTE</a>
         </div>
       </div>
       <div class="service-card fade-in">
@@ -1203,7 +1213,7 @@
         <div class="service-body">
           <h3>Landscaping</h3>
           <p>Patios, decks, fencing, concrete, landscaping, and backyard living spaces.</p>
-          <a href="#quote" class="btn btn-blue" onclick="selectService('Landscaping')">GET QUOTE</a>
+          <a href="quote.html?service=Landscaping" class="btn btn-blue">GET QUOTE</a>
         </div>
       </div>
     </div>
@@ -1349,7 +1359,7 @@
   <section class="cta-banner">
     <h2>Ready to Start Your Project?</h2>
     <p>Get a free, no-obligation estimate today. We'll come to you!</p>
-    <a href="#quote" class="btn btn-lg">Get My Free Quote</a>
+    <a href="quote.html" class="btn btn-lg">Get My Free Quote</a>
   </section>
 
   <!-- STORY -->
@@ -1376,97 +1386,18 @@
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
         Hello Projects Pro
       </a>
+      <a href="https://www.yelp.com/biz/hello-projects-pro-reseda-2" target="_blank" rel="noopener" class="social-link yelp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.16 12.594l-4.995 1.433c-.96.276-1.74-.8-1.176-1.63l2.905-4.308a1.072 1.072 0 011.596-.206 9.194 9.194 0 012.364 3.282 1.073 1.073 0 01-.694 1.429zm-1.737 5.39a1.073 1.073 0 01-1.282.855 9.194 9.194 0 01-3.592-1.722 1.072 1.072 0 01-.134-1.606l3.312-3.937c.635-.755 1.852-.24 1.838.776l-.142 5.634zm-7.737-.675l-1.545-4.973c-.297-.955.782-1.744 1.63-1.192l4.37 2.823a1.072 1.072 0 01.183 1.603 9.194 9.194 0 01-3.228 2.402 1.073 1.073 0 01-1.41-.663zm-1.898-6.093c.032 1.007-1.136 1.579-1.765.864L3.54 8.143a1.072 1.072 0 01.146-1.612A9.194 9.194 0 017.4 4.64a1.073 1.073 0 011.38.918l.005 5.658zm-2.41 7.703a1.072 1.072 0 01-.774-1.345 9.194 9.194 0 011.882-3.51 1.072 1.072 0 011.612-.078l3.77 3.478c.723.668.27 1.874-.685 1.822l-5.805-.367z"/></svg>
+        Yelp Reviews
+      </a>
     </div>
   </section>
 
-  <!-- QUOTE FORM -->
-  <section class="quote-section" id="quote">
-    <div class="quote-container fade-in">
-      <h2>Get Your FREE Quote</h2>
-      <p class="sub">Fill out the form below and we'll get back to you within 1 hour.</p>
-
-      <form id="quoteForm" onsubmit="return submitQuote(event)">
-        <div class="form-row">
-          <div class="form-group">
-            <label>First Name *</label>
-            <input type="text" name="first_name" placeholder="John" required>
-          </div>
-          <div class="form-group">
-            <label>Last Name *</label>
-            <input type="text" name="last_name" placeholder="Smith" required>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label>Phone Number *</label>
-            <input type="tel" name="phone" placeholder="(555) 123-4567" required>
-          </div>
-          <div class="form-group">
-            <label>Email</label>
-            <input type="email" name="email" placeholder="john@email.com">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Address</label>
-          <input type="text" name="address" placeholder="123 Main St, Los Angeles, CA">
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label>Project Type *</label>
-            <select name="project_type" id="projectType" required>
-              <option value="">Select a service...</option>
-              <option value="Kitchen Remodeling">Kitchen Remodeling</option>
-              <option value="Bathroom Remodeling">Bathroom Remodeling</option>
-              <option value="Roofing">Roofing</option>
-              <option value="General Remodeling">General Remodeling</option>
-              <option value="Residential Electrical">Residential Electrical</option>
-              <option value="Landscaping">Landscaping</option>
-              <option value="Plumbing">Plumbing</option>
-              <option value="Painting">Painting</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>How Soon?</label>
-            <select name="timeframe">
-              <option value="">Select timeframe...</option>
-              <option value="ASAP">ASAP / Emergency</option>
-              <option value="Within 1 week">Within 1 week</option>
-              <option value="Within 1 month">Within 1 month</option>
-              <option value="1-3 months">1-3 months</option>
-              <option value="Just exploring">Just exploring</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Tell Us About Your Project</label>
-          <textarea name="notes" rows="3" placeholder="Describe your project, dimensions, any special requirements..."></textarea>
-        </div>
-
-        <div class="consent-check">
-          <input type="checkbox" id="smsConsent" name="sms_consent" required>
-          <label for="smsConsent">
-            I agree to receive appointment confirmations and updates by text and/or email from Hello Projects Pro. Reply STOP to opt out. Msg & data rates may apply. Msg frequency varies. Your mobile information will not be sold or shared with third parties for promotional purposes. Consent is not a condition of purchase.
-          </label>
-        </div>
-
-        <button type="submit" class="btn form-submit" id="submitBtn">
-          Get My Free Quote Now
-        </button>
-
-        <p class="form-note">Your information is secure and will never be shared.</p>
-      </form>
-
-      <div class="form-success" id="formSuccess">
-        <h3>Thank You!</h3>
-        <p>Your quote request has been received. One of our project specialists will contact you within 1 hour.</p>
-        <p style="margin-top: 16px;">Or call us now: <a href="tel:+18887060080" style="color: var(--sky); font-weight: 700;">(888) 706-0080</a></p>
-      </div>
-    </div>
+  <!-- QUOTE CTA -->
+  <section class="cta-banner" id="quote">
+    <h2>Get Your FREE Quote Today</h2>
+    <p>Fill out our quick form and we'll get back to you within 1 hour.</p>
+    <a href="quote.html" class="btn btn-lg">Request Free Quote</a>
   </section>
 
   <!-- FOOTER -->
@@ -1508,56 +1439,6 @@
   </footer>
 
   <script>
-    const CRM_WEBHOOK = 'https://patagon-crm.onrender.com/api/webhooks/lead';
-
-    function selectService(service) {
-      document.getElementById('projectType').value = service;
-    }
-
-    async function submitQuote(e) {
-      e.preventDefault();
-      const form = document.getElementById('quoteForm');
-      const btn = document.getElementById('submitBtn');
-      const formData = new FormData(form);
-
-      btn.disabled = true;
-      btn.textContent = 'Submitting...';
-
-      const payload = {
-        first_name: formData.get('first_name'),
-        last_name: formData.get('last_name'),
-        phone: formData.get('phone'),
-        email: formData.get('email') || null,
-        address: formData.get('address') || null,
-        project_type: formData.get('project_type'),
-        timeframe: formData.get('timeframe') || null,
-        source: 'Landing Page',
-        form_name: 'Hello Projects Pro Landing Page',
-        campaign: 'HPP Landing Page',
-        notes: formData.get('notes') || null,
-        is_homeowner: 'Yes',
-      };
-
-      try {
-        const response = await fetch(CRM_WEBHOOK, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
-        });
-        if (response.ok) {
-          form.style.display = 'none';
-          document.getElementById('formSuccess').style.display = 'block';
-        } else {
-          throw new Error('Server error');
-        }
-      } catch (err) {
-        alert('Something went wrong. Please call us directly at (888) 706-0080.');
-        btn.disabled = false;
-        btn.textContent = 'Get My Free Quote Now';
-      }
-      return false;
-    }
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('visible');
