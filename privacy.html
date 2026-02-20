@@ -54,10 +54,40 @@
       background: linear-gradient(90deg, var(--blue), var(--blue-light));
       color: var(--white);
       text-align: center;
-      padding: 8px 16px;
+      padding: 0;
       font-weight: 700;
       font-size: 14px;
       letter-spacing: 0.5px;
+    }
+
+    .page-nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 8px 16px;
+      flex-wrap: wrap;
+    }
+
+    .page-nav a {
+      color: var(--white);
+      text-decoration: none;
+      padding: 4px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .page-nav a:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    .page-nav .nav-sep {
+      color: rgba(255,255,255,0.4);
+      font-size: 12px;
     }
 
     .header-main {
@@ -369,7 +399,15 @@
   <!-- STICKY HEADER -->
   <header class="header">
     <div class="header-top">
-      LIMITED TIME: FREE ESTIMATES ON ALL PROJECTS &mdash; Call Now!
+      <nav class="page-nav">
+        <a href="index.html">Home</a>
+        <span class="nav-sep">|</span>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <span class="nav-sep">|</span>
+        <a href="privacy.html">Privacy Policy</a>
+        <span class="nav-sep">|</span>
+        <a href="https://www.bbb.org/losangelessiliconvalley/customer-reviews/business-consultant/patagon-consulting-in-reseda-ca-1000036905/add/" target="_blank" rel="nofollow">Submit a BBB Review</a>
+      </nav>
     </div>
     <div class="header-main">
       <a href="index.html" class="logo">
