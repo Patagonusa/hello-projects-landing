@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms &amp; Conditions | Hello Projects Pro</title>
+  <meta name="description" content="Terms and Conditions for Patagon Consulting Inc. DBA Hello Projects Pro. CSLB #1135440.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0c1a2e;
+      --primary-light: #142d4f;
+      --blue: #2563eb;
+      --blue-hover: #1d4ed8;
+      --blue-light: #3b82f6;
+      --sky: #60a5fa;
+      --navy: #1e3a5f;
+      --accent: #f59e0b;
+      --accent-hover: #d97706;
+      --green: #10b981;
+      --green-dark: #059669;
+      --text: #1e293b;
+      --text-light: #64748b;
+      --bg-light: #f0f7ff;
+      --white: #fff;
+      --shadow: 0 4px 20px rgba(12,26,46,0.1);
+      --shadow-lg: 0 10px 40px rgba(12,26,46,0.18);
+      --radius: 12px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ===== STICKY HEADER ===== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: var(--primary);
+      padding: 0;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+    }
+
+    .header-top {
+      background: linear-gradient(90deg, var(--blue), var(--blue-light));
+      color: var(--white);
+      text-align: center;
+      padding: 8px 16px;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
+
+    .header-main {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 24px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      text-decoration: none;
+    }
+
+    .logo img {
+      height: 56px;
+      width: auto;
+    }
+
+    .header-ctas {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .btn-blue {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    .btn-blue:hover {
+      background: var(--blue-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(37,99,235,0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.6);
+    }
+
+    .btn-outline:hover {
+      background: var(--white);
+      color: var(--primary);
+      border-color: var(--white);
+    }
+
+    .lang-switch {
+      color: var(--sky);
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid rgba(96,165,250,0.4);
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+
+    .lang-switch:hover {
+      background: rgba(96,165,250,0.15);
+      color: var(--white);
+    }
+
+    /* ===== PAGE BANNER ===== */
+    .page-banner {
+      margin-top: 100px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--navy) 50%, #1a3f6b 100%);
+      color: var(--white);
+      padding: 60px 24px;
+      text-align: center;
+    }
+
+    .page-banner h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .page-banner p {
+      color: #94a3b8;
+      font-size: 16px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ===== TERMS CONTENT ===== */
+    .terms-section {
+      padding: 60px 24px 80px;
+      background: var(--white);
+    }
+
+    .terms-container {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 32px;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: var(--blue-hover);
+    }
+
+    .back-link svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    .terms-effective {
+      display: inline-block;
+      background: var(--bg-light);
+      color: var(--blue);
+      font-weight: 600;
+      font-size: 13px;
+      padding: 6px 14px;
+      border-radius: 6px;
+      margin-bottom: 32px;
+      border: 1px solid rgba(37,99,235,0.15);
+    }
+
+    .terms-container h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-top: 40px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--bg-light);
+    }
+
+    .terms-container h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .terms-container h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-top: 24px;
+      margin-bottom: 8px;
+    }
+
+    .terms-container p {
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+
+    .terms-container ul {
+      margin: 8px 0 16px 24px;
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .terms-container ul li {
+      margin-bottom: 4px;
+    }
+
+    .terms-container .legal-caps {
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .terms-container a {
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .terms-container a:hover {
+      color: var(--blue-hover);
+      text-decoration: underline;
+    }
+
+    .contact-card {
+      background: var(--bg-light);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-top: 16px;
+      border: 1px solid rgba(37,99,235,0.1);
+    }
+
+    .contact-card p {
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+
+    .contact-card strong {
+      color: var(--primary);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--primary);
+      color: #94a3b8;
+      padding: 48px 24px 24px;
+    }
+
+    .footer-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer h4 {
+      color: var(--white);
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .footer p, .footer a {
+      font-size: 14px;
+      color: #64748b;
+      line-height: 1.8;
+    }
+
+    .footer a {
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer a:hover { color: var(--sky); }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    .footer-bottom a { color: #4a6080; margin-left: 16px; }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 768px) {
+      .header-main { padding: 8px 16px; }
+      .logo img { height: 44px; }
+      .btn { padding: 10px 16px; font-size: 13px; }
+      .header-ctas .btn-outline { display: none; }
+
+      .page-banner { margin-top: 90px; padding: 40px 16px; }
+
+      .terms-section { padding: 40px 16px 60px; }
+
+      .terms-container h2 { font-size: 19px; }
+
+      .contact-card { padding: 20px; }
+
+      .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- STICKY HEADER -->
+  <header class="header">
+    <div class="header-top">
+      LIMITED TIME: FREE ESTIMATES ON ALL PROJECTS &mdash; Call Now!
+    </div>
+    <div class="header-main">
+      <a href="index.html" class="logo">
+        <img src="logo.jpeg" alt="Hello Projects Pro">
+      </a>
+      <div class="header-ctas">
+        <a href="es-terms.html" class="lang-switch">Espa&ntilde;ol</a>
+        <a href="index.html#quote" class="btn btn-blue">Get Free Quote</a>
+        <a href="tel:+18887060080" class="btn btn-outline">Call (888) 706-0080</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE BANNER -->
+  <section class="page-banner">
+    <h1>Terms &amp; Conditions</h1>
+    <p>Patagon Consulting Inc. DBA Hello Projects Pro</p>
+  </section>
+
+  <!-- TERMS CONTENT -->
+  <section class="terms-section">
+    <div class="terms-container">
+
+      <a href="index.html" class="back-link">
+        <svg viewBox="0 0 20 20"><path d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"/></svg>
+        Back to Home
+      </a>
+
+      <div class="terms-effective">Effective Date: February 19, 2026</div>
+
+      <!-- 1. Acceptance of Terms -->
+      <h2>1. Acceptance of Terms</h2>
+      <p>These Terms and Conditions ("Terms") govern your access to and use of the website, services, and all related communications provided by Patagon Consulting Inc. DBA Hello Projects Pro ("Company," "we," "us," or "our"), operating under CSLB #1135440.</p>
+      <p>By accessing our website, submitting a contact form, requesting a quote, entering into a service agreement, or otherwise engaging with our Services, you acknowledge that you have read, understood, and agree to be bound by these Terms and our <a href="privacy.html">Privacy Policy</a>.</p>
+
+      <!-- 2. Description of Services -->
+      <h2>2. Description of Services</h2>
+      <p>Hello Projects Pro provides home improvement and construction services, including but not limited to concrete work, flooring restoration, roofing coordination, general construction, and consulting advisory services. All construction work is performed under CSLB #1135440.</p>
+      <p>Service descriptions, estimates, and project scopes on our website are for general informational purposes only and do not constitute a binding offer.</p>
+
+      <!-- 3. Website Use -->
+      <h2>3. Website Use</h2>
+
+      <h3>3.1 Eligibility</h3>
+      <p>You must be at least 18 years of age and legally capable of entering into binding contracts.</p>
+
+      <h3>3.2 Permitted Use</h3>
+      <p>You agree to use our website only for lawful purposes.</p>
+
+      <h3>3.3 Intellectual Property</h3>
+      <p>All content on our website is the property of the Company or its content providers and is protected by copyright, trademark, and other intellectual property laws.</p>
+
+      <!-- 4. Quotes, Estimates, and Contracts -->
+      <h2>4. Quotes, Estimates, and Contracts</h2>
+      <p>All quotes valid for thirty (30) days. No work shall commence until a written contract has been signed and deposit received.</p>
+
+      <!-- 5. Communications and TCPA Consent -->
+      <h2>5. Communications and TCPA Consent</h2>
+
+      <h3>5.1 Consent to Communications</h3>
+      <p>By providing your telephone number and submitting a form, you provide express written consent under TCPA to receive:</p>
+      <ul>
+        <li>Autodialed/prerecorded calls</li>
+        <li>Text messages (SMS/MMS)</li>
+        <li>Artificial voice messages</li>
+      </ul>
+
+      <h3>5.2 Consent Is Voluntary</h3>
+      <p>Consent is NOT required as a condition of purchase.</p>
+
+      <h3>5.3 Message Frequency and Costs</h3>
+      <p>Frequency varies. Standard message and data rates may apply.</p>
+
+      <h3>5.4 Opt-Out Rights</h3>
+      <p>You may opt out at any time by using any of the following methods:</p>
+      <ul>
+        <li>Reply <strong>STOP</strong> to any text message</li>
+        <li>Call <a href="tel:+18887060080">(888) 706-0080</a></li>
+        <li>Email <a href="mailto:cs@helloprojectspro.com">cs@helloprojectspro.com</a></li>
+        <li>Mail to: 18546 Sherman Way, Ste 103, Reseda, CA 91335</li>
+      </ul>
+
+      <h3>5.5 Email Communications</h3>
+      <p>You may unsubscribe from marketing emails at any time.</p>
+
+      <!-- 6. Licensing and Insurance -->
+      <h2>6. Licensing and Insurance</h2>
+      <p>CSLB #1135440. Full insurance coverage. Verify at <a href="https://www.cslb.ca.gov" target="_blank" rel="noopener">www.cslb.ca.gov</a>.</p>
+
+      <!-- 7. Warranties and Disclaimers -->
+      <h2>7. Warranties and Disclaimers</h2>
+
+      <h3>7.1 Service Warranty</h3>
+      <p>Warranties set forth in individual project contracts. Governed by California Civil Code &sect; 896 et seq.</p>
+
+      <h3>7.2 Website Disclaimer</h3>
+      <p class="legal-caps">WEBSITE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED.</p>
+
+      <!-- 8. Limitation of Liability -->
+      <h2>8. Limitation of Liability</h2>
+      <p class="legal-caps">TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE COMPANY SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES.</p>
+
+      <!-- 9. Indemnification -->
+      <h2>9. Indemnification</h2>
+      <p>You agree to indemnify and hold harmless the Company from any claims arising from your violation of these Terms.</p>
+
+      <!-- 10. Third-Party Links and Services -->
+      <h2>10. Third-Party Links and Services</h2>
+      <p>We are not responsible for third-party websites. Financing through partners is subject to their terms.</p>
+
+      <!-- 11. Dispute Resolution -->
+      <h2>11. Dispute Resolution</h2>
+
+      <h3>11.1 Governing Law</h3>
+      <p>These Terms shall be governed by and construed in accordance with the laws of the State of California.</p>
+
+      <h3>11.2 Informal Resolution</h3>
+      <p>The parties shall attempt informal resolution for a period of thirty (30) days before pursuing formal proceedings.</p>
+
+      <h3>11.3 Jurisdiction</h3>
+      <p>Any disputes shall be subject to the exclusive jurisdiction of the courts of Los Angeles County, California.</p>
+
+      <h3>11.4 CSLB Complaint Rights</h3>
+      <p>You may file a complaint with the Contractors State License Board by calling 1-800-321-CSLB or visiting <a href="https://www.cslb.ca.gov" target="_blank" rel="noopener">www.cslb.ca.gov</a>.</p>
+
+      <!-- 12. California-Specific Disclosures -->
+      <h2>12. California-Specific Disclosures</h2>
+      <ul>
+        <li><strong>BPC &sect; 7159:</strong> Written contracts required for projects over $500.</li>
+        <li><strong>Civil Code &sect; 1689.5&ndash;1689.14:</strong> Three-day cancellation right for home solicitation contracts.</li>
+        <li><strong>CCPA/CPRA:</strong> See our <a href="privacy.html">Privacy Policy</a> for details on your California privacy rights.</li>
+        <li><strong>Mechanics' Lien Notice:</strong> Provided per Civil Code &sect; 8044.</li>
+      </ul>
+
+      <!-- 13. Force Majeure -->
+      <h2>13. Force Majeure</h2>
+      <p>The Company shall not be liable for delays caused by events beyond reasonable control, including but not limited to natural disasters, pandemics, labor disputes, or government actions.</p>
+
+      <!-- 14. Severability -->
+      <h2>14. Severability</h2>
+      <p>If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions shall continue in full force and effect.</p>
+
+      <!-- 15. Entire Agreement -->
+      <h2>15. Entire Agreement</h2>
+      <p>These Terms, together with our Privacy Policy and any individual project contracts, constitute the entire agreement between you and the Company.</p>
+
+      <!-- 16. Modifications -->
+      <h2>16. Modifications</h2>
+      <p>We reserve the right to modify these Terms at any time. Changes are effective immediately upon posting to the website. Continued use of our Services after changes constitutes acceptance of the updated Terms.</p>
+
+      <!-- 17. Contact Information -->
+      <h2>17. Contact Information</h2>
+      <div class="contact-card">
+        <p><strong>Patagon Consulting Inc. DBA Hello Projects Pro</strong></p>
+        <p>18546 Sherman Way, Ste 103, Reseda, CA 91335</p>
+        <p><strong>Phone:</strong> <a href="tel:+18887060080">(888) 706-0080</a></p>
+        <p><strong>Email:</strong> <a href="mailto:cs@helloprojectspro.com">cs@helloprojectspro.com</a></p>
+        <p><strong>Web:</strong> <a href="https://www.helloprojectspro.com" target="_blank" rel="noopener">www.helloprojectspro.com</a></p>
+        <p><strong>License:</strong> CSLB #1135440</p>
+        <p><strong>BBB Accredited Business</strong> &mdash; A+ Rating</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <h4>Hello Projects Pro</h4>
+        <p>Premier remodeling &amp; construction services. Licensed, bonded, and insured. CSLB #1135440.</p>
+        <p style="margin-top: 12px;">
+          <strong style="color: #fff;">Phone:</strong> <a href="tel:+18887060080">(888) 706-0080</a><br>
+          <strong style="color: #fff;">Email:</strong> <a href="mailto:info@helloprojectspro.com">info@helloprojectspro.com</a>
+        </p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <p><a href="index.html#services">Kitchen Remodeling</a></p>
+        <p><a href="index.html#services">Bathroom Remodeling</a></p>
+        <p><a href="index.html#services">Roofing</a></p>
+        <p><a href="index.html#services">General Remodeling</a></p>
+        <p><a href="index.html#services">Residential Electrical</a></p>
+        <p><a href="index.html#services">Landscaping</a></p>
+      </div>
+      <div>
+        <h4>Service Areas</h4>
+        <p>Los Angeles, CA</p>
+        <p>Reseda, CA</p>
+        <p>Encino, CA</p>
+        <p>Sherman Oaks, CA</p>
+        <p>Tarzana, CA</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Hello Projects Pro. All rights reserved.</span>
+      <div>
+        <a href="terms.html">Terms</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

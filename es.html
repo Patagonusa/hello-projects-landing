@@ -300,6 +300,84 @@
       letter-spacing: 1px;
     }
 
+    /* ===== TRUST BADGES ===== */
+    .trust-badges {
+      padding: 32px 24px;
+      background: var(--white);
+      text-align: center;
+    }
+
+    .trust-badges-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .bbb-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #fff;
+      border: 2px solid #006758;
+      border-radius: 10px;
+      padding: 12px 20px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .bbb-badge:hover {
+      box-shadow: 0 4px 16px rgba(0,103,88,0.2);
+      transform: translateY(-2px);
+    }
+
+    .bbb-seal {
+      width: 56px;
+      height: 56px;
+      flex-shrink: 0;
+    }
+
+    .bbb-text {
+      text-align: left;
+      line-height: 1.3;
+    }
+
+    .bbb-text .bbb-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: #006758;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .bbb-text .bbb-name {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .bbb-text .bbb-rating {
+      font-size: 12px;
+      font-weight: 700;
+      color: #006758;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-light);
+    }
+
+    .trust-icon {
+      font-size: 20px;
+    }
+
     /* ===== SERVICES ===== */
     .services {
       padding: 80px 24px;
@@ -915,6 +993,29 @@
     </div>
   </section>
 
+  <!-- TRUST BADGES -->
+  <section class="trust-badges fade-in">
+    <div class="trust-badges-inner">
+      <a href="https://www.bbb.org/us/ca/reseda/profile/general-contractor/hello-projects-pro-1216-1000143962" target="_blank" rel="noopener" class="bbb-badge">
+        <svg class="bbb-seal" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="40" cy="40" r="38" fill="#006758" stroke="#004d40" stroke-width="2"/>
+          <text x="40" y="28" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#fff">BBB</text>
+          <rect x="15" y="33" width="50" height="1" fill="rgba(255,255,255,0.3)"/>
+          <text x="40" y="50" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" font-weight="bold" fill="#fff">ACCREDITED</text>
+          <text x="40" y="60" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" font-weight="bold" fill="#fff">BUSINESS</text>
+          <text x="40" y="74" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" font-weight="bold" fill="#ffd700">A+</text>
+        </svg>
+        <div class="bbb-text">
+          <div class="bbb-title">Acreditado por BBB</div>
+          <div class="bbb-name">Hello Projects Pro</div>
+          <div class="bbb-rating">Calificaci&oacute;n: A+</div>
+        </div>
+      </a>
+      <div class="trust-item"><span class="trust-icon">&#9989;</span> Licencia CSLB #1135440</div>
+      <div class="trust-item"><span class="trust-icon">&#128737;</span> Totalmente Asegurado</div>
+    </div>
+  </section>
+
   <!-- SERVICES with photos -->
   <section class="services" id="servicios">
     <div class="section-header fade-in">
@@ -1251,8 +1352,8 @@
     <div class="footer-bottom">
       <span>&copy; 2026 Hello Projects Pro. Todos los derechos reservados.</span>
       <div>
-        <a href="https://helloprojectspro.com/terms-conditions/" target="_blank">T&eacute;rminos</a>
-        <a href="https://helloprojectspro.com/privacy-policy/" target="_blank">Privacidad</a>
+        <a href="terms.html">T&eacute;rminos</a>
+        <a href="privacy.html">Privacidad</a>
       </div>
     </div>
   </footer>
