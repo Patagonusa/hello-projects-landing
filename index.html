@@ -378,6 +378,33 @@
       font-size: 20px;
     }
 
+    .cslb-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      padding: 8px 16px;
+      border: 2px solid #1a3a6b;
+      border-radius: 10px;
+      transition: all 0.2s;
+    }
+
+    .cslb-badge:hover {
+      box-shadow: 0 4px 16px rgba(26,58,107,0.2);
+      transform: translateY(-2px);
+    }
+
+    .cslb-logo {
+      height: 40px;
+      width: auto;
+    }
+
+    .cslb-badge span {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1a3a6b;
+    }
+
     /* ===== SERVICES ===== */
     .services {
       padding: 80px 24px;
@@ -999,7 +1026,10 @@
       <a href="https://www.bbb.org/us/ca/reseda/profile/business-consultants/patagon-consulting-1216-1000036905/#sealclick" target="_blank" rel="nofollow">
         <img src="https://seal-sanjose.bbb.org/seals/blue-seal-200-65-bbb-1000036905.png" style="border: 0;" alt="Patagon Consulting BBB Business Review">
       </a>
-      <div class="trust-item"><span class="trust-icon">&#9989;</span> CSLB Licensed #1135440</div>
+      <a href="https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=1135440" target="_blank" rel="noopener" class="cslb-badge">
+        <img src="https://www.cslb.ca.gov/images/header_organization.png" alt="CSLB - Contractors State License Board" class="cslb-logo">
+        <span>License #1135440 &mdash; Verify</span>
+      </a>
       <div class="trust-item"><span class="trust-icon">&#128737;</span> Fully Insured</div>
     </div>
   </section>
