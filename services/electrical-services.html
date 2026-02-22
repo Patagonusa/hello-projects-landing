@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <title>Residential Electrician Los Angeles | Hello Projects Pro</title>
   <meta name="description" content="Licensed residential electrician in Los Angeles. Panel upgrades, rewiring, EV charger installation, lighting, smart home solutions. CSLB #1135440. Call (888) 706-0080.">
   <link rel="canonical" href="https://helloprojectspro.com/services/electrical-services.html">
@@ -326,89 +329,52 @@
       max-width: 1100px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: start;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
     }
-
-    .details-text h2 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 32px;
-      font-weight: 900;
-      color: var(--primary);
-      margin-bottom: 16px;
-    }
-
-    .details-text p {
-      color: var(--text-light);
-      font-size: 16px;
-      line-height: 1.8;
-      margin-bottom: 16px;
-    }
-
-    .details-list {
-      list-style: none;
-      margin: 24px 0;
-    }
-
-    .details-list li {
-      padding: 12px 0;
-      border-bottom: 1px solid #e2e8f0;
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: 15px;
-      color: var(--text);
-    }
-
-    .details-list li:last-child { border-bottom: none; }
-
-    .check-icon {
-      flex-shrink: 0;
-      width: 24px;
-      height: 24px;
-      background: rgba(37,99,235,0.1);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--blue);
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .details-image {
+    .detail-card {
+      background: var(--white);
+      border: 1px solid #e2e8f0;
       border-radius: var(--radius);
+      padding: 0;
       overflow: hidden;
-      box-shadow: var(--shadow-lg);
+      transition: box-shadow 0.3s;
     }
-
-    .details-image img {
+    .detail-card:hover { box-shadow: var(--shadow-lg); }
+    .detail-card img {
       width: 100%;
-      height: 100%;
+      height: 200px;
       object-fit: cover;
-      display: block;
     }
-
-    .safety-callout {
-      background: linear-gradient(135deg, #eff6ff, #dbeafe);
-      border-left: 4px solid var(--blue);
-      border-radius: 0 var(--radius) var(--radius) 0;
-      padding: 24px;
-      margin-top: 24px;
-    }
-
-    .safety-callout h3 {
-      font-size: 16px;
-      font-weight: 800;
+    .detail-card h3 {
+      font-size: 1.3rem;
       color: var(--primary);
-      margin-bottom: 8px;
+      margin-bottom: 12px;
+      padding: 24px 32px 0;
     }
-
-    .safety-callout p {
-      font-size: 14px;
-      color: var(--text-light);
-      margin-bottom: 0;
+    .detail-card p {
+      color: var(--text-light, #64748b);
+      font-size: 0.95rem;
+      padding: 0 32px;
+    }
+    .detail-card ul {
+      list-style: none;
+      margin-top: 12px;
+      padding: 0 32px 32px;
+    }
+    .detail-card ul li {
+      padding: 6px 0;
+      color: var(--text-light, #64748b);
+      font-size: 0.95rem;
+      position: relative;
+      padding-left: 24px;
+    }
+    .detail-card ul li::before {
+      content: '\2713';
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-weight: 700;
     }
 
     /* ===== PROCESS ===== */
@@ -674,7 +640,6 @@
       .hero p { font-size: 16px; }
 
       .details-grid { grid-template-columns: 1fr; }
-      .details-image { order: -1; max-height: 300px; }
 
       .process-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
       .process-step::after { display: none; }
@@ -743,53 +708,86 @@
   </nav>
 
   <!-- SERVICE DETAILS -->
-  <section class="service-details">
-    <div class="details-grid fade-in">
-      <div class="details-text">
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Our Services</span>
         <h2>Complete Residential Electrical Solutions</h2>
-        <p>Whether your Los Angeles home needs a panel upgrade, a full rewire, or modern lighting throughout, Hello Projects Pro has the licensed electricians to get it done right. We handle every aspect of residential electrical work with a focus on safety, code compliance, and long-lasting results.</p>
-        <p>Our team is experienced with the unique demands of LA homes, from older Reseda properties that need updated wiring to modern Sherman Oaks builds requiring smart home integration. Every project is completed to National Electrical Code (NEC) and California Title 24 standards.</p>
-        <ul class="details-list">
-          <li>
-            <div class="check-icon">&#10003;</div>
-            <div><strong>Electrical Panel Upgrades</strong> &mdash; Upgrade from 100A to 200A service to support modern appliances, HVAC systems, and EV chargers. Essential for older Los Angeles homes.</div>
-          </li>
-          <li>
-            <div class="check-icon">&#10003;</div>
-            <div><strong>Whole-House Rewiring</strong> &mdash; Replace outdated knob-and-tube or aluminum wiring with safe, modern copper wiring. Eliminate fire hazards and bring your home up to code.</div>
-          </li>
-          <li>
-            <div class="check-icon">&#10003;</div>
-            <div><strong>Lighting Installation</strong> &mdash; Recessed lighting, pendant fixtures, under-cabinet LEDs, outdoor landscape lighting, and accent lighting to transform any room.</div>
-          </li>
-          <li>
-            <div class="check-icon">&#10003;</div>
-            <div><strong>EV Charger Installation</strong> &mdash; Level 2 (240V) home charging station installation for Tesla, Rivian, and all electric vehicles. Includes dedicated circuit and panel capacity assessment.</div>
-          </li>
-          <li>
-            <div class="check-icon">&#10003;</div>
-            <div><strong>Smart Home Solutions</strong> &mdash; Smart switches, dimmers, thermostats, whole-home automation wiring, and voice-controlled lighting systems.</div>
-          </li>
-          <li>
-            <div class="check-icon">&#10003;</div>
-            <div><strong>Ceiling Fan Installation</strong> &mdash; New ceiling fan wiring, fan-rated box installation, and replacement of existing fixtures throughout your home.</div>
-          </li>
-          <li>
-            <div class="check-icon">&#10003;</div>
-            <div><strong>Outlet &amp; Switch Upgrades</strong> &mdash; GFCI outlets for kitchens and bathrooms, USB outlets, tamper-resistant receptacles, and dimmer switch installation.</div>
-          </li>
-          <li>
-            <div class="check-icon">&#10003;</div>
-            <div><strong>Code Compliance &amp; Inspections</strong> &mdash; Electrical safety inspections, permit coordination, code violation corrections, and pre-sale home electrical evaluations.</div>
-          </li>
-        </ul>
-        <div class="safety-callout">
-          <h3>&#9889; Safety-First Approach</h3>
-          <p>Electrical work is not a DIY project. Our licensed electricians carry proper insurance, pull all required permits, and ensure every connection meets or exceeds California electrical codes. Your family's safety is our top priority on every job.</p>
-        </div>
+        <p>Professional electrical services for your home, from panel upgrades to smart home installations. Licensed CSLB #1135440.</p>
       </div>
-      <div class="details-image">
-        <img src="../electrical.jpeg" alt="Licensed electrician performing panel upgrade in Los Angeles home" loading="lazy">
+      <div class="details-grid">
+        <div class="detail-card">
+          <img src="../images/services/electrical-panel.jpeg" alt="Electrical panel upgrade" loading="lazy">
+          <h3>Panel Upgrades</h3>
+          <p>Upgrade your electrical panel to handle modern power demands safely. We upgrade from 100A to 200A and beyond.</p>
+          <ul>
+            <li>100A to 200A panel upgrades</li>
+            <li>Subpanel installation</li>
+            <li>Breaker replacement</li>
+            <li>Meter base upgrades</li>
+            <li>Code compliance updates</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <img src="../images/services/electrical-wiring.jpeg" alt="Home electrical wiring" loading="lazy">
+          <h3>Whole-House Rewiring</h3>
+          <p>Replace outdated or unsafe wiring with modern, code-compliant electrical systems for peace of mind and safety.</p>
+          <ul>
+            <li>Knob-and-tube replacement</li>
+            <li>Aluminum to copper rewiring</li>
+            <li>New circuit installation</li>
+            <li>Dedicated appliance circuits</li>
+            <li>Full inspection and testing</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <img src="../images/services/electrical-lighting.jpeg" alt="Modern recessed lighting installation" loading="lazy">
+          <h3>Lighting Installation</h3>
+          <p>Transform your home with professional lighting design and installation. From recessed lights to elegant fixtures.</p>
+          <ul>
+            <li>Recessed can lights and LEDs</li>
+            <li>Pendant and chandelier installation</li>
+            <li>Outdoor and landscape lighting</li>
+            <li>Dimmer switch installation</li>
+            <li>Under-cabinet lighting</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <img src="../images/services/electrical-ev.jpeg" alt="EV charger installation at home" loading="lazy">
+          <h3>EV Charger Installation</h3>
+          <p>Charge your electric vehicle at home with a professionally installed Level 2 charger. Fast, safe, and convenient.</p>
+          <ul>
+            <li>Level 2 (240V) charger setup</li>
+            <li>Tesla, ChargePoint, and all brands</li>
+            <li>Dedicated 50A circuit</li>
+            <li>Garage and outdoor installations</li>
+            <li>Utility rebate assistance</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <img src="../images/services/electrical-smart.jpeg" alt="Smart home thermostat" loading="lazy">
+          <h3>Smart Home Solutions</h3>
+          <p>Modernize your home with smart technology for convenience, security, and energy savings.</p>
+          <ul>
+            <li>Smart thermostat installation</li>
+            <li>Smart lighting systems</li>
+            <li>Wi-Fi enabled switches and outlets</li>
+            <li>Home automation wiring</li>
+            <li>Voice assistant integration</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <img src="../images/services/electrical-outlets.jpeg" alt="Electrical outlet and switch installation" loading="lazy">
+          <h3>Outlets &amp; Switches</h3>
+          <p>Upgrade or add outlets and switches throughout your home for safety and convenience.</p>
+          <ul>
+            <li>GFCI outlet installation</li>
+            <li>USB outlet upgrades</li>
+            <li>Tamper-resistant receptacles</li>
+            <li>240V outlet installation</li>
+            <li>Ceiling fan wiring and installation</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>

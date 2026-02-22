@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <title>Techador en Los &Aacute;ngeles | Hello Projects Pro</title>
   <meta name="description" content="Servicios de techos en Los &Aacute;ngeles. Instalaci&oacute;n de techos nuevos, reparaciones, detecci&oacute;n de filtraciones y restauraci&oacute;n por tormentas. Licencia CSLB #1135440. Estimado gratis. Llame (888) 706-0080.">
   <link rel="canonical" href="https://helloprojectspro.com/services/roofing-es.html">
@@ -182,38 +185,64 @@
     .section-header p { color: var(--text-light); font-size: 16px; }
 
     /* ===== SERVICE DETAILS ===== */
-    .service-details { padding: 80px 24px; background: var(--white); }
+    .section {
+      padding: 80px 24px;
+      background: var(--white);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
 
     .details-grid {
-      max-width: 1100px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
     }
-
-    .details-text h2 {
-      font-family: 'Poppins', sans-serif; font-size: 32px;
-      font-weight: 900; color: var(--primary); margin-bottom: 16px;
+    .detail-card {
+      background: var(--white);
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius);
+      padding: 0;
+      overflow: hidden;
+      transition: box-shadow 0.3s;
     }
-
-    .details-text p {
-      color: var(--text-light); font-size: 16px; line-height: 1.8; margin-bottom: 16px;
+    .detail-card:hover { box-shadow: var(--shadow-lg); }
+    .detail-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
     }
-
-    .details-list { list-style: none; padding: 0; margin: 24px 0; }
-
-    .details-list li {
-      padding: 12px 0; border-bottom: 1px solid #e2e8f0;
-      font-size: 15px; font-weight: 600; color: var(--text);
-      display: flex; align-items: center; gap: 12px;
+    .detail-card h3 {
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 12px;
+      padding: 24px 32px 0;
     }
-
-    .details-list li::before {
-      content: '\2713'; display: inline-flex; align-items: center; justify-content: center;
-      width: 28px; height: 28px; background: rgba(37,99,235,0.1);
-      color: var(--blue); border-radius: 50%; font-size: 14px; font-weight: 700; flex-shrink: 0;
+    .detail-card p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      padding: 0 32px;
     }
-
-    .details-img {
-      width: 100%; border-radius: var(--radius); box-shadow: var(--shadow-lg);
+    .detail-card ul {
+      list-style: none;
+      margin-top: 12px;
+      padding: 0 32px 32px;
+    }
+    .detail-card ul li {
+      padding: 6px 0;
+      color: var(--text-light);
+      font-size: 0.95rem;
+      position: relative;
+      padding-left: 24px;
+    }
+    .detail-card ul li::before {
+      content: '\2713';
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-weight: 700;
     }
 
     /* ===== PROCESS ===== */
@@ -341,7 +370,6 @@
       .hero { padding: 60px 16px 80px; margin-top: 90px; min-height: 420px; }
       .hero h1 { font-size: clamp(26px, 6vw, 40px); }
       .hero p { font-size: 16px; }
-      .details-grid { grid-template-columns: 1fr; }
       .process-grid { grid-template-columns: repeat(2, 1fr); }
       .why-grid { grid-template-columns: 1fr; }
       .other-grid { grid-template-columns: repeat(2, 1fr); }
@@ -388,25 +416,86 @@
   </section>
 
   <!-- SERVICE DETAILS -->
-  <section class="service-details">
-    <div class="details-grid fade-in">
-      <div class="details-text">
-        <h2>Expertos en Techos para Su Hogar</h2>
-        <p>Su techo es la primera l&iacute;nea de defensa de su hogar. En Hello Projects Pro, entendemos lo importante que es tener un techo confiable y duradero. Nuestro equipo de techadores con licencia ofrece soluciones completas para todo tipo de techos residenciales y comerciales en Los &Aacute;ngeles.</p>
-        <p>Ya sea que necesite un techo nuevo, una reparaci&oacute;n de emergencia por filtraciones o una inspecci&oacute;n completa despu&eacute;s de una tormenta, estamos listos para ayudarle. Trabajamos con los mejores materiales del mercado y ofrecemos garant&iacute;as s&oacute;lidas en cada proyecto.</p>
-        <ul class="details-list">
-          <li>Instalaci&oacute;n de techos nuevos (tejas, planos, metal)</li>
-          <li>Reparaci&oacute;n de techos y goteras</li>
-          <li>Detecci&oacute;n profesional de filtraciones</li>
-          <li>Restauraci&oacute;n por da&ntilde;os de tormentas</li>
-          <li>Techos de tejas asf&aacute;lticas y cer&aacute;micas</li>
-          <li>Techos planos y techos de metal</li>
-          <li>Inspecciones completas de techos</li>
-          <li>Materiales de primera calidad con garant&iacute;a</li>
-        </ul>
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Nuestros Servicios</span>
+        <h2>Soluciones Completas de Techos para Propietarios de Los &Aacute;ngeles</h2>
+        <p>Desde instalaciones nuevas hasta reparaciones de emergencia, ofrecemos servicios completos de techos para proteger su hogar. Licencia CSLB #1135440.</p>
       </div>
-      <div>
-        <img src="../roofing.jpeg" alt="Servicios de techos en Los &Aacute;ngeles - Hello Projects Pro" class="details-img" loading="lazy">
+      <div class="details-grid">
+        <div class="detail-card">
+          <img src="../images/services/roof-new.jpeg" alt="Instalaci&oacute;n de techo nuevo en casa residencial" loading="lazy">
+          <h3>Instalaci&oacute;n de Techo Nuevo</h3>
+          <p>Instalaci&oacute;n completa de techos con materiales premium y mano de obra experta. Trabajamos con tejas, techos planos y met&aacute;licos.</p>
+          <ul>
+            <li>Tejas asf&aacute;lticas arquitect&oacute;nicas</li>
+            <li>Techos de tejas de arcilla y concreto</li>
+            <li>Techos met&aacute;licos de junta alzada</li>
+            <li>Techos planos TPO y bit&uacute;men modificado</li>
+            <li>Garant&iacute;as del fabricante de 25-50 a&ntilde;os</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <img src="../images/services/roof-shingles.jpeg" alt="Re-techado con tejas nuevas" loading="lazy">
+          <h3>Re-Techado y Reemplazo</h3>
+          <p>Actualice su techo viejo con materiales modernos y mejor protecci&oacute;n. Nos encargamos de la remoci&oacute;n completa, inspecci&oacute;n y nueva instalaci&oacute;n.</p>
+          <ul>
+            <li>Remoci&oacute;n y eliminaci&oacute;n del techo viejo</li>
+            <li>Inspecci&oacute;n y reparaci&oacute;n de la base</li>
+            <li>Instalaci&oacute;n de membrana mejorada</li>
+            <li>Nuevos tapajuntas y ventilaci&oacute;n</li>
+            <li>Opciones de techo fresco energ&eacute;ticamente eficiente</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <img src="../images/services/roof-repair.jpeg" alt="Reparaci&oacute;n de techo por contratista profesional" loading="lazy">
+          <h3>Reparaci&oacute;n de Techos</h3>
+          <p>Reparaciones r&aacute;pidas y confiables para detener goteras y prevenir da&ntilde;os mayores. Nuestro equipo diagnostica la causa ra&iacute;z y ofrece soluciones duraderas.</p>
+          <ul>
+            <li>Reparaci&oacute;n de goteras de emergencia</li>
+            <li>Reemplazo de tejas faltantes o da&ntilde;adas</li>
+            <li>Reparaci&oacute;n de tapajuntas en ventilaciones y chimeneas</li>
+            <li>Reparaci&oacute;n de canaletas y bajantes</li>
+            <li>Reparaci&oacute;n de goteras en tragaluces</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <img src="../images/services/roof-tiles.jpeg" alt="Primer plano de tejas de techo" loading="lazy">
+          <h3>Detecci&oacute;n de Fugas e Impermeabilizaci&oacute;n</h3>
+          <p>Tecnolog&iacute;a avanzada de detecci&oacute;n de fugas e impermeabilizaci&oacute;n profesional para mantener su hogar seco y protegido todo el a&ntilde;o.</p>
+          <ul>
+            <li>Detecci&oacute;n de humedad por infrarrojo</li>
+            <li>Pruebas de agua e identificaci&oacute;n de origen</li>
+            <li>Instalaci&oacute;n de membrana impermeable</li>
+            <li>Recubrimiento y sellado de superficies</li>
+            <li>Programas de mantenimiento preventivo</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <img src="../images/services/roof-house.jpeg" alt="Hermoso techo residencial" loading="lazy">
+          <h3>Restauraci&oacute;n por Da&ntilde;o de Tormentas</h3>
+          <p>Da&ntilde;os por viento, lluvia y clima restaurados r&aacute;pida y profesionalmente. Trabajamos directamente con compa&ntilde;&iacute;as de seguros para reclamos sin complicaciones.</p>
+          <ul>
+            <li>Lona de emergencia y protecci&oacute;n temporal</li>
+            <li>Asistencia con reclamos de seguro</li>
+            <li>Reparaci&oacute;n de da&ntilde;os por viento y granizo</li>
+            <li>Reemplazo completo del techo si es necesario</li>
+            <li>Documentaci&oacute;n e informes fotogr&aacute;ficos</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <img src="../images/services/roof-metal.jpeg" alt="Instalaci&oacute;n de techo met&aacute;lico" loading="lazy">
+          <h3>Inspecci&oacute;n de Techo Gratis</h3>
+          <p>Inspecci&oacute;n completa del techo por nuestros profesionales con licencia. Evaluamos la condici&oacute;n de su techo y proporcionamos un informe detallado con recomendaciones.</p>
+          <ul>
+            <li>Inspecci&oacute;n completa interior y exterior</li>
+            <li>Documentaci&oacute;n fotogr&aacute;fica de hallazgos</li>
+            <li>Informe escrito de condici&oacute;n</li>
+            <li>Recomendaci&oacute;n de reparaci&oacute;n vs. reemplazo</li>
+            <li>Estimado de reparaci&oacute;n sin compromiso</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>

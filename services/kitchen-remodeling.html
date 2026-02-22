@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <title>Kitchen Remodeling Los Angeles | Hello Projects Pro</title>
   <meta name="description" content="Expert kitchen remodeling in Los Angeles. Custom cabinets, quartz & granite countertops, backsplashes, flooring & lighting. Licensed CSLB #1135440. Free estimates. Call (888) 706-0080.">
   <meta name="keywords" content="kitchen remodeling Los Angeles, kitchen renovation LA, custom cabinets Los Angeles, countertop installation, kitchen contractor near me">
@@ -249,11 +252,24 @@
       background: var(--white);
       border: 1px solid var(--gray-200);
       border-radius: var(--radius);
-      padding: 32px;
+      padding: 0;
+      overflow: hidden;
       transition: box-shadow 0.3s;
     }
     .detail-card:hover { box-shadow: var(--shadow-lg); }
+    .detail-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .detail-card h3,
+    .detail-card p,
+    .detail-card ul {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
     .detail-card h3 {
+      padding-top: 24px;
       font-size: 1.3rem;
       color: var(--primary);
       margin-bottom: 12px;
@@ -262,6 +278,7 @@
     .detail-card ul {
       list-style: none;
       margin-top: 12px;
+      padding-bottom: 32px;
     }
     .detail-card ul li {
       padding: 6px 0;
@@ -480,6 +497,7 @@
       <p class="section-subtitle">Every kitchen remodel is tailored to your lifestyle, space, and budget. We handle everything from design through final walkthrough so you can enjoy your dream kitchen without the stress.</p>
       <div class="details-grid">
         <div class="detail-card">
+          <img src="../images/services/kitchen-cabinets.jpeg" alt="Custom kitchen cabinets installation" loading="lazy">
           <h3>Custom Cabinetry</h3>
           <p>We design and install cabinets that maximize storage and match your style. Choose from a wide range of finishes, hardware, and configurations.</p>
           <ul>
@@ -491,6 +509,7 @@
           </ul>
         </div>
         <div class="detail-card">
+          <img src="../images/services/kitchen-countertops.jpeg" alt="Premium granite countertop" loading="lazy">
           <h3>Premium Countertops</h3>
           <p>Select from the finest countertop materials sourced from top suppliers. We measure, fabricate, and install with precision for a flawless finish.</p>
           <ul>
@@ -502,6 +521,7 @@
           </ul>
         </div>
         <div class="detail-card">
+          <img src="../images/services/kitchen-backsplash.jpeg" alt="Kitchen backsplash tile installation" loading="lazy">
           <h3>Backsplashes &amp; Tile Work</h3>
           <p>Add personality and protection to your kitchen walls with expertly installed backsplashes that tie the entire room together.</p>
           <ul>
@@ -513,6 +533,7 @@
           </ul>
         </div>
         <div class="detail-card">
+          <img src="../images/services/kitchen-flooring.jpeg" alt="Kitchen hardwood flooring" loading="lazy">
           <h3>Flooring Installation</h3>
           <p>We install durable, beautiful flooring that withstands the demands of a busy kitchen while complementing your new design.</p>
           <ul>
@@ -524,6 +545,7 @@
           </ul>
         </div>
         <div class="detail-card">
+          <img src="../images/services/kitchen-lighting.jpeg" alt="Pendant lighting over kitchen island" loading="lazy">
           <h3>Lighting &amp; Electrical</h3>
           <p>Proper lighting transforms your kitchen's ambiance and functionality. We design layered lighting plans that work for cooking, dining, and entertaining.</p>
           <ul>
@@ -535,6 +557,7 @@
           </ul>
         </div>
         <div class="detail-card">
+          <img src="../images/services/kitchen-layout.jpeg" alt="Modern kitchen layout design" loading="lazy">
           <h3>Layout Optimization &amp; Plumbing</h3>
           <p>Redesign your kitchen layout for better flow, more counter space, and improved functionality. We handle all plumbing relocation and upgrades.</p>
           <ul>

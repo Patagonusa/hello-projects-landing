@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <title>Remodelaci&oacute;n General en Los &Aacute;ngeles | Hello Projects Pro</title>
   <meta name="description" content="Remodelaci&oacute;n general en Los &Aacute;ngeles. Pisos, ventanas, puertas, pintura, renovaciones completas, ADUs y conversiones de garaje. Licencia CSLB #1135440. Estimado gratis. Llame (888) 706-0080.">
   <link rel="canonical" href="https://helloprojectspro.com/services/general-remodeling-es.html">
@@ -185,35 +188,55 @@
     .service-details { padding: 80px 24px; background: var(--white); }
 
     .details-grid {
-      max-width: 1100px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+      max-width: 1100px;
+      margin: 0 auto;
     }
-
-    .details-text h2 {
-      font-family: 'Poppins', sans-serif; font-size: 32px;
-      font-weight: 900; color: var(--primary); margin-bottom: 16px;
+    .detail-card {
+      background: var(--white);
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius);
+      padding: 0;
+      overflow: hidden;
+      transition: box-shadow 0.3s;
     }
-
-    .details-text p {
-      color: var(--text-light); font-size: 16px; line-height: 1.8; margin-bottom: 16px;
+    .detail-card:hover { box-shadow: var(--shadow-lg); }
+    .detail-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
     }
-
-    .details-list { list-style: none; padding: 0; margin: 24px 0; }
-
-    .details-list li {
-      padding: 12px 0; border-bottom: 1px solid #e2e8f0;
-      font-size: 15px; font-weight: 600; color: var(--text);
-      display: flex; align-items: center; gap: 12px;
+    .detail-card h3 {
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 12px;
+      padding: 24px 32px 0;
     }
-
-    .details-list li::before {
-      content: '\2713'; display: inline-flex; align-items: center; justify-content: center;
-      width: 28px; height: 28px; background: rgba(37,99,235,0.1);
-      color: var(--blue); border-radius: 50%; font-size: 14px; font-weight: 700; flex-shrink: 0;
+    .detail-card p {
+      color: var(--text-light, #64748b);
+      font-size: 0.95rem;
+      padding: 0 32px;
     }
-
-    .details-img {
-      width: 100%; border-radius: var(--radius); box-shadow: var(--shadow-lg);
+    .detail-card ul {
+      list-style: none;
+      margin-top: 12px;
+      padding: 0 32px 32px;
+    }
+    .detail-card ul li {
+      padding: 6px 0;
+      color: var(--text-light, #64748b);
+      font-size: 0.95rem;
+      position: relative;
+      padding-left: 24px;
+    }
+    .detail-card ul li::before {
+      content: '\2713';
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-weight: 700;
     }
 
     /* ===== PROCESS ===== */
@@ -389,24 +412,85 @@
 
   <!-- SERVICE DETAILS -->
   <section class="service-details">
-    <div class="details-grid fade-in">
-      <div class="details-text">
-        <h2>Transformamos Su Hogar Por Completo</h2>
-        <p>&iquest;Su&ntilde;a con una casa renovada pero no sabe por d&oacute;nde empezar? En Hello Projects Pro nos encargamos de todo. Desde cambiar los pisos hasta agregar una habitaci&oacute;n extra o convertir su garaje en un espacio funcional, nuestro equipo maneja cada detalle de su proyecto de remodelaci&oacute;n.</p>
-        <p>Trabajamos mano a mano con usted en cada etapa: desde la consulta inicial y el dise&ntilde;o, hasta el manejo de permisos con la ciudad y la construcci&oacute;n final. Nos aseguramos de que cada aspecto de su remodelaci&oacute;n cumpla con los c&oacute;digos de construcci&oacute;n y supere sus expectativas.</p>
-        <ul class="details-list">
-          <li>Pisos de madera, azulejo y vinilo de lujo</li>
-          <li>Instalaci&oacute;n de ventanas y puertas nuevas</li>
-          <li>Pintura interior y exterior profesional</li>
-          <li>Renovaciones completas de casa</li>
-          <li>Adiciones y ampliaciones de espacios</li>
-          <li>Unidades de Vivienda Accesorias (ADUs)</li>
-          <li>Conversiones de garaje</li>
-          <li>Manejo completo de permisos y consulta de dise&ntilde;o</li>
-        </ul>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Nuestros Servicios</span>
+        <h2>Su Socio de Remodelaci&oacute;n Integral en Los &Aacute;ngeles</h2>
+        <p>Desde pisos hasta renovaciones completas, manejamos cada aspecto de su proyecto de remodelaci&oacute;n. Licencia CSLB #1135440.</p>
       </div>
-      <div>
-        <img src="../general-remodeling.jpeg" alt="Remodelaci&oacute;n general en Los &Aacute;ngeles - Hello Projects Pro" class="details-img" loading="lazy">
+      <div class="details-grid">
+        <div class="detail-card">
+          <img src="../images/services/remodel-flooring.jpeg" alt="Instalaci&oacute;n de pisos de madera" loading="lazy">
+          <h3>Instalaci&oacute;n de Pisos</h3>
+          <p>Pisos hermosos y duraderos que transforman cualquier habitaci&oacute;n. Instalamos una amplia variedad de pisos para su estilo y presupuesto.</p>
+          <ul>
+            <li>Madera s&oacute;lida y madera ingenierizada</li>
+            <li>Vinilo de lujo (LVP)</li>
+            <li>Porcelanato y cer&aacute;mica</li>
+            <li>Pisos de piedra natural</li>
+            <li>Sistemas de piso con calefacci&oacute;n disponibles</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <img src="../images/services/remodel-windows.jpeg" alt="Instalaci&oacute;n de ventanas en hogar" loading="lazy">
+          <h3>Ventanas y Puertas</h3>
+          <p>Mejore la eficiencia energ&eacute;tica, seguridad y apariencia de su hogar con ventanas y puertas nuevas instaladas profesionalmente.</p>
+          <ul>
+            <li>Ventanas de doble y triple panel</li>
+            <li>Puertas corredizas y francesas</li>
+            <li>Reemplazo de puerta principal</li>
+            <li>Mejoras de eficiencia energ&eacute;tica</li>
+            <li>Tama&ntilde;os y estilos personalizados</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <img src="../images/services/remodel-painting.jpeg" alt="Pintura interior de paredes" loading="lazy">
+          <h3>Pintura Interior y Exterior</h3>
+          <p>Pintura profesional que renueva su hogar por dentro y por fuera. Usamos pinturas premium y preparaci&oacute;n meticulosa para resultados duraderos.</p>
+          <ul>
+            <li>Pintura de habitaciones interiores</li>
+            <li>Pintura exterior de casa</li>
+            <li>Pintura y acabado de gabinetes</li>
+            <li>Reparaci&oacute;n de drywall y texturizado</li>
+            <li>Consulta de colores disponible</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <img src="../images/services/remodel-renovation.jpeg" alt="Renovaci&oacute;n de hogar en progreso" loading="lazy">
+          <h3>Renovaciones Completas</h3>
+          <p>Transformaciones completas que modernizan su espacio de vida. Manejamos cada detalle desde el dise&ntilde;o hasta la entrega final.</p>
+          <ul>
+            <li>Conversiones a planta abierta</li>
+            <li>Reconfiguraci&oacute;n de habitaciones</li>
+            <li>Modificaciones estructurales</li>
+            <li>Redise&ntilde;o interior completo</li>
+            <li>Manejo de permisos incluido</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <img src="../images/services/remodel-addition.jpeg" alt="Construcci&oacute;n de ampliaci&oacute;n de habitaci&oacute;n" loading="lazy">
+          <h3>Ampliaciones de Habitaciones</h3>
+          <p>Ampl&iacute;e su espacio de vida con adiciones construidas por expertos que se integran perfectamente con su hogar existente.</p>
+          <ul>
+            <li>Adiciones de dormitorios y ba&ntilde;os</li>
+            <li>Extensiones de sala familiar</li>
+            <li>Adiciones de segundo piso</li>
+            <li>Solanums y patios cerrados</li>
+            <li>Desde los cimientos hasta el acabado</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <img src="../images/services/remodel-doors.jpeg" alt="Conversi&oacute;n de garaje a ADU" loading="lazy">
+          <h3>ADU y Conversiones de Garaje</h3>
+          <p>Transforme espacio sin usar en ingresos por alquiler o &aacute;rea de vivienda adicional. Manejamos permisos, dise&ntilde;o y construcci&oacute;n.</p>
+          <ul>
+            <li>Unidades de Vivienda Accesorias (ADUs)</li>
+            <li>Conversiones de garaje a espacio habitable</li>
+            <li>Construcci&oacute;n de ADU Junior (JADU)</li>
+            <li>Manejo completo de permisos</li>
+            <li>Cumplimiento de zonificaci&oacute;n de LA</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>

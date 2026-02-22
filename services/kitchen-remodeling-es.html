@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <title>Remodelaci&oacute;n de Cocinas en Los &Aacute;ngeles | Hello Projects Pro</title>
   <meta name="description" content="Remodelaci&oacute;n de cocinas en Los &Aacute;ngeles. Gabinetes personalizados, encimeras de cuarzo y granito, pisos, iluminaci&oacute;n. Estimados gratis, financiamiento al 0%. Llame al (888) 706-0080.">
   <link rel="canonical" href="https://helloprojectspro.com/services/kitchen-remodeling-es.html">
@@ -166,10 +169,28 @@
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
     }
     .detail-card {
-      background: var(--bg-light); border-radius: var(--radius); padding: 32px 24px;
+      background: var(--bg-light); border-radius: var(--radius); padding: 0;
       text-align: center; border: 2px solid transparent; transition: all 0.3s;
+      overflow: hidden;
     }
     .detail-card:hover { border-color: var(--blue); transform: translateY(-4px); box-shadow: var(--shadow); }
+    .detail-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .detail-card h3,
+    .detail-card p,
+    .detail-card ul {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+    .detail-card h3 {
+      padding-top: 24px;
+    }
+    .detail-card ul {
+      padding-bottom: 32px;
+    }
     .detail-icon { font-size: 36px; margin-bottom: 16px; }
     .detail-card h3 { font-size: 18px; font-weight: 800; color: var(--primary); margin-bottom: 8px; }
     .detail-card p { color: var(--text-light); font-size: 14px; line-height: 1.7; }
@@ -327,31 +348,37 @@
     </div>
     <div class="details-grid">
       <div class="detail-card fade-in">
+        <img src="../images/services/kitchen-cabinets.jpeg" alt="Instalaci&oacute;n de gabinetes de cocina personalizados" loading="lazy">
         <div class="detail-icon">&#128422;</div>
         <h3>Gabinetes Personalizados</h3>
         <p>Dise&ntilde;amos e instalamos gabinetes a la medida de su cocina. Opciones en madera maciza, laminado de alta calidad y acabados modernos que se ajustan a su estilo y presupuesto.</p>
       </div>
       <div class="detail-card fade-in">
+        <img src="../images/services/kitchen-countertops.jpeg" alt="Encimera de granito premium" loading="lazy">
         <div class="detail-icon">&#9830;</div>
         <h3>Encimeras Premium</h3>
         <p>Cuarzo, granito, m&aacute;rmol y superficies s&oacute;lidas. Trabajamos con los mejores materiales para darle a su cocina un acabado elegante y duradero que resiste el uso diario.</p>
       </div>
       <div class="detail-card fade-in">
+        <img src="../images/services/kitchen-backsplash.jpeg" alt="Instalaci&oacute;n de salpicadero de cocina" loading="lazy">
         <div class="detail-icon">&#9632;</div>
         <h3>Salpicaderos y Azulejos</h3>
         <p>Salpicaderos en azulejo, piedra natural o materiales modernos. Protegen sus paredes y le dan un toque decorativo &uacute;nico a toda la cocina.</p>
       </div>
       <div class="detail-card fade-in">
+        <img src="../images/services/kitchen-flooring.jpeg" alt="Piso de madera para cocina" loading="lazy">
         <div class="detail-icon">&#9641;</div>
         <h3>Pisos Nuevos</h3>
         <p>Pisos de porcelanato, madera, vinilo de lujo o baldosa. Instalaci&oacute;n profesional con acabados impecables que transforman el aspecto completo de su cocina.</p>
       </div>
       <div class="detail-card fade-in">
+        <img src="../images/services/kitchen-lighting.jpeg" alt="Iluminaci&oacute;n colgante sobre isla de cocina" loading="lazy">
         <div class="detail-icon">&#128161;</div>
         <h3>Iluminaci&oacute;n Moderna</h3>
         <p>Iluminaci&oacute;n empotrada, bajo gabinetes, colgantes y LED de alta eficiencia. Creamos el ambiente perfecto para cocinar y compartir en familia.</p>
       </div>
       <div class="detail-card fade-in">
+        <img src="../images/services/kitchen-layout.jpeg" alt="Dise&ntilde;o moderno de cocina" loading="lazy">
         <div class="detail-icon">&#127968;</div>
         <h3>Transformaciones Completas</h3>
         <p>Remodelaciones integrales de cocina en estilos modernos, tradicionales y de transici&oacute;n. Cambiamos todo &mdash; plomer&iacute;a, electricidad, distribuci&oacute;n y acabados &mdash; para darle una cocina nueva.</p>

@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <title>Electricista Residencial en Los &Aacute;ngeles | Hello Projects Pro</title>
   <meta name="description" content="Servicios el&eacute;ctricos residenciales con licencia en Los &Aacute;ngeles. Actualizaci&oacute;n de paneles, recableado, iluminaci&oacute;n, cargadores EV y hogar inteligente. Estimado gratis. (888) 706-0080.">
   <link rel="canonical" href="https://helloprojectspro.com/services/electrical-services-es.html">
@@ -139,15 +142,57 @@
 
     /* ===== SERVICE DETAILS ===== */
     .service-details { padding: 80px 24px; background: var(--white); }
-    .details-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
-    .details-text h2 { font-family: 'Poppins', sans-serif; font-size: 32px; font-weight: 900; color: var(--primary); margin-bottom: 16px; line-height: 1.2; }
-    .details-text p { color: var(--text-light); font-size: 16px; line-height: 1.8; margin-bottom: 16px; }
-    .details-list { list-style: none; padding: 0; margin: 24px 0; }
-    .details-list li { padding: 12px 0; padding-left: 32px; position: relative; font-size: 15px; color: var(--text); border-bottom: 1px solid #e2e8f0; }
-    .details-list li::before { content: '\2713'; position: absolute; left: 0; color: var(--green); font-weight: 800; font-size: 18px; }
-    .details-list li:last-child { border-bottom: none; }
-    .details-img { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg); }
-    .details-img img { width: 100%; height: auto; display: block; }
+    .details-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+    }
+    .detail-card {
+      background: var(--white);
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius);
+      padding: 0;
+      overflow: hidden;
+      transition: box-shadow 0.3s;
+    }
+    .detail-card:hover { box-shadow: var(--shadow-lg); }
+    .detail-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .detail-card h3 {
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 12px;
+      padding: 24px 32px 0;
+    }
+    .detail-card p {
+      color: var(--text-light, #64748b);
+      font-size: 0.95rem;
+      padding: 0 32px;
+    }
+    .detail-card ul {
+      list-style: none;
+      margin-top: 12px;
+      padding: 0 32px 32px;
+    }
+    .detail-card ul li {
+      padding: 6px 0;
+      color: var(--text-light, #64748b);
+      font-size: 0.95rem;
+      position: relative;
+      padding-left: 24px;
+    }
+    .detail-card ul li::before {
+      content: '\2713';
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-weight: 700;
+    }
 
     /* ===== PROCESS ===== */
     .process { padding: 80px 24px; background: var(--bg-light); }
@@ -259,26 +304,86 @@
   </section>
 
   <!-- SERVICE DETAILS -->
-  <section class="service-details">
-    <div class="details-grid fade-in">
-      <div class="details-text">
-        <h2>Electricistas de Confianza para Su Hogar en Los &Aacute;ngeles</h2>
-        <p>En Hello Projects Pro entendemos que el sistema el&eacute;ctrico de su casa es el coraz&oacute;n de su hogar. Por eso contamos con electricistas con licencia que trabajan con los m&aacute;s altos est&aacute;ndares de seguridad y c&oacute;digo el&eacute;ctrico de California.</p>
-        <p>Ya sea que necesite actualizar su panel de 100 a 200 amperios para soportar m&aacute;s demanda energ&eacute;tica, hacer un recableado completo en una casa antigua, o simplemente instalar iluminaci&oacute;n nueva, nuestro equipo tiene la experiencia para hacerlo bien desde la primera vez.</p>
-        <ul class="details-list">
-          <li>Actualizaci&oacute;n de paneles el&eacute;ctricos de 100A a 200A</li>
-          <li>Recableado completo para casas antiguas</li>
-          <li>Iluminaci&oacute;n empotrada (recessed), colgante y exterior</li>
-          <li>Instalaci&oacute;n de cargadores para veh&iacute;culos el&eacute;ctricos (Nivel 2)</li>
-          <li>Soluciones de hogar inteligente y automatizaci&oacute;n</li>
-          <li>Instalaci&oacute;n y reemplazo de ventiladores de techo</li>
-          <li>Cumplimiento del c&oacute;digo el&eacute;ctrico de California</li>
-          <li>Diagn&oacute;stico y reparaci&oacute;n de fallas el&eacute;ctricas</li>
-        </ul>
-        <a href="../quote-es.html?service=Residential+Electrical" class="btn btn-blue btn-lg">Pedir Mi Estimado Gratis</a>
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Nuestros Servicios</span>
+        <h2>Soluciones El&eacute;ctricas Residenciales Completas</h2>
+        <p>Servicios el&eacute;ctricos profesionales para su hogar, desde actualizaci&oacute;n de paneles hasta instalaciones de hogar inteligente. Licencia CSLB #1135440.</p>
       </div>
-      <div class="details-img">
-        <img src="../electrical.jpeg" alt="Servicios el&eacute;ctricos residenciales en Los &Aacute;ngeles" loading="lazy">
+      <div class="details-grid">
+        <div class="detail-card">
+          <img src="../images/services/electrical-panel.jpeg" alt="Actualizaci&oacute;n de panel el&eacute;ctrico" loading="lazy">
+          <h3>Actualizaci&oacute;n de Panel</h3>
+          <p>Actualice su panel el&eacute;ctrico para manejar las demandas de energ&iacute;a modernas de forma segura. De 100A a 200A y m&aacute;s.</p>
+          <ul>
+            <li>Actualizaci&oacute;n de panel de 100A a 200A</li>
+            <li>Instalaci&oacute;n de subpaneles</li>
+            <li>Reemplazo de interruptores</li>
+            <li>Actualizaci&oacute;n de base del medidor</li>
+            <li>Actualizaciones de cumplimiento de c&oacute;digo</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <img src="../images/services/electrical-wiring.jpeg" alt="Recableado el&eacute;ctrico residencial" loading="lazy">
+          <h3>Recableado Completo</h3>
+          <p>Reemplace el cableado antiguo o inseguro con sistemas el&eacute;ctricos modernos que cumplen con el c&oacute;digo para su tranquilidad y seguridad.</p>
+          <ul>
+            <li>Reemplazo de cableado antiguo</li>
+            <li>Recableado de aluminio a cobre</li>
+            <li>Instalaci&oacute;n de circuitos nuevos</li>
+            <li>Circuitos dedicados para electrodom&eacute;sticos</li>
+            <li>Inspecci&oacute;n y pruebas completas</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <img src="../images/services/electrical-lighting.jpeg" alt="Instalaci&oacute;n de iluminaci&oacute;n empotrada moderna" loading="lazy">
+          <h3>Instalaci&oacute;n de Iluminaci&oacute;n</h3>
+          <p>Transforme su hogar con dise&ntilde;o e instalaci&oacute;n profesional de iluminaci&oacute;n. Desde luces empotradas hasta elegantes l&aacute;mparas.</p>
+          <ul>
+            <li>Luces empotradas y LEDs</li>
+            <li>Instalaci&oacute;n de colgantes y candelabros</li>
+            <li>Iluminaci&oacute;n exterior y de paisaje</li>
+            <li>Instalaci&oacute;n de interruptores dimmer</li>
+            <li>Iluminaci&oacute;n debajo de gabinetes</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <img src="../images/services/electrical-ev.jpeg" alt="Instalaci&oacute;n de cargador EV en casa" loading="lazy">
+          <h3>Instalaci&oacute;n de Cargador EV</h3>
+          <p>Cargue su veh&iacute;culo el&eacute;ctrico en casa con un cargador Nivel 2 instalado profesionalmente. R&aacute;pido, seguro y conveniente.</p>
+          <ul>
+            <li>Configuraci&oacute;n de cargador Nivel 2 (240V)</li>
+            <li>Tesla, ChargePoint y todas las marcas</li>
+            <li>Circuito dedicado de 50A</li>
+            <li>Instalaciones en garaje y exteriores</li>
+            <li>Asistencia con reembolsos de servicios p&uacute;blicos</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <img src="../images/services/electrical-smart.jpeg" alt="Termostato inteligente para el hogar" loading="lazy">
+          <h3>Soluciones de Hogar Inteligente</h3>
+          <p>Modernice su hogar con tecnolog&iacute;a inteligente para mayor comodidad, seguridad y ahorro de energ&iacute;a.</p>
+          <ul>
+            <li>Instalaci&oacute;n de termostato inteligente</li>
+            <li>Sistemas de iluminaci&oacute;n inteligente</li>
+            <li>Interruptores y tomacorrientes con Wi-Fi</li>
+            <li>Cableado para automatizaci&oacute;n del hogar</li>
+            <li>Integraci&oacute;n con asistente de voz</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <img src="../images/services/electrical-outlets.jpeg" alt="Instalaci&oacute;n de tomacorrientes e interruptores" loading="lazy">
+          <h3>Tomacorrientes e Interruptores</h3>
+          <p>Actualice o agregue tomacorrientes e interruptores en toda su casa para mayor seguridad y comodidad.</p>
+          <ul>
+            <li>Instalaci&oacute;n de tomacorrientes GFCI</li>
+            <li>Actualizaci&oacute;n a tomacorrientes USB</li>
+            <li>Receptáculos a prueba de manipulaci&oacute;n</li>
+            <li>Instalaci&oacute;n de tomacorrientes de 240V</li>
+            <li>Cableado e instalaci&oacute;n de ventiladores de techo</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>

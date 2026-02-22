@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <title>Remodelaci&oacute;n de Ba&ntilde;os en Los &Aacute;ngeles | Hello Projects Pro</title>
   <meta name="description" content="Remodelaci&oacute;n de ba&ntilde;os en Los &Aacute;ngeles. Duchas sin barreras, conversiones tina a ducha, azulejos, tocadores, renovaciones completas. Estimados gratis, financiamiento al 0%. (888) 706-0080.">
   <link rel="canonical" href="https://helloprojectspro.com/services/bathroom-remodeling-es.html">
@@ -166,10 +169,28 @@
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
     }
     .detail-card {
-      background: var(--bg-light); border-radius: var(--radius); padding: 32px 24px;
+      background: var(--bg-light); border-radius: var(--radius); padding: 0;
+      overflow: hidden;
       text-align: center; border: 2px solid transparent; transition: all 0.3s;
     }
     .detail-card:hover { border-color: var(--blue); transform: translateY(-4px); box-shadow: var(--shadow); }
+    .detail-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .detail-card h3,
+    .detail-card p,
+    .detail-card ul {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+    .detail-card h3 {
+      padding-top: 24px;
+    }
+    .detail-card ul {
+      padding-bottom: 32px;
+    }
     .detail-icon { font-size: 36px; margin-bottom: 16px; }
     .detail-card h3 { font-size: 18px; font-weight: 800; color: var(--primary); margin-bottom: 8px; }
     .detail-card p { color: var(--text-light); font-size: 14px; line-height: 1.7; }
@@ -327,31 +348,37 @@
     </div>
     <div class="details-grid">
       <div class="detail-card fade-in">
+        <img src="../images/services/bathroom-shower.jpeg" alt="Instalaci&oacute;n de ducha walk-in moderna" loading="lazy">
         <div class="detail-icon">&#128703;</div>
         <h3>Duchas Sin Barreras</h3>
         <p>Duchas modernas a nivel de piso con entrada sin barreras. Ideales para mayor accesibilidad y un look contempor&aacute;neo que transforma todo el ba&ntilde;o.</p>
       </div>
       <div class="detail-card fade-in">
+        <img src="../images/services/bathroom-bathtub.jpeg" alt="Conversi&oacute;n de tina a ducha" loading="lazy">
         <div class="detail-icon">&#128705;</div>
         <h3>Conversi&oacute;n Tina a Ducha</h3>
         <p>Eliminamos la tina vieja y la reemplazamos con una ducha amplia y moderna. M&aacute;s espacio, m&aacute;s funcionalidad y un aspecto renovado por completo.</p>
       </div>
       <div class="detail-card fade-in">
+        <img src="../images/services/bathroom-tile.jpeg" alt="Trabajo de azulejos para ba&ntilde;o" loading="lazy">
         <div class="detail-icon">&#9632;</div>
         <h3>Azulejos y Revestimientos</h3>
         <p>Instalaci&oacute;n profesional de azulejos en pisos, paredes y duchas. Porcelanato, cer&aacute;mica, piedra natural y mosaicos decorativos para cada estilo.</p>
       </div>
       <div class="detail-card fade-in">
+        <img src="../images/services/bathroom-vanity.jpeg" alt="Tocador moderno de ba&ntilde;o con doble lavabo" loading="lazy">
         <div class="detail-icon">&#128722;</div>
         <h3>Tocadores y Lavabos</h3>
         <p>Tocadores personalizados o prefabricados con encimeras de cuarzo, granito o m&aacute;rmol. Lavabos modernos con grifer&iacute;a de alta calidad incluida.</p>
       </div>
       <div class="detail-card fade-in">
+        <img src="../images/services/bathroom-accessible.jpeg" alt="Dise&ntilde;o de ba&ntilde;o accesible ADA" loading="lazy">
         <div class="detail-icon">&#9855;</div>
         <h3>Opciones Accesibles</h3>
         <p>Ba&ntilde;os adaptados para personas mayores y con movilidad reducida. Barras de apoyo, asientos de ducha, pisos antideslizantes y puertas amplias.</p>
       </div>
       <div class="detail-card fade-in">
+        <img src="../images/services/bathroom-luxury.jpeg" alt="Ba&ntilde;o de lujo con ducha y tina" loading="lazy">
         <div class="detail-icon">&#10024;</div>
         <h3>Actualizaciones de Lujo</h3>
         <p>Pisos con calefacci&oacute;n, iluminaci&oacute;n LED, duchas de lluvia, nichos empotrados y acabados premium. Convertimos su ba&ntilde;o en un spa privado.</p>

@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <title>General Remodeling Los Angeles | Hello Projects Pro</title>
   <meta name="description" content="General remodeling contractor in Los Angeles. Flooring, windows, doors, painting, room additions, ADUs, garage conversions. CSLB #1135440. Free estimates. Call (888) 706-0080.">
   <link rel="canonical" href="https://helloprojectspro.com/services/general-remodeling.html">
@@ -310,89 +313,55 @@
     }
 
     .details-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
       max-width: 1100px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: start;
     }
-
-    .details-content h2 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 32px;
-      font-weight: 900;
-      color: var(--primary);
-      margin-bottom: 20px;
-      line-height: 1.2;
-    }
-
-    .details-content p {
-      color: var(--text-light);
-      font-size: 16px;
-      line-height: 1.8;
-      margin-bottom: 16px;
-    }
-
-    .details-content strong { color: var(--text); }
-
-    .service-list {
-      list-style: none;
-      margin: 24px 0;
-    }
-
-    .service-list li {
-      padding: 12px 0;
-      border-bottom: 1px solid #e2e8f0;
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: 15px;
-      color: var(--text);
-    }
-
-    .service-list li:last-child { border-bottom: none; }
-
-    .check-icon {
-      flex-shrink: 0;
-      width: 24px;
-      height: 24px;
-      background: rgba(37,99,235,0.1);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--blue);
-      font-size: 14px;
-      font-weight: 700;
-      margin-top: 1px;
-    }
-
-    .details-image img {
-      width: 100%;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .details-card {
-      background: var(--bg-light);
-      border-radius: var(--radius);
-      padding: 32px;
-      margin-top: 32px;
+    .detail-card {
+      background: var(--white);
       border: 1px solid #e2e8f0;
+      border-radius: var(--radius);
+      padding: 0;
+      overflow: hidden;
+      transition: box-shadow 0.3s;
     }
-
-    .details-card h3 {
-      font-size: 18px;
-      font-weight: 800;
+    .detail-card:hover { box-shadow: var(--shadow-lg); }
+    .detail-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .detail-card h3 {
+      font-size: 1.3rem;
       color: var(--primary);
       margin-bottom: 12px;
+      padding: 24px 32px 0;
     }
-
-    .details-card p {
-      font-size: 14px;
-      color: var(--text-light);
-      line-height: 1.7;
+    .detail-card p {
+      color: var(--text-light, #64748b);
+      font-size: 0.95rem;
+      padding: 0 32px;
+    }
+    .detail-card ul {
+      list-style: none;
+      margin-top: 12px;
+      padding: 0 32px 32px;
+    }
+    .detail-card ul li {
+      padding: 6px 0;
+      color: var(--text-light, #64748b);
+      font-size: 0.95rem;
+      position: relative;
+      padding-left: 24px;
+    }
+    .detail-card ul li::before {
+      content: '\2713';
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-weight: 700;
     }
 
     /* ===== PROCESS ===== */
@@ -673,41 +642,84 @@
 
   <!-- SERVICE DETAILS -->
   <section class="service-details">
-    <div class="details-grid">
-      <div class="details-content fade-in">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Our Services</span>
         <h2>Your One-Stop Remodeling Partner in Los Angeles</h2>
-        <p>Whether you are refreshing a single room or reimagining your entire home, Hello Projects Pro delivers <strong>comprehensive general remodeling services</strong> throughout the Los Angeles area. Our licensed team manages every phase of the renovation &mdash; from initial design consultation and City of LA permit acquisition to final inspection and walkthrough &mdash; so you have a single, accountable point of contact from start to finish.</p>
-        <p>We specialize in the types of projects that make the biggest impact on daily living: <strong>new flooring that transforms a space</strong>, modern windows and doors that improve energy efficiency, interior and exterior painting that refreshes your home's curb appeal, and structural additions that add square footage and value. With 25+ years of experience navigating Los Angeles building codes and HOA requirements, we handle the complexity so you can enjoy the results.</p>
-
-        <ul class="service-list">
-          <li><div class="check-icon">&#10003;</div><div><strong>Hardwood Flooring</strong> &mdash; Solid and engineered hardwood installation, refinishing, and staining. Oak, maple, walnut, and exotic species available.</div></li>
-          <li><div class="check-icon">&#10003;</div><div><strong>Tile Flooring</strong> &mdash; Porcelain, ceramic, natural stone, and large-format tile installation for kitchens, bathrooms, and living areas.</div></li>
-          <li><div class="check-icon">&#10003;</div><div><strong>Luxury Vinyl Plank (LVP)</strong> &mdash; Waterproof, durable, and budget-friendly LVP flooring that mimics the look of real hardwood.</div></li>
-          <li><div class="check-icon">&#10003;</div><div><strong>Windows &amp; Doors</strong> &mdash; Energy-efficient vinyl, fiberglass, and aluminum window replacement. Sliding doors, French doors, and front entry doors.</div></li>
-          <li><div class="check-icon">&#10003;</div><div><strong>Interior &amp; Exterior Painting</strong> &mdash; Professional prep, prime, and paint services using premium brands like Sherwin-Williams and Benjamin Moore.</div></li>
-          <li><div class="check-icon">&#10003;</div><div><strong>Whole-House Renovations</strong> &mdash; Complete home makeovers coordinated across multiple trades: framing, plumbing, electrical, HVAC, and finishes.</div></li>
-          <li><div class="check-icon">&#10003;</div><div><strong>Room Additions</strong> &mdash; Expand your living space with permitted room additions that blend seamlessly with your existing home architecture.</div></li>
-          <li><div class="check-icon">&#10003;</div><div><strong>ADUs (Accessory Dwelling Units)</strong> &mdash; Detached and attached ADU construction compliant with California AB 68 and LA-specific regulations. Add rental income or multigenerational living space.</div></li>
-          <li><div class="check-icon">&#10003;</div><div><strong>Garage Conversions</strong> &mdash; Transform your underutilized garage into a legal living space, home office, studio, or guest suite with full permits.</div></li>
-        </ul>
+        <p>From flooring to full home renovations, we handle every aspect of your remodeling project. Licensed CSLB #1135440.</p>
       </div>
-
-      <div class="details-image fade-in">
-        <img src="../general-remodeling.jpeg" alt="General remodeling services in Los Angeles by Hello Projects Pro" loading="lazy">
-
-        <div class="details-card">
-          <h3>Permit Handling &amp; Code Compliance</h3>
-          <p>Navigating LA's building permit process can be overwhelming. Our team manages the <strong>entire permitting process</strong> with the City of Los Angeles Department of Building and Safety. We prepare plans, submit applications, schedule inspections, and ensure every project meets current California Building Code (CBC) and Title 24 energy requirements. You never have to set foot in a permit office.</p>
+      <div class="details-grid">
+        <div class="detail-card">
+          <img src="../images/services/remodel-flooring.jpeg" alt="Hardwood flooring installation" loading="lazy">
+          <h3>Flooring Installation</h3>
+          <p>Beautiful, durable flooring that transforms any room. We install a wide range of flooring types to match your style and budget.</p>
+          <ul>
+            <li>Hardwood and engineered wood</li>
+            <li>Luxury vinyl plank (LVP)</li>
+            <li>Porcelain and ceramic tile</li>
+            <li>Natural stone flooring</li>
+            <li>Heated floor systems available</li>
+          </ul>
         </div>
-
-        <div class="details-card">
-          <h3>Complimentary Design Consultation</h3>
-          <p>Every remodeling project starts with a <strong>free in-home design consultation</strong>. Our design team visits your property, discusses your vision, takes measurements, and presents material options and layout ideas. We provide 3D renderings for larger projects so you can visualize the finished space before a single nail is driven. No obligation, no pressure &mdash; just expert guidance.</p>
+        <div class="detail-card">
+          <img src="../images/services/remodel-windows.jpeg" alt="Window installation in home" loading="lazy">
+          <h3>Windows &amp; Doors</h3>
+          <p>Upgrade your home's energy efficiency, security, and curb appeal with new windows and doors professionally installed.</p>
+          <ul>
+            <li>Double and triple-pane windows</li>
+            <li>Sliding and French doors</li>
+            <li>Entry door replacement</li>
+            <li>Energy-efficient upgrades</li>
+            <li>Custom sizes and styles</li>
+          </ul>
         </div>
-
-        <div class="details-card">
-          <h3>ADU &amp; Garage Conversion Specialists</h3>
-          <p>California homeowners are increasingly building ADUs to add property value and rental income. Hello Projects Pro is experienced in <strong>detached ADUs, attached ADUs, junior ADUs, and garage conversions</strong> that comply with California state law and Los Angeles-specific zoning. We handle architectural plans, structural engineering, utility connections, and all required permits from concept to certificate of occupancy.</p>
+        <div class="detail-card">
+          <img src="../images/services/remodel-painting.jpeg" alt="Interior wall painting" loading="lazy">
+          <h3>Interior &amp; Exterior Painting</h3>
+          <p>Professional painting that refreshes your home inside and out. We use premium paints and meticulous prep work for lasting results.</p>
+          <ul>
+            <li>Interior room painting</li>
+            <li>Exterior house painting</li>
+            <li>Cabinet painting and refinishing</li>
+            <li>Drywall repair and texturing</li>
+            <li>Color consultation available</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <img src="../images/services/remodel-renovation.jpeg" alt="Home renovation in progress" loading="lazy">
+          <h3>Whole-House Renovations</h3>
+          <p>Complete home transformations that modernize your living space. We manage every detail from design through final walkthrough.</p>
+          <ul>
+            <li>Open floor plan conversions</li>
+            <li>Room reconfiguration</li>
+            <li>Structural modifications</li>
+            <li>Full interior redesign</li>
+            <li>Permit handling included</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <img src="../images/services/remodel-addition.jpeg" alt="Room addition construction" loading="lazy">
+          <h3>Room Additions</h3>
+          <p>Expand your living space with expertly built room additions that blend seamlessly with your existing home.</p>
+          <ul>
+            <li>Bedroom and bathroom additions</li>
+            <li>Family room extensions</li>
+            <li>Second-story additions</li>
+            <li>Sunrooms and enclosed patios</li>
+            <li>Foundation to finish</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <img src="../images/services/remodel-doors.jpeg" alt="ADU garage conversion" loading="lazy">
+          <h3>ADU &amp; Garage Conversions</h3>
+          <p>Transform unused space into rental income or additional living area. We handle permits, design, and construction.</p>
+          <ul>
+            <li>Accessory Dwelling Units (ADUs)</li>
+            <li>Garage-to-living space conversions</li>
+            <li>Junior ADU (JADU) construction</li>
+            <li>Full permit handling</li>
+            <li>LA zoning compliance</li>
+          </ul>
         </div>
       </div>
     </div>

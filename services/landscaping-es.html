@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <title>Servicios de Jardiner&iacute;a en Los &Aacute;ngeles | Hello Projects Pro</title>
   <meta name="description" content="Servicios de jardiner&iacute;a y exteriores con licencia en Los &Aacute;ngeles. Patios, decks, cercas, concreto, p&eacute;rgolas y espacios al aire libre. Estimado gratis. (888) 706-0080.">
   <link rel="canonical" href="https://helloprojectspro.com/services/landscaping-es.html">
@@ -139,15 +142,57 @@
 
     /* ===== SERVICE DETAILS ===== */
     .service-details { padding: 80px 24px; background: var(--white); }
-    .details-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
-    .details-text h2 { font-family: 'Poppins', sans-serif; font-size: 32px; font-weight: 900; color: var(--primary); margin-bottom: 16px; line-height: 1.2; }
-    .details-text p { color: var(--text-light); font-size: 16px; line-height: 1.8; margin-bottom: 16px; }
-    .details-list { list-style: none; padding: 0; margin: 24px 0; }
-    .details-list li { padding: 12px 0; padding-left: 32px; position: relative; font-size: 15px; color: var(--text); border-bottom: 1px solid #e2e8f0; }
-    .details-list li::before { content: '\2713'; position: absolute; left: 0; color: var(--green); font-weight: 800; font-size: 18px; }
-    .details-list li:last-child { border-bottom: none; }
-    .details-img { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg); }
-    .details-img img { width: 100%; height: auto; display: block; }
+    .details-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+    }
+    .detail-card {
+      background: var(--white);
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius);
+      padding: 0;
+      overflow: hidden;
+      transition: box-shadow 0.3s;
+    }
+    .detail-card:hover { box-shadow: var(--shadow-lg); }
+    .detail-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .detail-card h3 {
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 12px;
+      padding: 24px 32px 0;
+    }
+    .detail-card p {
+      color: var(--text-light, #64748b);
+      font-size: 0.95rem;
+      padding: 0 32px;
+    }
+    .detail-card ul {
+      list-style: none;
+      margin-top: 12px;
+      padding: 0 32px 32px;
+    }
+    .detail-card ul li {
+      padding: 6px 0;
+      color: var(--text-light, #64748b);
+      font-size: 0.95rem;
+      position: relative;
+      padding-left: 24px;
+    }
+    .detail-card ul li::before {
+      content: '\2713';
+      position: absolute;
+      left: 0;
+      color: var(--green, #10b981);
+      font-weight: 700;
+    }
 
     /* ===== PROCESS ===== */
     .process { padding: 80px 24px; background: var(--bg-light); }
@@ -216,7 +261,7 @@
       .hero { padding: 60px 16px 80px; margin-top: 90px; min-height: 440px; }
       .hero h1 { font-size: clamp(24px, 6vw, 36px); }
       .hero p { font-size: 16px; }
-      .details-grid { grid-template-columns: 1fr; gap: 32px; }
+      .details-grid { grid-template-columns: 1fr; }
       .process-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
       .why-grid { grid-template-columns: 1fr; }
       .other-grid { grid-template-columns: repeat(2, 1fr); }
@@ -260,26 +305,83 @@
 
   <!-- SERVICE DETAILS -->
   <section class="service-details">
+    <div class="section-header fade-in">
+      <span class="section-label">Nuestros Servicios</span>
+      <h2>Espacios al Aire Libre Dise&ntilde;ados para LA</h2>
+      <p>Transforme su patio en un oasis al aire libre. Desde patios personalizados hasta dise&ntilde;o completo de exteriores, construimos espacios que le encantar&aacute;n.</p>
+    </div>
     <div class="details-grid fade-in">
-      <div class="details-text">
-        <h2>Expertos en Exteriores y Jardiner&iacute;a en Los &Aacute;ngeles</h2>
-        <p>En Hello Projects Pro sabemos que su espacio exterior es una extensi&oacute;n de su hogar. Ya sea que quiera un patio para reuniones familiares, un deck para relajarse despu&eacute;s del trabajo, o una cerca nueva que le d&eacute; privacidad y seguridad, nuestro equipo tiene la experiencia para crear exactamente lo que usted necesita.</p>
-        <p>Trabajamos con todo tipo de materiales &mdash; concreto, adoquines, piedra natural, madera, compuesto, vinilo y hierro forjado &mdash; y le ayudamos a elegir la mejor opci&oacute;n para su presupuesto y el clima de Los &Aacute;ngeles. Adem&aacute;s, nos especializamos en jardines resistentes a la sequ&iacute;a que le ahorran agua y se ven incre&iacute;bles todo el a&ntilde;o.</p>
-        <ul class="details-list">
-          <li>Patios de concreto, adoquines y piedra natural</li>
-          <li>Decks de madera y material compuesto</li>
-          <li>Cercas de madera, vinilo y hierro forjado</li>
-          <li>Trabajos de concreto: entradas, aceras, muros</li>
-          <li>Espacios de vida al aire libre con cocina y chimenea</li>
-          <li>P&eacute;rgolas, gazebos y estructuras de sombra</li>
-          <li>Muros de contenci&oacute;n y soluciones de drenaje</li>
-          <li>Jardines resistentes a la sequ&iacute;a (drought-tolerant)</li>
-          <li>Iluminaci&oacute;n exterior y de paisaje</li>
+      <div class="detail-card">
+        <img src="../images/services/landscape-patio.jpeg" alt="Patio personalizado con muebles de exterior" loading="lazy">
+        <h3>Patios Personalizados</h3>
+        <p>Patios bellamente dise&ntilde;ados que extienden su espacio habitable al exterior. Trabajamos con materiales premium para resultados duraderos.</p>
+        <ul>
+          <li>Dise&ntilde;os de concreto estampado</li>
+          <li>Patios de adoquines</li>
+          <li>Piedra laja y travertino</li>
+          <li>Opciones cubiertas y descubiertas</li>
+          <li>Asientos y jardineras integradas</li>
         </ul>
-        <a href="../quote-es.html?service=Landscaping" class="btn btn-blue btn-lg">Pedir Mi Estimado Gratis</a>
       </div>
-      <div class="details-img">
-        <img src="../landscaping.jpeg" alt="Servicios de jardiner&iacute;a y exteriores en Los &Aacute;ngeles" loading="lazy">
+      <div class="detail-card">
+        <img src="../images/services/landscape-deck.jpeg" alt="Deck de madera con asientos al aire libre" loading="lazy">
+        <h3>Construcci&oacute;n de Decks</h3>
+        <p>Decks personalizados construidos con materiales de calidad que resisten el clima de LA mientras ofrecen el espacio perfecto para reuniones.</p>
+        <ul>
+          <li>Decks de madera tratada a presi&oacute;n</li>
+          <li>Decking compuesto (Trex, TimberTech)</li>
+          <li>Dise&ntilde;os de m&uacute;ltiples niveles</li>
+          <li>Bancas y barandales integrados</li>
+          <li>Te&ntilde;ido y sellado incluido</li>
+        </ul>
+      </div>
+      <div class="detail-card">
+        <img src="../images/services/landscape-fence.jpeg" alt="Patio residencial con cerca" loading="lazy">
+        <h3>Cercas</h3>
+        <p>Privacidad, seguridad y estilo con cercas instaladas profesionalmente. Ofrecemos variedad de materiales y dise&ntilde;os.</p>
+        <ul>
+          <li>Cercas de madera para privacidad</li>
+          <li>Cercas de vinilo y PVC</li>
+          <li>Hierro forjado y ornamental</li>
+          <li>Dise&ntilde;os modernos de listones horizontales</li>
+          <li>Puertas y abridores autom&aacute;ticos</li>
+        </ul>
+      </div>
+      <div class="detail-card">
+        <img src="../images/services/landscape-concrete.jpeg" alt="Camino de adoquines de concreto" loading="lazy">
+        <h3>Trabajo en Concreto</h3>
+        <p>Instalaciones de concreto duraderas y hermosas para entradas, caminos, cubiertas de piscina y m&aacute;s.</p>
+        <ul>
+          <li>Entradas y caminos</li>
+          <li>Resuperficiado de cubiertas de piscina</li>
+          <li>Muros de contenci&oacute;n</li>
+          <li>Concreto estampado y te&ntilde;ido</li>
+          <li>Soluciones de drenaje</li>
+        </ul>
+      </div>
+      <div class="detail-card">
+        <img src="../images/services/landscape-outdoor.jpeg" alt="Cocina exterior con BBQ y parrilla" loading="lazy">
+        <h3>Espacios de Vida al Aire Libre</h3>
+        <p>Cree la experiencia definitiva en su patio con cocinas exteriores personalizadas, chimeneas y &aacute;reas de entretenimiento.</p>
+        <ul>
+          <li>Cocinas exteriores e islas de BBQ</li>
+          <li>Fogatas y chimeneas</li>
+          <li>Barras y mostradores exteriores</li>
+          <li>Iluminaci&oacute;n y el&eacute;ctrico</li>
+          <li>Fuentes y elementos de agua</li>
+        </ul>
+      </div>
+      <div class="detail-card">
+        <img src="../images/services/landscape-pergola.jpeg" alt="P&eacute;rgola y gazebo de jard&iacute;n" loading="lazy">
+        <h3>P&eacute;rgolas y Estructuras</h3>
+        <p>Agregue sombra, belleza e inter&eacute;s arquitect&oacute;nico a su espacio exterior con estructuras construidas a medida.</p>
+        <ul>
+          <li>P&eacute;rgolas de madera y aluminio</li>
+          <li>Gazebos y pabellones</li>
+          <li>Velas de sombra y toldos</li>
+          <li>Arcos y enrejados</li>
+          <li>Jardiner&iacute;a resistente a la sequ&iacute;a</li>
+        </ul>
       </div>
     </div>
   </section>

@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <title>Roofing Contractor Los Angeles | Hello Projects Pro</title>
   <meta name="description" content="Licensed roofing contractor in Los Angeles. New roof installation, re-roofing, repairs, leak detection, storm damage restoration. CSLB #1135440. Free estimates. Call (888) 706-0080.">
   <link rel="canonical" href="https://helloprojectspro.com/services/roofing.html">
@@ -304,95 +307,64 @@
     }
 
     /* ===== SERVICE DETAILS ===== */
-    .service-details {
+    .section {
       padding: 80px 24px;
       background: var(--white);
     }
 
-    .details-grid {
+    .container {
       max-width: 1100px;
       margin: 0 auto;
+    }
+
+    .details-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: start;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
     }
-
-    .details-content h2 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 32px;
-      font-weight: 900;
-      color: var(--primary);
-      margin-bottom: 20px;
-      line-height: 1.2;
-    }
-
-    .details-content p {
-      color: var(--text-light);
-      font-size: 16px;
-      line-height: 1.8;
-      margin-bottom: 16px;
-    }
-
-    .details-content strong { color: var(--text); }
-
-    .service-list {
-      list-style: none;
-      margin: 24px 0;
-    }
-
-    .service-list li {
-      padding: 12px 0;
-      border-bottom: 1px solid #e2e8f0;
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: 15px;
-      color: var(--text);
-    }
-
-    .service-list li:last-child { border-bottom: none; }
-
-    .check-icon {
-      flex-shrink: 0;
-      width: 24px;
-      height: 24px;
-      background: rgba(37,99,235,0.1);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--blue);
-      font-size: 14px;
-      font-weight: 700;
-      margin-top: 1px;
-    }
-
-    .details-image img {
-      width: 100%;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .details-card {
-      background: var(--bg-light);
-      border-radius: var(--radius);
-      padding: 32px;
-      margin-top: 32px;
+    .detail-card {
+      background: var(--white);
       border: 1px solid #e2e8f0;
+      border-radius: var(--radius);
+      padding: 0;
+      overflow: hidden;
+      transition: box-shadow 0.3s;
     }
-
-    .details-card h3 {
-      font-size: 18px;
-      font-weight: 800;
+    .detail-card:hover { box-shadow: var(--shadow-lg); }
+    .detail-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .detail-card h3 {
+      font-size: 1.3rem;
       color: var(--primary);
       margin-bottom: 12px;
+      padding: 24px 32px 0;
     }
-
-    .details-card p {
-      font-size: 14px;
+    .detail-card p {
       color: var(--text-light);
-      line-height: 1.7;
+      font-size: 0.95rem;
+      padding: 0 32px;
+    }
+    .detail-card ul {
+      list-style: none;
+      margin-top: 12px;
+      padding: 0 32px 32px;
+    }
+    .detail-card ul li {
+      padding: 6px 0;
+      color: var(--text-light);
+      font-size: 0.95rem;
+      position: relative;
+      padding-left: 24px;
+    }
+    .detail-card ul li::before {
+      content: '\2713';
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-weight: 700;
     }
 
     /* ===== PROCESS ===== */
@@ -610,7 +582,6 @@
       .hero { padding: 60px 16px 80px; margin-top: 90px; min-height: 440px; }
       .hero p { font-size: 16px; }
 
-      .details-grid { grid-template-columns: 1fr; gap: 32px; }
       .process-grid { grid-template-columns: repeat(2, 1fr); }
       .why-grid { grid-template-columns: 1fr; }
       .other-grid { grid-template-columns: repeat(2, 1fr); }
@@ -672,42 +643,85 @@
   </nav>
 
   <!-- SERVICE DETAILS -->
-  <section class="service-details">
-    <div class="details-grid">
-      <div class="details-content fade-in">
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Our Services</span>
         <h2>Complete Roofing Solutions for Los Angeles Homeowners</h2>
-        <p>Your roof is the first line of defense against Southern California's intense sun, seasonal rainstorms, and Santa Ana winds. At Hello Projects Pro, we provide <strong>full-service roofing</strong> for residential properties throughout the Los Angeles area. Whether you need a brand-new roof installation, a cost-effective re-roofing project, or emergency leak repair, our CSLB-licensed contractors have the expertise to get the job done right.</p>
-        <p>Every roofing project begins with a <strong>thorough roof inspection</strong> performed by our certified inspectors. We assess the structural integrity of your roof deck, examine flashing and ventilation systems, identify signs of water intrusion, and evaluate remaining material lifespan. You receive a detailed inspection report with photos, recommended solutions, and a transparent cost estimate &mdash; all at no charge.</p>
-
-        <ul class="service-list">
-          <li><div class="check-icon">&#10003;</div><div><strong>New Roof Installation</strong> &mdash; Complete tear-off and installation with premium underlayment, ice-and-water shield, and manufacturer-certified materials.</div></li>
-          <li><div class="check-icon">&#10003;</div><div><strong>Re-Roofing &amp; Overlay</strong> &mdash; A cost-effective solution that layers new roofing over existing materials when structural conditions allow.</div></li>
-          <li><div class="check-icon">&#10003;</div><div><strong>Roof Repairs &amp; Patching</strong> &mdash; Targeted fixes for damaged areas, cracked tiles, missing shingles, and deteriorated flashing.</div></li>
-          <li><div class="check-icon">&#10003;</div><div><strong>Leak Detection &amp; Waterproofing</strong> &mdash; Advanced moisture mapping to pinpoint leaks, followed by professional sealing and waterproofing treatments.</div></li>
-          <li><div class="check-icon">&#10003;</div><div><strong>Storm Damage Restoration</strong> &mdash; Emergency response for wind, hail, and rain damage. We assist with insurance claims documentation.</div></li>
-          <li><div class="check-icon">&#10003;</div><div><strong>Tile Roofing</strong> &mdash; Clay and concrete tile installation, perfect for Mediterranean and Spanish-style homes throughout LA.</div></li>
-          <li><div class="check-icon">&#10003;</div><div><strong>Asphalt Shingle Roofing</strong> &mdash; Architectural and three-tab shingles from GAF, Owens Corning, and CertainTeed.</div></li>
-          <li><div class="check-icon">&#10003;</div><div><strong>Flat Roof Systems</strong> &mdash; TPO, EPDM, and modified bitumen solutions for flat and low-slope roofs on modern LA homes.</div></li>
-          <li><div class="check-icon">&#10003;</div><div><strong>Metal Roofing</strong> &mdash; Standing seam and corrugated metal roofing for durability, energy efficiency, and a contemporary look.</div></li>
-        </ul>
+        <p>From new installations to emergency repairs, we provide comprehensive roofing services to protect your home. Licensed CSLB #1135440.</p>
       </div>
-
-      <div class="details-image fade-in">
-        <img src="../roofing.jpeg" alt="Professional roofing services in Los Angeles by Hello Projects Pro" loading="lazy">
-
-        <div class="details-card">
-          <h3>Materials We Trust</h3>
-          <p>We partner with the industry's most respected manufacturers, including <strong>GAF</strong>, <strong>Owens Corning</strong>, <strong>CertainTeed</strong>, <strong>Eagle Roofing Products</strong>, and <strong>Boral</strong>. Every material is selected for durability in the Los Angeles climate and backed by manufacturer warranties of up to 50 years. As a GAF-certified installer, we offer enhanced warranty coverage on qualifying systems.</p>
+      <div class="details-grid">
+        <div class="detail-card">
+          <img src="../images/services/roof-new.jpeg" alt="New roof installation on residential home" loading="lazy">
+          <h3>New Roof Installation</h3>
+          <p>Complete roof installation with premium materials and expert craftsmanship. We work with tile, shingle, flat, and metal roofing systems.</p>
+          <ul>
+            <li>Architectural asphalt shingles</li>
+            <li>Clay and concrete tile roofing</li>
+            <li>Standing seam metal roofs</li>
+            <li>TPO and modified bitumen flat roofs</li>
+            <li>25-50 year manufacturer warranties</li>
+          </ul>
         </div>
-
-        <div class="details-card">
-          <h3>Warranty &amp; Guarantee</h3>
-          <p>All roofing work performed by Hello Projects Pro is backed by our <strong>10-year workmanship warranty</strong> in addition to the manufacturer's material warranty. We stand behind every nail, every shingle, and every flashing detail. If an issue arises from our installation within the warranty period, we will return and make it right at no additional cost.</p>
+        <div class="detail-card">
+          <img src="../images/services/roof-shingles.jpeg" alt="Re-roofing with new shingles" loading="lazy">
+          <h3>Re-Roofing &amp; Replacement</h3>
+          <p>Upgrade your aging roof with modern materials and improved protection. We handle full tear-off, deck inspection, and new installation.</p>
+          <ul>
+            <li>Old roof removal and disposal</li>
+            <li>Roof deck inspection and repair</li>
+            <li>Upgraded underlayment installation</li>
+            <li>New flashing and ridge vents</li>
+            <li>Energy-efficient cool roof options</li>
+          </ul>
         </div>
-
-        <div class="details-card">
+        <div class="detail-card">
+          <img src="../images/services/roof-repair.jpeg" alt="Roof repair by professional contractor" loading="lazy">
+          <h3>Roof Repair</h3>
+          <p>Fast, reliable repairs to stop leaks and prevent further damage. Our team diagnoses the root cause and provides lasting solutions.</p>
+          <ul>
+            <li>Emergency leak repair</li>
+            <li>Missing or damaged shingle replacement</li>
+            <li>Flashing repair around vents and chimneys</li>
+            <li>Gutter and downspout repair</li>
+            <li>Skylight leak repair</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <img src="../images/services/roof-tiles.jpeg" alt="Close-up of roof tiles" loading="lazy">
+          <h3>Leak Detection &amp; Waterproofing</h3>
+          <p>Advanced leak detection technology and professional waterproofing to keep your home dry and protected year-round.</p>
+          <ul>
+            <li>Infrared moisture detection</li>
+            <li>Water testing and source identification</li>
+            <li>Waterproof membrane installation</li>
+            <li>Deck coating and sealing</li>
+            <li>Preventive maintenance programs</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <img src="../images/services/roof-house.jpeg" alt="Beautiful residential roof" loading="lazy">
+          <h3>Storm Damage Restoration</h3>
+          <p>Wind, rain, and weather damage restored quickly and professionally. We work directly with insurance companies for hassle-free claims.</p>
+          <ul>
+            <li>Emergency tarping and board-up</li>
+            <li>Insurance claim assistance</li>
+            <li>Wind and hail damage repair</li>
+            <li>Full roof replacement if needed</li>
+            <li>Documentation and photo reports</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <img src="../images/services/roof-metal.jpeg" alt="Metal roofing installation" loading="lazy">
           <h3>Free Roof Inspection</h3>
-          <p>Not sure if your roof needs work? Schedule a <strong>free, no-obligation roof inspection</strong>. Our certified inspectors examine every component of your roofing system &mdash; decking, underlayment, flashing, ventilation, gutters, and surface materials &mdash; and provide a full condition report with honest recommendations.</p>
+          <p>Comprehensive roof inspection by our licensed professionals. We assess your roof's condition and provide a detailed report with recommendations.</p>
+          <ul>
+            <li>Full interior and exterior inspection</li>
+            <li>Photo documentation of findings</li>
+            <li>Written condition report</li>
+            <li>Repair vs. replacement recommendation</li>
+            <li>No-obligation repair estimate</li>
+          </ul>
         </div>
       </div>
     </div>

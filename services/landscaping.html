@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <title>Landscaping Services Los Angeles | Hello Projects Pro</title>
   <meta name="description" content="Professional landscaping services in Los Angeles. Patios, decks, fencing, concrete work, outdoor living spaces, drought-resistant landscaping. CSLB #1135440. Call (888) 706-0080.">
   <link rel="canonical" href="https://helloprojectspro.com/services/landscaping.html">
@@ -326,89 +329,52 @@
       max-width: 1100px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: start;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
     }
-
-    .details-text h2 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 32px;
-      font-weight: 900;
-      color: var(--primary);
-      margin-bottom: 16px;
-    }
-
-    .details-text p {
-      color: var(--text-light);
-      font-size: 16px;
-      line-height: 1.8;
-      margin-bottom: 16px;
-    }
-
-    .details-list {
-      list-style: none;
-      margin: 24px 0;
-    }
-
-    .details-list li {
-      padding: 12px 0;
-      border-bottom: 1px solid #e2e8f0;
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: 15px;
-      color: var(--text);
-    }
-
-    .details-list li:last-child { border-bottom: none; }
-
-    .check-icon {
-      flex-shrink: 0;
-      width: 24px;
-      height: 24px;
-      background: rgba(16,185,129,0.1);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--green);
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .details-image {
+    .detail-card {
+      background: var(--white);
+      border: 1px solid #e2e8f0;
       border-radius: var(--radius);
+      padding: 0;
       overflow: hidden;
-      box-shadow: var(--shadow-lg);
+      transition: box-shadow 0.3s;
     }
-
-    .details-image img {
+    .detail-card:hover { box-shadow: var(--shadow-lg); }
+    .detail-card img {
       width: 100%;
-      height: 100%;
+      height: 200px;
       object-fit: cover;
-      display: block;
     }
-
-    .drought-callout {
-      background: linear-gradient(135deg, #ecfdf5, #d1fae5);
-      border-left: 4px solid var(--green);
-      border-radius: 0 var(--radius) var(--radius) 0;
-      padding: 24px;
-      margin-top: 24px;
-    }
-
-    .drought-callout h3 {
-      font-size: 16px;
-      font-weight: 800;
+    .detail-card h3 {
+      font-size: 1.3rem;
       color: var(--primary);
-      margin-bottom: 8px;
+      margin-bottom: 12px;
+      padding: 24px 32px 0;
     }
-
-    .drought-callout p {
-      font-size: 14px;
-      color: var(--text-light);
-      margin-bottom: 0;
+    .detail-card p {
+      color: var(--text-light, #64748b);
+      font-size: 0.95rem;
+      padding: 0 32px;
+    }
+    .detail-card ul {
+      list-style: none;
+      margin-top: 12px;
+      padding: 0 32px 32px;
+    }
+    .detail-card ul li {
+      padding: 6px 0;
+      color: var(--text-light, #64748b);
+      font-size: 0.95rem;
+      position: relative;
+      padding-left: 24px;
+    }
+    .detail-card ul li::before {
+      content: '\2713';
+      position: absolute;
+      left: 0;
+      color: var(--green, #10b981);
+      font-weight: 700;
     }
 
     /* ===== PROCESS ===== */
@@ -674,7 +640,6 @@
       .hero p { font-size: 16px; }
 
       .details-grid { grid-template-columns: 1fr; }
-      .details-image { order: -1; max-height: 300px; }
 
       .process-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
       .process-step::after { display: none; }
@@ -744,52 +709,83 @@
 
   <!-- SERVICE DETAILS -->
   <section class="service-details">
+    <div class="section-header fade-in">
+      <span class="section-label">Our Services</span>
+      <h2>Outdoor Living Spaces Built for LA</h2>
+      <p>Transform your backyard into an outdoor oasis. From custom patios to complete landscape design, we build spaces you'll love.</p>
+    </div>
     <div class="details-grid fade-in">
-      <div class="details-text">
-        <h2>Outdoor Living Spaces Built for LA</h2>
-        <p>Los Angeles homeowners live outdoors year-round, and your backyard should reflect that. At Hello Projects Pro, we design and build outdoor spaces that extend your living area, increase your property value, and stand up to the Southern California climate for decades.</p>
-        <p>From intimate Encino courtyards to expansive Tarzana backyards, our licensed contractors handle every detail &mdash; grading, drainage, hardscaping, and construction &mdash; so you get a finished space that looks stunning and functions perfectly.</p>
-        <ul class="details-list">
-          <li>
-            <div class="check-icon">&#10003;</div>
-            <div><strong>Custom Patios</strong> &mdash; Stamped concrete, interlocking pavers, natural flagstone, and travertine patio installations. Create the perfect entertaining space with built-in seating and fire features.</div>
-          </li>
-          <li>
-            <div class="check-icon">&#10003;</div>
-            <div><strong>Deck Construction</strong> &mdash; Pressure-treated wood, cedar, redwood, and low-maintenance composite decking (Trex, TimberTech). Multi-level designs, built-in benches, and railing systems.</div>
-          </li>
-          <li>
-            <div class="check-icon">&#10003;</div>
-            <div><strong>Fencing</strong> &mdash; Wood privacy fencing, vinyl fencing, wrought iron, chain link, and modern horizontal slat designs. Gate installation and repair for security and curb appeal.</div>
-          </li>
-          <li>
-            <div class="check-icon">&#10003;</div>
-            <div><strong>Concrete Work</strong> &mdash; Driveways, walkways, pool decks, stamped concrete, exposed aggregate, and decorative concrete finishes. Expert grading and proper drainage integration.</div>
-          </li>
-          <li>
-            <div class="check-icon">&#10003;</div>
-            <div><strong>Outdoor Living Spaces</strong> &mdash; Outdoor kitchens, BBQ islands, fire pits, fireplaces, seating walls, and shade structures designed for the LA entertainment lifestyle.</div>
-          </li>
-          <li>
-            <div class="check-icon">&#10003;</div>
-            <div><strong>Pergolas &amp; Gazebos</strong> &mdash; Custom-built wood and aluminum pergolas, gazebos, patio covers, and shade sails. Provide relief from the LA sun while adding architectural beauty.</div>
-          </li>
-          <li>
-            <div class="check-icon">&#10003;</div>
-            <div><strong>Retaining Walls</strong> &mdash; Block, stone, and poured concrete retaining walls for hillside properties. Solve erosion problems while creating usable tiered outdoor spaces.</div>
-          </li>
-          <li>
-            <div class="check-icon">&#10003;</div>
-            <div><strong>Drainage Solutions</strong> &mdash; French drains, channel drains, catch basins, and grading corrections. Prevent water damage and protect your foundation from LA's seasonal rains.</div>
-          </li>
+      <div class="detail-card">
+        <img src="../images/services/landscape-patio.jpeg" alt="Custom patio with outdoor furniture" loading="lazy">
+        <h3>Custom Patios</h3>
+        <p>Beautifully designed patios that extend your living space outdoors. We work with premium materials for lasting results.</p>
+        <ul>
+          <li>Stamped concrete designs</li>
+          <li>Paver stone patios</li>
+          <li>Flagstone and travertine</li>
+          <li>Covered and uncovered options</li>
+          <li>Built-in seating and planters</li>
         </ul>
-        <div class="drought-callout">
-          <h3>&#127793; Drought-Resistant Landscaping for LA</h3>
-          <p>Water conservation matters in Southern California. We specialize in drought-tolerant landscaping using native plants, succulents, decomposed granite, artificial turf, and drip irrigation systems that keep your yard beautiful while dramatically reducing water usage. Compliant with LADWP rebate programs.</p>
-        </div>
       </div>
-      <div class="details-image">
-        <img src="../landscaping.jpeg" alt="Professional landscaping and patio construction in Los Angeles backyard" loading="lazy">
+      <div class="detail-card">
+        <img src="../images/services/landscape-deck.jpeg" alt="Wooden deck with outdoor seating" loading="lazy">
+        <h3>Deck Construction</h3>
+        <p>Custom decks built with quality materials that stand up to LA's weather while providing the perfect outdoor gathering space.</p>
+        <ul>
+          <li>Pressure-treated wood decks</li>
+          <li>Composite decking (Trex, TimberTech)</li>
+          <li>Multi-level deck designs</li>
+          <li>Built-in benches and railings</li>
+          <li>Staining and sealing included</li>
+        </ul>
+      </div>
+      <div class="detail-card">
+        <img src="../images/services/landscape-fence.jpeg" alt="Residential backyard with fence" loading="lazy">
+        <h3>Fencing</h3>
+        <p>Privacy, security, and style with professionally installed fencing. We offer a variety of materials and designs.</p>
+        <ul>
+          <li>Wood privacy fencing</li>
+          <li>Vinyl and PVC fencing</li>
+          <li>Wrought iron and ornamental</li>
+          <li>Horizontal slat modern designs</li>
+          <li>Gates and automated openers</li>
+        </ul>
+      </div>
+      <div class="detail-card">
+        <img src="../images/services/landscape-concrete.jpeg" alt="Concrete pavers walkway" loading="lazy">
+        <h3>Concrete Work</h3>
+        <p>Durable, beautiful concrete installations for driveways, walkways, pool decks, and more.</p>
+        <ul>
+          <li>Driveways and walkways</li>
+          <li>Pool deck resurfacing</li>
+          <li>Retaining walls</li>
+          <li>Stamped and stained concrete</li>
+          <li>Drainage solutions</li>
+        </ul>
+      </div>
+      <div class="detail-card">
+        <img src="../images/services/landscape-outdoor.jpeg" alt="Outdoor BBQ and grill setup" loading="lazy">
+        <h3>Outdoor Living Spaces</h3>
+        <p>Create the ultimate backyard experience with custom outdoor kitchens, fire features, and entertainment areas.</p>
+        <ul>
+          <li>Outdoor kitchens and BBQ islands</li>
+          <li>Fire pits and fireplaces</li>
+          <li>Outdoor bars and counters</li>
+          <li>Lighting and electrical</li>
+          <li>Water features and fountains</li>
+        </ul>
+      </div>
+      <div class="detail-card">
+        <img src="../images/services/landscape-pergola.jpeg" alt="Garden pergola and gazebo" loading="lazy">
+        <h3>Pergolas &amp; Structures</h3>
+        <p>Add shade, beauty, and architectural interest to your outdoor space with custom-built structures.</p>
+        <ul>
+          <li>Wood and aluminum pergolas</li>
+          <li>Gazebos and pavilions</li>
+          <li>Shade sails and canopies</li>
+          <li>Arbors and trellises</li>
+          <li>Drought-resistant landscaping</li>
+        </ul>
       </div>
     </div>
   </section>

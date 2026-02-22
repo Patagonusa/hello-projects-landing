@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <title>Bathroom Remodeling Los Angeles | Hello Projects Pro</title>
   <meta name="description" content="Expert bathroom remodeling in Los Angeles. Walk-in showers, tub-to-shower conversions, tile work, vanities & ADA accessible options. Licensed CSLB #1135440. Call (888) 706-0080.">
   <meta name="keywords" content="bathroom remodeling Los Angeles, bathroom renovation LA, walk-in shower installation, tub to shower conversion, bathroom contractor near me">
@@ -249,11 +252,24 @@
       background: var(--white);
       border: 1px solid var(--gray-200);
       border-radius: var(--radius);
-      padding: 32px;
+      padding: 0;
+      overflow: hidden;
       transition: box-shadow 0.3s;
     }
     .detail-card:hover { box-shadow: var(--shadow-lg); }
+    .detail-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .detail-card h3,
+    .detail-card p,
+    .detail-card ul {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
     .detail-card h3 {
+      padding-top: 24px;
       font-size: 1.3rem;
       color: var(--primary);
       margin-bottom: 12px;
@@ -262,6 +278,7 @@
     .detail-card ul {
       list-style: none;
       margin-top: 12px;
+      padding-bottom: 32px;
     }
     .detail-card ul li {
       padding: 6px 0;
@@ -480,6 +497,7 @@
       <p class="section-subtitle">Whether you're updating a guest bath or creating a master suite retreat, we handle every detail from design to final installation with expert craftsmanship.</p>
       <div class="details-grid">
         <div class="detail-card">
+          <img src="../images/services/bathroom-shower.jpeg" alt="Modern walk-in shower installation" loading="lazy">
           <h3>Walk-In Showers</h3>
           <p>Replace outdated tubs or shower stalls with modern, spacious walk-in showers. We build frameless glass enclosures, curbless entries, and custom tile designs that elevate your daily routine.</p>
           <ul>
@@ -491,6 +509,7 @@
           </ul>
         </div>
         <div class="detail-card">
+          <img src="../images/services/bathroom-bathtub.jpeg" alt="Bathtub to shower conversion" loading="lazy">
           <h3>Tub-to-Shower Conversions</h3>
           <p>Gain space and accessibility by converting your bathtub into a beautiful walk-in shower. Our conversions are fast, clean, and designed to maximize your bathroom's footprint.</p>
           <ul>
@@ -502,6 +521,7 @@
           </ul>
         </div>
         <div class="detail-card">
+          <img src="../images/services/bathroom-tile.jpeg" alt="Bathroom tile work and surfaces" loading="lazy">
           <h3>Tile Work &amp; Surfaces</h3>
           <p>From floor to ceiling, our tile experts install stunning surfaces that are both beautiful and built to last. We work with porcelain, ceramic, natural stone, and large-format tiles.</p>
           <ul>
@@ -513,6 +533,7 @@
           </ul>
         </div>
         <div class="detail-card">
+          <img src="../images/services/bathroom-vanity.jpeg" alt="Modern bathroom vanity with double sink" loading="lazy">
           <h3>Vanities &amp; Fixtures</h3>
           <p>Upgrade your vanity, faucets, and hardware for a fresh, cohesive look. We offer single and double vanity options in every style from modern floating to traditional furniture-style.</p>
           <ul>
@@ -524,6 +545,7 @@
           </ul>
         </div>
         <div class="detail-card">
+          <img src="../images/services/bathroom-accessible.jpeg" alt="ADA accessible bathroom design" loading="lazy">
           <h3>ADA Accessible Bathrooms</h3>
           <p>We specialize in accessible bathroom designs that combine safety with style. Our ADA-compliant renovations ensure comfort and independence for all family members.</p>
           <ul>
@@ -535,6 +557,7 @@
           </ul>
         </div>
         <div class="detail-card">
+          <img src="../images/services/bathroom-luxury.jpeg" alt="Luxury bathroom with shower and bathtub" loading="lazy">
           <h3>Luxury Upgrades &amp; Small Bath Solutions</h3>
           <p>No bathroom is too small or too ambitious. We maximize compact spaces with clever storage and open up larger baths with spa-inspired luxury features.</p>
           <ul>
