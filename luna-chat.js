@@ -3,7 +3,7 @@
 (function() {
   'use strict';
 
-  var API_BASE = 'https://salesdispatch.ai/api/chat';
+  var API_BASE = 'https://www.salesdispatch.ai/api/chat';
   var APPEAR_DELAY = 60000; // 60 seconds
   var LANG = document.documentElement.lang === 'es' ? 'es' : 'en';
 
@@ -101,7 +101,7 @@
     '</button>',
     '<div id="luna-panel">',
     '  <div id="luna-header">',
-    '    <div id="luna-avatar">L</div>',
+    '    <div id="luna-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px"><path d="M12 8V4H8"/><rect x="5" y="8" width="14" height="12" rx="2"/><line x1="9" y1="13" x2="9" y2="13.01"/><line x1="15" y1="13" x2="15" y2="13.01"/><path d="M10 17h4"/></svg></div>',
     '    <div id="luna-header-info">',
     '      <h3>' + S.title + '</h3>',
     '      <p>' + S.subtitle + '</p>',

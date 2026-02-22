@@ -139,61 +139,16 @@
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
     /* Header */
-    .header {
-      background: var(--primary);
-      padding: 16px 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.3);
-    }
-    .header .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-    .header-logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      color: var(--white);
-    }
-    .header-logo img { height: 44px; border-radius: 8px; }
-    .header-logo span { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.2rem; }
-    .header-nav { display: flex; align-items: center; gap: 24px; }
-    .header-nav a {
-      color: rgba(255,255,255,0.85);
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .header-nav a:hover { color: var(--white); }
-    .lang-switch {
-      background: rgba(255,255,255,0.12);
-      color: var(--white);
-      padding: 6px 14px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 600;
-      transition: background 0.2s;
-    }
-    .lang-switch:hover { background: rgba(255,255,255,0.22); }
-    .header-cta {
-      background: var(--blue);
-      color: var(--white);
-      padding: 10px 22px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: background 0.2s;
-      white-space: nowrap;
-    }
-    .header-cta:hover { background: var(--blue-dark); }
+    .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--primary); box-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+    .header-top { background: linear-gradient(90deg, var(--blue), #3b82f6); color: #fff; text-align: center; padding: 8px 16px; font-weight: 700; font-size: 14px; letter-spacing: 0.5px; }
+    .header-main { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 8px 24px; }
+    .logo { display: flex; align-items: center; text-decoration: none; }
+    .logo img { height: 56px; width: auto; }
+    .header-ctas { display: flex; align-items: center; gap: 12px; }
+    .lang-switch { color: #60a5fa; font-size: 13px; font-weight: 600; text-decoration: none; border: 1px solid rgba(96,165,250,0.4); padding: 6px 12px; border-radius: 6px; transition: all 0.2s; }
+    .lang-switch:hover { background: rgba(96,165,250,0.15); color: #fff; }
+    .btn-blue { background: var(--blue); color: #fff; padding: 10px 22px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: background 0.2s; white-space: nowrap; }
+    .btn-blue:hover { background: var(--blue-dark); }
 
     /* Breadcrumb */
     .breadcrumb {
@@ -263,6 +218,8 @@
     .btn-primary:hover { background: var(--blue-dark); transform: translateY(-1px); }
     .btn-outline { background: transparent; color: var(--white); border: 2px solid var(--white); }
     .btn-outline:hover { background: var(--white); color: var(--primary); }
+    .btn-green { background: #10b981; color: #fff; }
+    .btn-green:hover { background: #059669; transform: translateY(-1px); }
 
     /* Section base */
     .section { padding: 80px 0; }
@@ -419,27 +376,16 @@
     .cta-phone:hover { color: #93c5fd; }
 
     /* Other Services */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 24px;
-    }
-    .service-link {
-      display: block;
-      background: var(--white);
-      border: 1px solid var(--gray-200);
-      border-radius: var(--radius);
-      padding: 28px 24px;
-      text-align: center;
-      text-decoration: none;
-      color: var(--primary);
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      font-size: 1.05rem;
-      transition: all 0.3s;
-    }
-    .service-link:hover { border-color: var(--blue); box-shadow: var(--shadow); transform: translateY(-2px); }
-    .service-link span { display: block; font-size: 2rem; margin-bottom: 12px; }
+    .other-services { padding: 80px 24px; background: #f0f7ff; }
+    .other-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+    .other-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(12,26,46,0.1); transition: all 0.3s; text-decoration: none; border: 2px solid transparent; }
+    .other-card:hover { transform: translateY(-4px); border-color: #2563eb; box-shadow: 0 10px 40px rgba(12,26,46,0.18); }
+    .other-card img { width: 100%; height: 140px; object-fit: cover; }
+    .other-card-body { padding: 16px; text-align: center; }
+    .other-card h3 { font-size: 15px; font-weight: 800; color: #0c1a2e; margin-bottom: 4px; }
+    .other-card p { font-size: 12px; color: #2563eb; font-weight: 600; }
+    .section-header { text-align: center; margin-bottom: 48px; }
+    .section-label { display: inline-block; background: rgba(37,99,235,0.1); color: #2563eb; padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
 
     /* Footer */
     .footer {
@@ -476,7 +422,7 @@
       .process-steps { grid-template-columns: repeat(2, 1fr); }
       .process-step:not(:last-child)::after { display: none; }
       .why-grid { grid-template-columns: 1fr; }
-      .header-nav { display: none; }
+      .other-grid { grid-template-columns: repeat(2, 1fr); }
       .hero-content { padding: 48px 0; }
     }
   </style>
@@ -485,19 +431,19 @@
 
   <!-- Header -->
   <header class="header">
-    <div class="container">
-      <a href="../index.html" class="header-logo">
-        <img src="../logo.jpeg" alt="Hello Projects Pro" width="44" height="44">
-        <span>Hello Projects Pro</span>
+    <div class="header-top">
+      LIMITED TIME: FREE ESTIMATES ON ALL PROJECTS &mdash; Call Now!
+    </div>
+    <div class="header-main">
+      <a href="../index.html" class="logo">
+        <img src="../logo.jpeg" alt="Hello Projects Pro">
       </a>
-      <nav class="header-nav">
-        <a href="../index.html">Home</a>
-        <a href="../index.html#services">Services</a>
-        <a href="../index.html#about">About</a>
-        <a href="../index.html#contact">Contact</a>
-        <a href="kitchen-remodeling-es.html" class="lang-switch">ES</a>
-      </nav>
-      <a href="tel:+18887060080" class="header-cta">Call (888) 706-0080</a>
+      <div class="header-ctas">
+        <a href="kitchen-remodeling-es.html" class="lang-switch">Espa&ntilde;ol</a>
+        <a href="../quote.html?service=Kitchen+Remodeling" class="btn btn-blue">Get Free Quote</a>
+        <a href="tel:+18887060080" class="btn btn-outline">Call (888) 706-0080</a>
+        <a href="https://wa.me/message/P3KKERSF57BKB1" class="btn btn-green" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
     </div>
   </header>
 
@@ -700,32 +646,33 @@
   </section>
 
   <!-- Other Services -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">Explore Our Other Services</h2>
-      <p class="section-subtitle">Hello Projects Pro is your one-stop shop for home improvement in Los Angeles. Check out our full range of services.</p>
-      <div class="services-grid">
-        <a href="bathroom-remodeling.html" class="service-link">
-          <span aria-hidden="true">&#128705;</span>
-          Bathroom Remodeling
-        </a>
-        <a href="roofing.html" class="service-link">
-          <span aria-hidden="true">&#127968;</span>
-          Roofing
-        </a>
-        <a href="general-construction.html" class="service-link">
-          <span aria-hidden="true">&#128296;</span>
-          General Construction
-        </a>
-        <a href="electrical.html" class="service-link">
-          <span aria-hidden="true">&#9889;</span>
-          Electrical
-        </a>
-        <a href="landscaping.html" class="service-link">
-          <span aria-hidden="true">&#127795;</span>
-          Landscaping
-        </a>
-      </div>
+  <section class="other-services">
+    <div class="section-header fade-in">
+      <div class="section-label">Explore More</div>
+      <h2>Our Other Services</h2>
+      <p>Hello Projects Pro is your one-stop shop for home improvement in Los Angeles.</p>
+    </div>
+    <div class="other-grid fade-in">
+      <a href="bathroom-remodeling.html" class="other-card">
+        <img src="../bathroom.jpeg" alt="Bathroom Remodeling" loading="lazy">
+        <div class="other-card-body"><h3>Bathroom Remodeling</h3><p>Learn More &rarr;</p></div>
+      </a>
+      <a href="roofing.html" class="other-card">
+        <img src="../roofing.jpeg" alt="Roofing" loading="lazy">
+        <div class="other-card-body"><h3>Roofing</h3><p>Learn More &rarr;</p></div>
+      </a>
+      <a href="general-remodeling.html" class="other-card">
+        <img src="../general-remodeling.jpeg" alt="General Remodeling" loading="lazy">
+        <div class="other-card-body"><h3>General Remodeling</h3><p>Learn More &rarr;</p></div>
+      </a>
+      <a href="electrical-services.html" class="other-card">
+        <img src="../electrical.jpeg" alt="Residential Electrical" loading="lazy">
+        <div class="other-card-body"><h3>Residential Electrical</h3><p>Learn More &rarr;</p></div>
+      </a>
+      <a href="landscaping.html" class="other-card">
+        <img src="../landscaping.jpeg" alt="Landscaping" loading="lazy">
+        <div class="other-card-body"><h3>Landscaping</h3><p>Learn More &rarr;</p></div>
+      </a>
     </div>
   </section>
 

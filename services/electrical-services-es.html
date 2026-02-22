@@ -98,10 +98,10 @@
     }
 
     /* ===== HEADER ===== */
-    .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--primary); padding: 0; box-shadow: 0 2px 20px rgba(0,0,0,0.4); }
-    .header-top { background: linear-gradient(90deg, var(--blue), var(--blue-light)); color: var(--white); text-align: center; padding: 8px 16px; font-weight: 700; font-size: 14px; letter-spacing: 0.5px; }
+    .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: #0c1a2e; box-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+    .header-top { background: linear-gradient(90deg, #2563eb, #3b82f6); color: #fff; text-align: center; padding: 8px 16px; font-weight: 700; font-size: 14px; letter-spacing: 0.5px; }
     .header-main { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 8px 24px; }
-    .logo { display: flex; align-items: center; gap: 0; text-decoration: none; }
+    .logo { display: flex; align-items: center; text-decoration: none; }
     .logo img { height: 56px; width: auto; }
     .header-ctas { display: flex; align-items: center; gap: 12px; }
 
@@ -112,12 +112,14 @@
     .btn-accent:hover { background: var(--accent-hover); transform: translateY(-1px); }
     .btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.6); }
     .btn-outline:hover { background: var(--white); color: var(--primary); border-color: var(--white); }
+    .btn-green { background: #10b981; color: #fff; }
+    .btn-green:hover { background: #059669; transform: translateY(-1px); }
     .btn-lg { padding: 16px 36px; font-size: 17px; border-radius: 10px; }
     .btn-white { background: var(--white); color: var(--blue); font-size: 16px; font-weight: 800; }
     .btn-white:hover { background: #f0f7ff; transform: translateY(-2px); }
 
-    .lang-switch { color: var(--sky); font-size: 13px; font-weight: 600; text-decoration: none; border: 1px solid rgba(96,165,250,0.4); padding: 6px 12px; border-radius: 6px; transition: all 0.2s; }
-    .lang-switch:hover { background: rgba(96,165,250,0.15); color: var(--white); }
+    .lang-switch { color: #60a5fa; font-size: 13px; font-weight: 600; text-decoration: none; border: 1px solid rgba(96,165,250,0.4); padding: 6px 12px; border-radius: 6px; transition: all 0.2s; }
+    .lang-switch:hover { background: rgba(96,165,250,0.15); color: #fff; }
 
     /* ===== HERO ===== */
     .hero { margin-top: 100px; min-height: 520px; background: url('../electrical.jpeg') center center / cover no-repeat; color: var(--white); padding: 80px 24px 100px; text-align: center; position: relative; display: flex; align-items: center; justify-content: center; }
@@ -182,14 +184,14 @@
     .cta-banner .btn:hover { background: #f0f7ff; transform: translateY(-2px); }
 
     /* ===== OTHER SERVICES ===== */
-    .other-services { padding: 80px 24px; background: var(--bg-light); }
-    .other-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .other-card { background: var(--white); border-radius: var(--radius); padding: 32px 24px; text-align: center; box-shadow: var(--shadow); transition: all 0.3s; border: 2px solid transparent; text-decoration: none; }
-    .other-card:hover { transform: translateY(-4px); border-color: var(--blue); box-shadow: var(--shadow-lg); }
-    .other-card-icon { font-size: 36px; margin-bottom: 12px; }
-    .other-card h3 { font-size: 17px; font-weight: 800; color: var(--primary); margin-bottom: 8px; }
-    .other-card p { font-size: 14px; color: var(--text-light); margin-bottom: 16px; }
-    .other-card .link-text { font-size: 14px; font-weight: 700; color: var(--blue); }
+    .other-services { padding: 80px 24px; background: #f0f7ff; }
+    .other-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+    .other-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(12,26,46,0.1); transition: all 0.3s; text-decoration: none; border: 2px solid transparent; }
+    .other-card:hover { transform: translateY(-4px); border-color: #2563eb; box-shadow: 0 10px 40px rgba(12,26,46,0.18); }
+    .other-card img { width: 100%; height: 140px; object-fit: cover; }
+    .other-card-body { padding: 16px; text-align: center; }
+    .other-card h3 { font-size: 15px; font-weight: 800; color: #0c1a2e; margin-bottom: 4px; }
+    .other-card p { font-size: 12px; color: #2563eb; font-weight: 600; }
 
     /* ===== FOOTER ===== */
     .footer { background: var(--primary); color: #94a3b8; padding: 48px 24px 24px; }
@@ -217,7 +219,7 @@
       .details-grid { grid-template-columns: 1fr; gap: 32px; }
       .process-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
       .why-grid { grid-template-columns: 1fr; }
-      .other-grid { grid-template-columns: 1fr; max-width: 400px; }
+      .other-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-grid { grid-template-columns: 1fr; gap: 24px; }
       .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
     }
@@ -228,7 +230,7 @@
   <!-- HEADER -->
   <header class="header">
     <div class="header-top">
-      OFERTA LIMITADA: ESTIMADOS GRATIS EN TODOS LOS PROYECTOS &mdash; &iexcl;Llame Ahora!
+      TIEMPO LIMITADO: ESTIMADOS GRATIS EN TODOS LOS PROYECTOS &mdash; &iexcl;Llame Ahora!
     </div>
     <div class="header-main">
       <a href="../es.html" class="logo">
@@ -236,8 +238,9 @@
       </a>
       <div class="header-ctas">
         <a href="electrical-services.html" class="lang-switch">English</a>
-        <a href="../quote-es.html?service=Residential+Electrical" class="btn btn-blue">Estimado Gratis</a>
+        <a href="../quote-es.html" class="btn btn-blue">Estimado Gratis</a>
         <a href="tel:+18887060080" class="btn btn-outline">Llamar (888) 706-0080</a>
+        <a href="https://wa.me/message/P3KKERSF57BKB1" class="btn btn-green" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
   </header>
@@ -390,41 +393,16 @@
   <!-- OTHER SERVICES -->
   <section class="other-services">
     <div class="section-header fade-in">
-      <div class="section-label">Otros Servicios</div>
-      <h2>Tambi&eacute;n Podemos Ayudarle Con</h2>
-      <p>Ofrecemos una gama completa de servicios de remodelaci&oacute;n y construcci&oacute;n para su hogar.</p>
+      <div class="section-label">Explorar M&aacute;s</div>
+      <h2>Nuestros Otros Servicios</h2>
+      <p>Hello Projects Pro es su soluci&oacute;n completa para mejoras del hogar en Los &Aacute;ngeles.</p>
     </div>
-    <div class="other-grid">
-      <a href="kitchen-remodeling-es.html" class="other-card fade-in">
-        <div class="other-card-icon">&#127859;</div>
-        <h3>Remodelaci&oacute;n de Cocina</h3>
-        <p>Gabinetes, encimeras, pisos y transformaciones completas de cocina.</p>
-        <span class="link-text">Ver Servicio &rarr;</span>
-      </a>
-      <a href="bathroom-remodeling-es.html" class="other-card fade-in">
-        <div class="other-card-icon">&#128705;</div>
-        <h3>Remodelaci&oacute;n de Ba&ntilde;o</h3>
-        <p>Duchas, tinas, azulejos, tocadores y renovaciones completas.</p>
-        <span class="link-text">Ver Servicio &rarr;</span>
-      </a>
-      <a href="roofing-es.html" class="other-card fade-in">
-        <div class="other-card-icon">&#127968;</div>
-        <h3>Techos</h3>
-        <p>Instalaci&oacute;n, reparaci&oacute;n, detecci&oacute;n de fugas y restauraci&oacute;n de techos.</p>
-        <span class="link-text">Ver Servicio &rarr;</span>
-      </a>
-      <a href="general-remodeling-es.html" class="other-card fade-in">
-        <div class="other-card-icon">&#128296;</div>
-        <h3>Remodelaci&oacute;n General</h3>
-        <p>Pisos, ventanas, puertas, pintura y renovaciones de toda la casa.</p>
-        <span class="link-text">Ver Servicio &rarr;</span>
-      </a>
-      <a href="landscaping-es.html" class="other-card fade-in">
-        <div class="other-card-icon">&#127795;</div>
-        <h3>Jardiner&iacute;a y Exteriores</h3>
-        <p>Patios, terrazas, cercas, concreto y espacios al aire libre.</p>
-        <span class="link-text">Ver Servicio &rarr;</span>
-      </a>
+    <div class="other-grid fade-in">
+      <a href="kitchen-remodeling-es.html" class="other-card"><img src="../kitchen.jpeg" alt="Remodelaci&oacute;n de Cocina" loading="lazy"><div class="other-card-body"><h3>Remodelaci&oacute;n de Cocina</h3><p>Ver M&aacute;s &rarr;</p></div></a>
+      <a href="bathroom-remodeling-es.html" class="other-card"><img src="../bathroom.jpeg" alt="Remodelaci&oacute;n de Ba&ntilde;o" loading="lazy"><div class="other-card-body"><h3>Remodelaci&oacute;n de Ba&ntilde;o</h3><p>Ver M&aacute;s &rarr;</p></div></a>
+      <a href="roofing-es.html" class="other-card"><img src="../roofing.jpeg" alt="Techos" loading="lazy"><div class="other-card-body"><h3>Techos</h3><p>Ver M&aacute;s &rarr;</p></div></a>
+      <a href="general-remodeling-es.html" class="other-card"><img src="../general-remodeling.jpeg" alt="Remodelaci&oacute;n General" loading="lazy"><div class="other-card-body"><h3>Remodelaci&oacute;n General</h3><p>Ver M&aacute;s &rarr;</p></div></a>
+      <a href="landscaping-es.html" class="other-card"><img src="../landscaping.jpeg" alt="Jardiner&iacute;a" loading="lazy"><div class="other-card-body"><h3>Jardiner&iacute;a</h3><p>Ver M&aacute;s &rarr;</p></div></a>
     </div>
   </section>
 
