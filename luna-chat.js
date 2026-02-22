@@ -4,7 +4,8 @@
   'use strict';
 
   var API_BASE = 'https://www.salesdispatch.ai/api/chat';
-  var APPEAR_DELAY = 60000; // 60 seconds
+  var APPEAR_DELAY = 15000; // 15 seconds
+  var AUTO_OPEN_DELAY = 5000; // 5 seconds after bubble appears (20s total)
   var LANG = document.documentElement.lang === 'es' ? 'es' : 'en';
 
   // Strings
@@ -34,6 +35,46 @@
   };
   var S = STR[LANG] || STR.en;
 
+  // Page-context greetings
+  var PAGE_GREETINGS = {
+    en: {
+      kitchen: "Hey there! I'm Luna, your project assistant. I see you're interested in kitchen remodeling \u2014 great choice! Whether it's custom cabinets, countertops, or a full transformation, I can help you get started. Got questions about costs or timelines? Just ask! And if you need to speak with someone right away, tap the WhatsApp button on the left.",
+      bathroom: "Hi! I'm Luna. Thinking about a bathroom remodel? That's exciting! Walk-in showers, new vanities, beautiful tile work \u2014 we do it all. Tell me what you have in mind, and I'll help you take the first step. Need to talk to someone right now? Our WhatsApp is right there on the left!",
+      roofing: "Hi there! I'm Luna. I see you're looking at roofing services. Whether it's a leak, storm damage, or time for a brand new roof \u2014 our licensed team has you covered. Tell me what's going on, and I'll help you get a free estimate. If it's urgent, tap the WhatsApp button on the left for immediate help!",
+      general: "Welcome! I'm Luna, your project assistant. Looking at general remodeling? From flooring and windows to garage doors and complete renovations \u2014 we handle it all. What's your project about? Or if you'd rather talk to the team directly, WhatsApp is right on the left!",
+      electrical: "Hi! I'm Luna. Exploring electrical services? Panel upgrades, rewiring, EV chargers, smart home setups \u2014 our licensed electricians do it all. Tell me what you need, and I'll point you in the right direction. For urgent electrical issues, tap WhatsApp on the left!",
+      landscaping: "Hey! I'm Luna. Dreaming of a beautiful outdoor space? Patios, decks, fencing, landscaping \u2014 let's make your backyard amazing. What do you have in mind? And if you need someone right away, WhatsApp is right there on the left!",
+      quote: "Hi! I'm Luna. I see you're requesting a free quote \u2014 awesome! If you have any questions while filling out the form, I'm right here to help. You can also reach our team instantly on WhatsApp!",
+      index: "Hey, welcome to Hello Projects Pro! I'm Luna, your project assistant. Whether you're dreaming of a new kitchen, need a roof repair, or anything in between \u2014 I'm here to help you get started. If you need to talk to someone right now, tap the WhatsApp button on the left. Otherwise, tell me about your project!",
+      default: "Hey, how are you today! I'm Luna, your project assistant at Hello Projects Pro. If you're looking for something special, you're in the right place. Need to talk to someone right now? Tap the WhatsApp button on the left. Otherwise, tell me about your project!"
+    },
+    es: {
+      kitchen: "\u00a1Hola! Soy Luna, tu asistente de proyectos. Veo que te interesa la remodelaci\u00f3n de cocina \u2014 \u00a1excelente elecci\u00f3n! Gabinetes, mesones, pisos... puedo ayudarte a comenzar. \u00bfTienes preguntas sobre costos o tiempos? \u00a1Solo preg\u00fantame! Y si necesitas hablar con alguien ya, toca el bot\u00f3n de WhatsApp a la izquierda.",
+      bathroom: "\u00a1Hola! Soy Luna. \u00bfPensando en remodelar el ba\u00f1o? Duchas, vanidades, azulejos \u2014 hacemos de todo. Cu\u00e9ntame qu\u00e9 tienes en mente y te ayudo a dar el primer paso. \u00bfNecesitas hablar con alguien ahora? \u00a1WhatsApp est\u00e1 ah\u00ed a la izquierda!",
+      roofing: "\u00a1Hola! Soy Luna. Veo que est\u00e1s mirando servicios de techos. Ya sea una gotera, da\u00f1o por tormenta o un techo nuevo \u2014 nuestro equipo con licencia te tiene cubierto. Dime qu\u00e9 necesitas. Si es urgente, \u00a1toca WhatsApp a la izquierda para ayuda inmediata!",
+      general: "\u00a1Bienvenido! Soy Luna, tu asistente de proyectos. \u00bfMirando remodelaci\u00f3n general? Pisos, ventanas, puertas de garaje, renovaciones completas \u2014 hacemos de todo. \u00bfDe qu\u00e9 se trata tu proyecto? O si prefieres hablar directo, \u00a1WhatsApp est\u00e1 a la izquierda!",
+      electrical: "\u00a1Hola! Soy Luna. \u00bfBuscando servicios el\u00e9ctricos? Paneles, cableado, cargadores EV, casa inteligente \u2014 nuestros electricistas con licencia lo manejan todo. \u00a1Dime qu\u00e9 necesitas! Para emergencias el\u00e9ctricas, toca WhatsApp a la izquierda.",
+      landscaping: "\u00a1Hola! Soy Luna. \u00bfSo\u00f1ando con un espacio exterior hermoso? Patios, terrazas, cercas, jardiner\u00eda \u2014 \u00a1hagamos tu patio incre\u00edble! \u00bfQu\u00e9 tienes en mente? Y si necesitas a alguien ya, \u00a1WhatsApp est\u00e1 ah\u00ed!",
+      quote: "\u00a1Hola! Soy Luna. Veo que vas a pedir un estimado gratis \u2014 \u00a1qu\u00e9 bueno! Si tienes preguntas mientras llenas el formulario, aqu\u00ed estoy. \u00a1Tambi\u00e9n puedes contactar a nuestro equipo por WhatsApp!",
+      index: "\u00a1Hola, bienvenido a Hello Projects Pro! Soy Luna, tu asistente de proyectos. Ya sea una cocina nueva, reparar el techo o cualquier otra cosa \u2014 estoy aqu\u00ed para ayudarte. Si necesitas hablar con alguien ahora, toca el bot\u00f3n de WhatsApp a la izquierda. \u00a1O cu\u00e9ntame sobre tu proyecto!",
+      default: "\u00a1Hola, c\u00f3mo est\u00e1s! Soy Luna, tu asistente de proyectos en Hello Projects Pro. Si buscas algo especial, est\u00e1s en el lugar correcto. \u00bfNecesitas hablar con alguien ahora? Toca el bot\u00f3n de WhatsApp a la izquierda. \u00a1O cu\u00e9ntame sobre tu proyecto!"
+    }
+  };
+
+  function detectPageContext() {
+    var path = window.location.pathname.toLowerCase();
+    var greetings = PAGE_GREETINGS[LANG] || PAGE_GREETINGS.en;
+    if (path.indexOf('kitchen') !== -1) return greetings.kitchen;
+    if (path.indexOf('bathroom') !== -1) return greetings.bathroom;
+    if (path.indexOf('roofing') !== -1) return greetings.roofing;
+    if (path.indexOf('general') !== -1) return greetings.general;
+    if (path.indexOf('electrical') !== -1) return greetings.electrical;
+    if (path.indexOf('landscaping') !== -1) return greetings.landscaping;
+    if (path.indexOf('quote') !== -1) return greetings.quote;
+    if (path === '/' || path.indexOf('index') !== -1 || path.endsWith('/es.html')) return greetings.index;
+    return greetings.default;
+  }
+
   // State
   var sessionId = localStorage.getItem('luna_session_id') || null;
   var visitorId = localStorage.getItem('luna_visitor_id');
@@ -45,6 +86,13 @@
   var isLoading = false;
   var messages = [];
   var dismissed = localStorage.getItem('luna_dismissed') === '1';
+
+  // Reset auto-greet flag on new browser session
+  if (!sessionStorage.getItem('luna_session_active')) {
+    sessionStorage.setItem('luna_session_active', '1');
+    localStorage.removeItem('luna_auto_greeted');
+  }
+  var hasAutoGreeted = localStorage.getItem('luna_auto_greeted') === '1';
 
   // ===== INJECT CSS =====
   var css = document.createElement('style');
@@ -130,7 +178,6 @@
   function mount() {
     document.body.appendChild(widget);
     var bubble = document.getElementById('luna-bubble');
-    var panel = document.getElementById('luna-panel');
     var closeBtn = document.getElementById('luna-close');
     var input = document.getElementById('luna-input');
     var sendBtn = document.getElementById('luna-send');
@@ -150,6 +197,15 @@
             setTimeout(function() { tooltip.style.display = 'none'; }, 8000);
           }
         }, 3000);
+
+        // Auto-open with greeting (only once per browser session)
+        if (!hasAutoGreeted && !sessionId) {
+          setTimeout(function() {
+            if (!isOpen) {
+              autoGreet();
+            }
+          }, AUTO_OPEN_DELAY);
+        }
       }, APPEAR_DELAY);
     }
 
@@ -173,6 +229,32 @@
     });
   }
 
+  function autoGreet() {
+    var greeting = detectPageContext();
+
+    isOpen = true;
+    document.getElementById('luna-panel').classList.add('open');
+    document.getElementById('luna-bubble').style.display = 'none';
+    document.getElementById('luna-tooltip').style.display = 'none';
+    document.getElementById('luna-dot').style.display = 'none';
+
+    // Show greeting as local message (no API call)
+    addMessage('assistant', greeting);
+
+    // Mark as auto-greeted
+    localStorage.setItem('luna_auto_greeted', '1');
+    hasAutoGreeted = true;
+
+    // Start session in background
+    startSession(true);
+
+    // Tracking
+    try {
+      window.dispatchEvent(new Event('luna_chat_open'));
+      window.dispatchEvent(new Event('luna_auto_greet'));
+    } catch(e) {}
+  }
+
   function openChat() {
     isOpen = true;
     document.getElementById('luna-panel').classList.add('open');
@@ -182,11 +264,15 @@
     document.getElementById('luna-input').focus();
 
     // Dispatch event for tracking
-    window.dispatchEvent(new Event('luna_chat_open'));
+    try { window.dispatchEvent(new Event('luna_chat_open')); } catch(e) {}
 
-    // Start or resume session
-    if (!sessionId) {
-      startSession();
+    // Show greeting if no messages yet
+    if (!sessionId && messages.length === 0) {
+      var greeting = detectPageContext();
+      addMessage('assistant', greeting);
+      startSession(true);
+    } else if (!sessionId) {
+      startSession(false);
     }
   }
 
@@ -196,7 +282,7 @@
     document.getElementById('luna-bubble').style.display = 'flex';
   }
 
-  function startSession() {
+  function startSession(skipGreeting) {
     fetch(API_BASE + '/session', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -212,25 +298,20 @@
         sessionId = data.session_id;
         localStorage.setItem('luna_session_id', sessionId);
 
-        if (data.resumed) {
-          // Load previous messages
-          loadHistory();
-        } else {
-          // Send empty greeting trigger
+        if (data.resumed && !skipGreeting) {
+          // Resumed session — send hello again to get context
           showTyping();
-          sendToAPI('hi');
+          sendToAPI(LANG === 'es' ? 'Hola, volv\u00ed' : 'Hi, I\'m back');
         }
+        // For new sessions with skipGreeting (auto-greet or manual greeting),
+        // don't send anything — wait for user's first message
       }
     })
     .catch(function() {
-      addMessage('assistant', S.offline);
+      if (!skipGreeting) {
+        addMessage('assistant', S.offline);
+      }
     });
-  }
-
-  function loadHistory() {
-    // For resumed sessions, just send a "hello again" to get context
-    showTyping();
-    sendToAPI(LANG === 'es' ? 'Hola, volv\u00ed' : 'Hi, I\'m back');
   }
 
   function sendMessage() {
@@ -243,11 +324,11 @@
     showTyping();
 
     // Dispatch event for tracking
-    window.dispatchEvent(new Event('luna_chat_message'));
+    try { window.dispatchEvent(new Event('luna_chat_message')); } catch(e) {}
 
     if (!sessionId) {
       // Session not ready, queue it
-      startSession();
+      startSession(false);
       return;
     }
 
@@ -289,7 +370,7 @@
       }
 
       if (data.lead_created) {
-        window.dispatchEvent(new Event('luna_lead_created'));
+        try { window.dispatchEvent(new Event('luna_lead_created')); } catch(e) {}
       }
 
       // Session ended

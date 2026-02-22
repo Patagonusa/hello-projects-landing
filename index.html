@@ -137,13 +137,26 @@
       color: var(--white);
       text-align: center;
       padding: 8px 16px;
-      font-weight: 700;
       font-size: 14px;
+      letter-spacing: 0.3px;
+    }
+
+    .header-top strong {
+      font-weight: 800;
+      text-transform: uppercase;
       letter-spacing: 0.5px;
     }
 
-    .header-top a { color: #fff; text-decoration: none; font-weight: 700; }
-    .header-top a:hover { text-decoration: underline; }
+    .header-top a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      background: rgba(255,255,255,0.15);
+      padding: 2px 10px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    .header-top a:hover { background: rgba(255,255,255,0.25); }
 
     .header-main {
       max-width: 1200px;
@@ -162,14 +175,14 @@
     }
 
     .logo img {
-      height: 56px;
+      height: 72px;
       width: auto;
     }
 
-    .header-ctas {
+    .header-nav {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 16px;
     }
 
     .btn {
@@ -268,7 +281,7 @@
 
     /* ===== HERO ===== */
     .hero {
-      margin-top: 100px;
+      margin-top: 130px;
       min-height: 560px;
       background: url('hero-bg.jpeg') center center / cover no-repeat;
       color: var(--white);
@@ -1145,10 +1158,10 @@
     /* ===== MOBILE ===== */
     @media (max-width: 768px) {
       .header-main { padding: 8px 16px; }
-      .logo img { height: 44px; }
+      .logo img { height: 52px; }
+      .header-nav { gap: 10px; }
       .btn { padding: 10px 16px; font-size: 13px; }
-      .header-ctas .btn-outline { display: none; }
-      .hero { padding: 60px 16px 80px; margin-top: 90px; min-height: 480px; }
+      .hero { padding: 60px 16px 80px; margin-top: 110px; min-height: 480px; }
       .hero p { font-size: 16px; }
 
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1185,19 +1198,17 @@
   <!-- STICKY HEADER -->
   <header class="header">
     <div class="header-top">
-      FREE ESTIMATES ON ALL PROJECTS &mdash; <a href="tel:+18887060080">Call (888) 706-0080</a>
+      <strong>Claim Your Discount</strong> &mdash; Call or Text Us Toll-Free <a href="tel:+18887060080">(888) 706-0080</a>
     </div>
     <div class="header-main">
       <a href="index.html" class="logo">
         <img src="logo.jpeg" alt="Hello Projects Pro">
       </a>
-      <div class="header-ctas">
+      <nav class="header-nav">
         <a href="index.html" class="nav-link">Home</a>
         <a href="es.html" class="lang-switch">Espa&ntilde;ol</a>
         <a href="quote.html" class="btn btn-blue">Get Free Quote</a>
-        <a href="tel:+18887060080" class="btn btn-outline">&#x1F4DE; (888) 706-0080</a>
-        <a href="https://wa.me/message/P3KKERSF57BKB1" class="btn btn-green" target="_blank" rel="noopener">WhatsApp</a>
-      </div>
+      </nav>
     </div>
   </header>
 
@@ -1603,6 +1614,7 @@
   </script>
 
   <script src="tracking.js" defer></script>
+  <script src="whatsapp-widget.js" defer></script>
   <script src="luna-chat.js" defer></script>
 </body>
 </html>
