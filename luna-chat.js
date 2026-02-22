@@ -87,10 +87,12 @@
   var messages = [];
   var dismissed = localStorage.getItem('luna_dismissed') === '1';
 
-  // Reset auto-greet flag on new browser session
+  // Reset auto-greet flag AND stale session on new browser session
   if (!sessionStorage.getItem('luna_session_active')) {
     sessionStorage.setItem('luna_session_active', '1');
     localStorage.removeItem('luna_auto_greeted');
+    localStorage.removeItem('luna_session_id');
+    sessionId = null;
   }
   var hasAutoGreeted = localStorage.getItem('luna_auto_greeted') === '1';
 
@@ -199,7 +201,7 @@
         }, 3000);
 
         // Auto-open with greeting (only once per browser session)
-        if (!hasAutoGreeted && !sessionId) {
+        if (!hasAutoGreeted) {
           setTimeout(function() {
             if (!isOpen) {
               autoGreet();
@@ -267,10 +269,10 @@
     try { window.dispatchEvent(new Event('luna_chat_open')); } catch(e) {}
 
     // Show greeting if no messages yet
-    if (!sessionId && messages.length === 0) {
+    if (messages.length === 0) {
       var greeting = detectPageContext();
       addMessage('assistant', greeting);
-      startSession(true);
+      if (!sessionId) startSession(true);
     } else if (!sessionId) {
       startSession(false);
     }
