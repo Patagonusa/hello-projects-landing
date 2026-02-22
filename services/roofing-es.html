@@ -102,6 +102,8 @@
     /* ===== HEADER ===== */
     .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: #0c1a2e; box-shadow: 0 2px 20px rgba(0,0,0,0.4); }
     .header-top { background: linear-gradient(90deg, #2563eb, #3b82f6); color: #fff; text-align: center; padding: 8px 16px; font-weight: 700; font-size: 14px; letter-spacing: 0.5px; }
+    .header-top a { color: #fff; text-decoration: none; font-weight: 700; }
+    .header-top a:hover { text-decoration: underline; }
     .header-main { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 8px 24px; }
     .logo { display: flex; align-items: center; text-decoration: none; }
     .logo img { height: 56px; width: auto; }
@@ -129,6 +131,19 @@
 
     .lang-switch { color: #60a5fa; font-size: 13px; font-weight: 600; text-decoration: none; border: 1px solid rgba(96,165,250,0.4); padding: 6px 12px; border-radius: 6px; transition: all 0.2s; }
     .lang-switch:hover { background: rgba(96,165,250,0.15); color: #fff; }
+    .nav-link {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .nav-link:hover {
+      color: #fff;
+      background: rgba(255,255,255,0.08);
+    }
 
     /* ===== HERO ===== */
     .hero {
@@ -387,16 +402,17 @@
   <!-- HEADER -->
   <header class="header">
     <div class="header-top">
-      TIEMPO LIMITADO: ESTIMADOS GRATIS EN TODOS LOS PROYECTOS &mdash; &iexcl;Llame Ahora!
+      ESTIMADOS GRATIS EN TODOS LOS PROYECTOS &mdash; <a href="tel:+18887060080">Llame (888) 706-0080</a>
     </div>
     <div class="header-main">
       <a href="../es.html" class="logo">
         <img src="../logo.jpeg" alt="Hello Projects Pro">
       </a>
       <div class="header-ctas">
+        <a href="../es.html" class="nav-link">Inicio</a>
         <a href="roofing.html" class="lang-switch">English</a>
         <a href="../quote-es.html" class="btn btn-blue">Estimado Gratis</a>
-        <a href="tel:+18887060080" class="btn btn-outline">Llamar (888) 706-0080</a>
+        <a href="tel:+18887060080" class="btn btn-outline">&#x1F4DE; (888) 706-0080</a>
         <a href="https://wa.me/message/P3KKERSF57BKB1" class="btn btn-green" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
