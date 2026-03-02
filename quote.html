@@ -50,6 +50,11 @@
       line-height: 1.6;
       overflow-x: hidden;
       background: var(--bg-light);
+      background-image: url('hero-bg.jpeg');
+      background-size: cover;
+      background-position: center top;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
     }
 
     /* ===== HEADER ===== */
@@ -307,18 +312,57 @@
     .form-success {
       display: none;
       text-align: center;
-      padding: 40px 20px;
+      padding: 32px 20px;
+    }
+
+    .form-success .team-photo {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 16px;
+      margin: 0 auto 24px;
+      display: block;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
     }
 
     .form-success h3 {
-      font-size: 28px;
-      margin-bottom: 12px;
+      font-size: 26px;
+      margin-bottom: 16px;
       color: var(--sky);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 900;
     }
 
     .form-success p {
-      color: #94a3b8;
+      color: #c0cfe0;
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .form-success .signature {
+      color: var(--sky);
+      font-weight: 700;
+      font-style: italic;
       font-size: 16px;
+      margin-top: 16px;
+    }
+
+    .form-success .contact-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(37,99,235,0.15);
+      border: 1px solid rgba(37,99,235,0.3);
+      padding: 12px 24px;
+      border-radius: 10px;
+      margin-top: 16px;
+    }
+
+    .form-success .contact-box a {
+      color: var(--sky);
+      font-weight: 800;
+      font-size: 18px;
+      text-decoration: none;
     }
 
     /* ===== FOOTER ===== */
@@ -468,6 +512,17 @@
         </div>
 
         <div class="form-group">
+          <label>Best Time to Contact You?</label>
+          <select name="best_contact_time">
+            <option value="">Select preferred time...</option>
+            <option value="Morning (8am-12pm)">Morning (8am - 12pm)</option>
+            <option value="Afternoon (12pm-4pm)">Afternoon (12pm - 4pm)</option>
+            <option value="Evening (4pm-7pm)">Evening (4pm - 7pm)</option>
+            <option value="Anytime">Anytime works</option>
+          </select>
+        </div>
+
+        <div class="form-group">
           <label>Tell Us About Your Project</label>
           <textarea name="notes" rows="3" placeholder="Describe your project, dimensions, any special requirements..."></textarea>
         </div>
@@ -487,9 +542,17 @@
       </form>
 
       <div class="form-success" id="formSuccess">
-        <h3>Thank You!</h3>
-        <p>Your quote request has been received. One of our project specialists will contact you within 1 hour.</p>
-        <p style="margin-top: 16px;">Or call us now: <a href="tel:+18887060080" style="color: var(--sky); font-weight: 700;">(888) 706-0080</a></p>
+        <img src="team-thankyou.png" alt="The Hello Projects Pro Team" class="team-photo">
+        <h3>Thank You for Choosing Hello Projects Pro!</h3>
+        <p>We've received your information and truly appreciate your trust. As a family-owned company, we believe in honest work at fair prices &mdash; no hidden fees, no surprises, no cutting corners. What we quote is what you pay, and we stand behind every project we deliver.</p>
+        <p>Your personal information is safe with us and will never be shared with third parties.</p>
+        <p>Our team is ready to assist you in both <strong style="color:#fff;">English</strong> and <strong style="color:#fff;">Spanish</strong>. We'll be in touch shortly &mdash; or feel free to reach out anytime!</p>
+        <div class="contact-box">
+          <span style="font-size: 20px;">&#128241;</span>
+          <span style="color: #94a3b8;">Call or text us:</span>
+          <a href="tel:+18182130302">(818) 213-0302</a>
+        </div>
+        <p class="signature">&mdash; The Hello Projects Pro Family</p>
       </div>
     </div>
   </main>
@@ -563,6 +626,7 @@
         zip: formData.get('zip') || null,
         project_type: formData.get('project_type'),
         timeframe: formData.get('timeframe') || null,
+        best_contact_time: formData.get('best_contact_time') || null,
         source: 'Landing Page',
         form_name: 'Hello Projects Pro Landing Page',
         campaign: 'HPP Landing Page',

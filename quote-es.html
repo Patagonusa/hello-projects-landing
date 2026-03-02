@@ -50,6 +50,11 @@
       line-height: 1.6;
       overflow-x: hidden;
       background: var(--bg-light);
+      background-image: url('hero-bg.jpeg');
+      background-size: cover;
+      background-position: center top;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
     }
 
     /* ===== HEADER ===== */
@@ -307,18 +312,57 @@
     .form-success {
       display: none;
       text-align: center;
-      padding: 40px 20px;
+      padding: 32px 20px;
+    }
+
+    .form-success .team-photo {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 16px;
+      margin: 0 auto 24px;
+      display: block;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
     }
 
     .form-success h3 {
-      font-size: 28px;
-      margin-bottom: 12px;
+      font-size: 26px;
+      margin-bottom: 16px;
       color: var(--sky);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 900;
     }
 
     .form-success p {
-      color: #94a3b8;
+      color: #c0cfe0;
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .form-success .signature {
+      color: var(--sky);
+      font-weight: 700;
+      font-style: italic;
       font-size: 16px;
+      margin-top: 16px;
+    }
+
+    .form-success .contact-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(37,99,235,0.15);
+      border: 1px solid rgba(37,99,235,0.3);
+      padding: 12px 24px;
+      border-radius: 10px;
+      margin-top: 16px;
+    }
+
+    .form-success .contact-box a {
+      color: var(--sky);
+      font-weight: 800;
+      font-size: 18px;
+      text-decoration: none;
     }
 
     /* ===== FOOTER ===== */
@@ -468,6 +512,17 @@
         </div>
 
         <div class="form-group">
+          <label>&iquest;Mejor Hora Para Contactarlo?</label>
+          <select name="best_contact_time">
+            <option value="">Seleccione horario preferido...</option>
+            <option value="Morning (8am-12pm)">Ma&ntilde;ana (8am - 12pm)</option>
+            <option value="Afternoon (12pm-4pm)">Tarde (12pm - 4pm)</option>
+            <option value="Evening (4pm-7pm)">Noche (4pm - 7pm)</option>
+            <option value="Anytime">Cualquier hora</option>
+          </select>
+        </div>
+
+        <div class="form-group">
           <label>Cu&eacute;ntenos Sobre Su Proyecto</label>
           <textarea name="notes" rows="3" placeholder="Describa su proyecto, dimensiones, requisitos especiales..."></textarea>
         </div>
@@ -487,9 +542,17 @@
       </form>
 
       <div class="form-success" id="formSuccess">
-        <h3>&iexcl;Gracias!</h3>
-        <p>Su solicitud de estimado ha sido recibida. Uno de nuestros especialistas se comunicar&aacute; con usted en menos de 1 hora.</p>
-        <p style="margin-top: 16px;">O ll&aacute;menos ahora: <a href="tel:+18887060080" style="color: var(--sky); font-weight: 700;">(888) 706-0080</a></p>
+        <img src="team-thankyou.png" alt="El Equipo de Hello Projects Pro" class="team-photo">
+        <h3>&iexcl;Gracias por Elegir Hello Projects Pro!</h3>
+        <p>Hemos recibido su informaci&oacute;n y realmente apreciamos su confianza. Como empresa familiar, creemos en el trabajo honesto a precios justos &mdash; sin cargos ocultos, sin sorpresas, sin atajos. Lo que cotizamos es lo que paga, y respaldamos cada proyecto que entregamos.</p>
+        <p>Su informaci&oacute;n personal est&aacute; segura con nosotros y nunca ser&aacute; compartida con terceros.</p>
+        <p>Nuestro equipo est&aacute; listo para asistirle en <strong style="color:#fff;">ingl&eacute;s</strong> y <strong style="color:#fff;">espa&ntilde;ol</strong>. Nos pondremos en contacto pronto &mdash; &iexcl;o no dude en contactarnos en cualquier momento!</p>
+        <div class="contact-box">
+          <span style="font-size: 20px;">&#128241;</span>
+          <span style="color: #94a3b8;">Ll&aacute;menos o env&iacute;e un texto:</span>
+          <a href="tel:+18182130302">(818) 213-0302</a>
+        </div>
+        <p class="signature">&mdash; La Familia Hello Projects Pro</p>
       </div>
     </div>
   </main>
@@ -563,6 +626,7 @@
         zip: formData.get('zip') || null,
         project_type: formData.get('project_type'),
         timeframe: formData.get('timeframe') || null,
+        best_contact_time: formData.get('best_contact_time') || null,
         source: 'Landing Page',
         form_name: 'Hello Projects Pro Landing Page',
         campaign: 'HPP Landing Page Spanish',
