@@ -36,9 +36,9 @@
       --blue-light: #2563eb;
       --sky: #60a5fa;
       --navy: #1e3a5f;
-      --accent: #16A34A;
-      --accent-hover: #15803d;
-      --accent-light: #22c55e;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --accent-light: #3b82f6;
       --amber: #f59e0b;
       --text: #1F2937;
       --text-light: #6B7280;
@@ -134,7 +134,7 @@
       font-family: inherit;
     }
     .btn-green { background: var(--accent); color: var(--white); }
-    .btn-green:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(22,163,74,0.4); }
+    .btn-green:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,99,235,0.4); }
     .btn-outline-white { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.4); }
     .btn-outline-white:hover { border-color: #fff; transform: translateY(-2px); }
     .btn-white { background: var(--white); color: var(--blue); }
@@ -149,7 +149,7 @@
       overflow: hidden;
     }
     .form-top {
-      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      background: linear-gradient(135deg, var(--blue), var(--blue-light));
       padding: 18px 24px; text-align: center;
     }
     .form-top h2 { font-size: 19px; font-weight: 800; color: var(--white); margin-bottom: 2px; }
@@ -168,7 +168,7 @@
       -webkit-appearance: none; appearance: none;
       background: var(--white);
     }
-    .form-input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(22,163,74,0.1); }
+    .form-input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
     .form-input.error { border-color: #ef4444; }
     .error-msg { color: #ef4444; font-size: 13px; margin-top: 6px; display: none; }
 
@@ -182,8 +182,8 @@
       font-size: 14px; font-weight: 600; color: var(--text);
       transition: all 0.2s; user-select: none;
     }
-    .option-btn:hover { border-color: var(--accent); background: #f0fdf4; }
-    .option-btn.selected { border-color: var(--accent); background: #f0fdf4; color: var(--accent); }
+    .option-btn:hover { border-color: var(--accent); background: #eff6ff; }
+    .option-btn.selected { border-color: var(--accent); background: #eff6ff; color: var(--accent); }
     .option-btn i { font-size: 22px; display: block; margin-bottom: 4px; }
 
     /* Service chips */
@@ -196,7 +196,7 @@
       display: flex; align-items: center; gap: 10px;
     }
     .service-chip:hover { border-color: var(--accent); }
-    .service-chip.selected { border-color: var(--accent); background: #f0fdf4; color: #15803d; }
+    .service-chip.selected { border-color: var(--accent); background: #eff6ff; color: var(--accent); }
     .service-chip .chip-icon { font-size: 18px; color: var(--text-light); transition: color 0.2s; }
     .service-chip.selected .chip-icon { color: var(--accent); }
     .service-chip .chip-check {
@@ -228,7 +228,7 @@
       border: none; background: var(--accent); color: var(--white);
       cursor: pointer; transition: all 0.2s; margin-top: 20px; font-family: inherit;
     }
-    .btn-submit:hover { background: var(--accent-hover); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(22,163,74,0.3); }
+    .btn-submit:hover { background: var(--accent-hover); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(37,99,235,0.3); }
     .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
 
     .form-step { display: none; }
@@ -483,7 +483,7 @@
 <!-- HEADER -->
 <header class="header">
   <div class="header-inner">
-    <a href="index.html" class="header-logo"><img src="logo.jpeg" alt="Hello Projects Pro"></a>
+    <a href="index.html" class="header-logo"><img src="logo.png" alt="Hello Projects Pro"></a>
     <div class="header-right">
       <a href="tel:+18182130302" class="header-phone"><i class="bi bi-telephone-fill"></i> (818) 213-0302</a>
       <a href="#qualifyForm" class="header-cta" onclick="scrollToForm();return false;"><i class="bi bi-clipboard-check"></i> Free Quote</a>
@@ -519,60 +519,21 @@
 
         <!-- Step 1: ZIP -->
         <div class="form-step active" id="step1">
-          <div class="step-indicator">Step 1 of 4</div>
+          <div class="step-indicator">Step 1 of 3</div>
           <div class="step-question">Where is your project located?</div>
-          <div class="step-helper">We'll use this to find contractors in your area</div>
+          <div class="step-helper">Enter your ZIP code to find local pros</div>
           <label style="font-size:13px;font-weight:600;color:var(--text);display:block;margin-bottom:6px;">ZIP Code <span style="color:#ef4444;">*</span></label>
           <input type="text" class="form-input" id="zipCode" inputmode="numeric" pattern="[0-9]*" maxlength="5" placeholder="e.g. 91335" autocomplete="postal-code">
           <div class="error-msg" id="zipError">Please enter a valid 5-digit ZIP code</div>
+          <div id="zipArea" style="display:none;margin-top:10px;padding:10px 14px;background:#eff6ff;border-radius:8px;font-size:14px;color:var(--blue);font-weight:600;"><i class="bi bi-geo-alt-fill"></i> <span id="zipAreaText"></span></div>
           <div class="form-actions">
             <button class="btn-next" onclick="nextStep(1)">Continue <i class="bi bi-arrow-right"></i></button>
           </div>
         </div>
 
-        <!-- Step 2: Home Details -->
+        <!-- Step 2: Services -->
         <div class="form-step" id="step2">
-          <div class="step-indicator">Step 2 of 4</div>
-          <div class="step-question">Tell us about your home</div>
-          <div class="step-helper">This helps us determine which programs you qualify for</div>
-
-          <div style="margin-bottom:18px;">
-            <label style="font-size:13px;font-weight:600;color:var(--text);display:block;margin-bottom:8px;">Are you the homeowner? <span style="color:#ef4444;">*</span></label>
-            <div class="option-grid cols-2" data-field="homeowner">
-              <div class="option-btn" data-value="Yes" onclick="selectOption(this)"><i class="bi bi-house-check"></i> Yes</div>
-              <div class="option-btn" data-value="No" onclick="selectOption(this)"><i class="bi bi-person"></i> No</div>
-            </div>
-          </div>
-
-          <div style="margin-bottom:18px;">
-            <label style="font-size:13px;font-weight:600;color:var(--text);display:block;margin-bottom:8px;">Home type</label>
-            <div class="option-grid cols-3" data-field="homeType">
-              <div class="option-btn" data-value="Single Family" onclick="selectOption(this)">Single Family</div>
-              <div class="option-btn" data-value="Condo/Townhome" onclick="selectOption(this)">Condo / Townhome</div>
-              <div class="option-btn" data-value="Multi-Family" onclick="selectOption(this)">Multi-Family</div>
-            </div>
-          </div>
-
-          <div>
-            <label style="font-size:13px;font-weight:600;color:var(--text);display:block;margin-bottom:8px;">Approximate year built</label>
-            <div class="option-grid cols-2" data-field="yearBuilt">
-              <div class="option-btn" data-value="Before 1980" onclick="selectOption(this)">Before 1980</div>
-              <div class="option-btn" data-value="1980-2000" onclick="selectOption(this)">1980 &ndash; 2000</div>
-              <div class="option-btn" data-value="2000-2015" onclick="selectOption(this)">2000 &ndash; 2015</div>
-              <div class="option-btn" data-value="After 2015" onclick="selectOption(this)">After 2015</div>
-            </div>
-          </div>
-
-          <div class="error-msg" id="step2Error">Please answer all questions above</div>
-          <div class="form-actions">
-            <button class="btn-back" onclick="prevStep(2)"><i class="bi bi-arrow-left"></i> Back</button>
-            <button class="btn-next" onclick="nextStep(2)">Continue <i class="bi bi-arrow-right"></i></button>
-          </div>
-        </div>
-
-        <!-- Step 3: Services -->
-        <div class="form-step" id="step3">
-          <div class="step-indicator">Step 3 of 4</div>
+          <div class="step-indicator">Step 2 of 3</div>
           <div class="step-question">What upgrades interest you?</div>
           <div class="step-helper">Select all that apply</div>
           <div class="service-grid" id="serviceGrid">
@@ -601,16 +562,16 @@
               <i class="bi bi-tree chip-icon"></i> Landscaping <span class="chip-check"></span>
             </div>
           </div>
-          <div class="error-msg" id="step3Error">Please select at least one upgrade</div>
+          <div class="error-msg" id="step2Error">Please select at least one upgrade</div>
           <div class="form-actions">
-            <button class="btn-back" onclick="prevStep(3)"><i class="bi bi-arrow-left"></i> Back</button>
-            <button class="btn-next" onclick="nextStep(3)">Continue <i class="bi bi-arrow-right"></i></button>
+            <button class="btn-back" onclick="prevStep(2)"><i class="bi bi-arrow-left"></i> Back</button>
+            <button class="btn-next" onclick="nextStep(2)">Continue <i class="bi bi-arrow-right"></i></button>
           </div>
         </div>
 
-        <!-- Step 4: Contact -->
-        <div class="form-step" id="step4">
-          <div class="step-indicator">Step 4 of 4</div>
+        <!-- Step 3: Contact -->
+        <div class="form-step" id="step3">
+          <div class="step-indicator">Step 3 of 3</div>
           <div class="step-question">Almost done! Get your free assessment</div>
           <div class="step-helper">We'll contact you within 24 hours with your results</div>
           <div class="name-row">
@@ -619,7 +580,7 @@
           </div>
           <input type="tel" class="form-input" id="phone" placeholder="Phone number *" autocomplete="tel" style="margin-bottom:12px;" inputmode="tel">
           <input type="email" class="form-input" id="email" placeholder="Email address" autocomplete="email">
-          <div class="error-msg" id="step4Error">Please enter your name and phone number</div>
+          <div class="error-msg" id="step3Error">Please enter your name and phone number</div>
           <div class="consent">
             <input type="checkbox" id="consentCheck" checked>
             <label for="consentCheck">I agree to receive calls/texts about my project. Msg &amp; data rates may apply. <a href="privacy.html" target="_blank">Privacy Policy</a></label>
@@ -899,7 +860,7 @@
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-inner">
-    <div class="footer-logo"><img src="logo.jpeg" alt="Hello Projects Pro"></div>
+    <div class="footer-logo"><img src="logo.png" alt="Hello Projects Pro"></div>
     <p><strong>Hello Projects Pro</strong> &mdash; Patagon Consulting Inc.</p>
     <p><i class="bi bi-shield-check"></i> Licensed General Contractor &bull; CSLB #1135440</p>
     <p>Serving California Homeowners</p>
@@ -917,6 +878,31 @@
 </footer>
 
 <script>
+  // ===== ZIP AREA LOOKUP =====
+  var ZIP_AREAS = {
+    '900':'Los Angeles','901':'Los Angeles','902':'Inglewood','903':'Inglewood',
+    '904':'Santa Monica','905':'Torrance','906':'Long Beach','907':'San Pedro',
+    '908':'Long Beach','910':'Pasadena','911':'Pasadena','912':'Glendale',
+    '913':'Van Nuys / Reseda / Northridge','914':'Sherman Oaks / Encino / Tarzana',
+    '915':'Burbank','916':'North Hollywood','917':'Industry','918':'Alhambra / Arcadia',
+    '919':'West Covina','920':'San Diego','921':'San Diego','922':'Escondido',
+    '923':'San Bernardino','924':'San Bernardino','925':'Riverside','926':'Orange County',
+    '927':'Santa Ana / Anaheim','928':'Anaheim / Irvine','930':'Oxnard / Ventura',
+    '931':'Santa Barbara','932':'Bakersfield','933':'Bakersfield','934':'Santa Barbara',
+    '935':'Mojave / Lancaster','936':'Fresno','937':'Fresno','938':'Fresno',
+    '939':'Salinas','940':'San Francisco','941':'San Francisco','942':'Sacramento',
+    '943':'Sacramento','944':'San Mateo','945':'Oakland','946':'Oakland',
+    '947':'Berkeley','948':'Richmond','949':'San Rafael','950':'San Jose',
+    '951':'Riverside / Moreno Valley','952':'Stockton','953':'Stockton',
+    '954':'Santa Rosa','955':'Eureka','956':'Sacramento','957':'Sacramento',
+    '958':'Sacramento','959':'Marysville','960':'Redding','961':'Reno, NV'
+  };
+
+  function getZipArea(zip) {
+    var prefix = zip.substring(0, 3);
+    return ZIP_AREAS[prefix] || null;
+  }
+
   // ===== URL PARAMS & TRACKING =====
   var params = new URLSearchParams(window.location.search);
   var gclid = params.get('gclid') || '';
@@ -936,14 +922,39 @@
 
   // ===== FORM STATE =====
   var currentStep = 1;
-  var formData = { zip: '', homeowner: '', homeType: '', yearBuilt: '', services: [], firstName: '', lastName: '', phone: '', email: '' };
+  var formData = { zip: '', zipArea: '', services: [], firstName: '', lastName: '', phone: '', email: '' };
 
   function showStep(n) {
-    for (var i = 1; i <= 4; i++) document.getElementById('step' + i).classList.remove('active');
+    for (var i = 1; i <= 3; i++) document.getElementById('step' + i).classList.remove('active');
     document.getElementById('step' + n).classList.add('active');
-    document.getElementById('progressFill').style.width = (n * 25) + '%';
+    document.getElementById('progressFill').style.width = Math.round(n * 33.33) + '%';
     currentStep = n;
   }
+
+  // Show area when typing ZIP
+  document.getElementById('zipCode').addEventListener('input', function() {
+    var zip = this.value.trim();
+    var areaEl = document.getElementById('zipArea');
+    if (zip.length === 5 && /^\d{5}$/.test(zip)) {
+      var area = getZipArea(zip);
+      if (area) {
+        document.getElementById('zipAreaText').textContent = area + ', CA — We serve your area!';
+        areaEl.style.display = 'block';
+      } else if (zip.charAt(0) === '9') {
+        document.getElementById('zipAreaText').textContent = 'California — We serve your area!';
+        areaEl.style.display = 'block';
+      } else {
+        document.getElementById('zipAreaText').textContent = 'We primarily serve California. A specialist will verify availability.';
+        areaEl.style.display = 'block';
+        areaEl.style.background = '#fef3c7';
+        areaEl.style.color = '#92400e';
+      }
+    } else {
+      areaEl.style.display = 'none';
+      areaEl.style.background = '#eff6ff';
+      areaEl.style.color = 'var(--blue)';
+    }
+  });
 
   function nextStep(from) {
     if (from === 1) {
@@ -956,47 +967,26 @@
       document.getElementById('zipCode').classList.remove('error');
       document.getElementById('zipError').style.display = 'none';
       formData.zip = zip;
-      ga4('qualify_step_1', { zip_prefix: zip.substring(0, 3) });
-      fb('AddToCart', { content_name: 'Step 1 - ZIP', value: 1 });
+      formData.zipArea = getZipArea(zip) || 'California';
+      ga4('qualify_step_1', { zip_prefix: zip.substring(0, 3), area: formData.zipArea });
+      fb('AddToCart', { content_name: 'Step 1 - ZIP ' + zip, value: 1 });
     }
     if (from === 2) {
-      var g1 = document.querySelector('[data-field="homeowner"] .selected');
-      var g2 = document.querySelector('[data-field="homeType"] .selected');
-      var g3 = document.querySelector('[data-field="yearBuilt"] .selected');
-      if (!g1 || !g2 || !g3) { document.getElementById('step2Error').style.display = 'block'; return; }
-      document.getElementById('step2Error').style.display = 'none';
-      formData.homeowner = g1.getAttribute('data-value');
-      formData.homeType = g2.getAttribute('data-value');
-      formData.yearBuilt = g3.getAttribute('data-value');
-      ga4('qualify_step_2', { homeowner: formData.homeowner, home_type: formData.homeType });
-      fb('AddToCart', { content_name: 'Step 2 - Home Details', value: 2 });
-    }
-    if (from === 3) {
       var sel = document.querySelectorAll('#serviceGrid .selected');
-      if (sel.length === 0) { document.getElementById('step3Error').style.display = 'block'; return; }
-      document.getElementById('step3Error').style.display = 'none';
+      if (sel.length === 0) { document.getElementById('step2Error').style.display = 'block'; return; }
+      document.getElementById('step2Error').style.display = 'none';
       formData.services = [];
       sel.forEach(function(el) { formData.services.push(el.getAttribute('data-service')); });
-      ga4('qualify_step_3', { services: formData.services.join(', '), count: formData.services.length });
-      fb('InitiateCheckout', { content_name: 'Step 3 - Services', num_items: formData.services.length });
+      ga4('qualify_step_2', { services: formData.services.join(', '), count: formData.services.length });
+      fb('InitiateCheckout', { content_name: 'Step 2 - Services', num_items: formData.services.length });
     }
     showStep(from + 1);
     document.getElementById('qualifyForm').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   function prevStep(from) { showStep(from - 1); }
-
-  function selectOption(el) {
-    var siblings = el.parentElement.querySelectorAll('.option-btn');
-    siblings.forEach(function(s) { s.classList.remove('selected'); });
-    el.classList.add('selected');
-  }
-
   function toggleService(el) { el.classList.toggle('selected'); }
-
-  function scrollToForm() {
-    document.getElementById('qualifyForm').scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
+  function scrollToForm() { document.getElementById('qualifyForm').scrollIntoView({ behavior: 'smooth', block: 'center' }); }
 
   // ===== SUBMIT =====
   var CRM_WEBHOOK = 'https://patagon-crm.onrender.com/api/webhooks/lead';
@@ -1008,12 +998,12 @@
     var em = document.getElementById('email').value.trim();
 
     if (!fn || !ph) {
-      document.getElementById('step4Error').style.display = 'block';
+      document.getElementById('step3Error').style.display = 'block';
       if (!fn) document.getElementById('firstName').classList.add('error');
       if (!ph) document.getElementById('phone').classList.add('error');
       return;
     }
-    document.getElementById('step4Error').style.display = 'none';
+    document.getElementById('step3Error').style.display = 'none';
     document.getElementById('firstName').classList.remove('error');
     document.getElementById('phone').classList.remove('error');
 
@@ -1026,24 +1016,17 @@
     btn.disabled = true;
     btn.innerHTML = '<i class="bi bi-hourglass-split"></i> Checking...';
 
-    var notes = [
-      'Home: ' + formData.homeType + ' (' + formData.yearBuilt + ')',
-      'Homeowner: ' + formData.homeowner,
-      'Upgrades: ' + formData.services.join(', ')
-    ].join(' | ');
-
     var payload = {
       first_name: formData.firstName,
       last_name: formData.lastName || null,
       phone: formData.phone,
       email: formData.email || null,
       zip: formData.zip,
-      project_type: formData.services[0] || 'Energy Efficiency',
+      project_type: formData.services.join(', ') || 'Energy Efficiency',
       source: utmSource ? ('Google Ads - ' + utmCampaign) : 'Qualification Page',
       form_name: 'HPP Eligibility Check',
       campaign: utmCampaign || 'HPP Qualify',
-      notes: notes,
-      is_homeowner: formData.homeowner,
+      notes: 'Area: ' + formData.zipArea + ' | Upgrades: ' + formData.services.join(', '),
       gclid: gclid || null,
       utm_source: utmSource || null,
       utm_medium: utmMedium || null,
@@ -1059,7 +1042,7 @@
         body: JSON.stringify(payload)
       });
       if (response.ok) {
-        document.getElementById('step4').classList.remove('active');
+        document.getElementById('step3').classList.remove('active');
         document.getElementById('formSuccess').style.display = 'block';
         document.getElementById('formTitle').innerHTML = '<i class="bi bi-check-circle-fill"></i> Assessment Complete';
         document.getElementById('formSub').textContent = 'Thank you, ' + formData.firstName + '!';
