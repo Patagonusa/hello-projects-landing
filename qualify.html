@@ -6,11 +6,11 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <title>Check Your Eligibility | Hello Projects Pro — Free Home Renovation Assessment</title>
-  <meta name="description" content="See if you qualify for 0% financing on your home renovation. Free assessment in under 2 minutes. Licensed contractor, 25+ years experience in Los Angeles. Call (888) 706-0080.">
+  <title>Check Your Eligibility | Hello Projects Pro — Government-Supported Home Renovations</title>
+  <meta name="description" content="Check if you qualify for government-supported renovations and lower energy bills. 25+ years helping California homeowners. Licensed & Insured. Call (818) 213-0302.">
   <link rel="canonical" href="https://helloprojectspro.com/qualify.html">
-  <meta property="og:title" content="Check Your Eligibility | Hello Projects Pro">
-  <meta property="og:description" content="See if you qualify for 0% financing on your home renovation. Free assessment in under 2 minutes.">
+  <meta property="og:title" content="Check If You Qualify | Hello Projects Pro">
+  <meta property="og:description" content="Government-supported renovations & lower energy bills. Free eligibility check in under 2 minutes.">
   <meta property="og:url" content="https://helloprojectspro.com/qualify.html">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://helloprojectspro.com/hero-bg.jpeg">
@@ -22,27 +22,30 @@
   <!-- Meta Pixel -->
   <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1782159502364871');fbq('track','PageView');</script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1782159502364871&ev=PageView&noscript=1"/></noscript>
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <style>
     :root {
       --primary: #0c1a2e;
       --primary-light: #142d4f;
-      --blue: #2563eb;
-      --blue-hover: #1d4ed8;
-      --blue-light: #3b82f6;
+      --blue: #1E40AF;
+      --blue-hover: #1a3a9e;
+      --blue-light: #2563eb;
       --sky: #60a5fa;
       --navy: #1e3a5f;
-      --accent: #f59e0b;
-      --accent-hover: #d97706;
-      --green: #10b981;
-      --green-dark: #059669;
-      --text: #1e293b;
-      --text-light: #64748b;
-      --bg-light: #f0f7ff;
+      --accent: #16A34A;
+      --accent-hover: #15803d;
+      --accent-light: #22c55e;
+      --amber: #f59e0b;
+      --text: #1F2937;
+      --text-light: #6B7280;
+      --bg: #F8FAFC;
       --white: #fff;
-      --shadow: 0 4px 20px rgba(12,26,46,0.1);
-      --shadow-lg: 0 10px 40px rgba(12,26,46,0.18);
+      --shadow: 0 4px 20px rgba(12,26,46,0.08);
+      --shadow-lg: 0 10px 40px rgba(12,26,46,0.15);
       --radius: 12px;
     }
 
@@ -53,10 +56,10 @@
       color: var(--text);
       line-height: 1.6;
       overflow-x: hidden;
-      background: var(--bg-light);
+      background: var(--bg);
     }
 
-    /* ===== HEADER (simplified for landing) ===== */
+    /* ===== HEADER ===== */
     .header {
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
       background: var(--primary);
@@ -67,390 +70,482 @@
       display: flex; align-items: center; justify-content: space-between;
       padding: 10px 20px;
     }
+    .header-logo { display: flex; align-items: center; text-decoration: none; }
     .header-logo img { height: 48px; border-radius: 8px; }
+    .header-right { display: flex; align-items: center; gap: 16px; }
     .header-phone {
       display: flex; align-items: center; gap: 8px;
-      color: var(--accent); text-decoration: none; font-weight: 700; font-size: 16px;
+      color: var(--amber); text-decoration: none; font-weight: 700; font-size: 16px;
+      transition: color 0.2s;
     }
     .header-phone:hover { color: #fbbf24; }
-    .header-phone svg { width: 20px; height: 20px; fill: currentColor; }
+    .header-phone i { font-size: 18px; }
+    .header-cta {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 10px 20px; border-radius: 8px;
+      background: var(--accent); color: var(--white);
+      font-size: 14px; font-weight: 700; text-decoration: none;
+      transition: all 0.2s;
+    }
+    .header-cta:hover { background: var(--accent-hover); transform: translateY(-1px); }
 
     /* ===== HERO ===== */
     .hero {
       position: relative;
       background: linear-gradient(135deg, var(--primary) 0%, var(--navy) 50%, var(--primary-light) 100%);
       padding: 100px 20px 60px;
-      text-align: center; color: var(--white);
       overflow: hidden;
     }
     .hero::before {
       content: ''; position: absolute; inset: 0;
       background: url('hero-bg.jpeg') center/cover;
-      opacity: 0.15;
+      opacity: 0.12;
     }
-    .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+    .hero-inner {
+      position: relative; z-index: 1;
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 420px; gap: 48px; align-items: center;
+    }
+    .hero-text { color: var(--white); }
+    .hero-badges {
+      display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;
+    }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(37,99,235,0.3); border: 1px solid rgba(96,165,250,0.4);
-      padding: 6px 16px; border-radius: 50px; font-size: 13px; font-weight: 600;
-      margin-bottom: 20px; color: var(--sky);
+      background: rgba(30,64,175,0.3); border: 1px solid rgba(96,165,250,0.3);
+      padding: 6px 14px; border-radius: 50px; font-size: 13px; font-weight: 600;
+      color: var(--sky);
     }
+    .hero-badge i { font-size: 14px; }
     .hero h1 {
       font-family: 'Poppins', sans-serif; font-weight: 900;
-      font-size: 36px; line-height: 1.2; margin-bottom: 16px;
+      font-size: 38px; line-height: 1.15; margin-bottom: 16px;
     }
-    .hero h1 span { color: var(--sky); }
-    .hero p {
-      font-size: 17px; color: rgba(255,255,255,0.85); margin-bottom: 28px;
-      max-width: 600px; margin-left: auto; margin-right: auto;
+    .hero h1 span { color: var(--accent-light); }
+    .hero-sub {
+      font-size: 18px; color: rgba(255,255,255,0.8); margin-bottom: 28px;
+      line-height: 1.6; max-width: 520px;
     }
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; border-radius: 10px; font-size: 16px; font-weight: 700;
+      text-decoration: none; transition: all 0.2s; border: none; cursor: pointer;
+      font-family: inherit;
+    }
+    .btn-green { background: var(--accent); color: var(--white); }
+    .btn-green:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(22,163,74,0.4); }
+    .btn-outline-white { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.4); }
+    .btn-outline-white:hover { border-color: #fff; transform: translateY(-2px); }
+    .btn-white { background: var(--white); color: var(--blue); }
+    .btn-white:hover { background: #f0f7ff; transform: translateY(-2px); }
+    .btn-blue { background: var(--blue); color: var(--white); }
+    .btn-blue:hover { background: var(--blue-hover); transform: translateY(-2px); }
 
-    /* ===== FORM CONTAINER ===== */
-    .form-wrapper {
-      max-width: 520px; margin: 0 auto;
+    /* ===== FORM ===== */
+    .form-card {
       background: var(--white); border-radius: 16px;
       box-shadow: 0 20px 60px rgba(0,0,0,0.3);
       overflow: hidden;
     }
-    .form-header {
-      background: linear-gradient(135deg, var(--blue), var(--blue-light));
-      padding: 16px 24px; text-align: center;
+    .form-top {
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      padding: 18px 24px; text-align: center;
     }
-    .form-header h2 { font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
-    .form-header p { font-size: 13px; color: rgba(255,255,255,0.85); }
-    .progress-bar { height: 4px; background: rgba(255,255,255,0.2); border-radius: 2px; margin-top: 12px; }
-    .progress-fill { height: 100%; background: var(--accent); border-radius: 2px; transition: width 0.4s ease; width: 25%; }
+    .form-top h2 { font-size: 19px; font-weight: 800; color: var(--white); margin-bottom: 2px; }
+    .form-top p { font-size: 13px; color: rgba(255,255,255,0.9); }
+    .progress-bar { height: 4px; background: rgba(255,255,255,0.25); border-radius: 2px; margin-top: 14px; }
+    .progress-fill { height: 100%; background: var(--white); border-radius: 2px; transition: width 0.4s ease; width: 25%; }
     .form-body { padding: 28px 24px; }
-    .step-label { font-size: 12px; color: var(--text-light); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
-    .step-title { font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 20px; }
+    .step-indicator { font-size: 12px; color: var(--text-light); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+    .step-question { font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .step-helper { font-size: 14px; color: var(--text-light); margin-bottom: 20px; }
 
-    /* Form elements */
     .form-input {
       width: 100%; padding: 14px 16px; font-size: 16px;
-      border: 2px solid #e2e8f0; border-radius: 10px;
+      border: 2px solid #e5e7eb; border-radius: 10px;
       font-family: inherit; transition: border-color 0.2s;
       -webkit-appearance: none; appearance: none;
+      background: var(--white);
     }
-    .form-input:focus { outline: none; border-color: var(--blue); }
+    .form-input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(22,163,74,0.1); }
     .form-input.error { border-color: #ef4444; }
     .error-msg { color: #ef4444; font-size: 13px; margin-top: 6px; display: none; }
 
-    /* Option buttons (for home type, etc.) */
+    /* Option buttons */
     .option-grid { display: grid; gap: 10px; }
     .option-grid.cols-2 { grid-template-columns: 1fr 1fr; }
     .option-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
     .option-btn {
-      padding: 12px 16px; border: 2px solid #e2e8f0; border-radius: 10px;
+      padding: 14px 16px; border: 2px solid #e5e7eb; border-radius: 10px;
       background: var(--white); cursor: pointer; text-align: center;
       font-size: 14px; font-weight: 600; color: var(--text);
       transition: all 0.2s; user-select: none;
     }
-    .option-btn:hover { border-color: var(--blue-light); background: #f0f7ff; }
-    .option-btn.selected { border-color: var(--blue); background: #eff6ff; color: var(--blue); }
-    .option-btn .opt-icon { font-size: 22px; display: block; margin-bottom: 4px; }
+    .option-btn:hover { border-color: var(--accent); background: #f0fdf4; }
+    .option-btn.selected { border-color: var(--accent); background: #f0fdf4; color: var(--accent); }
+    .option-btn i { font-size: 22px; display: block; margin-bottom: 4px; }
 
-    /* Service selection chips */
+    /* Service chips */
     .service-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     .service-chip {
-      padding: 12px 14px; border: 2px solid #e2e8f0; border-radius: 10px;
+      padding: 12px 14px; border: 2px solid #e5e7eb; border-radius: 10px;
       background: var(--white); cursor: pointer; text-align: left;
       font-size: 14px; font-weight: 500; color: var(--text);
       transition: all 0.2s; user-select: none;
-      display: flex; align-items: center; gap: 8px;
+      display: flex; align-items: center; gap: 10px;
     }
-    .service-chip:hover { border-color: var(--blue-light); }
-    .service-chip.selected { border-color: var(--blue); background: #eff6ff; color: var(--blue); }
+    .service-chip:hover { border-color: var(--accent); }
+    .service-chip.selected { border-color: var(--accent); background: #f0fdf4; color: #15803d; }
+    .service-chip .chip-icon { font-size: 18px; color: var(--text-light); transition: color 0.2s; }
+    .service-chip.selected .chip-icon { color: var(--accent); }
     .service-chip .chip-check {
-      width: 20px; height: 20px; border: 2px solid #cbd5e1; border-radius: 4px;
+      width: 20px; height: 20px; border: 2px solid #d1d5db; border-radius: 4px;
       display: flex; align-items: center; justify-content: center;
-      transition: all 0.2s; flex-shrink: 0;
+      transition: all 0.2s; flex-shrink: 0; margin-left: auto;
     }
-    .service-chip.selected .chip-check { background: var(--blue); border-color: var(--blue); }
+    .service-chip.selected .chip-check { background: var(--accent); border-color: var(--accent); }
     .service-chip.selected .chip-check::after { content: '\2713'; color: white; font-size: 12px; font-weight: 700; }
 
     /* Form buttons */
     .form-actions { display: flex; gap: 12px; margin-top: 24px; }
     .btn-back {
-      padding: 14px 24px; border-radius: 10px; font-size: 15px; font-weight: 600;
-      border: 2px solid #e2e8f0; background: var(--white); color: var(--text-light);
-      cursor: pointer; transition: all 0.2s;
+      padding: 14px 20px; border-radius: 10px; font-size: 15px; font-weight: 600;
+      border: 2px solid #e5e7eb; background: var(--white); color: var(--text-light);
+      cursor: pointer; transition: all 0.2s; font-family: inherit;
     }
-    .btn-back:hover { border-color: #cbd5e1; color: var(--text); }
+    .btn-back:hover { border-color: #d1d5db; color: var(--text); }
+    .btn-back i { margin-right: 4px; }
     .btn-next {
       flex: 1; padding: 14px 24px; border-radius: 10px; font-size: 16px; font-weight: 700;
-      border: none; background: var(--blue); color: var(--white);
-      cursor: pointer; transition: all 0.2s;
+      border: none; background: var(--accent); color: var(--white);
+      cursor: pointer; transition: all 0.2s; font-family: inherit;
     }
-    .btn-next:hover { background: var(--blue-hover); transform: translateY(-1px); }
-    .btn-next:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+    .btn-next:hover { background: var(--accent-hover); transform: translateY(-1px); }
+    .btn-next i { margin-left: 6px; }
     .btn-submit {
-      width: 100%; padding: 16px; border-radius: 10px; font-size: 17px; font-weight: 700;
-      border: none; background: var(--green); color: var(--white);
-      cursor: pointer; transition: all 0.2s; margin-top: 24px;
+      width: 100%; padding: 16px; border-radius: 10px; font-size: 17px; font-weight: 800;
+      border: none; background: var(--accent); color: var(--white);
+      cursor: pointer; transition: all 0.2s; margin-top: 20px; font-family: inherit;
     }
-    .btn-submit:hover { background: var(--green-dark); transform: translateY(-1px); }
-    .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+    .btn-submit:hover { background: var(--accent-hover); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(22,163,74,0.3); }
+    .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
 
     .form-step { display: none; }
     .form-step.active { display: block; }
 
-    /* Success state */
-    .form-success {
-      display: none; text-align: center; padding: 32px 24px;
-    }
-    .form-success .success-icon {
-      width: 64px; height: 64px; border-radius: 50%;
-      background: var(--green); color: white;
+    /* Success */
+    .form-success { display: none; text-align: center; padding: 32px 24px; }
+    .form-success .success-check {
+      width: 68px; height: 68px; border-radius: 50%;
+      background: var(--accent); color: white;
       display: flex; align-items: center; justify-content: center;
-      font-size: 32px; margin: 0 auto 16px;
+      margin: 0 auto 16px;
     }
-    .form-success h3 { font-size: 22px; font-weight: 700; margin-bottom: 8px; color: var(--text); }
-    .form-success p { color: var(--text-light); font-size: 15px; margin-bottom: 16px; }
-    .success-cta {
+    .form-success .success-check i { font-size: 32px; }
+    .form-success h3 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+    .form-success p { color: var(--text-light); font-size: 15px; margin-bottom: 20px; line-height: 1.6; }
+    .success-phone {
       display: inline-flex; align-items: center; gap: 8px;
       padding: 14px 28px; border-radius: 10px; font-size: 16px; font-weight: 700;
-      text-decoration: none; color: var(--white); background: var(--accent);
+      text-decoration: none; color: var(--white); background: var(--blue);
       transition: all 0.2s;
     }
-    .success-cta:hover { background: var(--accent-hover); }
+    .success-phone:hover { background: var(--blue-hover); }
+    .success-phone i { font-size: 18px; }
 
     /* Consent */
-    .consent { display: flex; gap: 10px; align-items: flex-start; margin-top: 16px; }
-    .consent input { margin-top: 3px; width: 18px; height: 18px; accent-color: var(--blue); flex-shrink: 0; }
+    .consent { display: flex; gap: 10px; align-items: flex-start; margin-top: 14px; }
+    .consent input { margin-top: 3px; width: 18px; height: 18px; accent-color: var(--accent); flex-shrink: 0; }
     .consent label { font-size: 12px; color: var(--text-light); line-height: 1.5; }
     .consent a { color: var(--blue); }
 
-    /* Phone input */
-    .phone-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    .name-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
 
-    /* ===== TRUST BADGES ===== */
-    .trust-strip {
-      background: var(--white); padding: 28px 20px;
-      border-bottom: 1px solid #e2e8f0;
-    }
+    /* ===== TRUST STRIP ===== */
+    .trust-strip { background: var(--white); padding: 24px 20px; border-bottom: 1px solid #e5e7eb; }
     .trust-inner {
-      max-width: 700px; margin: 0 auto;
-      display: flex; justify-content: center; align-items: center; gap: 32px; flex-wrap: wrap;
+      max-width: 800px; margin: 0 auto;
+      display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap;
     }
-    .trust-item { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--text); }
-    .trust-icon {
-      width: 36px; height: 36px; border-radius: 50%;
+    .trust-item { display: flex; align-items: center; gap: 10px; }
+    .trust-item .t-icon {
+      width: 44px; height: 44px; border-radius: 10px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 16px;
+      font-size: 20px;
     }
-    .trust-icon.blue { background: #eff6ff; color: var(--blue); }
-    .trust-icon.green { background: #ecfdf5; color: var(--green); }
-    .trust-icon.amber { background: #fef3c7; color: var(--accent); }
+    .trust-item .t-icon.blue { background: #eff6ff; color: var(--blue); }
+    .trust-item .t-icon.green { background: #f0fdf4; color: var(--accent); }
+    .trust-item .t-icon.amber { background: #fef3c7; color: #d97706; }
+    .trust-item .t-label { font-size: 14px; font-weight: 700; color: var(--text); }
+    .trust-item .t-sub { font-size: 12px; color: var(--text-light); }
 
     /* ===== SECTIONS ===== */
-    section { padding: 60px 20px; }
+    section { padding: 64px 20px; }
     .section-inner { max-width: 1000px; margin: 0 auto; }
+    .section-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #eff6ff; color: var(--blue); font-size: 13px; font-weight: 700;
+      padding: 6px 14px; border-radius: 50px; margin-bottom: 12px;
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .section-tag i { font-size: 14px; }
     .section-title {
       font-family: 'Poppins', sans-serif; font-weight: 800;
-      font-size: 28px; text-align: center; margin-bottom: 12px;
+      font-size: 30px; margin-bottom: 12px; line-height: 1.2;
     }
-    .section-subtitle { text-align: center; color: var(--text-light); font-size: 16px; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .section-subtitle { color: var(--text-light); font-size: 16px; margin-bottom: 40px; max-width: 600px; }
+    .text-center { text-align: center; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
 
-    /* Value Props */
+    /* ===== VALUE PROPS ===== */
     .values-section { background: var(--white); }
     .values-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
     .value-card {
-      background: var(--bg-light); border-radius: var(--radius); padding: 24px;
-      border: 1px solid #e2e8f0;
+      background: var(--bg); border-radius: var(--radius); padding: 28px;
+      border: 1px solid #e5e7eb; transition: box-shadow 0.2s;
     }
-    .value-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
-    .value-card p { font-size: 14px; color: var(--text-light); line-height: 1.6; }
-    .value-icon { font-size: 20px; }
-
-    /* Process */
-    .process-section { background: linear-gradient(135deg, var(--primary), var(--navy)); color: var(--white); }
-    .process-section .section-title { color: var(--white); }
-    .process-section .section-subtitle { color: rgba(255,255,255,0.7); }
-    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-    .process-step { text-align: center; position: relative; }
-    .process-num {
-      width: 48px; height: 48px; border-radius: 50%;
-      background: var(--blue); color: white;
+    .value-card:hover { box-shadow: var(--shadow); }
+    .value-card .v-icon {
+      width: 48px; height: 48px; border-radius: 10px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 20px; font-weight: 800; margin: 0 auto 14px;
+      font-size: 22px; margin-bottom: 14px;
     }
-    .process-step h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
-    .process-step p { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.5; }
+    .value-card .v-icon.blue { background: #eff6ff; color: var(--blue); }
+    .value-card .v-icon.green { background: #f0fdf4; color: var(--accent); }
+    .value-card .v-icon.amber { background: #fef3c7; color: #d97706; }
+    .value-card .v-icon.purple { background: #f5f3ff; color: #7c3aed; }
+    .value-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+    .value-card p { font-size: 14px; color: var(--text-light); line-height: 1.7; }
 
-    /* Services */
-    .services-section { background: var(--bg-light); }
-    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .svc-card {
-      background: var(--white); border-radius: var(--radius); overflow: hidden;
-      box-shadow: var(--shadow); transition: transform 0.2s, box-shadow 0.2s;
+    /* ===== ABOUT ===== */
+    .about-section { background: var(--bg); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .about-img { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg); }
+    .about-img img { width: 100%; height: 360px; object-fit: cover; display: block; }
+    .about-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
+    .about-badge {
+      display: flex; align-items: center; gap: 8px;
+      background: var(--white); padding: 10px 14px; border-radius: 8px;
+      font-size: 13px; font-weight: 600; color: var(--text);
+      border: 1px solid #e5e7eb;
     }
-    .svc-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-    .svc-card img { width: 100%; height: 180px; object-fit: cover; }
-    .svc-card-body { padding: 20px; }
-    .svc-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
-    .svc-card p { font-size: 14px; color: var(--text-light); line-height: 1.5; }
+    .about-badge i { color: var(--accent); font-size: 16px; }
 
-    /* Portfolio */
-    .portfolio-section { background: var(--white); }
+    /* ===== SERVICES ===== */
+    .services-section { background: var(--white); }
+    .services-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; }
+    .services-img { border-radius: var(--radius); overflow: hidden; }
+    .services-img img { width: 100%; height: 300px; object-fit: cover; display: block; }
+    .services-list {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px;
+    }
+    .svc-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 12px 14px; background: var(--bg); border-radius: 8px;
+      font-size: 14px; font-weight: 500;
+    }
+    .svc-item i { color: var(--accent); font-size: 18px; }
+
+    /* ===== PROCESS ===== */
+    .process-section {
+      background: linear-gradient(135deg, var(--primary), var(--navy));
+      color: var(--white);
+    }
+    .process-section .section-tag { background: rgba(96,165,250,0.2); color: var(--sky); }
+    .process-section .section-title { color: var(--white); }
+    .process-section .section-subtitle { color: rgba(255,255,255,0.65); }
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .process-card { text-align: center; }
+    .process-num {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: var(--accent); color: white;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; font-weight: 800; margin: 0 auto 16px;
+      font-family: 'Poppins', sans-serif;
+    }
+    .process-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .process-card p { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.6; }
+
+    /* ===== CTA BANNER ===== */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--blue), var(--blue-light));
+      text-align: center; color: var(--white); padding: 52px 20px;
+    }
+    .cta-banner h2 { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 28px; margin-bottom: 10px; }
+    .cta-banner p { font-size: 16px; color: rgba(255,255,255,0.85); margin-bottom: 28px; }
+    .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* ===== PORTFOLIO ===== */
+    .portfolio-section { background: var(--bg); }
     .portfolio-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-    .portfolio-img {
+    .portfolio-item {
       border-radius: var(--radius); overflow: hidden; aspect-ratio: 1;
-      cursor: pointer; position: relative;
+      position: relative; cursor: pointer;
     }
-    .portfolio-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
-    .portfolio-img:hover img { transform: scale(1.05); }
+    .portfolio-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; display: block; }
+    .portfolio-item:hover img { transform: scale(1.05); }
+    .portfolio-item .p-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(transparent 50%, rgba(0,0,0,0.6));
+      display: flex; align-items: flex-end; padding: 14px;
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .portfolio-item:hover .p-overlay { opacity: 1; }
+    .portfolio-item .p-overlay span { color: white; font-size: 13px; font-weight: 600; }
 
-    /* Testimonials */
-    .testimonials-section { background: var(--bg-light); }
+    /* ===== TESTIMONIALS ===== */
+    .testimonials-section { background: var(--white); }
     .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     .testimonial-card {
-      background: var(--white); border-radius: var(--radius); padding: 24px;
-      box-shadow: var(--shadow);
+      background: var(--bg); border-radius: var(--radius); padding: 28px;
+      border: 1px solid #e5e7eb;
     }
-    .testimonial-stars { color: var(--accent); font-size: 16px; margin-bottom: 12px; }
-    .testimonial-text { font-size: 14px; color: var(--text); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
-    .testimonial-author { font-size: 14px; font-weight: 700; }
-    .testimonial-loc { font-size: 13px; color: var(--text-light); }
+    .testimonial-stars { color: var(--amber); font-size: 16px; margin-bottom: 14px; letter-spacing: 2px; }
+    .testimonial-text { font-size: 14px; color: var(--text); line-height: 1.7; margin-bottom: 18px; }
+    .testimonial-author { font-size: 15px; font-weight: 700; color: var(--text); }
+    .testimonial-loc { font-size: 13px; color: var(--text-light); display: flex; align-items: center; gap: 4px; }
+    .testimonial-loc i { font-size: 12px; }
 
-    /* FAQ */
-    .faq-section { background: var(--white); }
-    .faq-list { max-width: 700px; margin: 0 auto; }
-    .faq-item { border-bottom: 1px solid #e2e8f0; }
+    /* ===== FAQ ===== */
+    .faq-section { background: var(--bg); }
+    .faq-list { max-width: 720px; margin: 0 auto; }
+    .faq-item { background: var(--white); border-radius: 10px; margin-bottom: 10px; border: 1px solid #e5e7eb; overflow: hidden; }
     .faq-q {
       display: flex; justify-content: space-between; align-items: center;
-      padding: 18px 0; cursor: pointer; font-size: 15px; font-weight: 600;
+      padding: 18px 20px; cursor: pointer; font-size: 15px; font-weight: 600;
       color: var(--text); user-select: none; gap: 12px;
     }
     .faq-q:hover { color: var(--blue); }
-    .faq-arrow { font-size: 18px; transition: transform 0.3s; flex-shrink: 0; }
-    .faq-item.open .faq-arrow { transform: rotate(180deg); }
-    .faq-a { padding: 0 0 18px; font-size: 14px; color: var(--text-light); line-height: 1.7; display: none; }
+    .faq-q i { font-size: 16px; transition: transform 0.3s; color: var(--text-light); }
+    .faq-item.open .faq-q i { transform: rotate(180deg); color: var(--blue); }
+    .faq-a { padding: 0 20px 18px; font-size: 14px; color: var(--text-light); line-height: 1.7; display: none; }
     .faq-item.open .faq-a { display: block; }
 
-    /* Mid CTA */
-    .mid-cta {
-      background: linear-gradient(135deg, var(--blue), var(--blue-light));
-      text-align: center; color: var(--white); padding: 48px 20px;
-    }
-    .mid-cta h2 { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 26px; margin-bottom: 10px; }
-    .mid-cta p { font-size: 16px; color: rgba(255,255,255,0.85); margin-bottom: 24px; }
-    .mid-cta .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-    .btn-cta {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 14px 28px; border-radius: 10px; font-size: 16px; font-weight: 700;
-      text-decoration: none; transition: all 0.2s; border: none; cursor: pointer;
-    }
-    .btn-cta.white { background: var(--white); color: var(--blue); }
-    .btn-cta.white:hover { background: #f0f7ff; transform: translateY(-2px); }
-    .btn-cta.outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.5); }
-    .btn-cta.outline:hover { border-color: var(--white); transform: translateY(-2px); }
-
-    /* Footer */
-    .footer { background: var(--primary); color: rgba(255,255,255,0.7); padding: 40px 20px; text-align: center; }
-    .footer-inner { max-width: 600px; margin: 0 auto; }
-    .footer-logo img { height: 48px; border-radius: 8px; margin-bottom: 16px; }
+    /* ===== FOOTER ===== */
+    .footer { background: var(--primary); color: rgba(255,255,255,0.7); padding: 40px 20px; }
+    .footer-inner { max-width: 600px; margin: 0 auto; text-align: center; }
+    .footer-logo { margin-bottom: 16px; }
+    .footer-logo img { height: 48px; border-radius: 8px; }
     .footer p { font-size: 13px; margin-bottom: 6px; }
     .footer a { color: var(--sky); text-decoration: none; }
     .footer a:hover { text-decoration: underline; }
-    .footer-links { margin-top: 16px; display: flex; gap: 16px; justify-content: center; font-size: 13px; }
+    .footer-links { margin-top: 16px; display: flex; gap: 20px; justify-content: center; font-size: 13px; }
     .footer-copy { margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 12px; }
 
     /* ===== MOBILE ===== */
     @media (max-width: 768px) {
       .hero { padding: 80px 16px 40px; }
-      .hero h1 { font-size: 26px; }
-      .hero p { font-size: 15px; }
-      .form-wrapper { margin: 0 -4px; border-radius: 14px; }
-      .form-body { padding: 24px 20px; }
-      .step-title { font-size: 18px; }
-      .phone-row { grid-template-columns: 1fr; }
+      .hero-inner { grid-template-columns: 1fr; gap: 28px; }
+      .hero h1 { font-size: 28px; }
+      .hero-sub { font-size: 16px; }
+      .hero-text { text-align: center; }
+      .hero-badges { justify-content: center; }
+      .hero-ctas { justify-content: center; }
+      .header-cta { display: none; }
+      .form-card { max-width: 100%; }
+      .form-body { padding: 24px 18px; }
+      .step-question { font-size: 18px; }
+      .name-row { grid-template-columns: 1fr; }
       .trust-inner { gap: 20px; }
-      .trust-item { font-size: 13px; }
       .section-title { font-size: 24px; }
       .values-grid { grid-template-columns: 1fr; }
-      .process-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
-      .services-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-img img { height: 240px; }
+      .services-hero { grid-template-columns: 1fr; }
+      .services-list { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
       .portfolio-grid { grid-template-columns: 1fr 1fr; }
       .testimonial-grid { grid-template-columns: 1fr; }
       .service-grid { grid-template-columns: 1fr 1fr; }
       .option-grid.cols-3 { grid-template-columns: 1fr 1fr; }
-      section { padding: 40px 16px; }
-      .mid-cta { padding: 36px 16px; }
-      .mid-cta h2 { font-size: 22px; }
+      section { padding: 44px 16px; }
+      .cta-banner { padding: 36px 16px; }
+      .cta-banner h2 { font-size: 22px; }
     }
 
-    @media (max-width: 400px) {
-      .hero h1 { font-size: 23px; }
-      .service-grid { grid-template-columns: 1fr; }
+    @media (max-width: 420px) {
+      .hero h1 { font-size: 24px; }
+      .hero-badge { font-size: 11px; padding: 5px 10px; }
       .process-grid { grid-template-columns: 1fr; }
       .option-grid.cols-2 { grid-template-columns: 1fr; }
       .option-grid.cols-3 { grid-template-columns: 1fr; }
+      .service-grid { grid-template-columns: 1fr; }
     }
 
     /* Fade in */
-    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.5s, transform 0.5s; }
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s, transform 0.6s; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
   </style>
 </head>
 <body>
 
-<!-- ===== HEADER ===== -->
+<!-- HEADER -->
 <header class="header">
   <div class="header-inner">
     <a href="index.html" class="header-logo"><img src="logo.jpeg" alt="Hello Projects Pro"></a>
-    <a href="tel:+18887060080" class="header-phone">
-      <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-      (888) 706-0080
-    </a>
+    <div class="header-right">
+      <a href="tel:+18182130302" class="header-phone"><i class="bi bi-telephone-fill"></i> (818) 213-0302</a>
+      <a href="#qualifyForm" class="header-cta" onclick="scrollToForm();return false;"><i class="bi bi-clipboard-check"></i> Free Quote</a>
+    </div>
   </div>
 </header>
 
-<!-- ===== HERO + FORM ===== -->
+<!-- HERO -->
 <section class="hero">
-  <div class="hero-content">
-    <div class="hero-badge">&#9989; Licensed &bull; Bonded &bull; Insured &mdash; CSLB #1135440</div>
-    <h1>Check If You Qualify for <span>0% Financing</span> on Your Home Renovation</h1>
-    <p>25+ years helping Los Angeles homeowners transform their homes with flexible payment options. Free assessment in under 2 minutes.</p>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-badges">
+        <span class="hero-badge"><i class="bi bi-shield-check"></i> Licensed &amp; Insured</span>
+        <span class="hero-badge"><i class="bi bi-clock-history"></i> 25+ Years Experience</span>
+        <span class="hero-badge"><i class="bi bi-building-check"></i> Government Program Partner</span>
+      </div>
+      <h1>Check If You Qualify for <span>Government-Supported Renovations</span> &amp; Lower Energy Bills</h1>
+      <p class="hero-sub">25+ years helping California homeowners access renovation programs designed to improve homes and reduce monthly utility costs.</p>
+      <div class="hero-ctas">
+        <a href="#qualifyForm" class="btn btn-green" onclick="scrollToForm();return false;"><i class="bi bi-clipboard-check"></i> Check My Eligibility</a>
+        <a href="tel:+18182130302" class="btn btn-outline-white"><i class="bi bi-telephone-fill"></i> Call Now</a>
+      </div>
+    </div>
 
-    <!-- Multi-Step Form -->
-    <div class="form-wrapper" id="formWrapper">
-      <div class="form-header">
-        <h2 id="formHeaderTitle">Check Your Eligibility</h2>
-        <p id="formHeaderSub">Step <span id="stepNum">1</span> of 4 &mdash; Takes under 2 minutes</p>
+    <!-- FORM -->
+    <div class="form-card" id="qualifyForm">
+      <div class="form-top">
+        <h2 id="formTitle"><i class="bi bi-clipboard-check"></i> Check My Eligibility</h2>
+        <p id="formSub">Fill out the form &mdash; we'll respond fast.</p>
         <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
       </div>
-
       <div class="form-body">
-        <!-- Step 1: ZIP Code -->
+
+        <!-- Step 1: ZIP -->
         <div class="form-step active" id="step1">
-          <div class="step-label">Step 1 of 4</div>
-          <div class="step-title">Where is your home located?</div>
-          <input type="text" class="form-input" id="zipCode" inputmode="numeric" pattern="[0-9]*" maxlength="5" placeholder="Enter your ZIP code" autocomplete="postal-code">
+          <div class="step-indicator">Step 1 of 4</div>
+          <div class="step-question">Where is your project located?</div>
+          <div class="step-helper">We'll use this to find contractors in your area</div>
+          <label style="font-size:13px;font-weight:600;color:var(--text);display:block;margin-bottom:6px;">ZIP Code <span style="color:#ef4444;">*</span></label>
+          <input type="text" class="form-input" id="zipCode" inputmode="numeric" pattern="[0-9]*" maxlength="5" placeholder="e.g. 91335" autocomplete="postal-code">
           <div class="error-msg" id="zipError">Please enter a valid 5-digit ZIP code</div>
           <div class="form-actions">
-            <button class="btn-next" onclick="nextStep(1)">Continue &#8594;</button>
+            <button class="btn-next" onclick="nextStep(1)">Continue <i class="bi bi-arrow-right"></i></button>
           </div>
         </div>
 
         <!-- Step 2: Home Details -->
         <div class="form-step" id="step2">
-          <div class="step-label">Step 2 of 4</div>
-          <div class="step-title">Tell us about your home</div>
+          <div class="step-indicator">Step 2 of 4</div>
+          <div class="step-question">Tell us about your home</div>
+          <div class="step-helper">This helps us determine which programs you qualify for</div>
 
-          <div style="margin-bottom: 18px;">
-            <div style="font-size: 14px; font-weight: 600; margin-bottom: 8px; color: var(--text);">Are you the homeowner?</div>
+          <div style="margin-bottom:18px;">
+            <label style="font-size:13px;font-weight:600;color:var(--text);display:block;margin-bottom:8px;">Are you the homeowner? <span style="color:#ef4444;">*</span></label>
             <div class="option-grid cols-2" data-field="homeowner">
-              <div class="option-btn" data-value="Yes" onclick="selectOption(this)">
-                <span class="opt-icon">&#127968;</span> Yes
-              </div>
-              <div class="option-btn" data-value="No" onclick="selectOption(this)">
-                <span class="opt-icon">&#128100;</span> No
-              </div>
+              <div class="option-btn" data-value="Yes" onclick="selectOption(this)"><i class="bi bi-house-check"></i> Yes</div>
+              <div class="option-btn" data-value="No" onclick="selectOption(this)"><i class="bi bi-person"></i> No</div>
             </div>
           </div>
 
-          <div style="margin-bottom: 18px;">
-            <div style="font-size: 14px; font-weight: 600; margin-bottom: 8px; color: var(--text);">Home type</div>
+          <div style="margin-bottom:18px;">
+            <label style="font-size:13px;font-weight:600;color:var(--text);display:block;margin-bottom:8px;">Home type</label>
             <div class="option-grid cols-3" data-field="homeType">
               <div class="option-btn" data-value="Single Family" onclick="selectOption(this)">Single Family</div>
               <div class="option-btn" data-value="Condo/Townhome" onclick="selectOption(this)">Condo / Townhome</div>
@@ -459,7 +554,7 @@
           </div>
 
           <div>
-            <div style="font-size: 14px; font-weight: 600; margin-bottom: 8px; color: var(--text);">Approximate year built</div>
+            <label style="font-size:13px;font-weight:600;color:var(--text);display:block;margin-bottom:8px;">Approximate year built</label>
             <div class="option-grid cols-2" data-field="yearBuilt">
               <div class="option-btn" data-value="Before 1980" onclick="selectOption(this)">Before 1980</div>
               <div class="option-btn" data-value="1980-2000" onclick="selectOption(this)">1980 &ndash; 2000</div>
@@ -470,318 +565,348 @@
 
           <div class="error-msg" id="step2Error">Please answer all questions above</div>
           <div class="form-actions">
-            <button class="btn-back" onclick="prevStep(2)">&larr; Back</button>
-            <button class="btn-next" onclick="nextStep(2)">Continue &#8594;</button>
+            <button class="btn-back" onclick="prevStep(2)"><i class="bi bi-arrow-left"></i> Back</button>
+            <button class="btn-next" onclick="nextStep(2)">Continue <i class="bi bi-arrow-right"></i></button>
           </div>
         </div>
 
         <!-- Step 3: Services -->
         <div class="form-step" id="step3">
-          <div class="step-label">Step 3 of 4</div>
-          <div class="step-title">What improvements interest you?</div>
-          <p style="font-size: 14px; color: var(--text-light); margin-bottom: 16px;">Select all that apply</p>
+          <div class="step-indicator">Step 3 of 4</div>
+          <div class="step-question">What upgrades interest you?</div>
+          <div class="step-helper">Select all that apply</div>
           <div class="service-grid" id="serviceGrid">
-            <div class="service-chip" data-service="Kitchen Remodeling" onclick="toggleService(this)">
-              <span class="chip-check"></span> Kitchen
-            </div>
-            <div class="service-chip" data-service="Bathroom Remodeling" onclick="toggleService(this)">
-              <span class="chip-check"></span> Bathroom
-            </div>
             <div class="service-chip" data-service="Roofing" onclick="toggleService(this)">
-              <span class="chip-check"></span> Roofing
+              <i class="bi bi-house-door chip-icon"></i> Roofing <span class="chip-check"></span>
             </div>
-            <div class="service-chip" data-service="Windows & Doors" onclick="toggleService(this)">
-              <span class="chip-check"></span> Windows
+            <div class="service-chip" data-service="Solar Panels" onclick="toggleService(this)">
+              <i class="bi bi-sun chip-icon"></i> Solar Panels <span class="chip-check"></span>
             </div>
-            <div class="service-chip" data-service="General Remodeling" onclick="toggleService(this)">
-              <span class="chip-check"></span> Remodeling
+            <div class="service-chip" data-service="HVAC" onclick="toggleService(this)">
+              <i class="bi bi-thermometer-half chip-icon"></i> HVAC <span class="chip-check"></span>
             </div>
-            <div class="service-chip" data-service="Electrical" onclick="toggleService(this)">
-              <span class="chip-check"></span> Electrical
+            <div class="service-chip" data-service="Insulation" onclick="toggleService(this)">
+              <i class="bi bi-bricks chip-icon"></i> Insulation <span class="chip-check"></span>
+            </div>
+            <div class="service-chip" data-service="Windows" onclick="toggleService(this)">
+              <i class="bi bi-window chip-icon"></i> Windows <span class="chip-check"></span>
+            </div>
+            <div class="service-chip" data-service="Water Heaters" onclick="toggleService(this)">
+              <i class="bi bi-droplet-half chip-icon"></i> Water Heaters <span class="chip-check"></span>
+            </div>
+            <div class="service-chip" data-service="Exterior Paint" onclick="toggleService(this)">
+              <i class="bi bi-paint-bucket chip-icon"></i> Exterior Paint <span class="chip-check"></span>
             </div>
             <div class="service-chip" data-service="Landscaping" onclick="toggleService(this)">
-              <span class="chip-check"></span> Landscaping
-            </div>
-            <div class="service-chip" data-service="Other" onclick="toggleService(this)">
-              <span class="chip-check"></span> Other
+              <i class="bi bi-tree chip-icon"></i> Landscaping <span class="chip-check"></span>
             </div>
           </div>
-          <div class="error-msg" id="step3Error">Please select at least one service</div>
+          <div class="error-msg" id="step3Error">Please select at least one upgrade</div>
           <div class="form-actions">
-            <button class="btn-back" onclick="prevStep(3)">&larr; Back</button>
-            <button class="btn-next" onclick="nextStep(3)">Continue &#8594;</button>
+            <button class="btn-back" onclick="prevStep(3)"><i class="bi bi-arrow-left"></i> Back</button>
+            <button class="btn-next" onclick="nextStep(3)">Continue <i class="bi bi-arrow-right"></i></button>
           </div>
         </div>
 
-        <!-- Step 4: Contact Info -->
+        <!-- Step 4: Contact -->
         <div class="form-step" id="step4">
-          <div class="step-label">Step 4 of 4</div>
-          <div class="step-title">Get your free assessment</div>
-          <div class="phone-row">
-            <input type="text" class="form-input" id="firstName" placeholder="First name" autocomplete="given-name">
+          <div class="step-indicator">Step 4 of 4</div>
+          <div class="step-question">Almost done! Get your free assessment</div>
+          <div class="step-helper">We'll contact you within 24 hours with your results</div>
+          <div class="name-row">
+            <input type="text" class="form-input" id="firstName" placeholder="First name *" autocomplete="given-name">
             <input type="text" class="form-input" id="lastName" placeholder="Last name" autocomplete="family-name">
           </div>
-          <input type="tel" class="form-input" id="phone" placeholder="Phone number" autocomplete="tel" style="margin-bottom: 12px;" inputmode="tel">
-          <input type="email" class="form-input" id="email" placeholder="Email (optional)" autocomplete="email">
+          <input type="tel" class="form-input" id="phone" placeholder="Phone number *" autocomplete="tel" style="margin-bottom:12px;" inputmode="tel">
+          <input type="email" class="form-input" id="email" placeholder="Email address" autocomplete="email">
           <div class="error-msg" id="step4Error">Please enter your name and phone number</div>
           <div class="consent">
             <input type="checkbox" id="consentCheck" checked>
             <label for="consentCheck">I agree to receive calls/texts about my project. Msg &amp; data rates may apply. <a href="privacy.html" target="_blank">Privacy Policy</a></label>
           </div>
-          <button class="btn-submit" id="submitBtn" onclick="submitForm()">Check My Eligibility &#10003;</button>
+          <button class="btn-submit" id="submitBtn" onclick="submitForm()"><i class="bi bi-check-circle"></i> Check My Eligibility</button>
         </div>
 
         <!-- Success -->
         <div class="form-success" id="formSuccess">
-          <div class="success-icon">&#10003;</div>
+          <div class="success-check"><i class="bi bi-check-lg"></i></div>
           <h3>You May Qualify!</h3>
-          <p>Thank you! Based on your information, you may be eligible for our 0% financing program. A project specialist will contact you shortly to discuss your options.</p>
-          <a href="tel:+18887060080" class="success-cta">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-            Call Now &mdash; (888) 706-0080
-          </a>
+          <p>Thank you! Based on your information, you may be eligible for government-supported renovation programs. A project specialist will contact you within 24 hours to discuss your options.</p>
+          <a href="tel:+18182130302" class="success-phone"><i class="bi bi-telephone-fill"></i> Call Now &mdash; (818) 213-0302</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== TRUST STRIP ===== -->
+<!-- TRUST STRIP -->
 <div class="trust-strip">
   <div class="trust-inner">
     <div class="trust-item">
-      <span class="trust-icon blue">&#128272;</span>
-      Licensed &amp; Insured
+      <span class="t-icon blue"><i class="bi bi-shield-lock-fill"></i></span>
+      <div><div class="t-label">Licensed &amp; Insured</div><div class="t-sub">CSLB #1135440</div></div>
     </div>
     <div class="trust-item">
-      <span class="trust-icon amber">&#11088;</span>
-      25+ Years Experience
+      <span class="t-icon amber"><i class="bi bi-award-fill"></i></span>
+      <div><div class="t-label">25+ Years Experience</div><div class="t-sub">Trusted in California</div></div>
     </div>
     <div class="trust-item">
-      <span class="trust-icon green">&#128178;</span>
-      0% Financing Available
+      <span class="t-icon green"><i class="bi bi-building-fill-check"></i></span>
+      <div><div class="t-label">Government Program Partner</div><div class="t-sub">Official partner</div></div>
     </div>
   </div>
 </div>
 
-<!-- ===== VALUE PROPOSITIONS ===== -->
+<!-- VALUE PROPOSITIONS -->
 <section class="values-section fade-in">
+  <div class="section-inner text-center">
+    <span class="section-tag"><i class="bi bi-star-fill"></i> Why Choose Us</span>
+    <h2 class="section-title">Licensed Government Program Partner</h2>
+    <p class="section-subtitle mx-auto">Helping homeowners navigate government-supported renovation incentives with 25+ years of trusted service</p>
+  </div>
   <div class="section-inner">
-    <h2 class="section-title">Why Homeowners Choose Hello Projects Pro</h2>
-    <p class="section-subtitle">Trusted by over 1,000 families across the Los Angeles area</p>
     <div class="values-grid">
       <div class="value-card">
-        <h3><span class="value-icon">&#128272;</span> Licensed General Contractor</h3>
-        <p>Fully licensed (CSLB #1135440), bonded, and insured. We handle permits, inspections, and compliance so you don't have to.</p>
+        <div class="v-icon blue"><i class="bi bi-building-fill-check"></i></div>
+        <h3>Licensed Government Program Partner</h3>
+        <p>Official partner helping homeowners navigate government-supported renovation incentives with 25+ years of trusted service.</p>
       </div>
       <div class="value-card">
-        <h3><span class="value-icon">&#128736;</span> Full-Service Renovations</h3>
-        <p>From design consultation through final inspection. Kitchen, bathroom, roofing, electrical, and more — all under one roof.</p>
+        <div class="v-icon green"><i class="bi bi-arrow-repeat"></i></div>
+        <h3>Full Home Upgrade Process</h3>
+        <p>Complete service from eligibility check and application submission through renovation completion and final inspection.</p>
       </div>
       <div class="value-card">
-        <h3><span class="value-icon">&#128178;</span> Flexible Financing Options</h3>
-        <p>Qualified homeowners may access 0% financing with no upfront payment required. We help you find the best payment plan.</p>
+        <div class="v-icon amber"><i class="bi bi-lightning-charge-fill"></i></div>
+        <h3>Reduce Monthly Utility Costs</h3>
+        <p>Energy-efficient upgrades including solar, HVAC, insulation, and windows designed to lower your monthly bills.</p>
       </div>
       <div class="value-card">
-        <h3><span class="value-icon">&#127775;</span> 5-Star Rated Service</h3>
-        <p>Consistently rated 5.0 stars across Google and Yelp. Our commitment to quality and communication sets us apart.</p>
+        <div class="v-icon purple"><i class="bi bi-cash-stack"></i></div>
+        <h3>Zero Upfront Costs Available</h3>
+        <p>Eligible homeowners may qualify for government-supported programs with no upfront payment required.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== PROCESS ===== -->
-<section class="process-section fade-in">
+<!-- ABOUT -->
+<section class="about-section fade-in">
   <div class="section-inner">
-    <h2 class="section-title">Simple 4-Step Process</h2>
-    <p class="section-subtitle">From first call to finished project, we make it easy</p>
-    <div class="process-grid">
-      <div class="process-step">
-        <div class="process-num">1</div>
-        <h3>Free Assessment</h3>
-        <p>Quick eligibility check to see what financing options and services are available for your home.</p>
+    <div class="about-grid">
+      <div class="about-img">
+        <img src="crew-03.jpeg" alt="Hello Projects Pro team at work" loading="lazy">
       </div>
-      <div class="process-step">
-        <div class="process-num">2</div>
-        <h3>In-Home Consultation</h3>
-        <p>A project specialist visits your home to understand your vision and provide a detailed estimate.</p>
-      </div>
-      <div class="process-step">
-        <div class="process-num">3</div>
-        <h3>Custom Project Plan</h3>
-        <p>We design the perfect renovation plan tailored to your needs, timeline, and budget.</p>
-      </div>
-      <div class="process-step">
-        <div class="process-num">4</div>
-        <h3>Quality Installation</h3>
-        <p>Our licensed team completes your project with final inspection and warranty coverage.</p>
+      <div>
+        <span class="section-tag"><i class="bi bi-info-circle-fill"></i> About Us</span>
+        <h2 class="section-title">25+ Years Helping California Families Access Home Improvement Programs</h2>
+        <p style="font-size:15px;color:var(--text-light);line-height:1.7;margin-bottom:8px;">At Hello Projects Pro, we help homeowners check eligibility for government-supported renovation programs designed to improve homes and reduce monthly utility costs. We handle the entire process &mdash; from submitting the application and planning the right upgrades to completing the renovation from start to finish.</p>
+        <p style="font-size:15px;color:var(--text-light);line-height:1.7;">Eligible upgrades may include roofing, solar panels, HVAC, insulation, windows, tankless water heaters, exterior paint, and landscaping improvements. Our experienced team has guided thousands of California families through this process, ensuring they maximize available incentives while achieving lasting home improvements.</p>
+        <div class="about-highlights">
+          <div class="about-badge"><i class="bi bi-clock-history"></i> 25+ Years Experience</div>
+          <div class="about-badge"><i class="bi bi-shield-check"></i> Licensed &amp; Insured</div>
+          <div class="about-badge"><i class="bi bi-building-check"></i> Government Program Partner</div>
+          <div class="about-badge"><i class="bi bi-tools"></i> Full Service Provider</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== SERVICES ===== -->
+<!-- SERVICES -->
 <section class="services-section fade-in">
   <div class="section-inner">
-    <h2 class="section-title">Our Expert Services</h2>
-    <p class="section-subtitle">Comprehensive home improvement solutions for every room</p>
-    <div class="services-grid">
-      <div class="svc-card">
-        <img src="kitchen.jpeg" alt="Kitchen Remodeling" loading="lazy">
-        <div class="svc-card-body">
-          <h3>Kitchen Remodeling</h3>
-          <p>Custom cabinets, countertops, flooring, and complete kitchen transformations.</p>
-        </div>
+    <div class="text-center">
+      <span class="section-tag"><i class="bi bi-tools"></i> What We Offer</span>
+      <h2 class="section-title">Energy Efficiency Upgrades</h2>
+      <p class="section-subtitle mx-auto">Complete energy efficiency improvements designed to reduce monthly utility costs through government-supported programs</p>
+    </div>
+    <div class="services-hero">
+      <div class="services-img">
+        <img src="roofing.jpeg" alt="Energy efficient home renovation" loading="lazy">
       </div>
-      <div class="svc-card">
-        <img src="bathroom.jpeg" alt="Bathroom Remodeling" loading="lazy">
-        <div class="svc-card-body">
-          <h3>Bathroom Remodeling</h3>
-          <p>Walk-in showers, vanities, tile work, and full bathroom renovations.</p>
-        </div>
-      </div>
-      <div class="svc-card">
-        <img src="roofing.jpeg" alt="Roofing" loading="lazy">
-        <div class="svc-card-body">
-          <h3>Roofing</h3>
-          <p>Roof repair, replacement, and energy-efficient upgrades for lasting protection.</p>
-        </div>
-      </div>
-      <div class="svc-card">
-        <img src="general-remodeling.jpeg" alt="General Remodeling" loading="lazy">
-        <div class="svc-card-body">
-          <h3>General Remodeling</h3>
-          <p>Room additions, ADUs, structural improvements, and whole-home renovations.</p>
-        </div>
-      </div>
-      <div class="svc-card">
-        <img src="electrical.jpeg" alt="Electrical Services" loading="lazy">
-        <div class="svc-card-body">
-          <h3>Electrical Services</h3>
-          <p>Panel upgrades, rewiring, smart home installations, and EV charger setup.</p>
-        </div>
-      </div>
-      <div class="svc-card">
-        <img src="landscaping.jpeg" alt="Landscaping" loading="lazy">
-        <div class="svc-card-body">
-          <h3>Landscaping</h3>
-          <p>Hardscaping, outdoor living spaces, irrigation, and drought-resistant design.</p>
+      <div>
+        <div class="services-list">
+          <div class="svc-item"><i class="bi bi-sun-fill"></i> Solar Panel Installation</div>
+          <div class="svc-item"><i class="bi bi-thermometer-half"></i> HVAC System Upgrades</div>
+          <div class="svc-item"><i class="bi bi-bricks"></i> Insulation Improvements</div>
+          <div class="svc-item"><i class="bi bi-window-stack"></i> Energy-Efficient Windows</div>
+          <div class="svc-item"><i class="bi bi-droplet-half"></i> Tankless Water Heaters</div>
+          <div class="svc-item"><i class="bi bi-cpu"></i> Smart Home Integration</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== MID CTA ===== -->
-<div class="mid-cta fade-in">
-  <h2>Ready to Transform Your Home?</h2>
-  <p>Check your eligibility for 0% financing in under 2 minutes</p>
+<!-- PROCESS -->
+<section class="process-section fade-in">
+  <div class="section-inner text-center">
+    <span class="section-tag"><i class="bi bi-list-ol"></i> How It Works</span>
+    <h2 class="section-title">Simple 4-Step Process to Lower Your Energy Bills</h2>
+    <p class="section-subtitle mx-auto">We handle everything from eligibility check to final inspection</p>
+  </div>
+  <div class="section-inner">
+    <div class="process-grid">
+      <div class="process-card">
+        <div class="process-num">1</div>
+        <h3>Eligibility Check</h3>
+        <p>Quick assessment to determine if your home qualifies for government-supported renovation programs</p>
+      </div>
+      <div class="process-card">
+        <div class="process-num">2</div>
+        <h3>Application Submission</h3>
+        <p>We handle all paperwork and submit your application to the appropriate government programs</p>
+      </div>
+      <div class="process-card">
+        <div class="process-num">3</div>
+        <h3>Custom Upgrade Plan</h3>
+        <p>Design energy-efficient improvements tailored to your home and maximum utility savings</p>
+      </div>
+      <div class="process-card">
+        <div class="process-num">4</div>
+        <h3>Professional Installation</h3>
+        <p>Licensed team completes all renovations with final inspection and warranty coverage</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MID CTA -->
+<div class="cta-banner fade-in">
+  <h2>Ready to Reduce Your Monthly Energy Bills?</h2>
+  <p>Check your eligibility for government-supported home renovations in under 2 minutes</p>
   <div class="cta-row">
-    <a href="#formWrapper" class="btn-cta white" onclick="scrollToForm()">Check Eligibility Now</a>
-    <a href="tel:+18887060080" class="btn-cta outline">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-      Call (888) 706-0080
-    </a>
+    <a href="#qualifyForm" class="btn btn-white" onclick="scrollToForm();return false;"><i class="bi bi-clipboard-check"></i> Check Eligibility Now</a>
+    <a href="tel:+18182130302" class="btn btn-outline-white"><i class="bi bi-telephone-fill"></i> Call (818) 213-0302</a>
   </div>
 </div>
 
-<!-- ===== PORTFOLIO ===== -->
+<!-- PORTFOLIO -->
 <section class="portfolio-section fade-in">
+  <div class="section-inner text-center">
+    <span class="section-tag"><i class="bi bi-images"></i> Our Work</span>
+    <h2 class="section-title">California Homes We've Transformed</h2>
+    <p class="section-subtitle mx-auto">Energy-efficient upgrades reducing monthly costs for families across California</p>
+  </div>
   <div class="section-inner">
-    <h2 class="section-title">Los Angeles Homes We've Transformed</h2>
-    <p class="section-subtitle">Real projects completed by our licensed team</p>
     <div class="portfolio-grid">
-      <div class="portfolio-img"><img src="crew-01.jpeg" alt="Project 1" loading="lazy"></div>
-      <div class="portfolio-img"><img src="crew-02.jpeg" alt="Project 2" loading="lazy"></div>
-      <div class="portfolio-img"><img src="crew-05.jpeg" alt="Project 3" loading="lazy"></div>
-      <div class="portfolio-img"><img src="crew-06.jpeg" alt="Project 4" loading="lazy"></div>
-      <div class="portfolio-img"><img src="crew-08.jpeg" alt="Project 5" loading="lazy"></div>
-      <div class="portfolio-img"><img src="crew-09.jpeg" alt="Project 6" loading="lazy"></div>
-      <div class="portfolio-img"><img src="crew-11.jpeg" alt="Project 7" loading="lazy"></div>
-      <div class="portfolio-img"><img src="crew-12.jpeg" alt="Project 8" loading="lazy"></div>
+      <div class="portfolio-item">
+        <img src="crew-01.jpeg" alt="Home renovation project" loading="lazy">
+        <div class="p-overlay"><span><i class="bi bi-eye"></i> View Project</span></div>
+      </div>
+      <div class="portfolio-item">
+        <img src="crew-05.jpeg" alt="Energy efficiency upgrade" loading="lazy">
+        <div class="p-overlay"><span><i class="bi bi-eye"></i> View Project</span></div>
+      </div>
+      <div class="portfolio-item">
+        <img src="crew-08.jpeg" alt="Roofing installation" loading="lazy">
+        <div class="p-overlay"><span><i class="bi bi-eye"></i> View Project</span></div>
+      </div>
+      <div class="portfolio-item">
+        <img src="crew-09.jpeg" alt="Home improvement project" loading="lazy">
+        <div class="p-overlay"><span><i class="bi bi-eye"></i> View Project</span></div>
+      </div>
+      <div class="portfolio-item">
+        <img src="crew-11.jpeg" alt="Solar panel installation" loading="lazy">
+        <div class="p-overlay"><span><i class="bi bi-eye"></i> View Project</span></div>
+      </div>
+      <div class="portfolio-item">
+        <img src="crew-02.jpeg" alt="HVAC system upgrade" loading="lazy">
+        <div class="p-overlay"><span><i class="bi bi-eye"></i> View Project</span></div>
+      </div>
+      <div class="portfolio-item">
+        <img src="crew-06.jpeg" alt="Window installation" loading="lazy">
+        <div class="p-overlay"><span><i class="bi bi-eye"></i> View Project</span></div>
+      </div>
+      <div class="portfolio-item">
+        <img src="crew-12.jpeg" alt="Complete home renovation" loading="lazy">
+        <div class="p-overlay"><span><i class="bi bi-eye"></i> View Project</span></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ===== TESTIMONIALS ===== -->
+<!-- TESTIMONIALS -->
 <section class="testimonials-section fade-in">
+  <div class="section-inner text-center">
+    <span class="section-tag"><i class="bi bi-chat-quote-fill"></i> Testimonials</span>
+    <h2 class="section-title">What Our Customers Say</h2>
+    <p class="section-subtitle mx-auto">Real results from homeowners who worked with us</p>
+  </div>
   <div class="section-inner">
-    <h2 class="section-title">What Our Clients Say</h2>
-    <p class="section-subtitle">Hear from homeowners who transformed their homes with us</p>
     <div class="testimonial-grid">
       <div class="testimonial-card">
-        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="testimonial-text">"Hello Projects Pro remodeled our entire kitchen and the results are stunning. They handled everything from permits to final inspection. The 0% financing made it possible for us to do the full upgrade we wanted."</div>
-        <div class="testimonial-author">Maria G.</div>
-        <div class="testimonial-loc">Encino, CA</div>
+        <div class="testimonial-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+        <div class="testimonial-text">"Hello Projects Pro helped us get approved for the government program and installed solar panels, new HVAC, and insulation. Our monthly utility bill dropped by $180 and our home is so much more comfortable."</div>
+        <div class="testimonial-author">Maria C.</div>
+        <div class="testimonial-loc"><i class="bi bi-geo-alt-fill"></i> Los Angeles, CA</div>
       </div>
       <div class="testimonial-card">
-        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="testimonial-text">"Professional team from start to finish. They replaced our roof and installed new windows. Our energy bills dropped significantly and the house looks brand new. Highly recommend!"</div>
+        <div class="testimonial-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+        <div class="testimonial-text">"They handled everything from the application to the final inspection. The whole process was stress-free and now we're saving over $200 per month on energy costs. Highly recommend their services."</div>
         <div class="testimonial-author">David R.</div>
-        <div class="testimonial-loc">Sherman Oaks, CA</div>
+        <div class="testimonial-loc"><i class="bi bi-geo-alt-fill"></i> Encino, CA</div>
       </div>
       <div class="testimonial-card">
-        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="testimonial-text">"We were worried about the cost of our bathroom remodel, but they found us a financing option with no money down. The work was completed on time and the quality exceeded our expectations."</div>
+        <div class="testimonial-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+        <div class="testimonial-text">"Professional team that knows the government programs inside and out. They got us approved quickly and the quality of work on our roof, windows, and solar installation exceeded expectations."</div>
         <div class="testimonial-author">Jennifer L.</div>
-        <div class="testimonial-loc">Tarzana, CA</div>
+        <div class="testimonial-loc"><i class="bi bi-geo-alt-fill"></i> Sherman Oaks, CA</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== FAQ ===== -->
+<!-- FAQ -->
 <section class="faq-section fade-in">
-  <div class="section-inner">
+  <div class="section-inner text-center">
+    <span class="section-tag"><i class="bi bi-question-circle-fill"></i> FAQ</span>
     <h2 class="section-title">Frequently Asked Questions</h2>
+  </div>
+  <div class="section-inner">
     <div class="faq-list">
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">How do I know if I qualify for 0% financing? <span class="faq-arrow">&#9660;</span></div>
-        <div class="faq-a">Eligibility depends on factors like home ownership, credit profile, and project scope. Our quick assessment determines your qualification status and available financing options in under 2 minutes. There's no obligation and no impact on your credit score to check.</div>
+        <div class="faq-q" onclick="toggleFaq(this)">How do I know if I qualify for government-supported renovation programs? <i class="bi bi-chevron-down"></i></div>
+        <div class="faq-a">Eligibility depends on factors like home age, current energy efficiency, income level, and location. Our quick assessment determines your qualification status and available programs in under 2 minutes.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">What types of renovations do you handle? <span class="faq-arrow">&#9660;</span></div>
-        <div class="faq-a">We offer complete home improvement services including kitchen remodeling, bathroom remodeling, roofing, windows and doors, general remodeling, electrical services, and landscaping. Our licensed team handles everything from small upgrades to full-home renovations.</div>
+        <div class="faq-q" onclick="toggleFaq(this)">What types of upgrades are covered by these programs? <i class="bi bi-chevron-down"></i></div>
+        <div class="faq-a">Eligible upgrades include roofing, solar panels, HVAC systems, insulation, energy-efficient windows, tankless water heaters, exterior paint, and landscaping improvements designed to reduce energy costs.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Do I need to pay anything upfront? <span class="faq-arrow">&#9660;</span></div>
-        <div class="faq-a">Many of our financing programs offer zero down payment options for qualified homeowners. We'll explain all available payment plans during your free consultation so you can choose what works best for your budget.</div>
+        <div class="faq-q" onclick="toggleFaq(this)">Do I need to pay upfront for the renovations? <i class="bi bi-chevron-down"></i></div>
+        <div class="faq-a">Many government-supported programs offer zero upfront cost options for qualified homeowners. We'll explain all payment options during your eligibility consultation.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">How long does a typical renovation take? <span class="faq-arrow">&#9660;</span></div>
-        <div class="faq-a">Timelines vary by project scope. A bathroom remodel typically takes 2-3 weeks, a kitchen 4-6 weeks, and roofing 1-2 weeks. We provide a detailed timeline during your consultation and keep you updated throughout the process.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Are you licensed and insured? <span class="faq-arrow">&#9660;</span></div>
-        <div class="faq-a">Yes. Hello Projects Pro holds California State License Board (CSLB) License #1135440. We are fully licensed, bonded, and insured. You can verify our license at <a href="https://www.cslb.ca.gov/onlineservices/checklicenseII/checklicense.aspx" target="_blank" rel="noopener">cslb.ca.gov</a>.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">What areas do you serve? <span class="faq-arrow">&#9660;</span></div>
-        <div class="faq-a">We serve the greater Los Angeles area including Reseda, Encino, Sherman Oaks, Tarzana, Woodland Hills, Northridge, Van Nuys, Studio City, and surrounding communities in the San Fernando Valley and beyond.</div>
+        <div class="faq-q" onclick="toggleFaq(this)">How long does the application and renovation process take? <i class="bi bi-chevron-down"></i></div>
+        <div class="faq-a">The application process typically takes 2-3 weeks for approval. Renovation timelines vary by project scope but most energy efficiency upgrades are completed within 4-6 weeks of approval.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== FINAL CTA ===== -->
-<div class="mid-cta fade-in">
-  <h2>Start Your Home Renovation Today</h2>
-  <p>Free eligibility check &mdash; no obligation, no credit impact</p>
+<!-- FINAL CTA -->
+<div class="cta-banner fade-in">
+  <h2>Start Saving on Energy Bills This Month</h2>
+  <p>Free eligibility check available today &mdash; serving California homeowners for 25+ years</p>
   <div class="cta-row">
-    <a href="#formWrapper" class="btn-cta white" onclick="scrollToForm()">Check My Eligibility</a>
-    <a href="tel:+18887060080" class="btn-cta outline">Call (888) 706-0080</a>
+    <a href="#qualifyForm" class="btn btn-white" onclick="scrollToForm();return false;"><i class="bi bi-clipboard-check"></i> Check My Eligibility</a>
+    <a href="tel:+18182130302" class="btn btn-outline-white"><i class="bi bi-telephone-fill"></i> Call (818) 213-0302</a>
   </div>
 </div>
 
-<!-- ===== FOOTER ===== -->
+<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-logo"><img src="logo.jpeg" alt="Hello Projects Pro"></div>
     <p><strong>Hello Projects Pro</strong> &mdash; Patagon Consulting Inc.</p>
-    <p>Licensed General Contractor &bull; CSLB #1135440</p>
-    <p>Serving the Greater Los Angeles Area</p>
-    <p><a href="tel:+18887060080">(888) 706-0080</a> &bull; <a href="mailto:info@helloprojectspro.com">info@helloprojectspro.com</a></p>
+    <p><i class="bi bi-shield-check"></i> Licensed General Contractor &bull; CSLB #1135440</p>
+    <p>Serving California Homeowners</p>
+    <p style="margin-top:10px;">
+      <a href="tel:+18182130302"><i class="bi bi-telephone-fill"></i> (818) 213-0302</a> &bull;
+      <a href="mailto:info@helloprojectspro.com"><i class="bi bi-envelope-fill"></i> info@helloprojectspro.com</a>
+    </p>
     <div class="footer-links">
       <a href="privacy.html">Privacy Policy</a>
       <a href="terms.html">Terms of Service</a>
@@ -801,35 +926,26 @@
   var utmContent = params.get('utm_content') || '';
   var utmTerm = params.get('utm_term') || '';
 
-  // Store GCLID in session for cross-page tracking
   if (gclid) sessionStorage.setItem('hpp_gclid', gclid);
   else gclid = sessionStorage.getItem('hpp_gclid') || '';
 
-  // GA4 helper
   function ga4(ev, p) { if (typeof gtag === 'function') gtag('event', ev, p || {}); }
-  // Meta Pixel helper
   function fb(ev, p) { if (typeof fbq === 'function') fbq('track', ev, p || {}); }
 
-  // Track page view with source
   ga4('qualify_page_view', { source: utmSource, medium: utmMedium, campaign: utmCampaign, has_gclid: gclid ? 'yes' : 'no' });
 
   // ===== FORM STATE =====
   var currentStep = 1;
   var formData = { zip: '', homeowner: '', homeType: '', yearBuilt: '', services: [], firstName: '', lastName: '', phone: '', email: '' };
 
-  // ===== STEP NAVIGATION =====
   function showStep(n) {
-    for (var i = 1; i <= 4; i++) {
-      document.getElementById('step' + i).classList.remove('active');
-    }
+    for (var i = 1; i <= 4; i++) document.getElementById('step' + i).classList.remove('active');
     document.getElementById('step' + n).classList.add('active');
-    document.getElementById('stepNum').textContent = n;
     document.getElementById('progressFill').style.width = (n * 25) + '%';
     currentStep = n;
   }
 
   function nextStep(from) {
-    // Validate current step
     if (from === 1) {
       var zip = document.getElementById('zipCode').value.trim();
       if (!/^\d{5}$/.test(zip)) {
@@ -843,63 +959,46 @@
       ga4('qualify_step_1', { zip_prefix: zip.substring(0, 3) });
       fb('AddToCart', { content_name: 'Step 1 - ZIP', value: 1 });
     }
-
     if (from === 2) {
-      var grid1 = document.querySelector('[data-field="homeowner"] .selected');
-      var grid2 = document.querySelector('[data-field="homeType"] .selected');
-      var grid3 = document.querySelector('[data-field="yearBuilt"] .selected');
-      if (!grid1 || !grid2 || !grid3) {
-        document.getElementById('step2Error').style.display = 'block';
-        return;
-      }
+      var g1 = document.querySelector('[data-field="homeowner"] .selected');
+      var g2 = document.querySelector('[data-field="homeType"] .selected');
+      var g3 = document.querySelector('[data-field="yearBuilt"] .selected');
+      if (!g1 || !g2 || !g3) { document.getElementById('step2Error').style.display = 'block'; return; }
       document.getElementById('step2Error').style.display = 'none';
-      formData.homeowner = grid1.getAttribute('data-value');
-      formData.homeType = grid2.getAttribute('data-value');
-      formData.yearBuilt = grid3.getAttribute('data-value');
+      formData.homeowner = g1.getAttribute('data-value');
+      formData.homeType = g2.getAttribute('data-value');
+      formData.yearBuilt = g3.getAttribute('data-value');
       ga4('qualify_step_2', { homeowner: formData.homeowner, home_type: formData.homeType });
       fb('AddToCart', { content_name: 'Step 2 - Home Details', value: 2 });
     }
-
     if (from === 3) {
-      var selected = document.querySelectorAll('#serviceGrid .selected');
-      if (selected.length === 0) {
-        document.getElementById('step3Error').style.display = 'block';
-        return;
-      }
+      var sel = document.querySelectorAll('#serviceGrid .selected');
+      if (sel.length === 0) { document.getElementById('step3Error').style.display = 'block'; return; }
       document.getElementById('step3Error').style.display = 'none';
       formData.services = [];
-      selected.forEach(function(el) { formData.services.push(el.getAttribute('data-service')); });
+      sel.forEach(function(el) { formData.services.push(el.getAttribute('data-service')); });
       ga4('qualify_step_3', { services: formData.services.join(', '), count: formData.services.length });
       fb('InitiateCheckout', { content_name: 'Step 3 - Services', num_items: formData.services.length });
     }
-
     showStep(from + 1);
-    // Scroll form into view on mobile
-    document.getElementById('formWrapper').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.getElementById('qualifyForm').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
-  function prevStep(from) {
-    showStep(from - 1);
-  }
+  function prevStep(from) { showStep(from - 1); }
 
-  // ===== OPTION BUTTONS =====
   function selectOption(el) {
     var siblings = el.parentElement.querySelectorAll('.option-btn');
     siblings.forEach(function(s) { s.classList.remove('selected'); });
     el.classList.add('selected');
   }
 
-  // ===== SERVICE CHIPS (multi-select) =====
-  function toggleService(el) {
-    el.classList.toggle('selected');
-  }
+  function toggleService(el) { el.classList.toggle('selected'); }
 
-  // ===== SCROLL TO FORM =====
   function scrollToForm() {
-    document.getElementById('formWrapper').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    document.getElementById('qualifyForm').scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 
-  // ===== FORM SUBMISSION =====
+  // ===== SUBMIT =====
   var CRM_WEBHOOK = 'https://patagon-crm.onrender.com/api/webhooks/lead';
 
   async function submitForm() {
@@ -915,6 +1014,8 @@
       return;
     }
     document.getElementById('step4Error').style.display = 'none';
+    document.getElementById('firstName').classList.remove('error');
+    document.getElementById('phone').classList.remove('error');
 
     formData.firstName = fn;
     formData.lastName = ln;
@@ -923,12 +1024,12 @@
 
     var btn = document.getElementById('submitBtn');
     btn.disabled = true;
-    btn.textContent = 'Checking...';
+    btn.innerHTML = '<i class="bi bi-hourglass-split"></i> Checking...';
 
     var notes = [
       'Home: ' + formData.homeType + ' (' + formData.yearBuilt + ')',
       'Homeowner: ' + formData.homeowner,
-      'Services: ' + formData.services.join(', ')
+      'Upgrades: ' + formData.services.join(', ')
     ].join(' | ');
 
     var payload = {
@@ -937,7 +1038,7 @@
       phone: formData.phone,
       email: formData.email || null,
       zip: formData.zip,
-      project_type: formData.services[0] || 'General',
+      project_type: formData.services[0] || 'Energy Efficiency',
       source: utmSource ? ('Google Ads - ' + utmCampaign) : 'Qualification Page',
       form_name: 'HPP Eligibility Check',
       campaign: utmCampaign || 'HPP Qualify',
@@ -957,78 +1058,41 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       });
-
       if (response.ok) {
-        // Show success
         document.getElementById('step4').classList.remove('active');
         document.getElementById('formSuccess').style.display = 'block';
-        document.getElementById('formHeaderTitle').textContent = 'Assessment Complete';
-        document.getElementById('formHeaderSub').textContent = 'Thank you, ' + formData.firstName + '!';
+        document.getElementById('formTitle').innerHTML = '<i class="bi bi-check-circle-fill"></i> Assessment Complete';
+        document.getElementById('formSub').textContent = 'Thank you, ' + formData.firstName + '!';
         document.getElementById('progressFill').style.width = '100%';
-
-        // Track conversion
-        ga4('generate_lead', {
-          event_category: 'qualify_form',
-          event_label: formData.services.join(', '),
-          value: 1,
-          currency: 'USD'
-        });
-        fb('Lead', {
-          content_name: 'Eligibility Check',
-          content_category: formData.services[0],
-          value: 1,
-          currency: 'USD'
-        });
-
-        // Google Ads conversion (if gtag available)
-        if (typeof gtag === 'function') {
-          gtag('event', 'conversion', {
-            send_to: 'AW-CONVERSION_ID/CONVERSION_LABEL',
-            value: 1.0,
-            currency: 'USD'
-          });
-        }
-      } else {
-        throw new Error('Server error');
-      }
+        ga4('generate_lead', { event_category: 'qualify_form', event_label: formData.services.join(', '), value: 1, currency: 'USD' });
+        fb('Lead', { content_name: 'Eligibility Check', content_category: formData.services[0], value: 1, currency: 'USD' });
+        if (typeof gtag === 'function') gtag('event', 'conversion', { send_to: 'AW-CONVERSION_ID/CONVERSION_LABEL', value: 1.0, currency: 'USD' });
+      } else { throw new Error('Server error'); }
     } catch (err) {
-      alert('Something went wrong. Please call us directly at (888) 706-0080.');
+      alert('Something went wrong. Please call us directly at (818) 213-0302.');
       btn.disabled = false;
-      btn.textContent = 'Check My Eligibility \u2713';
+      btn.innerHTML = '<i class="bi bi-check-circle"></i> Check My Eligibility';
     }
   }
 
-  // ===== FAQ ACCORDION =====
-  function toggleFaq(el) {
-    el.parentElement.classList.toggle('open');
-  }
+  // ===== FAQ =====
+  function toggleFaq(el) { el.parentElement.classList.toggle('open'); }
 
-  // ===== FADE IN ON SCROLL =====
+  // ===== FADE IN =====
   var fadeEls = document.querySelectorAll('.fade-in');
   if ('IntersectionObserver' in window) {
     var obs = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          obs.unobserve(entry.target);
-        }
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); obs.unobserve(entry.target); }
       });
     }, { threshold: 0.1 });
     fadeEls.forEach(function(el) { obs.observe(el); });
-  } else {
-    fadeEls.forEach(function(el) { el.classList.add('visible'); });
-  }
+  } else { fadeEls.forEach(function(el) { el.classList.add('visible'); }); }
 
-  // ===== ENTER KEY SUPPORT =====
-  document.getElementById('zipCode').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') { e.preventDefault(); nextStep(1); }
-  });
-  document.getElementById('phone').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') { e.preventDefault(); submitForm(); }
-  });
-  document.getElementById('email').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') { e.preventDefault(); submitForm(); }
-  });
+  // ===== ENTER KEY =====
+  document.getElementById('zipCode').addEventListener('keydown', function(e) { if (e.key === 'Enter') { e.preventDefault(); nextStep(1); } });
+  document.getElementById('phone').addEventListener('keydown', function(e) { if (e.key === 'Enter') { e.preventDefault(); submitForm(); } });
+  document.getElementById('email').addEventListener('keydown', function(e) { if (e.key === 'Enter') { e.preventDefault(); submitForm(); } });
 
   // ===== PHONE FORMATTING =====
   document.getElementById('phone').addEventListener('input', function(e) {
