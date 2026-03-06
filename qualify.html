@@ -445,42 +445,99 @@
 
     /* ===== MOBILE ===== */
     @media (max-width: 768px) {
-      .hero { padding: 80px 16px 40px; }
-      .hero-inner { grid-template-columns: 1fr; gap: 28px; }
-      .hero h1 { font-size: 28px; }
-      .hero-sub { font-size: 16px; }
+      .hero { padding: 80px 12px 32px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 24px; }
+      .hero h1 { font-size: 26px; }
+      .hero-sub { font-size: 15px; margin-bottom: 20px; }
       .hero-text { text-align: center; }
       .hero-badges { justify-content: center; }
       .hero-ctas { justify-content: center; }
       .header-cta { display: none; }
-      .form-card { max-width: 100%; }
-      .form-body { padding: 24px 18px; }
-      .step-question { font-size: 18px; }
-      .name-row { grid-template-columns: 1fr; }
-      .trust-inner { gap: 20px; }
-      .section-title { font-size: 24px; }
-      .values-grid { grid-template-columns: 1fr; }
-      .about-grid { grid-template-columns: 1fr; }
-      .about-img img { height: 240px; }
-      .services-hero { grid-template-columns: 1fr; }
+      .header-inner { padding: 8px 12px; }
+      .header-logo img { height: 36px; }
+      .header-phone { font-size: 13px; gap: 4px; }
+      .header-phone i { font-size: 14px; }
+      .lang-switch { padding: 5px 10px; font-size: 11px; gap: 4px; }
+      .header-right { gap: 8px; }
+      .form-card { max-width: 100%; margin: 0; border-radius: 12px; }
+      .form-top { padding: 14px 16px; }
+      .form-top h2 { font-size: 16px; }
+      .form-top p { font-size: 12px; }
+      .form-body { padding: 20px 16px; }
+      .step-indicator { font-size: 11px; }
+      .step-question { font-size: 17px; }
+      .step-helper { font-size: 13px; }
+      .name-row { grid-template-columns: 1fr; gap: 10px; }
+      .form-input { padding: 12px 14px; font-size: 16px; }
+      .btn-submit { padding: 14px; font-size: 16px; }
+      .btn-next { padding: 12px 20px; font-size: 15px; }
+      .btn-back { padding: 12px 16px; font-size: 14px; }
+      .form-actions { gap: 10px; }
+      .trust-strip { padding: 16px 12px; }
+      .trust-inner { gap: 16px; }
+      .trust-item .t-icon { width: 36px; height: 36px; font-size: 16px; }
+      .trust-item .t-label { font-size: 12px; }
+      .trust-item .t-sub { font-size: 11px; }
+      .section-title { font-size: 22px; }
+      .section-subtitle { font-size: 14px; }
+      .values-grid { grid-template-columns: 1fr; gap: 14px; }
+      .value-card { padding: 20px; }
+      .value-card h3 { font-size: 15px; }
+      .value-card p { font-size: 13px; }
+      .about-grid { grid-template-columns: 1fr; gap: 24px; }
+      .about-img img { height: 200px; }
+      .about-highlights { grid-template-columns: 1fr; gap: 8px; }
+      .services-hero { grid-template-columns: 1fr; gap: 20px; }
+      .services-img img { height: 200px; }
       .services-list { grid-template-columns: 1fr; }
-      .process-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
-      .portfolio-grid { grid-template-columns: 1fr 1fr; }
+      .process-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .process-num { width: 44px; height: 44px; font-size: 18px; }
+      .process-card h3 { font-size: 14px; }
+      .process-card p { font-size: 12px; }
+      .portfolio-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
       .testimonial-grid { grid-template-columns: 1fr; }
-      .service-grid { grid-template-columns: 1fr 1fr; }
+      .testimonial-card { padding: 20px; }
+      .service-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .service-chip { padding: 10px 12px; font-size: 13px; gap: 8px; }
+      .service-chip .chip-icon { font-size: 16px; }
+      .option-grid { gap: 8px; }
       .option-grid.cols-3 { grid-template-columns: 1fr 1fr; }
-      section { padding: 44px 16px; }
-      .cta-banner { padding: 36px 16px; }
-      .cta-banner h2 { font-size: 22px; }
+      .option-btn { padding: 12px 14px; font-size: 13px; }
+      .option-btn i { font-size: 20px; }
+      section { padding: 40px 12px; }
+      .cta-banner { padding: 32px 12px; }
+      .cta-banner h2 { font-size: 20px; }
+      .cta-banner p { font-size: 14px; }
+      .cta-row .btn { padding: 12px 20px; font-size: 14px; }
+      .faq-q { padding: 14px 16px; font-size: 14px; }
+      .faq-a { padding: 0 16px 14px; font-size: 13px; }
+      .footer { padding: 30px 12px; }
+      .footer-links { gap: 12px; font-size: 12px; flex-wrap: wrap; }
+      .consent label { font-size: 11px; }
+      .success-phone { padding: 12px 20px; font-size: 14px; }
+      .form-success h3 { font-size: 19px; }
+      .form-success p { font-size: 14px; }
     }
 
     @media (max-width: 420px) {
-      .hero h1 { font-size: 24px; }
-      .hero-badge { font-size: 11px; padding: 5px 10px; }
+      .hero { padding: 72px 10px 28px; }
+      .hero h1 { font-size: 22px; }
+      .hero-sub { font-size: 14px; }
+      .hero-badge { font-size: 11px; padding: 4px 10px; }
+      .hero-ctas { flex-direction: column; align-items: center; }
+      .hero-ctas .btn { width: 100%; justify-content: center; }
+      .header-phone span { display: none; }
       .process-grid { grid-template-columns: 1fr; }
       .option-grid.cols-2 { grid-template-columns: 1fr; }
       .option-grid.cols-3 { grid-template-columns: 1fr; }
       .service-grid { grid-template-columns: 1fr; }
+      .service-chip { padding: 12px 14px; font-size: 14px; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .trust-inner { flex-direction: column; gap: 12px; }
+      .form-body { padding: 16px 14px; }
+      .form-top { padding: 12px 14px; }
+      .form-top h2 { font-size: 15px; }
+      .about-highlights { grid-template-columns: 1fr; }
     }
 
     /* Fade in */
@@ -495,7 +552,7 @@
   <div class="header-inner">
     <a href="index.html" class="header-logo"><img src="logo.png" alt="Hello Projects Pro"></a>
     <div class="header-right">
-      <a href="tel:+18182130302" class="header-phone"><i class="bi bi-telephone-fill"></i> (818) 213-0302</a>
+      <a href="tel:+18182130302" class="header-phone"><i class="bi bi-telephone-fill"></i> <span>(818) 213-0302</span></a>
       <a href="qualify-es.html" class="lang-switch"><i class="bi bi-translate"></i> Español</a>
       <a href="#qualifyForm" class="header-cta" onclick="scrollToForm();return false;"><i class="bi bi-clipboard-check"></i> Free Quote</a>
     </div>
