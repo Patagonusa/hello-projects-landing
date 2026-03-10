@@ -715,6 +715,156 @@
       color: #94a3b8;
     }
 
+    /* ===== FINANCING ===== */
+    .financing {
+      padding: 80px 24px;
+      background: var(--bg-light);
+    }
+
+    .financing-banner {
+      max-width: 1000px;
+      margin: 0 auto 48px;
+    }
+
+    .financing-banner-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      background: linear-gradient(135deg, #0c4e9e 0%, #1E40AF 100%);
+      color: #fff;
+      padding: 32px 40px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .financing-banner-text h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .financing-banner-text p {
+      font-size: 15px;
+      color: #bdd5f5;
+      margin: 0;
+    }
+
+    .financing-wt-logo {
+      max-width: 150px;
+      flex-shrink: 0;
+    }
+
+    .financing-grid {
+      max-width: 1000px;
+      margin: 0 auto 48px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .financing-card {
+      background: var(--white);
+      padding: 28px 20px;
+      border-radius: var(--radius);
+      text-align: center;
+      box-shadow: var(--shadow);
+      border: 2px solid transparent;
+      transition: all 0.3s;
+    }
+
+    .financing-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--blue);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .financing-icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .financing-card h4 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .financing-card p {
+      font-size: 13px;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .financing-calculator {
+      max-width: 800px;
+      margin: 0 auto 24px;
+      text-align: center;
+    }
+
+    .financing-calculator h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .financing-calculator p {
+      color: var(--text-light);
+      margin-bottom: 24px;
+    }
+
+    .calculator-wrapper {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      padding: 8px;
+    }
+
+    .calculator-wrapper iframe {
+      border-radius: 8px;
+    }
+
+    .financing-disclaimer {
+      max-width: 800px;
+      margin: 32px auto 0;
+      text-align: center;
+    }
+
+    .financing-disclaimer p {
+      font-size: 11px;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    .financing-disclaimer a {
+      color: var(--blue);
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .financing-banner-inner {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px;
+      }
+      .financing-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .financing-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* ===== GALLERY ===== */
     .gallery {
       padding: 80px 24px;
@@ -1206,6 +1356,7 @@
       </a>
       <nav class="header-nav">
         <a href="index.html" class="nav-link">Home</a>
+        <a href="#financing" class="nav-link">Financing</a>
         <a href="es.html" class="lang-switch">Espa&ntilde;ol</a>
         <a href="quote.html" class="btn btn-blue">Get Free Quote</a>
         <a href="https://www.salesdispatch.ai/login" class="nav-link" target="_blank" rel="noopener">Customer Access</a>
@@ -1377,6 +1528,69 @@
           <p>Serving Los Angeles and surrounding areas.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- FINANCING — Wisetack -->
+  <section class="financing" id="financing">
+    <div class="section-header fade-in">
+      <div class="section-label">Flexible Financing</div>
+      <h2>Make Your Project Affordable</h2>
+      <p>We've partnered with Wisetack to offer easy monthly payment options. Pre-qualify in minutes with no impact to your credit score.</p>
+    </div>
+
+    <!-- Financing Banner -->
+    <div class="financing-banner fade-in">
+      <div class="financing-banner-inner">
+        <div class="financing-banner-text">
+          <h3>0% APR Financing Available</h3>
+          <p>Split your project into low monthly payments — no hidden fees, no compounding interest</p>
+        </div>
+        <img src="https://cdn.prod.website-files.com/5f194315e6b47c1697925302/685d2668c95beb756512dd46_logo%20(1).svg" alt="Wisetack" class="financing-wt-logo">
+      </div>
+    </div>
+
+    <!-- Value cards -->
+    <div class="financing-grid fade-in">
+      <div class="financing-card">
+        <div class="financing-icon">⚡</div>
+        <h4>Quick Application</h4>
+        <p>Apply in about 60 seconds. Get pre-qualified with multiple offers instantly.</p>
+      </div>
+      <div class="financing-card">
+        <div class="financing-icon">🛡️</div>
+        <h4>No Credit Impact</h4>
+        <p>Checking your options won't affect your credit score. Only a soft pull to pre-qualify.</p>
+      </div>
+      <div class="financing-card">
+        <div class="financing-icon">💰</div>
+        <h4>Flexible Terms</h4>
+        <p>Finance up to $25,000 with terms from 3 to 60 months. APR from 0% to 35.9%.*</p>
+      </div>
+      <div class="financing-card">
+        <div class="financing-icon">✅</div>
+        <h4>No Hidden Fees</h4>
+        <p>Transparent pricing — no prepayment penalties, no hidden charges, no surprises.</p>
+      </div>
+    </div>
+
+    <!-- Payment Calculator -->
+    <div class="financing-calculator fade-in">
+      <h3>Payment Calculator</h3>
+      <p>Estimate your monthly payments below:</p>
+      <div class="calculator-wrapper">
+        <iframe frameborder="0" width="100%" height="700" src="https://wisetack.us/#/payment_calculator?type=HS" title="Wisetack Payment Calculator"></iframe>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="financing-cta fade-in" style="text-align:center; margin-top:40px;">
+      <a href="qualify.html" class="btn btn-primary" style="font-size:16px; padding:16px 40px;">Pre-Qualify Now — No Credit Impact</a>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="financing-disclaimer fade-in">
+      <p>*All financing is subject to credit approval. Your terms may vary. Payment options through Wisetack are provided by our lending partners. For example, a $1,200 purchase could cost $104.89/mo for 12 months at 8.9% APR, or $400/mo for 3 months at 0% APR. Offers range from 0–35.9% APR based on creditworthiness. No other financing charges or participation fees. See additional terms at <a href="https://wisetack.com/faqs" target="_blank" rel="noopener">wisetack.com/faqs</a>.</p>
     </div>
   </section>
 
