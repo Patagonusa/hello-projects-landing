@@ -684,39 +684,52 @@
       background: var(--bg-light);
     }
 
-    .financing-banner {
+    .financing-banner-link {
+      display: block;
       max-width: 1000px;
       margin: 0 auto 48px;
+      text-decoration: none;
+      transition: transform 0.3s, box-shadow 0.3s;
+      border-radius: var(--radius);
     }
 
-    .financing-banner-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      background: linear-gradient(135deg, #0c4e9e 0%, #1E40AF 100%);
+    .financing-banner-link:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(21,110,215,0.3);
+    }
+
+    .financing-banner-wt {
+      background-color: #156ed7;
       color: #fff;
-      padding: 32px 40px;
       border-radius: var(--radius);
+      padding: 28px 32px;
       box-shadow: var(--shadow-lg);
     }
 
-    .financing-banner-text h3 {
+    .financing-banner-wt-content {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .financing-banner-wt-title {
       font-family: 'Poppins', sans-serif;
-      font-size: 24px;
+      font-size: 32px;
       font-weight: 800;
-      margin-bottom: 6px;
+      margin: 0 0 8px;
+      line-height: 1.4;
     }
 
-    .financing-banner-text p {
+    .financing-banner-wt-sub {
       font-size: 15px;
-      color: #bdd5f5;
       margin: 0;
+      color: rgba(255,255,255,0.9);
     }
 
-    .financing-wt-logo {
-      max-width: 150px;
-      flex-shrink: 0;
+    @media (max-width: 767px) {
+      .financing-banner-wt { padding: 24px; }
+      .financing-banner-wt-title { font-size: 26px; }
     }
 
     .financing-grid {
@@ -1449,15 +1462,17 @@
     </div>
 
     <!-- Financing Banner -->
-    <div class="financing-banner fade-in">
-      <div class="financing-banner-inner">
-        <div class="financing-banner-text">
-          <h3>Financiamiento con 0% APR Disponible</h3>
-          <p>Divida su proyecto en pagos mensuales bajos &mdash; sin cargos ocultos, sin inter&eacute;s compuesto</p>
+    <a href="https://wisetack.us/#/uomxp4b/prequalify" target="_blank" rel="noopener" class="financing-banner-link fade-in">
+      <div class="financing-banner-wt">
+        <div class="financing-banner-wt-content">
+          <div style="margin-bottom:8px;">
+            <img src="https://cdn.prod.website-files.com/5f194315e6b47c1697925302/685d26d263b500ec2705677b_logo%20(2).svg" loading="lazy" alt="Wisetack" style="max-width:150px;">
+          </div>
+          <h3 class="financing-banner-wt-title">&iexcl;NUEVO! Ofrecemos financiamiento.</h3>
+          <p class="financing-banner-wt-sub">&iexcl;Cont&aacute;ctenos para saber m&aacute;s sobre c&oacute;mo financiar su pr&oacute;ximo proyecto!</p>
         </div>
-        <img src="https://cdn.prod.website-files.com/5f194315e6b47c1697925302/685d2668c95beb756512dd46_logo%20(1).svg" alt="Wisetack" class="financing-wt-logo">
       </div>
-    </div>
+    </a>
 
     <!-- Value cards -->
     <div class="financing-grid fade-in">
