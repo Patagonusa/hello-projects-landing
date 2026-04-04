@@ -929,5 +929,27 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbo
 init();
 </script>
 
+<!-- Text Us Floating Button -->
+<style>
+#text-us-float{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);z-index:9996;font-family:'Inter',-apple-system,sans-serif;display:block;}
+#text-us-btn{display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,#2563eb,#3b82f6);color:#fff;text-decoration:none;padding:12px 24px;border-radius:50px;font-size:14px;font-weight:700;box-shadow:0 4px 20px rgba(37,99,235,0.35);transition:all 0.25s;border:none;cursor:pointer;}
+#text-us-btn:hover{background:linear-gradient(135deg,#1d4ed8,#2563eb);transform:translateY(-2px);box-shadow:0 6px 28px rgba(37,99,235,0.45);}
+#text-us-btn svg{width:20px;height:20px;flex-shrink:0;}
+@media(max-width:768px){
+  #text-us-float{bottom:16px;}
+  #text-us-btn{padding:10px 18px;font-size:13px;}
+}
+</style>
+<div id="text-us-float">
+  <a id="text-us-btn" href="sms:+18887060080&body=Hi%2C%20I%27m%20interested%20in%20a%20product%20from%20your%20catalog.%20Can%20you%20help%20me%20with%20a%20quote%3F" aria-label="Text Us">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+    Text Us (888) 706-0080
+  </a>
+</div>
+
+<script src="tracking.js" defer></script>
+<script src="whatsapp-widget.js" defer></script>
+<script src="luna-chat.js" defer></script>
+
 </body>
 </html>

@@ -45,6 +45,7 @@
       electrical: "Hi! I'm Luna. Exploring electrical services? Panel upgrades, rewiring, EV chargers, smart home setups \u2014 our licensed electricians do it all. Tell me what you need, and I'll point you in the right direction. For urgent electrical issues, tap WhatsApp on the left!",
       landscaping: "Hey! I'm Luna. Dreaming of a beautiful outdoor space? Patios, decks, fencing, landscaping \u2014 let's make your backyard amazing. What do you have in mind? And if you need someone right away, WhatsApp is right there on the left!",
       quote: "Hi! I'm Luna. I see you're requesting a free quote \u2014 awesome! If you have any questions while filling out the form, I'm right here to help. You can also reach our team instantly on WhatsApp!",
+      catalog: "Hey! I'm Luna. I see you're browsing our materials catalog \u2014 great taste! Whether you're looking for tile, hardwood, or vinyl, I can help you find the perfect match for your project. Tell me what room you're renovating and I'll point you in the right direction. You can also text us at (888) 706-0080 or tap WhatsApp for instant help!",
       index: "Hey, welcome to Hello Projects Pro! I'm Luna, your project assistant. Whether you're dreaming of a new kitchen, need a roof repair, or anything in between \u2014 I'm here to help you get started. If you need to talk to someone right now, tap the WhatsApp button on the left. Otherwise, tell me about your project!",
       default: "Hey, how are you today! I'm Luna, your project assistant at Hello Projects Pro. If you're looking for something special, you're in the right place. Need to talk to someone right now? Tap the WhatsApp button on the left. Otherwise, tell me about your project!"
     },
@@ -56,6 +57,7 @@
       electrical: "\u00a1Hola! Soy Luna. \u00bfBuscando servicios el\u00e9ctricos? Paneles, cableado, cargadores EV, casa inteligente \u2014 nuestros electricistas con licencia lo manejan todo. \u00a1Dime qu\u00e9 necesitas! Para emergencias el\u00e9ctricas, toca WhatsApp a la izquierda.",
       landscaping: "\u00a1Hola! Soy Luna. \u00bfSo\u00f1ando con un espacio exterior hermoso? Patios, terrazas, cercas, jardiner\u00eda \u2014 \u00a1hagamos tu patio incre\u00edble! \u00bfQu\u00e9 tienes en mente? Y si necesitas a alguien ya, \u00a1WhatsApp est\u00e1 ah\u00ed!",
       quote: "\u00a1Hola! Soy Luna. Veo que vas a pedir un estimado gratis \u2014 \u00a1qu\u00e9 bueno! Si tienes preguntas mientras llenas el formulario, aqu\u00ed estoy. \u00a1Tambi\u00e9n puedes contactar a nuestro equipo por WhatsApp!",
+      catalog: "\u00a1Hola! Soy Luna. Veo que est\u00e1s viendo nuestro cat\u00e1logo de materiales \u2014 \u00a1excelente gusto! Ya sea azulejo, madera o vinilo, puedo ayudarte a encontrar lo perfecto para tu proyecto. Dime qu\u00e9 habitaci\u00f3n est\u00e1s renovando. \u00a1Tambi\u00e9n puedes enviarnos un texto al (888) 706-0080 o tocar WhatsApp para ayuda instant\u00e1nea!",
       index: "\u00a1Hola, bienvenido a Hello Projects Pro! Soy Luna, tu asistente de proyectos. Ya sea una cocina nueva, reparar el techo o cualquier otra cosa \u2014 estoy aqu\u00ed para ayudarte. Si necesitas hablar con alguien ahora, toca el bot\u00f3n de WhatsApp a la izquierda. \u00a1O cu\u00e9ntame sobre tu proyecto!",
       default: "\u00a1Hola, c\u00f3mo est\u00e1s! Soy Luna, tu asistente de proyectos en Hello Projects Pro. Si buscas algo especial, est\u00e1s en el lugar correcto. \u00bfNecesitas hablar con alguien ahora? Toca el bot\u00f3n de WhatsApp a la izquierda. \u00a1O cu\u00e9ntame sobre tu proyecto!"
     }
@@ -64,6 +66,7 @@
   function detectPageContext() {
     var path = window.location.pathname.toLowerCase();
     var greetings = PAGE_GREETINGS[LANG] || PAGE_GREETINGS.en;
+    if (path.indexOf('catalog') !== -1) return greetings.catalog;
     if (path.indexOf('kitchen') !== -1) return greetings.kitchen;
     if (path.indexOf('bathroom') !== -1) return greetings.bathroom;
     if (path.indexOf('roofing') !== -1) return greetings.roofing;
