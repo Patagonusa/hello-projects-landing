@@ -562,7 +562,7 @@
   <section class="catalog-hero">
     <h1>Materials Catalog</h1>
     <p>Browse our curated selection of premium flooring and tile. Find the perfect look for your renovation project.</p>
-    <a href="quote.html" class="btn btn-accent" style="font-size:15px;">Request a Quote with Your Selection</a>
+    <a href="sms:+18886093009&body=Hi%2C%20I%27m%20browsing%20your%20catalog%20and%20would%20like%20a%20quote.%20Can%20you%20help%3F" class="btn btn-accent" style="font-size:15px;">Text Us for a Quote</a>
   </section>
 
   <!-- FILTERS -->
@@ -616,7 +616,7 @@
         <h2 id="lightboxName"></h2>
         <div id="lightboxMeta" class="lightbox-meta"></div>
         <div id="lightboxTags" class="lightbox-tags"></div>
-        <a href="quote.html" class="lightbox-cta">Request Quote with This Product</a>
+        <a id="lightboxTextBtn" href="#" class="lightbox-cta">Text Us for a Quote</a>
         <a href="tel:+18887060080" class="lightbox-call">Call (888) 706-0080</a>
       </div>
     </div>
@@ -876,7 +876,7 @@ function renderProducts(products) {
           <span class="detail-chip">${p.material}</span>
         </div>
         <div class="product-material">${p.color}${p.brand ? ' &bull; ' + p.brand : ''}</div>
-        <button class="product-quote-btn" onclick="event.stopPropagation();window.location.href='quote.html'">Request Quote</button>
+        <a class="product-quote-btn" href="sms:+18886093009&body=Hi%2C%20I%27m%20interested%20in%20${encodeURIComponent(p.name)}%20(${p.category}).%20Can%20you%20help%20me%20with%20a%20quote%3F" onclick="event.stopPropagation()">Text Us for Quote</a>
       </div>
     </div>
   `).join('');
@@ -915,6 +915,8 @@ function openLightbox(id) {
   const tags = document.getElementById('lightboxTags');
   tags.innerHTML = p.tags.map(t => `<span class="lightbox-tag">${t}</span>`).join('');
 
+  document.getElementById('lightboxTextBtn').href = 'sms:+18886093009&body=' + encodeURIComponent('Hi, I\'m interested in ' + p.name + ' (' + p.category + ', ' + p.size + ', ' + p.finish + '). Can you help me with a quote?');
+
   document.getElementById('lightbox').classList.add('active');
   document.body.style.overflow = 'hidden';
 }
@@ -941,9 +943,9 @@ init();
 }
 </style>
 <div id="text-us-float">
-  <a id="text-us-btn" href="sms:+18887060080&body=Hi%2C%20I%27m%20interested%20in%20a%20product%20from%20your%20catalog.%20Can%20you%20help%20me%20with%20a%20quote%3F" aria-label="Text Us">
+  <a id="text-us-btn" href="sms:+18886093009&body=Hi%2C%20I%27m%20interested%20in%20a%20product%20from%20your%20catalog.%20Can%20you%20help%20me%20with%20a%20quote%3F" aria-label="Text Us">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-    Text Us (888) 706-0080
+    Text Us (888) 609-3009
   </a>
 </div>
 
