@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <title>HVAC Catalog &amp; BTU Calculator | Hello Projects Pro</title>
+  <meta name="description" content="Browse residential HVAC systems: mini splits, central AC, heat pumps, furnaces. Use our BTU calculator to find the right size for your home.">
+  <link rel="canonical" href="https://helloprojectspro.com/hvac.html">
+  <meta property="og:title" content="HVAC Catalog & BTU Calculator | Hello Projects Pro">
+  <meta property="og:description" content="Find the perfect HVAC system for your home. Mini splits, central AC, heat pumps & more.">
+  <meta property="og:url" content="https://helloprojectspro.com/hvac.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://helloprojectspro.com/hero-bg.jpeg">
+  <meta property="og:site_name" content="Hello Projects Pro">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KE7XWYKQ9F"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KE7XWYKQ9F');</script>
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1782159502364871');fbq('track','PageView');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0c1a2e;
+      --primary-light: #142d4f;
+      --blue: #2563eb;
+      --blue-hover: #1d4ed8;
+      --blue-light: #3b82f6;
+      --sky: #60a5fa;
+      --navy: #1e3a5f;
+      --accent: #f59e0b;
+      --accent-hover: #d97706;
+      --green: #10b981;
+      --green-dark: #059669;
+      --text: #1e293b;
+      --text-light: #64748b;
+      --bg-light: #f0f7ff;
+      --white: #fff;
+      --shadow: 0 4px 20px rgba(12,26,46,0.1);
+      --shadow-lg: 0 10px 40px rgba(12,26,46,0.18);
+      --radius: 12px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text); line-height: 1.6; background: #f8fafc; }
+
+    /* HEADER */
+    .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--primary); box-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+    .header-top { background: linear-gradient(90deg, var(--blue), var(--blue-light)); color: var(--white); text-align: center; padding: 8px 16px; font-size: 14px; }
+    .header-top strong { font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
+    .header-top a { color: #fff; text-decoration: none; font-weight: 800; background: rgba(255,255,255,0.15); padding: 2px 10px; border-radius: 4px; }
+    .header-main { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 8px 24px; }
+    .logo { display: flex; align-items: center; text-decoration: none; }
+    .logo img { height: 72px; width: auto; }
+    .header-nav { display: flex; align-items: center; gap: 16px; }
+    .nav-link { color: #cbd5e1; text-decoration: none; font-size: 14px; font-weight: 500; padding: 8px 16px; border-radius: 6px; transition: all 0.2s; }
+    .nav-link:hover { color: #fff; background: rgba(255,255,255,0.08); }
+    .nav-link.active { color: #fff; background: rgba(255,255,255,0.12); }
+    .lang-switch { color: var(--sky); font-size: 13px; font-weight: 600; text-decoration: none; border: 1px solid rgba(96,165,250,0.4); padding: 6px 12px; border-radius: 6px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 8px; font-weight: 700; font-size: 14px; text-decoration: none; border: none; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
+    .btn-blue { background: var(--blue); color: var(--white); }
+    .btn-blue:hover { background: var(--blue-hover); transform: translateY(-1px); }
+    .btn-accent { background: var(--accent); color: var(--primary); }
+    .btn-accent:hover { background: var(--accent-hover); }
+    .btn-green { background: var(--green); color: var(--white); }
+    .btn-green:hover { background: var(--green-dark); }
+
+    /* HERO */
+    .hvac-hero {
+      margin-top: 130px;
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #1d4ed8 100%);
+      color: var(--white);
+      padding: 50px 24px 40px;
+      text-align: center;
+    }
+    .hvac-hero h1 { font-family: 'Poppins', sans-serif; font-size: 38px; font-weight: 800; margin-bottom: 10px; }
+    .hvac-hero p { font-size: 17px; color: #94a3b8; max-width: 600px; margin: 0 auto 20px; }
+
+    /* BTU CALCULATOR */
+    .btu-calc {
+      max-width: 800px;
+      margin: -30px auto 40px;
+      background: var(--white);
+      border-radius: 16px;
+      box-shadow: var(--shadow-lg);
+      padding: 32px;
+      position: relative;
+      z-index: 10;
+    }
+    .btu-calc h2 {
+      font-size: 22px; font-weight: 800; color: var(--text); margin-bottom: 4px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .btu-calc h2 .icon { font-size: 28px; }
+    .btu-calc .subtitle { font-size: 14px; color: var(--text-light); margin-bottom: 20px; }
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .calc-field label {
+      display: block; font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 4px;
+    }
+    .calc-field select, .calc-field input {
+      width: 100%; padding: 10px 14px; border: 1.5px solid #d1d5db; border-radius: 10px;
+      font-size: 15px; font-family: inherit; color: var(--text); background: #f8fafc;
+      transition: border-color 0.2s;
+    }
+    .calc-field select:focus, .calc-field input:focus {
+      outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(37,99,235,0.12); background: #fff;
+    }
+    .calc-btn {
+      width: 100%; padding: 14px; background: var(--blue); color: var(--white);
+      border: none; border-radius: 10px; font-size: 16px; font-weight: 700;
+      cursor: pointer; transition: all 0.2s; font-family: inherit;
+    }
+    .calc-btn:hover { background: var(--blue-hover); transform: translateY(-1px); }
+    .calc-result {
+      display: none; margin-top: 20px; padding: 20px; border-radius: 12px;
+      background: linear-gradient(135deg, #eff6ff, #f0fdf4);
+      border: 1.5px solid #bfdbfe;
+    }
+    .calc-result.active { display: block; }
+    .result-btu { font-size: 36px; font-weight: 900; color: var(--blue); line-height: 1; }
+    .result-btu small { font-size: 16px; font-weight: 600; color: var(--text-light); }
+    .result-tons { font-size: 15px; color: var(--text); margin-top: 4px; font-weight: 600; }
+    .result-rec { font-size: 13px; color: var(--text-light); margin-top: 10px; line-height: 1.6; }
+    .result-cta { margin-top: 14px; }
+
+    /* CATEGORY NAV */
+    .cat-nav {
+      background: var(--white); border-bottom: 1px solid #e2e8f0;
+      position: sticky; top: 130px; z-index: 50;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .cat-nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; gap: 0; overflow-x: auto;
+      -webkit-overflow-scrolling: touch; scrollbar-width: none;
+    }
+    .cat-nav-inner::-webkit-scrollbar { display: none; }
+    .cat-nav-link {
+      flex-shrink: 0; padding: 14px 20px; font-size: 14px; font-weight: 600;
+      color: var(--text-light); text-decoration: none; border-bottom: 3px solid transparent;
+      transition: all 0.2s; white-space: nowrap;
+    }
+    .cat-nav-link:hover { color: var(--text); background: #f8fafc; }
+    .cat-nav-link.active { color: var(--blue); border-bottom-color: var(--blue); }
+
+    /* PRODUCT SECTIONS */
+    .catalog-container { max-width: 1200px; margin: 0 auto; padding: 0 24px 80px; }
+    .product-section { padding: 48px 0 32px; border-bottom: 1px solid #e2e8f0; }
+    .product-section:last-child { border-bottom: none; }
+    .section-head { margin-bottom: 24px; }
+    .section-head h2 { font-size: 26px; font-weight: 800; color: var(--text); margin-bottom: 6px; }
+    .section-head p { font-size: 15px; color: var(--text-light); max-width: 700px; }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .product-card {
+      background: var(--white); border-radius: var(--radius); overflow: hidden;
+      box-shadow: var(--shadow); transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;
+    }
+    .product-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .product-image-wrap {
+      position: relative; width: 100%; padding-top: 75%; overflow: hidden; background: #f1f5f9;
+    }
+    .product-image-wrap img {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      object-fit: cover; transition: transform 0.3s;
+    }
+    .product-card:hover .product-image-wrap img { transform: scale(1.05); }
+    .product-badges {
+      position: absolute; top: 10px; left: 10px; display: flex; flex-wrap: wrap; gap: 6px; z-index: 2;
+    }
+    .badge {
+      font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 20px;
+      text-transform: uppercase; letter-spacing: 0.3px;
+    }
+    .badge-blue { background: var(--blue); color: var(--white); }
+    .badge-green { background: var(--green); color: var(--white); }
+    .badge-accent { background: var(--accent); color: var(--primary); }
+    .product-info { padding: 16px; }
+    .product-name { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px; line-height: 1.4; }
+    .product-desc { font-size: 13px; color: var(--text-light); margin-bottom: 10px; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .product-specs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+    .spec-chip {
+      font-size: 11px; padding: 3px 8px; background: #f1f5f9; color: var(--text-light);
+      border-radius: 4px; font-weight: 600;
+    }
+    .product-cta {
+      display: block; width: 100%; padding: 10px; background: var(--blue); color: var(--white);
+      text-align: center; text-decoration: none; font-size: 13px; font-weight: 700;
+      border-radius: 8px; border: none; cursor: pointer; transition: background 0.2s;
+    }
+    .product-cta:hover { background: var(--blue-hover); }
+
+    /* LIGHTBOX */
+    .lightbox {
+      display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 2000;
+      background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
+      align-items: center; justify-content: center; padding: 40px;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox-close { position: absolute; top: 20px; right: 24px; background: none; border: none; color: #fff; font-size: 36px; cursor: pointer; opacity: 0.8; }
+    .lightbox-close:hover { opacity: 1; }
+    .lightbox-content { max-width: 900px; width: 100%; display: flex; background: var(--white); border-radius: var(--radius); overflow: hidden; max-height: 90vh; }
+    .lightbox-img { flex: 1; min-width: 0; background: #f1f5f9; display: flex; align-items: center; justify-content: center; }
+    .lightbox-img img { width: 100%; height: 100%; object-fit: contain; max-height: 80vh; }
+    .lightbox-details { width: 340px; padding: 32px 28px; overflow-y: auto; flex-shrink: 0; }
+    .lightbox-details h2 { font-size: 20px; font-weight: 800; color: var(--text); margin-bottom: 12px; line-height: 1.3; }
+    .lightbox-meta { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+    .lightbox-meta-row { display: flex; justify-content: space-between; font-size: 14px; }
+    .lightbox-meta-label { color: var(--text-light); font-weight: 500; }
+    .lightbox-meta-value { color: var(--text); font-weight: 600; }
+    .lightbox-cta {
+      display: block; width: 100%; padding: 14px; background: var(--green); color: var(--white);
+      text-align: center; text-decoration: none; font-size: 15px; font-weight: 700;
+      border-radius: 10px; border: none; cursor: pointer; transition: background 0.2s;
+    }
+    .lightbox-cta:hover { background: var(--green-dark); }
+
+    /* FOOTER */
+    .footer { background: var(--primary); color: #64748b; padding: 48px 24px 24px; }
+    .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 32px; }
+    .footer h4 { color: var(--white); font-size: 16px; font-weight: 700; margin-bottom: 16px; }
+    .footer p, .footer a { font-size: 14px; line-height: 2; }
+    .footer a { color: #64748b; text-decoration: none; }
+    .footer a:hover { color: var(--sky); }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; border-top: 1px solid #1e293b; padding-top: 16px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #334155; }
+    .footer-bottom a { color: #4a6080; margin-left: 16px; }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .header-main { padding: 8px 16px; }
+      .logo img { height: 52px; }
+      .header-nav { gap: 10px; }
+      .btn { padding: 10px 16px; font-size: 13px; }
+      .hvac-hero { margin-top: 110px; padding: 32px 16px 24px; }
+      .hvac-hero h1 { font-size: 26px; }
+      .hvac-hero p { font-size: 14px; }
+      .btu-calc { margin: -20px 12px 24px; padding: 20px; }
+      .btu-calc h2 { font-size: 18px; }
+      .calc-grid { grid-template-columns: 1fr; gap: 12px; }
+      .result-btu { font-size: 28px; }
+      .cat-nav { top: 110px; }
+      .cat-nav-link { padding: 12px 16px; font-size: 13px; }
+      .catalog-container { padding: 0 12px 60px; }
+      .product-section { padding: 32px 0 24px; }
+      .section-head h2 { font-size: 20px; }
+      .product-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .product-info { padding: 10px; }
+      .product-name { font-size: 13px; }
+      .product-desc { font-size: 11px; -webkit-line-clamp: 2; }
+      .spec-chip { font-size: 10px; }
+      .lightbox { padding: 16px; }
+      .lightbox-content { flex-direction: column; max-height: 95vh; }
+      .lightbox-img { max-height: 50vh; }
+      .lightbox-details { width: 100%; padding: 20px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-top">
+      <strong>Claim Your Discount</strong> &mdash; Call or Text Us Toll-Free <a href="tel:+18887060080">(888) 706-0080</a>
+    </div>
+    <div class="header-main">
+      <a href="index.html" class="logo"><img src="logo.jpeg" alt="Hello Projects Pro"></a>
+      <nav class="header-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="catalog.html" class="nav-link">Catalog</a>
+        <a href="hvac.html" class="nav-link active">HVAC</a>
+        <a href="catalog-es.html" class="lang-switch">Espa&ntilde;ol</a>
+        <a href="quote.html" class="btn btn-blue">Get Free Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hvac-hero">
+    <h1>HVAC Systems</h1>
+    <p>Residential heating &amp; cooling solutions. Mini splits, central AC, heat pumps, furnaces &amp; more.</p>
+    <a href="#calculator" class="btn btn-accent">Calculate Your BTU Needs</a>
+  </section>
+
+  <!-- BTU CALCULATOR -->
+  <div class="btu-calc" id="calculator">
+    <h2><span class="icon">&#9992;</span> BTU Calculator</h2>
+    <p class="subtitle">Find the right size HVAC system for your space</p>
+    <div class="calc-grid">
+      <div class="calc-field">
+        <label>Square Footage</label>
+        <input type="number" id="calcSqft" placeholder="e.g. 1500" min="100" max="10000">
+      </div>
+      <div class="calc-field">
+        <label>Ceiling Height</label>
+        <select id="calcCeiling">
+          <option value="8">Standard (8 ft)</option>
+          <option value="9">9 ft</option>
+          <option value="10">10 ft</option>
+          <option value="12">12 ft (Vaulted)</option>
+        </select>
+      </div>
+      <div class="calc-field">
+        <label>Climate Zone</label>
+        <select id="calcClimate">
+          <option value="hot">Hot &amp; Humid (AZ, FL, TX, SoCal)</option>
+          <option value="warm">Warm (CA Coast, SE States)</option>
+          <option value="moderate">Moderate (Mid-Atlantic, NW)</option>
+          <option value="cold">Cold (Northern States)</option>
+        </select>
+      </div>
+      <div class="calc-field">
+        <label>Sun Exposure</label>
+        <select id="calcSun">
+          <option value="avg">Average</option>
+          <option value="high">High (lots of windows / south-facing)</option>
+          <option value="low">Low (shaded / north-facing)</option>
+        </select>
+      </div>
+      <div class="calc-field">
+        <label>Insulation Quality</label>
+        <select id="calcInsulation">
+          <option value="avg">Average</option>
+          <option value="good">Good (newer build / upgraded)</option>
+          <option value="poor">Poor (older home / no insulation)</option>
+        </select>
+      </div>
+      <div class="calc-field">
+        <label>Number of Occupants</label>
+        <select id="calcOccupants">
+          <option value="2">1-2 people</option>
+          <option value="4">3-4 people</option>
+          <option value="6">5-6 people</option>
+          <option value="8">7+ people</option>
+        </select>
+      </div>
+    </div>
+    <button class="calc-btn" onclick="calculateBTU()">Calculate BTU Requirement</button>
+    <div class="calc-result" id="calcResult">
+      <div class="result-btu" id="resultBtu"></div>
+      <div class="result-tons" id="resultTons"></div>
+      <div class="result-rec" id="resultRec"></div>
+      <div class="result-cta">
+        <a id="resultCta" href="#" class="btn btn-green" style="width:100%;justify-content:center;font-size:15px;">Text Us for a Free HVAC Quote</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORY NAV -->
+  <nav class="cat-nav">
+    <div class="cat-nav-inner">
+      <a href="#mini-splits" class="cat-nav-link active">Mini Splits</a>
+      <a href="#central-systems" class="cat-nav-link">Central Systems</a>
+      <a href="#furnaces" class="cat-nav-link">Furnaces</a>
+      <a href="#heat-pumps" class="cat-nav-link">Heat Pumps</a>
+      <a href="#air-handlers" class="cat-nav-link">Air Handlers</a>
+    </div>
+  </nav>
+
+  <!-- PRODUCT SECTIONS -->
+  <div class="catalog-container">
+
+    <!-- MINI SPLITS -->
+    <section class="product-section" id="mini-splits">
+      <div class="section-head">
+        <h2>Ductless Mini Split Systems</h2>
+        <p>Energy-efficient cooling &amp; heating without ductwork. Perfect for room additions, garages, or homes without ducts. Available in single-zone, multi-zone, and DIY options.</p>
+      </div>
+      <div class="product-grid" id="gridMiniSplits"></div>
+    </section>
+
+    <!-- CENTRAL SYSTEMS -->
+    <section class="product-section" id="central-systems">
+      <div class="section-head">
+        <h2>Central Heating &amp; Cooling Systems</h2>
+        <p>Complete ducted systems for whole-home comfort. Includes condenser, air handler, and evaporator coil &mdash; everything you need for professional installation.</p>
+      </div>
+      <div class="product-grid" id="gridCentral"></div>
+    </section>
+
+    <!-- FURNACES -->
+    <section class="product-section" id="furnaces">
+      <div class="section-head">
+        <h2>Gas Furnaces</h2>
+        <p>High-efficiency residential gas furnaces. 80% to 96% AFUE ratings, single and two-stage burners, multi-speed and variable-speed blowers.</p>
+      </div>
+      <div class="product-grid" id="gridFurnaces"></div>
+    </section>
+
+    <!-- HEAT PUMPS -->
+    <section class="product-section" id="heat-pumps">
+      <div class="section-head">
+        <h2>Heat Pump Condensers</h2>
+        <p>All-electric heating &amp; cooling in one unit. High SEER2 ratings for maximum energy savings. Pairs with indoor air handler or existing ductwork.</p>
+      </div>
+      <div class="product-grid" id="gridHeatPumps"></div>
+    </section>
+
+    <!-- AIR HANDLERS -->
+    <section class="product-section" id="air-handlers">
+      <div class="section-head">
+        <h2>Air Handlers &amp; Evaporator Coils</h2>
+        <p>Indoor components that pair with your outdoor condenser or heat pump. Concealed duct, floor/ceiling, and horizontal cased options.</p>
+      </div>
+      <div class="product-grid" id="gridAirHandlers"></div>
+    </section>
+
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox" onclick="if(event.target===this)closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <div class="lightbox-content">
+      <div class="lightbox-img"><img id="lightboxImg" src="" alt=""></div>
+      <div class="lightbox-details">
+        <h2 id="lightboxName"></h2>
+        <div id="lightboxMeta" class="lightbox-meta"></div>
+        <a id="lightboxCta" href="#" class="lightbox-cta">Text Us for a Quote</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <h4>Hello Projects Pro</h4>
+        <p>Premier remodeling &amp; construction services. Licensed, bonded, and insured. CSLB #1135440.</p>
+        <p style="margin-top:12px;"><strong style="color:#fff;">Phone:</strong> <a href="tel:+18887060080">(888) 706-0080</a><br><strong style="color:#fff;">Email:</strong> <a href="mailto:info@helloprojectspro.com">info@helloprojectspro.com</a></p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <p><a href="services/kitchen-remodeling.html">Kitchen Remodeling</a></p>
+        <p><a href="services/bathroom-remodeling.html">Bathroom Remodeling</a></p>
+        <p><a href="services/roofing.html">Roofing</a></p>
+        <p><a href="services/general-remodeling.html">General Remodeling</a></p>
+        <p><a href="services/electrical-services.html">Residential Electrical</a></p>
+        <p><a href="services/landscaping.html">Landscaping</a></p>
+      </div>
+      <div>
+        <h4>Service Areas</h4>
+        <p>Los Angeles, CA</p><p>Reseda, CA</p><p>Encino, CA</p><p>Sherman Oaks, CA</p><p>Tarzana, CA</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Hello Projects Pro. All rights reserved.</span>
+      <div><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></div>
+    </div>
+  </footer>
+
+<script>
+// ===== HVAC PRODUCT DATA =====
+var HVAC = [
+  // --- Single Zone Mini Splits ---
+  {id:1,cat:"Mini Splits",sub:"Single Zone",image:"mini-split-single",name:"9,000 BTU Single Zone Mini Split",desc:"0.8 Ton, 21.6 SEER2 Inverter heat pump. Wall-mount indoor unit with remote. Cools & heats up to 400 sq ft.",brand:"Blueridge",btu:9000,tons:0.8,seer:21.6,specs:["9,000 BTU","0.8 Ton","21.6 SEER2","R-454B","Inverter"]},
+  {id:2,cat:"Mini Splits",sub:"Single Zone",image:"mini-split-single",name:"9,000 BTU Premium Single Zone Mini Split",desc:"0.8 Ton, 25.8 SEER2 high-efficiency inverter heat pump. Ultra-quiet operation, Wi-Fi ready.",brand:"Blueridge",btu:9000,tons:0.8,seer:25.8,specs:["9,000 BTU","0.8 Ton","25.8 SEER2","R-454B","Inverter"]},
+  {id:3,cat:"Mini Splits",sub:"Single Zone",image:"mini-split-single",name:"9,000 BTU Daikin Single Zone Mini Split",desc:"0.8 Ton, 18 SEER2. Industry-leading Daikin compressor technology. Quiet, reliable, energy-efficient.",brand:"Daikin",btu:9000,tons:0.8,seer:18,specs:["9,000 BTU","0.8 Ton","18 SEER2","R-32","Daikin"]},
+  {id:4,cat:"Mini Splits",sub:"Single Zone",image:"mini-split-single",name:"9,000 BTU Daikin Premium Mini Split",desc:"0.8 Ton, 21 SEER2. Advanced inverter technology, auto-swing louvers, 24-hour timer.",brand:"Daikin",btu:9000,tons:0.8,seer:21,specs:["9,000 BTU","0.8 Ton","21 SEER2","R-32","Daikin"]},
+  {id:5,cat:"Mini Splits",sub:"Single Zone",image:"mini-split-single",name:"9,000 BTU Daikin Ultra Heat Mini Split",desc:"0.8 Ton, 27.4 SEER2. Ultra-efficient with hyper-heating down to -13F. Top-tier performance.",brand:"Daikin",btu:9000,tons:0.8,seer:27.4,specs:["9,000 BTU","0.8 Ton","27.4 SEER2","R-32","Ultra Heat"]},
+  {id:6,cat:"Mini Splits",sub:"Single Zone",image:"mini-split-single",name:"12,000 BTU Single Zone Mini Split",desc:"1 Ton, 24 SEER2. Ideal for bedrooms, offices, or living rooms up to 550 sq ft.",brand:"Blueridge",btu:12000,tons:1,seer:24,specs:["12,000 BTU","1 Ton","24 SEER2","R-410A","Inverter"]},
+  // --- DIY Mini Splits ---
+  {id:7,cat:"Mini Splits",sub:"DIY Install",image:"mini-split-diy",name:"9,000 BTU DIY Mini Split System",desc:"0.8 Ton, 20.2 SEER2. Pre-charged line set, no HVAC tools needed. Install yourself in hours.",brand:"Blueridge",btu:9000,tons:0.8,seer:20.2,specs:["9,000 BTU","0.8 Ton","20.2 SEER2","DIY Install","Pre-Charged"]},
+  {id:8,cat:"Mini Splits",sub:"DIY Install",image:"mini-split-diy",name:"12,000 BTU DIY Mini Split System",desc:"1 Ton, 19.5 SEER2. No vacuum pump or gauges required. Quick-connect refrigerant lines included.",brand:"Blueridge",btu:12000,tons:1,seer:19.5,specs:["12,000 BTU","1 Ton","19.5 SEER2","DIY Install","Pre-Charged"]},
+  {id:9,cat:"Mini Splits",sub:"DIY Install",image:"mini-split-diy",name:"17,000 BTU DIY Mini Split System",desc:"1.4 Ton, 20 SEER2. Covers up to 750 sq ft. DIY-friendly with pre-charged line set.",brand:"Blueridge",btu:17000,tons:1.4,seer:20,specs:["17,000 BTU","1.4 Ton","20 SEER2","DIY Install","Pre-Charged"]},
+  {id:10,cat:"Mini Splits",sub:"DIY Install",image:"mini-split-diy",name:"24,000 BTU DIY Mini Split System",desc:"2 Ton, 18.9 SEER2. Large room coverage up to 1,100 sq ft. DIY install with pre-charged lines.",brand:"Blueridge",btu:24000,tons:2,seer:18.9,specs:["24,000 BTU","2 Ton","18.9 SEER2","DIY Install","Pre-Charged"]},
+  // --- 2-Zone Mini Splits ---
+  {id:11,cat:"Mini Splits",sub:"2-Zone",image:"mini-split-2zone",name:"18,000 BTU 2-Zone Mini Split System",desc:"1.5 Ton, 21 SEER2. Two indoor wall-mount units on one outdoor condenser. Independent zone control.",brand:"Blueridge",btu:18000,tons:1.5,seer:21,specs:["18,000 BTU","1.5 Ton","21 SEER2","2-Zone","R-410A"]},
+  {id:12,cat:"Mini Splits",sub:"2-Zone",image:"mini-split-2zone",name:"22,000 BTU 2-Zone Mini Split System",desc:"1.8 Ton, 20 SEER2. Two indoor units for independent room control. Heats and cools.",brand:"Blueridge",btu:22000,tons:1.8,seer:20,specs:["22,000 BTU","1.8 Ton","20 SEER2","2-Zone","R-410A"]},
+  {id:13,cat:"Mini Splits",sub:"2-Zone",image:"mini-split-2zone",name:"23,200 BTU 2-Zone Mini Split System",desc:"1.9 Ton, 21 SEER2. Powerful dual-zone comfort for larger spaces. Whisper-quiet operation.",brand:"Blueridge",btu:23200,tons:1.9,seer:21,specs:["23,200 BTU","1.9 Ton","21 SEER2","2-Zone","R-410A"]},
+  {id:14,cat:"Mini Splits",sub:"2-Zone",image:"mini-split-2zone",name:"48,000 BTU 2-Zone Mini Split System",desc:"4 Ton, 21.2 SEER2. High-capacity dual zone for large homes or commercial spaces.",brand:"Blueridge",btu:48000,tons:4,seer:21.2,specs:["48,000 BTU","4 Ton","21.2 SEER2","2-Zone","R-410A"]},
+  // --- 2-Zone DIY ---
+  {id:15,cat:"Mini Splits",sub:"2-Zone DIY",image:"mini-split-2zone",name:"18,000 BTU 2-Zone DIY Mini Split",desc:"1.5 Ton, 23.9 SEER2. Two zones, DIY install with pre-charged line sets. No HVAC license needed.",brand:"Blueridge",btu:18000,tons:1.5,seer:23.9,specs:["18,000 BTU","1.5 Ton","23.9 SEER2","2-Zone DIY","R-454B"]},
+  {id:16,cat:"Mini Splits",sub:"2-Zone DIY",image:"mini-split-2zone",name:"26,000 BTU 2-Zone DIY Mini Split",desc:"2.2 Ton, 23 SEER2. Large capacity dual-zone DIY system. Pre-charged lines included.",brand:"Blueridge",btu:26000,tons:2.2,seer:23,specs:["26,000 BTU","2.2 Ton","23 SEER2","2-Zone DIY","R-454B"]},
+  // --- 3-Zone & 5-Zone ---
+  {id:17,cat:"Mini Splits",sub:"3+ Zone",image:"mini-split-3zone",name:"42,000 BTU 3-Zone Mini Split System",desc:"3.5 Ton, 16 SEER2. Three independent zones with one outdoor unit. Whole-home comfort.",brand:"Blueridge",btu:42000,tons:3.5,seer:16,specs:["42,000 BTU","3.5 Ton","16 SEER2","3-Zone","R-410A"]},
+  {id:18,cat:"Mini Splits",sub:"3+ Zone",image:"mini-split-5zone",name:"42,000 BTU 5-Zone Ultra Heat Mini Split",desc:"23 SEER. Five independent zones for ultimate whole-home control. Hyper-heat technology.",brand:"Panasonic",btu:42000,tons:3.5,seer:23,specs:["42,000 BTU","5-Zone","23 SEER","Ultra Heat","Panasonic"]},
+  // --- Central Heating & Cooling ---
+  {id:19,cat:"Central Systems",sub:"Complete Systems",image:"central-ac-system",name:"1.5 Ton Central AC System",desc:"16 SEER2, R-454B. AC condenser paired with evaporator coil. Complete cooling system.",brand:"Blueridge",btu:18000,tons:1.5,seer:16,specs:["1.5 Ton","16 SEER2","R-454B","Condenser + Coil"]},
+  {id:20,cat:"Central Systems",sub:"Complete Systems",image:"central-ac-system",name:"2 Ton Central AC System",desc:"16 SEER2, R-454B. Sized for 800-1,200 sq ft homes. Includes condenser and evaporator coil.",brand:"Blueridge",btu:24000,tons:2,seer:16,specs:["2 Ton","16 SEER2","R-454B","Condenser + Coil"]},
+  {id:21,cat:"Central Systems",sub:"Complete Systems",image:"central-ac-system",name:"3 Ton Central AC System",desc:"15.5 SEER2, R-454B. Mid-size home coverage 1,200-1,800 sq ft. Complete system.",brand:"Blueridge",btu:36000,tons:3,seer:15.5,specs:["3 Ton","15.5 SEER2","R-454B","Condenser + Coil"]},
+  {id:22,cat:"Central Systems",sub:"Complete Systems",image:"central-ac-system",name:"3.5 Ton Central AC System",desc:"14.3 SEER2, R-454B. Larger home coverage 1,800-2,100 sq ft. Condenser + evap coil.",brand:"Blueridge",btu:42000,tons:3.5,seer:14.3,specs:["3.5 Ton","14.3 SEER2","R-454B","Condenser + Coil"]},
+  {id:23,cat:"Central Systems",sub:"Complete Systems",image:"central-ac-system",name:"4 Ton Central AC System",desc:"14.7 SEER2, R-454B. Large home coverage 2,100-2,400 sq ft. Condenser + evap coil.",brand:"Blueridge",btu:48000,tons:4,seer:14.7,specs:["4 Ton","14.7 SEER2","R-454B","Condenser + Coil"]},
+  // --- All-Electric Complete Systems ---
+  {id:24,cat:"Central Systems",sub:"All-Electric (Heat Pump)",image:"central-ac-system",name:"1.5 Ton All-Electric Heat Pump System",desc:"15.5 SEER2. Heat pump condenser + air handler. Year-round heating & cooling, no gas needed.",brand:"Blueridge",btu:18000,tons:1.5,seer:15.5,specs:["1.5 Ton","15.5 SEER2","All-Electric","Heat Pump + AHU"]},
+  {id:25,cat:"Central Systems",sub:"All-Electric (Heat Pump)",image:"central-ac-system",name:"2 Ton All-Electric Heat Pump System",desc:"15.2 SEER2. Complete electric heating & cooling. No gas line required.",brand:"Blueridge",btu:24000,tons:2,seer:15.2,specs:["2 Ton","15.2 SEER2","All-Electric","Heat Pump + AHU"]},
+  {id:26,cat:"Central Systems",sub:"All-Electric (Heat Pump)",image:"central-ac-system",name:"3 Ton All-Electric Heat Pump System",desc:"15.5 SEER2. Whole-home electric heating & cooling. Energy Star rated.",brand:"Blueridge",btu:36000,tons:3,seer:15.5,specs:["3 Ton","15.5 SEER2","All-Electric","Heat Pump + AHU"]},
+  {id:27,cat:"Central Systems",sub:"All-Electric (Heat Pump)",image:"central-ac-system",name:"3.5 Ton All-Electric Heat Pump System",desc:"15.2 SEER2. Large home all-electric system. Heat pump condenser + air handler.",brand:"Blueridge",btu:42000,tons:3.5,seer:15.2,specs:["3.5 Ton","15.2 SEER2","All-Electric","Heat Pump + AHU"]},
+  {id:28,cat:"Central Systems",sub:"All-Electric (Heat Pump)",image:"central-ac-system",name:"4 Ton All-Electric Heat Pump System",desc:"14.3 SEER2. Extra-large home system. Condenser + air handler with electric heat.",brand:"Blueridge",btu:48000,tons:4,seer:14.3,specs:["4 Ton","14.3 SEER2","All-Electric","Heat Pump + AHU"]},
+  // --- Dual Fuel ---
+  {id:29,cat:"Central Systems",sub:"Dual Fuel",image:"dual-fuel",name:"18,000 BTU Dual-Fuel Heat Pump + Furnace",desc:"16.1 SEER2. Inverter heat pump + 80% AFUE gas furnace. Best of both worlds for extreme climates.",brand:"Blueridge",btu:18000,tons:1.5,seer:16.1,specs:["18,000 BTU","16.1 SEER2","Dual Fuel","Heat Pump + 80% Furnace"]},
+  // --- Gas Furnaces ---
+  {id:30,cat:"Furnaces",sub:"80% AFUE",image:"gas-furnace",name:"90,000 BTU Gas Furnace 80% AFUE",desc:"Two-stage burner, 1,200 CFM multi-speed blower. Standard efficiency for budget-friendly heating.",brand:"Blueridge",btu:90000,tons:0,seer:0,specs:["90,000 BTU","80% AFUE","Two-Stage","1,200 CFM"]},
+  {id:31,cat:"Furnaces",sub:"80% AFUE",image:"gas-furnace",name:"90,000 BTU Gas Furnace 80% AFUE (1,600 CFM)",desc:"Two-stage burner, 1,600 CFM multi-speed blower. Higher airflow for larger duct systems.",brand:"Blueridge",btu:90000,tons:0,seer:0,specs:["90,000 BTU","80% AFUE","Two-Stage","1,600 CFM"]},
+  {id:32,cat:"Furnaces",sub:"80% AFUE",image:"gas-furnace",name:"90,000 BTU Gas Furnace 80% AFUE Variable Speed",desc:"Two-stage burner, 1,600 CFM variable-speed blower. Premium comfort with precise airflow control.",brand:"Blueridge",btu:90000,tons:0,seer:0,specs:["90,000 BTU","80% AFUE","Two-Stage","Variable Speed"]},
+  {id:33,cat:"Furnaces",sub:"92% AFUE",image:"gas-furnace",name:"90,000 BTU Gas Furnace 92% High Efficiency",desc:"Single-stage burner, 1,200 CFM. High-efficiency condensing furnace saves on gas bills.",brand:"Alpine",btu:90000,tons:0,seer:0,specs:["90,000 BTU","92% AFUE","Single-Stage","1,200 CFM"]},
+  {id:34,cat:"Furnaces",sub:"92% AFUE",image:"gas-furnace",name:"110,000 BTU Gas Furnace 92% High Efficiency",desc:"Single-stage burner, 1,600 CFM. High-output condensing furnace for larger homes.",brand:"Blueridge",btu:110000,tons:0,seer:0,specs:["110,000 BTU","92% AFUE","Single-Stage","1,600 CFM"]},
+  // --- Heat Pump Condensers ---
+  {id:35,cat:"Heat Pumps",sub:"Outdoor Condensers",image:"heat-pump-condenser",name:"9,000 BTU Ultra Heat Pump Condenser",desc:"0.8 Ton, 27 SEER2. Hyper-heating down to -13F. Premium efficiency outdoor unit.",brand:"Blueridge",btu:9000,tons:0.8,seer:27,specs:["9,000 BTU","0.8 Ton","27 SEER2","Ultra Heat","R-410A"]},
+  {id:36,cat:"Heat Pumps",sub:"Outdoor Condensers",image:"heat-pump-condenser",name:"12,000 BTU Ultra Heat Pump Condenser",desc:"1 Ton, 24 SEER2. Ultra-efficient heat pump for year-round comfort. Pairs with any air handler.",brand:"Blueridge",btu:12000,tons:1,seer:24,specs:["12,000 BTU","1 Ton","24 SEER2","Ultra Heat","R-410A"]},
+  {id:37,cat:"Heat Pumps",sub:"Ducted Systems",image:"mini-split-concealed",name:"30,600 BTU Ducted Heat Pump System",desc:"2.5 Ton, 16 SEER. Concealed duct indoor unit with outdoor condenser. Invisible comfort.",brand:"Blueridge",btu:30600,tons:2.5,seer:16,specs:["30,600 BTU","2.5 Ton","16 SEER","Ducted","Single Zone"]},
+  // --- Air Handlers / Evap Coils ---
+  {id:38,cat:"Air Handlers",sub:"Evaporator Coils",image:"evaporator-coil",name:"3.5 Ton Horizontal Cased Evaporator Coil",desc:"Horizontal installation. Pairs with 3.5 ton condenser. Cased design for easy installation.",brand:"Blueridge",btu:42000,tons:3.5,seer:0,specs:["3.5 Ton","Horizontal","Cased","31.5\"W x 17.5\"H"]},
+  {id:39,cat:"Air Handlers",sub:"Floor/Ceiling Units",image:"mini-split-floor",name:"12,000 BTU Floor/Ceiling Console Air Handler",desc:"Ductless indoor unit mounts on floor or ceiling. Pairs with multi-zone outdoor condenser.",brand:"Blueridge",btu:12000,tons:1,seer:0,specs:["12,000 BTU","Floor/Ceiling","Ductless","R-410A"]},
+  {id:40,cat:"Air Handlers",sub:"Floor/Ceiling Units",image:"mini-split-floor",name:"18,000 BTU Floor/Ceiling Console Air Handler",desc:"Versatile floor or ceiling mount. Perfect for rooms where wall-mount isn't ideal.",brand:"Blueridge",btu:18000,tons:1.5,seer:0,specs:["18,000 BTU","Floor/Ceiling","Ductless","R-410A"]},
+  {id:41,cat:"Air Handlers",sub:"Floor/Ceiling Units",image:"mini-split-floor",name:"24,000 BTU Floor/Ceiling Console Air Handler",desc:"Large capacity floor/ceiling unit. Powerful airflow for big rooms or open floor plans.",brand:"Blueridge",btu:24000,tons:2,seer:0,specs:["24,000 BTU","Floor/Ceiling","Ductless","R-410A"]},
+  {id:42,cat:"Air Handlers",sub:"Concealed Duct",image:"mini-split-concealed",name:"12,000 BTU Concealed Duct Air Handler",desc:"Hidden in ceiling or soffit. Ducted distribution for invisible comfort. Pairs with multi-zone condenser.",brand:"Blueridge",btu:12000,tons:1,seer:0,specs:["12,000 BTU","Concealed Duct","Slim Design","R-410A"]},
+];
+
+// ===== RENDER =====
+function init() {
+  var cats = {
+    'Mini Splits': 'gridMiniSplits',
+    'Central Systems': 'gridCentral',
+    'Furnaces': 'gridFurnaces',
+    'Heat Pumps': 'gridHeatPumps',
+    'Air Handlers': 'gridAirHandlers'
+  };
+  for (var cat in cats) {
+    var products = HVAC.filter(function(p) { return p.cat === cat; });
+    var grid = document.getElementById(cats[cat]);
+    if (!grid) continue;
+    grid.innerHTML = products.map(function(p) {
+      return '<div class="product-card" onclick="openLightbox(' + p.id + ')">' +
+        '<div class="product-image-wrap">' +
+          '<img src="hvac/' + p.image + '.jpg" alt="' + p.name + '" loading="lazy">' +
+          '<div class="product-badges">' +
+            '<span class="badge badge-blue">' + p.sub + '</span>' +
+            (p.brand ? '<span class="badge badge-accent">' + p.brand + '</span>' : '') +
+          '</div>' +
+        '</div>' +
+        '<div class="product-info">' +
+          '<div class="product-name">' + p.name + '</div>' +
+          '<div class="product-desc">' + p.desc + '</div>' +
+          '<div class="product-specs">' +
+            p.specs.map(function(s) { return '<span class="spec-chip">' + s + '</span>'; }).join('') +
+          '</div>' +
+          '<a href="sms:+18886093009&body=' + encodeURIComponent('Hi! I\'m interested in the ' + p.name + '. Can I get a quote?') + '" class="product-cta" onclick="event.stopPropagation()">Text Us for a Quote</a>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+  }
+}
+
+// ===== BTU CALCULATOR =====
+function calculateBTU() {
+  var sqft = parseInt(document.getElementById('calcSqft').value) || 0;
+  if (sqft < 100) { alert('Please enter a valid square footage (100+)'); return; }
+
+  var ceiling = parseInt(document.getElementById('calcCeiling').value);
+  var climate = document.getElementById('calcClimate').value;
+  var sun = document.getElementById('calcSun').value;
+  var insulation = document.getElementById('calcInsulation').value;
+  var occupants = parseInt(document.getElementById('calcOccupants').value);
+
+  // Base: 20 BTU per sq ft (standard)
+  var baseBtu = sqft * 20;
+
+  // Ceiling adjustment
+  if (ceiling === 9) baseBtu *= 1.1;
+  else if (ceiling === 10) baseBtu *= 1.2;
+  else if (ceiling === 12) baseBtu *= 1.4;
+
+  // Climate adjustment
+  var climateFactors = { hot: 1.2, warm: 1.05, moderate: 1.0, cold: 1.15 };
+  baseBtu *= climateFactors[climate] || 1;
+
+  // Sun exposure
+  if (sun === 'high') baseBtu *= 1.1;
+  else if (sun === 'low') baseBtu *= 0.9;
+
+  // Insulation
+  if (insulation === 'poor') baseBtu *= 1.2;
+  else if (insulation === 'good') baseBtu *= 0.9;
+
+  // Occupants (add 600 BTU per person over 2)
+  baseBtu += Math.max(0, occupants - 2) * 600;
+
+  // Round to nearest 1000
+  var btu = Math.round(baseBtu / 1000) * 1000;
+  var tons = (btu / 12000).toFixed(1);
+
+  // Show result
+  document.getElementById('resultBtu').innerHTML = btu.toLocaleString() + ' <small>BTU/hr</small>';
+  document.getElementById('resultTons').textContent = tons + ' Tons of cooling capacity needed';
+
+  // Recommendation
+  var rec = '';
+  if (btu <= 12000) rec = 'A single-zone mini split (9,000-12,000 BTU) would be perfect for this space.';
+  else if (btu <= 24000) rec = 'A single-zone mini split (17,000-24,000 BTU) or a small central system (1.5-2 ton) would work well.';
+  else if (btu <= 36000) rec = 'A 2-zone mini split system or a 2.5-3 ton central AC system is recommended.';
+  else if (btu <= 48000) rec = 'A multi-zone mini split (3-4 zones) or a 3.5-4 ton central system is ideal.';
+  else rec = 'A 4+ ton central system or a 5-zone mini split system is recommended for this space.';
+  document.getElementById('resultRec').textContent = rec;
+
+  document.getElementById('resultCta').href = 'sms:+18886093009&body=' + encodeURIComponent('Hi! I need HVAC for ' + sqft + ' sq ft (' + btu.toLocaleString() + ' BTU / ' + tons + ' tons). Can I get a quote?');
+
+  document.getElementById('calcResult').classList.add('active');
+}
+
+// ===== LIGHTBOX =====
+function openLightbox(id) {
+  var p = HVAC.find(function(x) { return x.id === id; });
+  if (!p) return;
+  document.getElementById('lightboxImg').src = 'hvac/' + p.image + '.jpg';
+  document.getElementById('lightboxName').textContent = p.name;
+  var meta = document.getElementById('lightboxMeta');
+  meta.innerHTML =
+    '<div class="lightbox-meta-row"><span class="lightbox-meta-label">Category</span><span class="lightbox-meta-value">' + p.cat + ' - ' + p.sub + '</span></div>' +
+    '<div class="lightbox-meta-row"><span class="lightbox-meta-label">BTU</span><span class="lightbox-meta-value">' + p.btu.toLocaleString() + '</span></div>' +
+    (p.tons ? '<div class="lightbox-meta-row"><span class="lightbox-meta-label">Capacity</span><span class="lightbox-meta-value">' + p.tons + ' Ton</span></div>' : '') +
+    (p.seer ? '<div class="lightbox-meta-row"><span class="lightbox-meta-label">Efficiency</span><span class="lightbox-meta-value">' + p.seer + ' SEER2</span></div>' : '') +
+    (p.brand ? '<div class="lightbox-meta-row"><span class="lightbox-meta-label">Brand</span><span class="lightbox-meta-value">' + p.brand + '</span></div>' : '') +
+    '<div class="lightbox-meta-row" style="margin-top:8px;"><span class="lightbox-meta-label" style="font-style:italic;">' + p.desc + '</span></div>';
+  document.getElementById('lightboxCta').href = 'sms:+18886093009&body=' + encodeURIComponent('Hi! I\'m interested in the ' + p.name + '. Can I get a quote?');
+  document.getElementById('lightbox').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
+
+// Active category nav on scroll
+window.addEventListener('scroll', function() {
+  var sections = document.querySelectorAll('.product-section');
+  var links = document.querySelectorAll('.cat-nav-link');
+  var scrollPos = window.scrollY + 200;
+  sections.forEach(function(s, i) {
+    if (s.offsetTop <= scrollPos && s.offsetTop + s.offsetHeight > scrollPos) {
+      links.forEach(function(l) { l.classList.remove('active'); });
+      links[i].classList.add('active');
+    }
+  });
+});
+
+// Smooth scroll for nav links
+document.querySelectorAll('.cat-nav-link').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    var target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      window.scrollTo({ top: target.offsetTop - 180, behavior: 'smooth' });
+    }
+  });
+});
+
+init();
+</script>
+<script src="whatsapp-widget.js" defer></script>
+<script src="luna-chat.js" defer></script>
+</body>
+</html>
