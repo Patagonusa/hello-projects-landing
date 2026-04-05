@@ -325,24 +325,34 @@
     .catalog-container {
       max-width: 1400px;
       margin: 0 auto;
-      padding: 32px 24px 80px;
+      padding: 16px 16px 80px;
     }
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    @media (min-width: 600px) {
+      .product-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    }
+    @media (min-width: 900px) {
+      .product-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+      .catalog-container { padding: 24px 24px 80px; }
+    }
+    @media (min-width: 1200px) {
+      .product-grid { grid-template-columns: repeat(5, 1fr); }
     }
     .product-card {
       background: var(--white);
-      border-radius: var(--radius);
+      border-radius: 10px;
       overflow: hidden;
-      box-shadow: var(--shadow);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
       transition: transform 0.2s, box-shadow 0.2s;
       cursor: pointer;
     }
     .product-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
     }
     .product-image-wrap {
       position: relative;
@@ -393,52 +403,33 @@
     }
 
     .product-info {
-      padding: 16px;
+      padding: 10px;
     }
     .product-name {
-      font-size: 16px;
+      font-size: 13px;
       font-weight: 700;
       color: var(--text);
-      margin-bottom: 6px;
+      margin-bottom: 4px;
       line-height: 1.3;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
     .product-details {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 10px;
+      gap: 4px;
     }
     .detail-chip {
-      font-size: 12px;
-      padding: 3px 8px;
+      font-size: 11px;
+      padding: 2px 6px;
       background: #f1f5f9;
       color: var(--text-light);
       border-radius: 4px;
       font-weight: 500;
     }
-    .product-material {
-      font-size: 13px;
-      color: var(--text-light);
-      margin-bottom: 12px;
-    }
-    .product-quote-btn {
-      display: block;
-      width: 100%;
-      padding: 10px;
-      background: var(--blue);
-      color: var(--white);
-      text-align: center;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 700;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .product-quote-btn:hover {
-      background: var(--blue-hover);
-    }
+    .product-material { display: none; }
 
     /* ===== LIGHTBOX ===== */
     .lightbox {
@@ -532,24 +523,28 @@
       font-weight: 600;
     }
     .lightbox-cta {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
       width: 100%;
-      padding: 14px;
-      background: var(--blue);
+      padding: 16px;
+      background: #25D366;
       color: var(--white);
       text-align: center;
       text-decoration: none;
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 700;
-      border-radius: 10px;
+      border-radius: 12px;
       border: none;
       cursor: pointer;
-      transition: background 0.2s;
-      margin-bottom: 10px;
+      transition: all 0.2s;
+      margin-top: 8px;
     }
-    .lightbox-cta:hover { background: var(--blue-hover); }
+    .lightbox-cta:hover { background: #20bd5a; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(37,211,102,0.3); }
+    .lightbox-cta svg { width: 20px; height: 20px; fill: currentColor; }
     .lightbox-call {
-      display: block;
+      display: none;
       width: 100%;
       padding: 12px;
       background: transparent;
@@ -606,51 +601,45 @@
 
     /* ===== MOBILE ===== */
     @media (max-width: 768px) {
-      .header-main { padding: 8px 16px; }
-      .logo img { height: 48px; }
+      .header-main { padding: 6px 12px; }
+      .logo img { height: 44px; }
       .header-nav { gap: 6px; }
       .header-nav .nav-link { display: none; }
-      .header-nav .nav-link.active { display: inline-flex; padding: 6px 10px; font-size: 12px; }
-      .btn { padding: 8px 14px; font-size: 12px; }
+      .header-nav .nav-link.active { display: inline-flex; padding: 5px 8px; font-size: 11px; }
+      .btn { padding: 7px 12px; font-size: 11px; }
       .lang-switch { padding: 4px 8px; font-size: 11px; }
-      .header-top { padding: 6px 12px; font-size: 12px; }
-      .catalog-hero { margin-top: 100px; padding: 24px 16px 16px; }
-      .catalog-hero h1 { font-size: 24px; margin-bottom: 6px; }
-      .catalog-hero p { font-size: 13px; margin-bottom: 10px; }
-      .catalog-nav { top: 100px; }
-      .search-row { padding: 8px 12px; }
-      .search-input { padding: 10px 10px 10px 36px; font-size: 14px; }
-      .category-pills { padding: 8px 12px; gap: 6px; }
-      .cat-pill { padding: 7px 12px; font-size: 12px; }
-      .product-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-      .product-info { padding: 10px; }
-      .product-name { font-size: 13px; }
-      .detail-chip { font-size: 10px; padding: 2px 6px; }
-      .catalog-container { padding: 12px 10px 80px; }
-      .section-title { font-size: 15px; }
-      .lightbox { padding: 12px; }
+      .header-top { padding: 5px 10px; font-size: 11px; }
+      .catalog-hero { margin-top: 90px; padding: 16px 12px 12px; }
+      .catalog-hero h1 { font-size: 22px; margin-bottom: 4px; }
+      .catalog-hero p { font-size: 12px; margin-bottom: 8px; }
+      .catalog-nav { top: 90px; }
+      .search-row { padding: 6px 10px; }
+      .search-input { padding: 8px 8px 8px 32px; font-size: 13px; border-radius: 8px; }
+      .filter-toggle { padding: 8px 10px; font-size: 12px; }
+      .category-pills { padding: 6px 10px; gap: 6px; }
+      .cat-pill { padding: 6px 10px; font-size: 11px; }
+      .catalog-container { padding: 8px 8px 80px; }
+      .section-header { padding: 12px 4px 6px; margin-bottom: 8px; }
+      .section-title { font-size: 14px; }
+      .product-info { padding: 8px; }
+      .product-name { font-size: 12px; }
+      .lightbox { padding: 8px; }
       .lightbox-content { flex-direction: column; max-height: 95vh; }
       .lightbox-img { max-height: 45vh; }
       .lightbox-details { width: 100%; padding: 16px; }
       .lightbox-details h2 { font-size: 18px; }
+      .lightbox-meta-row { font-size: 13px; }
       .footer-grid { grid-template-columns: 1fr; gap: 24px; }
       .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+      .back-to-top { bottom: 72px; width: 40px; height: 40px; font-size: 18px; }
     }
 
-    @media (max-width: 480px) {
-      .catalog-hero { padding: 16px 12px 12px; }
-      .catalog-hero h1 { font-size: 20px; }
-      .catalog-hero p { font-size: 12px; }
-      .catalog-hero .hero-selection-box { display: none; }
-      .product-grid { gap: 8px; }
-      .product-info { padding: 8px; }
-      .product-name { font-size: 12px; }
-      .product-details { display: none; }
-      .product-material { display: none; }
-      .product-quote-btn { font-size: 11px; padding: 7px; border-radius: 6px; }
-      .section-header { padding: 14px 0 8px; margin-bottom: 10px; }
-      .section-title { font-size: 14px; }
-      .back-to-top { bottom: 72px; width: 40px; height: 40px; font-size: 18px; }
+    @media (max-width: 420px) {
+      .product-grid { gap: 6px; }
+      .product-info { padding: 6px; }
+      .product-name { font-size: 11px; }
+      .detail-chip { font-size: 10px; padding: 1px 4px; }
+      .badge { font-size: 9px; padding: 2px 6px; }
     }
 
     /* ===== SELECTION CART ===== */
@@ -687,17 +676,7 @@
     }
     .btn-submit-selection:hover { background: var(--accent-hover); transform: translateY(-1px); }
 
-    .product-card .select-check {
-      position: absolute; top: 10px; right: 10px; z-index: 3;
-      width: 28px; height: 28px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.6);
-      background: rgba(0,0,0,0.3); color: transparent; font-size: 16px; cursor: pointer;
-      display: flex; align-items: center; justify-content: center; transition: all 0.2s; backdrop-filter: blur(4px);
-    }
-    .product-card .select-check:hover { border-color: #fff; background: rgba(37,99,235,0.5); }
-    .product-card.selected .select-check {
-      background: var(--blue); border-color: var(--blue); color: #fff;
-    }
-    .product-card.selected { ring: 3px solid var(--blue); box-shadow: 0 0 0 3px rgba(37,99,235,0.3), var(--shadow-lg); }
+    /* select-check removed - simplified to text-only CTA */
 
     /* ===== SUBMIT MODAL ===== */
     .submit-modal {
@@ -785,10 +764,7 @@
   <section class="catalog-hero">
     <h1>Materials &amp; Products</h1>
     <p>Premium flooring, vanities, cabinets, faucets &amp; more for your renovation project.</p>
-    <div class="hero-selection-box" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:10px;padding:12px 20px;max-width:600px;margin:0 auto 14px;backdrop-filter:blur(4px);">
-      <p style="color:#fff;font-size:14px;font-weight:600;margin:0;">Select up to 10 products + upload photos for a custom quote</p>
-    </div>
-    <a href="#" onclick="openSubmitModal();return false;" class="btn btn-accent" style="font-size:14px;" id="heroSubmitBtn">Submit Selection (<span id="heroCount">0</span>/10)</a>
+    <a href="sms:+18886093009&body=Hi!%20I%27m%20interested%20in%20your%20products.%20Can%20I%20get%20a%20quote?" class="btn btn-accent" style="font-size:14px;">Text Us (888) 609-3009</a>
   </section>
 
   <!-- STICKY NAVIGATION -->
@@ -843,21 +819,15 @@
       <div class="lightbox-details">
         <h2 id="lightboxName"></h2>
         <div id="lightboxMeta" class="lightbox-meta"></div>
-        <div id="lightboxTags" class="lightbox-tags"></div>
-        <a id="lightboxTextBtn" href="#" class="lightbox-cta">Text Us for a Quote</a>
-        <a href="tel:+18887060080" class="lightbox-call">Call (888) 706-0080</a>
+        <a id="lightboxTextBtn" href="#" class="lightbox-cta">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+          Text Us for a Quote
+        </a>
       </div>
     </div>
   </div>
 
-  <!-- SELECTION BAR -->
-  <div id="selectionBar" class="selection-bar">
-    <div class="selection-bar-inner">
-      <div id="selectionThumbs" class="selection-thumbs"></div>
-      <span id="selectionCount" class="selection-count">0/10 selected</span>
-      <button class="btn-submit-selection" onclick="openSubmitModal()">Submit Selection</button>
-    </div>
-  </div>
+  <!-- Selection removed - simplified to Text Us CTA -->
 
   <!-- SUBMIT MODAL -->
   <div id="submitModal" class="submit-modal" onclick="if(event.target===this)closeSubmitModal()">
@@ -1489,23 +1459,17 @@ function renderGrouped(products) {
     html += '<div class="product-grid">';
     items.forEach(function(p) {
       var isSelected = selectedProducts.some(function(s) { return s.id === p.id; });
-      html += '<div class="product-card' + (isSelected ? ' selected' : '') + '" onclick="openLightbox(' + p.id + ')">' +
+      html += '<div class="product-card" onclick="openLightbox(' + p.id + ')">' +
         '<div class="product-image-wrap">' +
           '<img data-src="catalog/' + p.image + '.jpg" alt="' + p.name + '" onload="this.classList.add(\'loaded\')" loading="lazy">' +
-          '<button class="select-check" onclick="event.stopPropagation();toggleSelect(' + p.id + ')" title="Select">' + (isSelected ? '&#10003;' : '') + '</button>' +
-          '<div class="product-badges">' +
-            (p.brand ? '<span class="badge badge-finish">' + p.brand + '</span>' : '') +
-            (p.use.includes('Outdoor') ? '<span class="badge badge-outdoor">Outdoor</span>' : '') +
-          '</div>' +
+          (p.brand ? '<div class="product-badges"><span class="badge badge-finish">' + p.brand + '</span></div>' : '') +
         '</div>' +
         '<div class="product-info">' +
           '<div class="product-name">' + p.name + '</div>' +
           '<div class="product-details">' +
             '<span class="detail-chip">' + p.size + '</span>' +
-            '<span class="detail-chip">' + p.finish + '</span>' +
+            '<span class="detail-chip">' + p.color + '</span>' +
           '</div>' +
-          '<div class="product-material">' + p.color + '</div>' +
-          '<button class="product-quote-btn" onclick="event.stopPropagation();toggleSelect(' + p.id + ')">' + (isSelected ? '&#10003; Selected' : '+ Add to Quote') + '</button>' +
         '</div>' +
       '</div>';
     });
@@ -1535,20 +1499,14 @@ function openLightbox(id) {
   document.getElementById('lightboxName').textContent = p.name;
 
   const meta = document.getElementById('lightboxMeta');
-  meta.innerHTML = `
-    <div class="lightbox-meta-row"><span class="lightbox-meta-label">Category</span><span class="lightbox-meta-value">${p.category}</span></div>
-    <div class="lightbox-meta-row"><span class="lightbox-meta-label">Size</span><span class="lightbox-meta-value">${p.size}</span></div>
-    <div class="lightbox-meta-row"><span class="lightbox-meta-label">Finish</span><span class="lightbox-meta-value">${p.finish}</span></div>
-    <div class="lightbox-meta-row"><span class="lightbox-meta-label">Material</span><span class="lightbox-meta-value">${p.material}</span></div>
-    <div class="lightbox-meta-row"><span class="lightbox-meta-label">Color</span><span class="lightbox-meta-value">${p.color}</span></div>
-    <div class="lightbox-meta-row"><span class="lightbox-meta-label">Use</span><span class="lightbox-meta-value">${p.use}</span></div>
-    ${p.brand ? '<div class="lightbox-meta-row"><span class="lightbox-meta-label">Brand</span><span class="lightbox-meta-value">' + p.brand + '</span></div>' : ''}
-  `;
+  meta.innerHTML =
+    '<div class="lightbox-meta-row"><span class="lightbox-meta-label">Category</span><span class="lightbox-meta-value">' + p.category + '</span></div>' +
+    '<div class="lightbox-meta-row"><span class="lightbox-meta-label">Size</span><span class="lightbox-meta-value">' + p.size + '</span></div>' +
+    '<div class="lightbox-meta-row"><span class="lightbox-meta-label">Finish</span><span class="lightbox-meta-value">' + p.finish + '</span></div>' +
+    '<div class="lightbox-meta-row"><span class="lightbox-meta-label">Color</span><span class="lightbox-meta-value">' + p.color + '</span></div>' +
+    (p.brand ? '<div class="lightbox-meta-row"><span class="lightbox-meta-label">Brand</span><span class="lightbox-meta-value">' + p.brand + '</span></div>' : '');
 
-  const tags = document.getElementById('lightboxTags');
-  tags.innerHTML = p.tags.map(t => `<span class="lightbox-tag">${t}</span>`).join('');
-
-  document.getElementById('lightboxTextBtn').href = 'sms:+18886093009&body=' + encodeURIComponent('Hi, I\'m interested in ' + p.name + ' (' + p.category + ', ' + p.size + ', ' + p.finish + '). Can you help me with a quote?');
+  document.getElementById('lightboxTextBtn').href = 'sms:+18886093009&body=' + encodeURIComponent('Hi! I\'m interested in ' + p.name + ' (' + p.size + ', ' + p.finish + '). Can I get a quote?');
 
   document.getElementById('lightbox').classList.add('active');
   document.body.style.overflow = 'hidden';
