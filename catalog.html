@@ -121,136 +121,52 @@
       margin-top: 130px;
       background: linear-gradient(135deg, var(--primary) 0%, var(--navy) 50%, var(--blue) 100%);
       color: var(--white);
-      padding: 40px 24px 30px;
+      padding: 60px 24px 50px;
       text-align: center;
     }
     .catalog-hero h1 {
       font-family: 'Poppins', sans-serif;
-      font-size: 36px;
+      font-size: 42px;
       font-weight: 800;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
     }
     .catalog-hero p {
-      font-size: 16px;
+      font-size: 18px;
       color: #94a3b8;
       max-width: 600px;
-      margin: 0 auto 16px;
+      margin: 0 auto 24px;
     }
 
-    /* ===== STICKY NAV ===== */
-    .catalog-nav {
+    /* ===== FILTERS ===== */
+    .filters-bar {
+      background: var(--white);
+      border-bottom: 1px solid #e2e8f0;
+      padding: 16px 24px;
       position: sticky;
       top: 130px;
       z-index: 100;
-      background: var(--white);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
-    .search-row {
-      padding: 10px 16px;
-      border-bottom: 1px solid #e2e8f0;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    .filters-inner {
       max-width: 1400px;
       margin: 0 auto;
-    }
-    .search-input {
-      flex: 1;
-      min-width: 0;
-      padding: 10px 12px 10px 38px;
-      border: 1px solid #d1d5db;
-      border-radius: 10px;
-      font-size: 15px;
-      font-family: inherit;
-      color: var(--text);
-      background: #f8fafc url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E") no-repeat 12px center;
-    }
-    .search-input:focus {
-      outline: none;
-      border-color: var(--blue);
-      box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
-      background-color: var(--white);
-    }
-    .filter-toggle {
       display: flex;
       align-items: center;
-      gap: 4px;
-      padding: 10px 14px;
-      border: 1px solid #d1d5db;
-      border-radius: 10px;
-      background: #f8fafc;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text);
-      cursor: pointer;
-      white-space: nowrap;
-      font-family: inherit;
+      gap: 12px;
+      flex-wrap: wrap;
     }
-    .filter-toggle.active {
-      border-color: var(--blue);
-      color: var(--blue);
-      background: #eff6ff;
-    }
-    .filter-toggle svg { width: 16px; height: 16px; }
-    .result-count {
-      font-size: 13px;
-      color: var(--text-light);
-      font-weight: 600;
-      white-space: nowrap;
-    }
-    /* Category pills */
-    .category-pills {
+    .filter-group {
       display: flex;
+      align-items: center;
       gap: 8px;
-      padding: 10px 16px;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      max-width: 1400px;
-      margin: 0 auto;
     }
-    .category-pills::-webkit-scrollbar { display: none; }
-    .cat-pill {
-      flex-shrink: 0;
-      padding: 8px 16px;
-      border-radius: 20px;
+    .filter-label {
       font-size: 13px;
       font-weight: 600;
       color: var(--text-light);
-      background: #f1f5f9;
-      border: 1.5px solid transparent;
-      cursor: pointer;
-      transition: all 0.2s;
-      white-space: nowrap;
-      font-family: inherit;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
-    .cat-pill:hover { background: #e2e8f0; color: var(--text); }
-    .cat-pill.active {
-      background: var(--blue);
-      color: var(--white);
-      border-color: var(--blue);
-    }
-    .cat-pill .pill-count {
-      display: inline-block;
-      background: rgba(0,0,0,0.12);
-      color: inherit;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 1px 7px;
-      border-radius: 10px;
-      margin-left: 4px;
-    }
-    .cat-pill.active .pill-count { background: rgba(255,255,255,0.25); }
-    /* Expanded filters drawer */
-    .filters-drawer {
-      display: none;
-      padding: 12px 16px;
-      border-top: 1px solid #e2e8f0;
-      background: #f8fafc;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-    .filters-drawer.open { display: flex; flex-wrap: wrap; gap: 10px; }
     .filter-select {
       padding: 8px 32px 8px 12px;
       border: 1px solid #d1d5db;
@@ -264,95 +180,58 @@
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748b' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: right 10px center;
-      flex: 1;
-      min-width: 140px;
+      min-width: 160px;
     }
     .filter-select:focus {
       outline: none;
       border-color: var(--blue);
       box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
     }
-    /* Section headers */
-    .section-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 0 12px;
-      border-bottom: 2px solid #e2e8f0;
-      margin-bottom: 16px;
-    }
-    .section-header:first-child { padding-top: 0; }
-    .section-title {
-      font-size: 18px;
-      font-weight: 800;
+    .search-input {
+      flex: 1;
+      min-width: 200px;
+      padding: 8px 12px 8px 36px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: inherit;
       color: var(--text);
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      background: var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E") no-repeat 10px center;
     }
-    .section-count {
+    .search-input:focus {
+      outline: none;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+    }
+    .result-count {
       font-size: 13px;
-      font-weight: 600;
       color: var(--text-light);
-      background: #f1f5f9;
-      padding: 2px 10px;
-      border-radius: 12px;
+      font-weight: 500;
+      white-space: nowrap;
     }
-    /* Back to top */
-    .back-to-top {
-      position: fixed;
-      bottom: 80px;
-      right: 16px;
-      z-index: 400;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: var(--blue);
-      color: var(--white);
-      border: none;
-      font-size: 20px;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(37,99,235,0.4);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s;
-    }
-    .back-to-top.visible { display: flex; }
-    .back-to-top:hover { transform: scale(1.1); }
 
     /* ===== PRODUCT GRID ===== */
     .catalog-container {
       max-width: 1400px;
       margin: 0 auto;
-      padding: 16px 16px 80px;
+      padding: 32px 24px 80px;
     }
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-    @media (min-width: 600px) {
-      .product-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    }
-    @media (min-width: 900px) {
-      .product-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; }
-      .catalog-container { padding: 24px 24px 80px; }
-    }
-    @media (min-width: 1200px) {
-      .product-grid { grid-template-columns: repeat(5, 1fr); }
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
     }
     .product-card {
       background: var(--white);
-      border-radius: 10px;
+      border-radius: var(--radius);
       overflow: hidden;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      box-shadow: var(--shadow);
       transition: transform 0.2s, box-shadow 0.2s;
       cursor: pointer;
     }
     .product-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
     }
     .product-image-wrap {
       position: relative;
@@ -403,33 +282,52 @@
     }
 
     .product-info {
-      padding: 10px;
+      padding: 16px;
     }
     .product-name {
-      font-size: 13px;
+      font-size: 16px;
       font-weight: 700;
       color: var(--text);
-      margin-bottom: 4px;
+      margin-bottom: 6px;
       line-height: 1.3;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
     }
     .product-details {
       display: flex;
       flex-wrap: wrap;
-      gap: 4px;
+      gap: 6px;
+      margin-bottom: 10px;
     }
     .detail-chip {
-      font-size: 11px;
-      padding: 2px 6px;
+      font-size: 12px;
+      padding: 3px 8px;
       background: #f1f5f9;
       color: var(--text-light);
       border-radius: 4px;
       font-weight: 500;
     }
-    .product-material { display: none; }
+    .product-material {
+      font-size: 13px;
+      color: var(--text-light);
+      margin-bottom: 12px;
+    }
+    .product-quote-btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background: var(--blue);
+      color: var(--white);
+      text-align: center;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .product-quote-btn:hover {
+      background: var(--blue-hover);
+    }
 
     /* ===== LIGHTBOX ===== */
     .lightbox {
@@ -523,28 +421,24 @@
       font-weight: 600;
     }
     .lightbox-cta {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
+      display: block;
       width: 100%;
-      padding: 16px;
-      background: #25D366;
+      padding: 14px;
+      background: var(--blue);
       color: var(--white);
       text-align: center;
       text-decoration: none;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 700;
-      border-radius: 12px;
+      border-radius: 10px;
       border: none;
       cursor: pointer;
-      transition: all 0.2s;
-      margin-top: 8px;
+      transition: background 0.2s;
+      margin-bottom: 10px;
     }
-    .lightbox-cta:hover { background: #20bd5a; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(37,211,102,0.3); }
-    .lightbox-cta svg { width: 20px; height: 20px; fill: currentColor; }
+    .lightbox-cta:hover { background: var(--blue-hover); }
     .lightbox-call {
-      display: none;
+      display: block;
       width: 100%;
       padding: 12px;
       background: transparent;
@@ -601,45 +495,38 @@
 
     /* ===== MOBILE ===== */
     @media (max-width: 768px) {
-      .header-main { padding: 6px 12px; }
-      .logo img { height: 44px; }
-      .header-nav { gap: 6px; }
-      .header-nav .nav-link { display: none; }
-      .header-nav .nav-link.active { display: inline-flex; padding: 5px 8px; font-size: 11px; }
-      .btn { padding: 7px 12px; font-size: 11px; }
-      .lang-switch { padding: 4px 8px; font-size: 11px; }
-      .header-top { padding: 5px 10px; font-size: 11px; }
-      .catalog-hero { margin-top: 90px; padding: 16px 12px 12px; }
-      .catalog-hero h1 { font-size: 22px; margin-bottom: 4px; }
-      .catalog-hero p { font-size: 12px; margin-bottom: 8px; }
-      .catalog-nav { top: 90px; }
-      .search-row { padding: 6px 10px; }
-      .search-input { padding: 8px 8px 8px 32px; font-size: 13px; border-radius: 8px; }
-      .filter-toggle { padding: 8px 10px; font-size: 12px; }
-      .category-pills { padding: 6px 10px; gap: 6px; }
-      .cat-pill { padding: 6px 10px; font-size: 11px; }
-      .catalog-container { padding: 8px 8px 80px; }
-      .section-header { padding: 12px 4px 6px; margin-bottom: 8px; }
-      .section-title { font-size: 14px; }
-      .product-info { padding: 8px; }
-      .product-name { font-size: 12px; }
-      .lightbox { padding: 8px; }
+      .header-main { padding: 8px 16px; }
+      .logo img { height: 52px; }
+      .header-nav { gap: 10px; }
+      .btn { padding: 10px 16px; font-size: 13px; }
+      .catalog-hero { margin-top: 110px; padding: 40px 16px 32px; }
+      .catalog-hero h1 { font-size: 28px; }
+      .catalog-hero p { font-size: 15px; }
+      .filters-bar { top: 110px; padding: 12px 16px; }
+      .filters-inner { gap: 8px; }
+      .filter-select { min-width: 130px; font-size: 13px; }
+      .search-input { min-width: 100%; }
+      .product-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .product-info { padding: 10px; }
+      .product-name { font-size: 13px; }
+      .detail-chip { font-size: 10px; }
+      .catalog-container { padding: 16px 12px 60px; }
+      .lightbox { padding: 16px; }
       .lightbox-content { flex-direction: column; max-height: 95vh; }
-      .lightbox-img { max-height: 45vh; }
-      .lightbox-details { width: 100%; padding: 16px; }
-      .lightbox-details h2 { font-size: 18px; }
-      .lightbox-meta-row { font-size: 13px; }
+      .lightbox-img { max-height: 50vh; }
+      .lightbox-details { width: 100%; padding: 20px; }
       .footer-grid { grid-template-columns: 1fr; gap: 24px; }
       .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
-      .back-to-top { bottom: 72px; width: 40px; height: 40px; font-size: 18px; }
     }
 
-    @media (max-width: 420px) {
-      .product-grid { gap: 6px; }
-      .product-info { padding: 6px; }
-      .product-name { font-size: 11px; }
-      .detail-chip { font-size: 10px; padding: 1px 4px; }
-      .badge { font-size: 9px; padding: 2px 6px; }
+    @media (max-width: 480px) {
+      .product-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .product-info { padding: 8px; }
+      .product-name { font-size: 12px; }
+      .product-details { display: none; }
+      .product-quote-btn { font-size: 11px; padding: 8px; }
+      .filter-group { width: 100%; }
+      .filter-select { width: 100%; }
     }
 
     /* ===== SELECTION CART ===== */
@@ -676,7 +563,17 @@
     }
     .btn-submit-selection:hover { background: var(--accent-hover); transform: translateY(-1px); }
 
-    /* select-check removed - simplified to text-only CTA */
+    .product-card .select-check {
+      position: absolute; top: 10px; right: 10px; z-index: 3;
+      width: 28px; height: 28px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.6);
+      background: rgba(0,0,0,0.3); color: transparent; font-size: 16px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; transition: all 0.2s; backdrop-filter: blur(4px);
+    }
+    .product-card .select-check:hover { border-color: #fff; background: rgba(37,99,235,0.5); }
+    .product-card.selected .select-check {
+      background: var(--blue); border-color: var(--blue); color: #fff;
+    }
+    .product-card.selected { ring: 3px solid var(--blue); box-shadow: 0 0 0 3px rgba(37,99,235,0.3), var(--shadow-lg); }
 
     /* ===== SUBMIT MODAL ===== */
     .submit-modal {
@@ -762,43 +659,45 @@
 
   <!-- CATALOG HERO -->
   <section class="catalog-hero">
-    <h1>Materials &amp; Products</h1>
-    <p>Premium flooring, vanities, cabinets, faucets &amp; more for your renovation project.</p>
-    <a href="sms:+18886093009&body=Hi!%20I%27m%20interested%20in%20your%20products.%20Can%20I%20get%20a%20quote?" class="btn btn-accent" style="font-size:14px;">Text Us (888) 609-3009</a>
+    <h1>Materials Catalog</h1>
+    <p>Browse our curated selection of premium flooring and tile. Find the perfect look for your renovation project.</p>
+    <div style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:12px;padding:16px 24px;max-width:700px;margin:0 auto 20px;backdrop-filter:blur(4px);">
+      <p style="color:#fff;font-size:15px;font-weight:600;margin-bottom:4px;">Select up to 10 products + upload photos of your space for a custom quote!</p>
+      <p style="color:#94a3b8;font-size:14px;margin:0;">Seleccione hasta 10 productos + suba fotos de su espacio para una cotizaci&oacute;n personalizada.</p>
+    </div>
+    <a href="#" onclick="openSubmitModal();return false;" class="btn btn-accent" style="font-size:15px;" id="heroSubmitBtn">Submit My Selection (<span id="heroCount">0</span>/10)</a>
   </section>
 
-  <!-- STICKY NAVIGATION -->
-  <div class="catalog-nav">
-    <div class="search-row">
+  <!-- FILTERS -->
+  <div class="filters-bar">
+    <div class="filters-inner">
+      <div class="filter-group">
+        <select id="filterCategory" class="filter-select" onchange="applyFilters()">
+          <option value="">All Categories</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <select id="filterFinish" class="filter-select" onchange="applyFilters()">
+          <option value="">All Finishes</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <select id="filterColor" class="filter-select" onchange="applyFilters()">
+          <option value="">All Colors</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <select id="filterUse" class="filter-select" onchange="applyFilters()">
+          <option value="">Indoor/Outdoor</option>
+          <option value="Indoor">Indoor Only</option>
+          <option value="Indoor/Outdoor">Indoor & Outdoor</option>
+          <option value="Outdoor">Outdoor Only</option>
+        </select>
+      </div>
       <input type="text" id="searchInput" class="search-input" placeholder="Search products..." oninput="applyFilters()">
-      <button class="filter-toggle" id="filterToggle" onclick="toggleFilters()">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="20" y2="12"/><line x1="12" y1="18" x2="20" y2="18"/><circle cx="6" cy="12" r="2" fill="currentColor"/><circle cx="14" cy="18" r="2" fill="currentColor"/></svg>
-        Filters
-      </button>
       <span id="resultCount" class="result-count"></span>
     </div>
-    <div id="categoryPills" class="category-pills"></div>
-    <div id="filtersDrawer" class="filters-drawer">
-      <select id="filterCategory" class="filter-select" onchange="applyFilters()" style="display:none">
-        <option value="">All Categories</option>
-      </select>
-      <select id="filterFinish" class="filter-select" onchange="applyFilters()">
-        <option value="">All Finishes</option>
-      </select>
-      <select id="filterColor" class="filter-select" onchange="applyFilters()">
-        <option value="">All Colors</option>
-      </select>
-      <select id="filterUse" class="filter-select" onchange="applyFilters()">
-        <option value="">Indoor/Outdoor</option>
-        <option value="Indoor">Indoor Only</option>
-        <option value="Indoor/Outdoor">Indoor &amp; Outdoor</option>
-        <option value="Outdoor">Outdoor Only</option>
-      </select>
-    </div>
   </div>
-
-  <!-- BACK TO TOP -->
-  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#9650;</button>
 
   <!-- PRODUCT GRID -->
   <div class="catalog-container">
@@ -819,15 +718,21 @@
       <div class="lightbox-details">
         <h2 id="lightboxName"></h2>
         <div id="lightboxMeta" class="lightbox-meta"></div>
-        <a id="lightboxTextBtn" href="#" class="lightbox-cta">
-          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
-          Text Us for a Quote
-        </a>
+        <div id="lightboxTags" class="lightbox-tags"></div>
+        <a id="lightboxTextBtn" href="#" class="lightbox-cta">Text Us for a Quote</a>
+        <a href="tel:+18887060080" class="lightbox-call">Call (888) 706-0080</a>
       </div>
     </div>
   </div>
 
-  <!-- Selection removed - simplified to Text Us CTA -->
+  <!-- SELECTION BAR -->
+  <div id="selectionBar" class="selection-bar">
+    <div class="selection-bar-inner">
+      <div id="selectionThumbs" class="selection-thumbs"></div>
+      <span id="selectionCount" class="selection-count">0/10 selected</span>
+      <button class="btn-submit-selection" onclick="openSubmitModal()">Submit Selection</button>
+    </div>
+  </div>
 
   <!-- SUBMIT MODAL -->
   <div id="submitModal" class="submit-modal" onclick="if(event.target===this)closeSubmitModal()">
@@ -1331,109 +1236,53 @@ var uploadedPhotos = [];
 var MAX_SELECTION = 10;
 var MAX_PHOTOS = 5;
 
-// ===== SUPER CATEGORIES =====
-var SUPER_CATS = [
-  {label:'All',icon:'',cats:null},
-  {label:'Tile & Stone',icon:'',cats:['Large Format Porcelain','Standard Porcelain','Contemporary Tile','Ceramic Tile','Outdoor Tile','Specialty Tile','Wood Look Tile']},
-  {label:'Hardwood',icon:'',cats:['Engineered Hardwood','Solid Hardwood']},
-  {label:'Vinyl & Laminate',icon:'',cats:['Waterproof Luxury Vinyl','Luxury Vinyl Plank','Laminate Flooring','Flooring Underlayment']},
-  {label:'Vanities',icon:'',cats:['Bathroom Vanity']},
-  {label:'Cabinets',icon:'',cats:['Kitchen Cabinet','Cabinet Hardware']},
-  {label:'Sinks',icon:'',cats:['Kitchen Sink']},
-  {label:'Faucets',icon:'',cats:['Kitchen Faucet','Bathroom Faucet']},
-  {label:'Shower',icon:'',cats:['Showerhead']},
-  {label:'Doors',icon:'',cats:['Exterior Door','Interior Door']},
-  {label:'Windows',icon:'',cats:['Window','Skylight']},
-  {label:'Outdoor',icon:'',cats:['Artificial Turf','Carpet']},
-  {label:'More',icon:'',cats:['Insulation','Furnace']}
-];
-var activeSuperCat = 0;
-
 // ===== INIT =====
 function init() {
   populateFilters();
-  buildCategoryPills();
-  renderGrouped(PRODUCTS);
-  // Back to top visibility
-  window.addEventListener('scroll', function() {
-    var btn = document.getElementById('backToTop');
-    btn.classList.toggle('visible', window.scrollY > 600);
-  });
-}
-
-function buildCategoryPills() {
-  var container = document.getElementById('categoryPills');
-  container.innerHTML = SUPER_CATS.map(function(sc, i) {
-    var count = sc.cats ? PRODUCTS.filter(function(p) { return sc.cats.indexOf(p.category) >= 0; }).length : PRODUCTS.length;
-    if (count === 0 && i > 0) return '';
-    return '<button class="cat-pill' + (i === activeSuperCat ? ' active' : '') + '" onclick="selectSuperCat(' + i + ')">' +
-      sc.label + '<span class="pill-count">' + count + '</span></button>';
-  }).join('');
-}
-
-function selectSuperCat(idx) {
-  activeSuperCat = idx;
-  // Update pill active state
-  var pills = document.querySelectorAll('.cat-pill');
-  pills.forEach(function(p, i) { p.classList.toggle('active', i === idx); });
-  // Reset search & filters
-  document.getElementById('searchInput').value = '';
-  document.getElementById('filterFinish').value = '';
-  document.getElementById('filterColor').value = '';
-  document.getElementById('filterUse').value = '';
-  applyFilters();
-  // Scroll to grid
-  document.querySelector('.catalog-container').scrollIntoView({behavior:'smooth', block:'start'});
+  renderProducts(PRODUCTS);
 }
 
 function populateFilters() {
-  var finishes = []; var colors = [];
-  PRODUCTS.forEach(function(p) {
-    if (finishes.indexOf(p.finish) < 0) finishes.push(p.finish);
-    if (colors.indexOf(p.color) < 0) colors.push(p.color);
-  });
-  finishes.sort(); colors.sort();
+  const cats = [...new Set(PRODUCTS.map(p => p.category))].sort();
+  const finishes = [...new Set(PRODUCTS.map(p => p.finish))].sort();
+  const colors = [...new Set(PRODUCTS.map(p => p.color))].sort();
 
-  var finSel = document.getElementById('filterFinish');
-  finishes.forEach(function(f) { var o = document.createElement('option'); o.value = f; o.textContent = f; finSel.appendChild(o); });
+  const catSel = document.getElementById('filterCategory');
+  cats.forEach(c => { const o = document.createElement('option'); o.value = c; o.textContent = c; catSel.appendChild(o); });
 
-  var colSel = document.getElementById('filterColor');
-  colors.forEach(function(c) { var o = document.createElement('option'); o.value = c; o.textContent = c; colSel.appendChild(o); });
-}
+  const finSel = document.getElementById('filterFinish');
+  finishes.forEach(f => { const o = document.createElement('option'); o.value = f; o.textContent = f; finSel.appendChild(o); });
 
-function toggleFilters() {
-  var drawer = document.getElementById('filtersDrawer');
-  var btn = document.getElementById('filterToggle');
-  drawer.classList.toggle('open');
-  btn.classList.toggle('active');
+  const colSel = document.getElementById('filterColor');
+  colors.forEach(c => { const o = document.createElement('option'); o.value = c; o.textContent = c; colSel.appendChild(o); });
 }
 
 function applyFilters() {
-  var sc = SUPER_CATS[activeSuperCat];
-  var fin = document.getElementById('filterFinish').value;
-  var col = document.getElementById('filterColor').value;
-  var use = document.getElementById('filterUse').value;
-  var search = document.getElementById('searchInput').value.toLowerCase().trim();
+  const cat = document.getElementById('filterCategory').value;
+  const fin = document.getElementById('filterFinish').value;
+  const col = document.getElementById('filterColor').value;
+  const use = document.getElementById('filterUse').value;
+  const search = document.getElementById('searchInput').value.toLowerCase().trim();
 
-  var filtered = PRODUCTS.filter(function(p) {
-    if (sc.cats && sc.cats.indexOf(p.category) < 0) return false;
+  let filtered = PRODUCTS.filter(p => {
+    if (cat && p.category !== cat) return false;
     if (fin && p.finish !== fin) return false;
     if (col && p.color !== col) return false;
     if (use && !p.use.includes(use)) return false;
     if (search) {
-      var haystack = [p.name, p.category, p.material, p.color, p.finish, p.brand, p.size].concat(p.tags).join(' ').toLowerCase();
-      if (haystack.indexOf(search) < 0) return false;
+      const haystack = [p.name, p.category, p.material, p.color, p.finish, p.brand, p.size, ...p.tags].join(' ').toLowerCase();
+      if (!haystack.includes(search)) return false;
     }
     return true;
   });
 
-  renderGrouped(filtered);
+  renderProducts(filtered);
 }
 
-function renderGrouped(products) {
-  var grid = document.getElementById('productGrid');
-  var noRes = document.getElementById('noResults');
-  var countEl = document.getElementById('resultCount');
+function renderProducts(products) {
+  const grid = document.getElementById('productGrid');
+  const noRes = document.getElementById('noResults');
+  const countEl = document.getElementById('resultCount');
 
   countEl.textContent = products.length + ' product' + (products.length !== 1 ? 's' : '');
 
@@ -1444,51 +1293,42 @@ function renderGrouped(products) {
   }
   noRes.style.display = 'none';
 
-  // Group by category
-  var groups = {};
-  var groupOrder = [];
-  products.forEach(function(p) {
-    if (!groups[p.category]) { groups[p.category] = []; groupOrder.push(p.category); }
-    groups[p.category].push(p);
-  });
+  grid.innerHTML = products.map(p => {
+    var isSelected = selectedProducts.some(s => s.id === p.id);
+    return `
+    <div class="product-card${isSelected ? ' selected' : ''}" onclick="openLightbox(${p.id})">
+      <div class="product-image-wrap">
+        <img data-src="catalog/${p.image}.jpg" alt="${p.name}" onload="this.classList.add('loaded')">
+        <button class="select-check" onclick="event.stopPropagation();toggleSelect(${p.id})" title="Select">${isSelected ? '&#10003;' : ''}</button>
+        <div class="product-badges">
+          <span class="badge badge-category">${p.category.replace('Large Format ','').replace('Standard ','')}</span>
+          ${p.use.includes('Outdoor') ? '<span class="badge badge-outdoor">Outdoor</span>' : ''}
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">${p.name}</div>
+        <div class="product-details">
+          <span class="detail-chip">${p.size}</span>
+          <span class="detail-chip">${p.finish}</span>
+          <span class="detail-chip">${p.material}</span>
+        </div>
+        <div class="product-material">${p.color}${p.brand ? ' &bull; ' + p.brand : ''}</div>
+        <button class="product-quote-btn" onclick="event.stopPropagation();toggleSelect(${p.id})">${isSelected ? '&#10003; Selected' : '+ Add to Selection'}</button>
+      </div>
+    </div>`;
+  }).join('');
 
-  var html = '';
-  groupOrder.forEach(function(cat) {
-    var items = groups[cat];
-    html += '<div class="section-header"><div class="section-title">' + cat + ' <span class="section-count">' + items.length + '</span></div></div>';
-    html += '<div class="product-grid">';
-    items.forEach(function(p) {
-      var isSelected = selectedProducts.some(function(s) { return s.id === p.id; });
-      html += '<div class="product-card" onclick="openLightbox(' + p.id + ')">' +
-        '<div class="product-image-wrap">' +
-          '<img data-src="catalog/' + p.image + '.jpg" alt="' + p.name + '" onload="this.classList.add(\'loaded\')" loading="lazy">' +
-          (p.brand ? '<div class="product-badges"><span class="badge badge-finish">' + p.brand + '</span></div>' : '') +
-        '</div>' +
-        '<div class="product-info">' +
-          '<div class="product-name">' + p.name + '</div>' +
-          '<div class="product-details">' +
-            '<span class="detail-chip">' + p.size + '</span>' +
-            '<span class="detail-chip">' + p.color + '</span>' +
-          '</div>' +
-        '</div>' +
-      '</div>';
-    });
-    html += '</div>';
-  });
-
-  grid.innerHTML = html;
-
-  // Lazy load images with IntersectionObserver
-  var imgs = grid.querySelectorAll('img[data-src]');
-  var imgObs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) {
+  // Lazy load images
+  const imgs = grid.querySelectorAll('img[data-src]');
+  const imgObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
       if (e.isIntersecting) {
         e.target.src = e.target.dataset.src;
         imgObs.unobserve(e.target);
       }
     });
-  }, { rootMargin: '300px' });
-  imgs.forEach(function(img) { imgObs.observe(img); });
+  }, { rootMargin: '200px' });
+  imgs.forEach(img => imgObs.observe(img));
 }
 
 function openLightbox(id) {
@@ -1499,14 +1339,20 @@ function openLightbox(id) {
   document.getElementById('lightboxName').textContent = p.name;
 
   const meta = document.getElementById('lightboxMeta');
-  meta.innerHTML =
-    '<div class="lightbox-meta-row"><span class="lightbox-meta-label">Category</span><span class="lightbox-meta-value">' + p.category + '</span></div>' +
-    '<div class="lightbox-meta-row"><span class="lightbox-meta-label">Size</span><span class="lightbox-meta-value">' + p.size + '</span></div>' +
-    '<div class="lightbox-meta-row"><span class="lightbox-meta-label">Finish</span><span class="lightbox-meta-value">' + p.finish + '</span></div>' +
-    '<div class="lightbox-meta-row"><span class="lightbox-meta-label">Color</span><span class="lightbox-meta-value">' + p.color + '</span></div>' +
-    (p.brand ? '<div class="lightbox-meta-row"><span class="lightbox-meta-label">Brand</span><span class="lightbox-meta-value">' + p.brand + '</span></div>' : '');
+  meta.innerHTML = `
+    <div class="lightbox-meta-row"><span class="lightbox-meta-label">Category</span><span class="lightbox-meta-value">${p.category}</span></div>
+    <div class="lightbox-meta-row"><span class="lightbox-meta-label">Size</span><span class="lightbox-meta-value">${p.size}</span></div>
+    <div class="lightbox-meta-row"><span class="lightbox-meta-label">Finish</span><span class="lightbox-meta-value">${p.finish}</span></div>
+    <div class="lightbox-meta-row"><span class="lightbox-meta-label">Material</span><span class="lightbox-meta-value">${p.material}</span></div>
+    <div class="lightbox-meta-row"><span class="lightbox-meta-label">Color</span><span class="lightbox-meta-value">${p.color}</span></div>
+    <div class="lightbox-meta-row"><span class="lightbox-meta-label">Use</span><span class="lightbox-meta-value">${p.use}</span></div>
+    ${p.brand ? '<div class="lightbox-meta-row"><span class="lightbox-meta-label">Brand</span><span class="lightbox-meta-value">' + p.brand + '</span></div>' : ''}
+  `;
 
-  document.getElementById('lightboxTextBtn').href = 'sms:+18886093009&body=' + encodeURIComponent('Hi! I\'m interested in ' + p.name + ' (' + p.size + ', ' + p.finish + '). Can I get a quote?');
+  const tags = document.getElementById('lightboxTags');
+  tags.innerHTML = p.tags.map(t => `<span class="lightbox-tag">${t}</span>`).join('');
+
+  document.getElementById('lightboxTextBtn').href = 'sms:+18886093009&body=' + encodeURIComponent('Hi, I\'m interested in ' + p.name + ' (' + p.category + ', ' + p.size + ', ' + p.finish + '). Can you help me with a quote?');
 
   document.getElementById('lightbox').classList.add('active');
   document.body.style.overflow = 'hidden';
