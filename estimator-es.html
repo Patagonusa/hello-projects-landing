@@ -163,17 +163,12 @@
       font-size: 12px;
     }
     .project-card.selected .check-mark { display: flex; }
-    .project-card .card-icon {
-      font-size: 32px; margin-bottom: 10px;
-      background: linear-gradient(135deg, var(--blue), var(--blue-light));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
+    .project-card .card-img {
+      width: 100%; height: 100px; object-fit: cover; border-radius: 8px; margin-bottom: 10px;
+      filter: brightness(0.9); transition: all 0.3s;
     }
-    .project-card.selected .card-icon {
-      background: linear-gradient(135deg, var(--green-dark), var(--green));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+    .project-card:hover .card-img { filter: brightness(1); }
+    .project-card.selected .card-img { filter: brightness(1); box-shadow: 0 0 0 2px var(--green); }
     .project-card .card-label { font-size: 14px; font-weight: 700; color: var(--text); }
     .project-card .card-range { font-size: 12px; color: var(--text-light); margin-top: 4px; }
 
@@ -357,7 +352,7 @@
       .step-nav-item span.nav-text { display: none; }
       .project-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
       .project-card { padding: 16px 10px; }
-      .project-card .card-icon { font-size: 26px; }
+      .project-card .card-img { height: 70px; }
       .project-card .card-label { font-size: 12px; }
       .scope-options { flex-direction: column; }
       .result-total { font-size: 28px; }
@@ -420,55 +415,55 @@
       <div class="project-grid">
         <div class="project-card" data-project="kitchen" onclick="toggleProject(this)">
           <div class="check-mark"><i class="fas fa-check"></i></div>
-          <div class="card-icon"><i class="fas fa-utensils"></i></div>
+          <img class="card-img" src="kitchen.jpeg" alt="Remodelación de Cocina">
           <div class="card-label">Remodelaci&oacute;n de Cocina</div>
           <div class="card-range">$15k &ndash; $80k</div>
         </div>
         <div class="project-card" data-project="bathroom" onclick="toggleProject(this)">
           <div class="check-mark"><i class="fas fa-check"></i></div>
-          <div class="card-icon"><i class="fas fa-bath"></i></div>
+          <img class="card-img" src="bathroom.jpeg" alt="Remodelación de Baño">
           <div class="card-label">Remodelaci&oacute;n de Ba&ntilde;o</div>
           <div class="card-range">$8k &ndash; $40k</div>
         </div>
         <div class="project-card" data-project="roofing" onclick="toggleProject(this)">
           <div class="check-mark"><i class="fas fa-check"></i></div>
-          <div class="card-icon"><i class="fas fa-house-chimney"></i></div>
+          <img class="card-img" src="roofing.jpeg" alt="Techo">
           <div class="card-label">Techo</div>
           <div class="card-range">$2k &ndash; $75k</div>
         </div>
         <div class="project-card" data-project="hvac" onclick="toggleProject(this)">
           <div class="check-mark"><i class="fas fa-check"></i></div>
-          <div class="card-icon"><i class="fas fa-snowflake"></i></div>
+          <img class="card-img" src="hvac/central-ac-system.jpg" alt="Aire Acondicionado">
           <div class="card-label">Aire Acondicionado</div>
           <div class="card-range">$3k &ndash; $15k</div>
         </div>
         <div class="project-card" data-project="windows" onclick="toggleProject(this)">
           <div class="check-mark"><i class="fas fa-check"></i></div>
-          <div class="card-icon"><i class="fas fa-window-maximize"></i></div>
+          <img class="card-img" src="catalog/IMG_5497.jpg" alt="Ventanas y Puertas">
           <div class="card-label">Ventanas y Puertas</div>
           <div class="card-range">$500 &ndash; $30k</div>
         </div>
         <div class="project-card" data-project="flooring" onclick="toggleProject(this)">
           <div class="check-mark"><i class="fas fa-check"></i></div>
-          <div class="card-icon"><i class="fas fa-border-all"></i></div>
+          <img class="card-img" src="catalog/IMG_5500.jpg" alt="Pisos">
           <div class="card-label">Pisos</div>
           <div class="card-range">$1k &ndash; $45k</div>
         </div>
         <div class="project-card" data-project="electrical" onclick="toggleProject(this)">
           <div class="check-mark"><i class="fas fa-check"></i></div>
-          <div class="card-icon"><i class="fas fa-bolt"></i></div>
+          <img class="card-img" src="electrical.jpeg" alt="Eléctrico">
           <div class="card-label">El&eacute;ctrico</div>
           <div class="card-range">$1k &ndash; $12k</div>
         </div>
         <div class="project-card" data-project="landscaping" onclick="toggleProject(this)">
           <div class="check-mark"><i class="fas fa-check"></i></div>
-          <div class="card-icon"><i class="fas fa-tree"></i></div>
+          <img class="card-img" src="landscaping.jpeg" alt="Jardinería">
           <div class="card-label">Jardiner&iacute;a</div>
           <div class="card-range">$3k &ndash; $50k</div>
         </div>
         <div class="project-card" data-project="general" onclick="toggleProject(this)">
           <div class="check-mark"><i class="fas fa-check"></i></div>
-          <div class="card-icon"><i class="fas fa-hammer"></i></div>
+          <img class="card-img" src="general-remodeling.jpeg" alt="Remodelación General">
           <div class="card-label">Remodelaci&oacute;n General</div>
           <div class="card-range">$10k &ndash; $150k</div>
         </div>
