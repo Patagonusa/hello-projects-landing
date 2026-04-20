@@ -173,7 +173,7 @@
     /* ===== HERO ===== */
     .hero {
       margin-top: 130px;
-      background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #1d4ed8 100%);
+      background: linear-gradient(rgba(12,26,46,0.75), rgba(30,58,95,0.85)), url('roof-hero.png') center/cover no-repeat;
       color: var(--white);
       padding: 56px 24px 48px;
       text-align: center;
@@ -864,11 +864,10 @@
         <div class="calc-group">
           <label>Tipo de Techo</label>
           <select id="roofType">
-            <option value="asphalt">Tejas de Asfalto</option>
-            <option value="tile">Teja</option>
-            <option value="metal">Metal</option>
-            <option value="flat">Plano / TPO</option>
-            <option value="wood">Madera (Wood Shake)</option>
+            <option value="25yr">Teja Arquitect&oacute;nica 25 A&ntilde;os</option>
+            <option value="50yr">Teja Premium 50 A&ntilde;os</option>
+            <option value="torch">Torch Down (Techo Plano)</option>
+            <option value="metal">Techo de Metal</option>
           </select>
         </div>
 
@@ -1079,11 +1078,10 @@
 
     // Pricing per sq ft (low - high)
     const PRICING = {
-      asphalt: { low: 4, high: 7, name: 'Tejas de Asfalto', nameEn: 'Asphalt Shingles' },
-      tile:    { low: 8, high: 15, name: 'Teja', nameEn: 'Tile' },
-      metal:   { low: 7, high: 12, name: 'Metal', nameEn: 'Metal' },
-      flat:    { low: 5, high: 9, name: 'Plano / TPO', nameEn: 'Flat / TPO' },
-      wood:    { low: 6, high: 11, name: 'Madera (Wood Shake)', nameEn: 'Wood Shake' }
+      '25yr':  { low: 7, high: 8, name: 'Teja Arquitect\u00f3nica 25 A\u00f1os', nameEn: '25-Year Architectural Shingle' },
+      '50yr':  { low: 8, high: 9.5, name: 'Teja Premium 50 A\u00f1os', nameEn: '50-Year Premium Shingle' },
+      torch:   { low: 7, high: 8, name: 'Torch Down (Techo Plano)', nameEn: 'Torch Down (Flat Roof)' },
+      metal:   { low: 10.5, high: 12, name: 'Techo de Metal', nameEn: 'Metal Roofing' }
     };
 
     // Current calculator state

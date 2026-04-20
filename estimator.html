@@ -426,7 +426,7 @@
         </div>
         <div class="project-card" data-project="roofing" onclick="toggleProject(this)">
           <div class="check-mark"><i class="fas fa-check"></i></div>
-          <img class="card-img" src="roofing.jpeg" alt="Roofing">
+          <img class="card-img" src="roofing-work.jpeg" alt="Roofing">
           <div class="card-label">Roofing</div>
           <div class="card-range">$2k &ndash; $75k</div>
         </div>
@@ -438,13 +438,13 @@
         </div>
         <div class="project-card" data-project="windows" onclick="toggleProject(this)">
           <div class="check-mark"><i class="fas fa-check"></i></div>
-          <img class="card-img" src="catalog/IMG_5497.jpg" alt="Windows & Doors">
+          <img class="card-img" src="windows-work.jpeg" alt="Windows & Doors">
           <div class="card-label">Windows &amp; Doors</div>
           <div class="card-range">$500 &ndash; $30k</div>
         </div>
         <div class="project-card" data-project="flooring" onclick="toggleProject(this)">
           <div class="check-mark"><i class="fas fa-check"></i></div>
-          <img class="card-img" src="catalog/IMG_5500.jpg" alt="Flooring">
+          <img class="card-img" src="flooring-work.jpeg" alt="Flooring">
           <div class="card-label">Flooring</div>
           <div class="card-range">$1k &ndash; $45k</div>
         </div>
@@ -631,7 +631,7 @@ var CRM_WEBHOOK = 'https://patagon-crm.onrender.com/api/webhooks/lead';
 var PROJECTS = {
   kitchen:      { label: 'Kitchen Remodel',    icon: 'fa-utensils',         type: 'tier', tiers: [{ label:'Small',  lo:15000, hi:25000 },{ label:'Medium', lo:25000, hi:45000 },{ label:'Large', lo:45000, hi:80000 }] },
   bathroom:     { label: 'Bathroom Remodel',   icon: 'fa-bath',             type: 'tier', tiers: [{ label:'Small',  lo:8000,  hi:15000 },{ label:'Medium', lo:15000, hi:25000 },{ label:'Large', lo:15000, hi:40000 }] },
-  roofing:      { label: 'Roofing',            icon: 'fa-house-chimney',    type: 'slider', unit: 'sq ft', min: 500, max: 5000, step: 100, default: 1500, priceLo: 4, priceHi: 15 },
+  roofing:      { label: 'Roofing',            icon: 'fa-house-chimney',    type: 'slider', unit: 'sq ft', min: 500, max: 5000, step: 100, default: 1500, priceLo: 7, priceHi: 9.5 },
   hvac:         { label: 'HVAC',               icon: 'fa-snowflake',        type: 'dropdown', options: [{ label:'Mini Split (1 zone)',lo:3000,hi:5000 },{ label:'Mini Split (multi-zone)',lo:5000,hi:9000 },{ label:'Central AC System',lo:5000,hi:10000 },{ label:'Heat Pump System',lo:6000,hi:12000 },{ label:'Full HVAC Replacement',lo:8000,hi:15000 }] },
   windows:      { label: 'Windows & Doors',    icon: 'fa-window-maximize',  type: 'slider', unit: 'windows', min: 1, max: 20, step: 1, default: 5, priceLo: 500, priceHi: 1500 },
   flooring:     { label: 'Flooring',           icon: 'fa-border-all',       type: 'slider', unit: 'sq ft', min: 200, max: 3000, step: 50, default: 800, priceLo: 5, priceHi: 15 },

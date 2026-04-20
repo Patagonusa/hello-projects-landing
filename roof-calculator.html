@@ -173,7 +173,7 @@
     /* ===== HERO ===== */
     .hero {
       margin-top: 130px;
-      background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #1d4ed8 100%);
+      background: linear-gradient(rgba(12,26,46,0.75), rgba(30,58,95,0.85)), url('roof-hero.png') center/cover no-repeat;
       color: var(--white);
       padding: 56px 24px 48px;
       text-align: center;
@@ -864,11 +864,10 @@
         <div class="calc-group">
           <label>Roof Type</label>
           <select id="roofType">
-            <option value="asphalt">Asphalt Shingles</option>
-            <option value="tile">Tile</option>
-            <option value="metal">Metal</option>
-            <option value="flat">Flat / TPO</option>
-            <option value="wood">Wood Shake</option>
+            <option value="25yr">25-Year Architectural Shingle</option>
+            <option value="50yr">50-Year Premium Shingle</option>
+            <option value="torch">Torch Down (Flat Roof)</option>
+            <option value="metal">Metal Roofing</option>
           </select>
         </div>
 
@@ -941,7 +940,7 @@
     <div class="estimate-card">
       <div class="label">Your Estimated Roof Cost</div>
       <div class="range" id="estimateRange">$6,000 &mdash; $10,500</div>
-      <div class="specs" id="estimateSpecs">1,500 sq ft &middot; Asphalt Shingles &middot; 1 Story</div>
+      <div class="specs" id="estimateSpecs">1,500 sq ft &middot; 25-Year Architectural Shingle &middot; 1 Story</div>
 
       <div class="breakdown">
         <div class="breakdown-item">
@@ -1079,11 +1078,10 @@
 
     // Pricing per sq ft (low - high)
     const PRICING = {
-      asphalt: { low: 4, high: 7, name: 'Asphalt Shingles' },
-      tile:    { low: 8, high: 15, name: 'Tile' },
-      metal:   { low: 7, high: 12, name: 'Metal' },
-      flat:    { low: 5, high: 9, name: 'Flat / TPO' },
-      wood:    { low: 6, high: 11, name: 'Wood Shake' }
+      '25yr':  { low: 7, high: 8, name: '25-Year Architectural Shingle' },
+      '50yr':  { low: 8, high: 9.5, name: '50-Year Premium Shingle' },
+      torch:   { low: 7, high: 8, name: 'Torch Down (Flat Roof)' },
+      metal:   { low: 10.5, high: 12, name: 'Metal Roofing' }
     };
 
     // Current calculator state
