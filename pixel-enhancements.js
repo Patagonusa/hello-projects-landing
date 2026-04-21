@@ -1,11 +1,14 @@
 // HPP pixel enhancements
+// - Own visitor pixel: POST every pageview to CRM /api/webhooks/visitor
 // - Meta Advanced Matching: hash email/phone/zip/first/last on blur, re-init fbq
 // - Form-abandoner webhook: POST valid email/phone to CRM on blur
-// Included via <script src="/pixel-enhancements.js" async></script> in <head>
+// Included via <script src="/pixel-enhancements.js" defer></script> in <head>
 (function () {
   var BRAND = 'hpp';
   var META_PIXEL = '1782159502364871';
-  var CRM = 'https://patagon-crm.onrender.com/api/webhooks/lead-partial';
+  var CRM_HOST = 'https://patagon-crm.onrender.com';
+  var CRM = CRM_HOST + '/api/webhooks/lead-partial';
+  var CRM_VISITOR = CRM_HOST + '/api/webhooks/visitor';
   var FP_KEY = 'hpp_fp';
 
   // Infer interest from pathname
@@ -40,6 +43,41 @@
   function qs(k) {
     try { return new URLSearchParams(location.search).get(k) || undefined; } catch (e) { return undefined; }
   }
+
+  function getCookie(name) {
+    try {
+      var m = document.cookie.match(new RegExp('(?:^|; )' + name.replace(/[.$?*|{}()[\]\\\/+^]/g, '\\$&') + '=([^;]*)'));
+      return m ? decodeURIComponent(m[1]) : undefined;
+    } catch (e) { return undefined; }
+  }
+
+  // Fire our own pixel ping to CRM /api/webhooks/visitor — one call per pageview
+  try {
+    var visitorBody = {
+      fingerprint_id: fp,
+      brand: BRAND,
+      landing_page: location.pathname,
+      referrer_domain: (function () {
+        try { return document.referrer ? new URL(document.referrer).hostname : undefined; } catch (e) { return undefined; }
+      })(),
+      utm_source: qs('utm_source'),
+      utm_medium: qs('utm_medium'),
+      utm_campaign: qs('utm_campaign'),
+      utm_content: qs('utm_content'),
+      utm_term: qs('utm_term'),
+      fbclid: qs('fbclid'),
+      gclid: qs('gclid'),
+      fbc: getCookie('_fbc'),
+      fbp: getCookie('_fbp'),
+    };
+    fetch(CRM_VISITOR, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(visitorBody),
+      keepalive: true,
+      mode: 'cors',
+    }).catch(function () {});
+  } catch (_) {}
 
   async function sha256(s) {
     var b = new TextEncoder().encode(s);
