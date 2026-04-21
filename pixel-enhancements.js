@@ -320,9 +320,8 @@
   }
 
   function injectStickyBar() {
-    try {
-      if (localStorage.getItem('sticky_call_dismissed') === '1') return;
-    } catch (_) {}
+    // (Dismiss-persistence intentionally disabled during the testing phase so
+    // the bar always shows. Restore the localStorage check to re-enable.)
     if (document.getElementById('hpp-sticky-bar')) return;
     injectStickyBarStyles();
     var bar = document.createElement('div');
@@ -340,7 +339,6 @@
     document.body.appendChild(bar);
     var closeBtn = bar.querySelector('.hpp-sticky-close');
     closeBtn.addEventListener('click', function () {
-      try { localStorage.setItem('sticky_call_dismissed', '1'); } catch (_) {}
       try { bar.parentNode.removeChild(bar); } catch (_) {}
     });
   }
