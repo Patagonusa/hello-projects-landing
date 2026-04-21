@@ -97,7 +97,10 @@
     var payload = JSON.stringify(body);
     try {
       if (useBeacon && navigator.sendBeacon) {
-        var blob = new Blob([payload], { type: 'application/json' });
+        // text/plain avoids CORS preflight which sendBeacon cannot perform —
+        // application/json blob silently fails on cross-origin. Server parses
+        // via request.json() regardless of content-type.
+        var blob = new Blob([payload], { type: 'text/plain' });
         navigator.sendBeacon(CRM, blob);
         return;
       }
@@ -147,7 +150,10 @@
     var payload = JSON.stringify(body);
     try {
       if (opts.useBeacon && navigator.sendBeacon) {
-        var blob = new Blob([payload], { type: 'application/json' });
+        // text/plain avoids CORS preflight which sendBeacon cannot perform —
+        // application/json blob silently fails on cross-origin. Server parses
+        // via request.json() regardless of content-type.
+        var blob = new Blob([payload], { type: 'text/plain' });
         navigator.sendBeacon(CRM_VISITOR, blob);
         return;
       }
