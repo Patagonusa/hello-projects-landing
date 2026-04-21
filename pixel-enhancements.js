@@ -1,9 +1,10 @@
 // HPP pixel enhancements
-// - Own visitor pixel: POST every pageview to CRM /api/webhooks/visitor
+// - Own visitor pixel: POST pageview + periodic heartbeats to CRM /api/webhooks/visitor
 // - Meta Advanced Matching: hash email/phone/zip/first/last on blur, re-init fbq
 // - Form-abandoner webhook: POST valid email/phone to CRM on blur
 // - Click-to-call tracking (tel: link taps -> CRM)
-// - Exit-intent SMS opt-in modal
+// - Exit-intent SMS opt-in modal (adaptive dwell for in-app browsers)
+// - Sticky mobile call bar (always-visible CTA on phones)
 // Included via <script src="/pixel-enhancements.js" defer></script> in <head>
 (function () {
   var BRAND = 'hpp';
@@ -12,6 +13,8 @@
   var CRM = CRM_HOST + '/api/webhooks/lead-partial';
   var CRM_VISITOR = CRM_HOST + '/api/webhooks/visitor';
   var FP_KEY = 'hpp_fp';
+  var PHONE_E164 = '+18887060080';
+  var PHONE_DISPLAY = '(888) 706-0080';
 
   var BRAND_COLORS = {
     primary: '#0c1a2e',
@@ -19,6 +22,12 @@
     accentHover: '#d97706',
     text: '#1e293b'
   };
+
+  // In-app browsers (Facebook/Instagram/Messenger/Line/Twitter/Snapchat) kill mouseleave
+  // and shorten dwell, so reduce the thresholds so pagehide/scroll triggers catch them.
+  var IS_IN_APP = /\b(FBAN|FBAV|Instagram|Line|Twitter|Snapchat|Messenger)\b/i.test(navigator.userAgent || '');
+  var DWELL_MIN_MS = IS_IN_APP ? 8000 : 20000;
+  var DWELL_PAGEHIDE_MS = IS_IN_APP ? 12000 : 30000;
 
   function inferInterest() {
     var p = (location.pathname || '').toLowerCase();
@@ -99,8 +108,25 @@
     } catch (_) {}
   }
 
-  try {
-    var visitorBody = {
+  // Scroll + time tracking for heartbeats
+  var lastY = window.scrollY || 0;
+  var maxY = lastY;
+  var scrollUp = 0;
+  function scrolledPct() {
+    try {
+      var doc = document.documentElement;
+      var denom = Math.max(1, (doc.scrollHeight || doc.clientHeight || 1) - (window.innerHeight || 1));
+      var pct = Math.min(100, Math.round((maxY / denom) * 100));
+      return pct < 0 ? 0 : pct;
+    } catch (_) { return 0; }
+  }
+  function secondsOnPage() {
+    return Math.round((Date.now() - PAGE_LOAD_AT) / 1000);
+  }
+
+  function postVisitor(opts) {
+    opts = opts || {};
+    var body = {
       fingerprint_id: fp,
       brand: BRAND,
       landing_page: location.pathname,
@@ -110,13 +136,29 @@
       utm_source: qs('utm_source'), utm_medium: qs('utm_medium'),
       utm_campaign: qs('utm_campaign'), utm_content: qs('utm_content'), utm_term: qs('utm_term'),
       fbclid: qs('fbclid'), gclid: qs('gclid'),
-      fbc: getCookie('_fbc'), fbp: getCookie('_fbp')
+      fbc: getCookie('_fbc'), fbp: getCookie('_fbp'),
+      heartbeat: !!opts.heartbeat,
+      time_on_site_sec: secondsOnPage(),
+      scrolled_pct: scrolledPct()
     };
-    fetch(CRM_VISITOR, {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(visitorBody), keepalive: true, mode: 'cors'
-    }).catch(function () {});
-  } catch (_) {}
+    var payload = JSON.stringify(body);
+    try {
+      if (opts.useBeacon && navigator.sendBeacon) {
+        var blob = new Blob([payload], { type: 'application/json' });
+        navigator.sendBeacon(CRM_VISITOR, blob);
+        return;
+      }
+      fetch(CRM_VISITOR, {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: payload, keepalive: true, mode: 'cors'
+      }).catch(function () {});
+    } catch (_) {}
+  }
+
+  // Initial pageview
+  postVisitor({ heartbeat: false });
+  // Heartbeat every 15s to capture time_on_site + scrolled_pct
+  var heartbeatTimer = setInterval(function () { postVisitor({ heartbeat: true }); }, 15000);
 
   async function sha256(s) {
     var b = new TextEncoder().encode(s);
@@ -187,6 +229,62 @@
     return true;
   }, true);
 
+  // Sticky mobile call bar — always visible, big tap target, drives click-to-call
+  function injectStickyBarStyles() {
+    if (document.getElementById('sticky-call-bar-styles')) return;
+    var css = ''
+      + '.hpp-sticky-bar{position:fixed;left:0;right:0;bottom:0;z-index:2147483645;'
+      + 'background:' + BRAND_COLORS.primary + ';color:#fff;'
+      + 'padding:10px 12px calc(10px + env(safe-area-inset-bottom)) 12px;'
+      + 'box-shadow:0 -4px 18px rgba(0,0,0,.2);display:none;align-items:center;gap:10px;'
+      + 'font-family:Inter,-apple-system,sans-serif}'
+      + '.hpp-sticky-bar .hpp-sticky-label{flex:1;font-size:13px;line-height:1.25;color:#e2e8f0}'
+      + '.hpp-sticky-bar .hpp-sticky-label strong{color:#fff;display:block;font-size:14px;font-weight:800}'
+      + '.hpp-sticky-bar a.hpp-sticky-cta{background:' + BRAND_COLORS.accent + ';color:' + BRAND_COLORS.primary + ';'
+      + 'padding:12px 16px;border-radius:10px;font-weight:800;font-size:15px;'
+      + 'text-decoration:none;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;'
+      + 'box-shadow:0 2px 6px rgba(0,0,0,.18)}'
+      + '.hpp-sticky-bar a.hpp-sticky-cta:active{background:' + BRAND_COLORS.accentHover + '}'
+      + '.hpp-sticky-bar .hpp-sticky-close{background:transparent;border:0;color:#94a3b8;'
+      + 'font-size:20px;line-height:1;cursor:pointer;padding:4px 8px;margin-left:-4px}'
+      + '@media (max-width: 820px){.hpp-sticky-bar{display:flex}body{padding-bottom:76px}}';
+    var s = document.createElement('style');
+    s.id = 'sticky-call-bar-styles';
+    s.textContent = css;
+    document.head.appendChild(s);
+  }
+
+  function injectStickyBar() {
+    try {
+      if (localStorage.getItem('sticky_call_dismissed') === '1') return;
+    } catch (_) {}
+    if (document.getElementById('hpp-sticky-bar')) return;
+    injectStickyBarStyles();
+    var bar = document.createElement('div');
+    bar.id = 'hpp-sticky-bar';
+    bar.className = 'hpp-sticky-bar';
+    bar.setAttribute('role', 'region');
+    bar.setAttribute('aria-label', IS_ES ? 'Llamar ahora' : 'Call now');
+    var labelTop = IS_ES ? 'Presupuesto gratis' : 'Free estimate';
+    var labelSub = IS_ES ? 'Hablamos espa&ntilde;ol' : 'Talk to a specialist';
+    var ctaText = IS_ES ? 'Llamar' : 'Call';
+    bar.innerHTML = ''
+      + '<button class="hpp-sticky-close" aria-label="' + (IS_ES ? 'Cerrar' : 'Close') + '" type="button">&times;</button>'
+      + '<div class="hpp-sticky-label"><strong>' + labelTop + '</strong>' + labelSub + '</div>'
+      + '<a class="hpp-sticky-cta" href="tel:' + PHONE_E164 + '">&#128222; ' + ctaText + ' ' + PHONE_DISPLAY + '</a>';
+    document.body.appendChild(bar);
+    var closeBtn = bar.querySelector('.hpp-sticky-close');
+    closeBtn.addEventListener('click', function () {
+      try { localStorage.setItem('sticky_call_dismissed', '1'); } catch (_) {}
+      try { bar.parentNode.removeChild(bar); } catch (_) {}
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', injectStickyBar);
+  } else {
+    injectStickyBar();
+  }
+
   // Exit-intent modal
   var COPY = IS_ES ? {
     heading: '¡Espera! Envíame una copia de mi estimado',
@@ -236,7 +334,7 @@
       if (localStorage.getItem('exit_popup_shown') === '1') return true;
       if (localStorage.getItem('form_submitted') === '1') return true;
     } catch (_) {}
-    if (Date.now() - PAGE_LOAD_AT < 20000) return true;
+    if (Date.now() - PAGE_LOAD_AT < DWELL_MIN_MS) return true;
     return shown;
   }
 
@@ -306,21 +404,21 @@
     showExitModal();
   });
 
-  var lastY = window.scrollY || 0;
-  var maxY = lastY;
-  var scrollUp = 0;
   window.addEventListener('scroll', function () {
     var y = window.scrollY || 0;
     if (y > maxY) maxY = y;
     if (y < lastY) scrollUp += (lastY - y); else scrollUp = 0;
     lastY = y;
-    if (maxY > 500 && scrollUp > 300 && Date.now() - PAGE_LOAD_AT > 20000) {
+    if (maxY > 500 && scrollUp > 300 && Date.now() - PAGE_LOAD_AT > DWELL_MIN_MS) {
       showExitModal();
     }
   }, { passive: true });
 
   window.addEventListener('pagehide', function () {
-    if (Date.now() - PAGE_LOAD_AT < 30000) return;
+    // Final heartbeat with accumulated values before page goes away
+    try { postVisitor({ heartbeat: true, useBeacon: true }); } catch (_) {}
+    if (heartbeatTimer) { clearInterval(heartbeatTimer); heartbeatTimer = null; }
+    if (Date.now() - PAGE_LOAD_AT < DWELL_PAGEHIDE_MS) return;
     showExitModal();
   });
 })();
