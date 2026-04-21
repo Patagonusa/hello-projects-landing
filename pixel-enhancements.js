@@ -58,6 +58,9 @@
 
   var userData = {};
   var sent = {};
+  var formAddress = { address: null, city: null, state: null, zip: null };
+  var addressSent = false;
+  var lastEmail = null, lastPhone = null;
   var PAGE_LOAD_AT = Date.now();
 
   function qs(k) {
@@ -160,6 +163,21 @@
   // Heartbeat every 15s to capture time_on_site + scrolled_pct
   var heartbeatTimer = setInterval(function () { postVisitor({ heartbeat: true }); }, 15000);
 
+  // Lazy-load address autocomplete only on pages that have address inputs marked for it
+  function maybeLoadAddressAutocomplete() {
+    if (!document.querySelector('input[data-address-autocomplete]')) return;
+    if (document.querySelector('script[src*="address-autocomplete.js"]')) return;
+    var s = document.createElement('script');
+    s.src = '/address-autocomplete.js';
+    s.defer = true;
+    document.head.appendChild(s);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', maybeLoadAddressAutocomplete);
+  } else {
+    maybeLoadAddressAutocomplete();
+  }
+
   async function sha256(s) {
     var b = new TextEncoder().encode(s);
     var h = await crypto.subtle.digest('SHA-256', b);
@@ -167,6 +185,15 @@
   }
 
   var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  function addressBundleForPost() {
+    var out = {};
+    if (formAddress.address) out.address = formAddress.address;
+    if (formAddress.city) out.city = formAddress.city;
+    if (formAddress.state) out.state = formAddress.state;
+    if (formAddress.zip) out.zip = formAddress.zip;
+    return out;
+  }
 
   async function onBlur(e) {
     var t = e.target;
@@ -176,7 +203,7 @@
     var v = t.value || '';
     if (!v) return;
 
-    var email = null, phone = null, changed = false;
+    var email = null, phone = null, changed = false, addressChanged = false;
     if (type === 'email' || nm.indexOf('email') >= 0) {
       var em = v.trim().toLowerCase();
       if (emailRe.test(em)) { userData.em = await sha256(em); email = em; changed = true; }
@@ -187,6 +214,17 @@
     } else if (nm.indexOf('zip') >= 0 || nm.indexOf('postal') >= 0) {
       var z = v.trim().toLowerCase().slice(0, 5);
       if (z) { userData.zp = await sha256(z); changed = true; }
+      var zClean = v.trim().slice(0, 10);
+      if (zClean && zClean !== formAddress.zip) { formAddress.zip = zClean; addressChanged = true; }
+    } else if (nm === 'address' || nm.indexOf('address') >= 0 || nm === 'street' || nm.indexOf('street') >= 0) {
+      var addr = v.trim();
+      if (addr.length > 3 && addr !== formAddress.address) { formAddress.address = addr; addressChanged = true; }
+    } else if (nm === 'city' || nm.indexOf('city') >= 0) {
+      var ci = v.trim();
+      if (ci && ci !== formAddress.city) { formAddress.city = ci; addressChanged = true; }
+    } else if (nm === 'state' || nm.indexOf('state') >= 0 || nm === 'region') {
+      var st = v.trim();
+      if (st && st !== formAddress.state) { formAddress.state = st; addressChanged = true; }
     } else if (nm.indexOf('first') >= 0) {
       var fn = v.trim().toLowerCase();
       if (fn) { userData.fn = await sha256(fn); changed = true; }
@@ -204,7 +242,28 @@
       var last = sent[k] || 0;
       if (Date.now() - last < 10000) return;
       sent[k] = Date.now();
-      postPartial({ email: email || undefined, phone: phone || undefined, source: 'form_abandon' }, false);
+      lastEmail = email || lastEmail;
+      lastPhone = phone || lastPhone;
+      var body = { email: email || undefined, phone: phone || undefined, source: 'form_abandon' };
+      var addr = addressBundleForPost();
+      for (var ak in addr) body[ak] = addr[ak];
+      if (formAddress.address && formAddress.zip) addressSent = true;
+      postPartial(body, false);
+      return;
+    }
+
+    // Address completed AFTER initial email/phone partial — fire one follow-up update
+    // so the lead row gets enriched with full property address for BatchData skip-trace.
+    if (addressChanged && !addressSent && (lastEmail || lastPhone) && formAddress.address && formAddress.zip) {
+      addressSent = true;
+      var followBody = {
+        email: lastEmail || undefined,
+        phone: lastPhone || undefined,
+        source: 'form_abandon_address',
+      };
+      var addrBundle = addressBundleForPost();
+      for (var bk in addrBundle) followBody[bk] = addrBundle[bk];
+      postPartial(followBody, false);
     }
   }
   document.addEventListener('blur', onBlur, true);
