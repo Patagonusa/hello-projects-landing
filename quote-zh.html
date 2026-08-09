@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <title>Get a Free Quote | Hello Projects Pro</title>
+  <title>获取免费报价 | Hello Projects Pro</title>
   <meta name="description" content="Request a free, no-obligation estimate from Hello Projects Pro. Licensed remodeling & construction experts in the Los Angeles area.">
-  <link rel="canonical" href="https://helloprojectspro.com/quote.html">
+  <link rel="canonical" href="https://helloprojectspro.com/quote-zh.html">
   <link rel="alternate" hreflang="en" href="https://helloprojectspro.com/quote.html">
   <link rel="alternate" hreflang="es" href="https://helloprojectspro.com/quote-es.html">
   <link rel="alternate" hreflang="tl" href="https://helloprojectspro.com/quote-tl.html">
@@ -418,25 +418,26 @@
       .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
     }
   </style>
+  <style>html[lang="zh"] body{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",-apple-system,system-ui,sans-serif}</style>
 </head>
 <body>
 
   <header class="header">
     <div class="header-top">
-      <strong>Claim Your Discount</strong> &mdash; Call or Text Us Toll-Free <a href="tel:+18884804286">(888) 480-4286</a>
+      <strong>领取您的优惠</strong> &mdash; 免费电话或短信联系我们 <a href="tel:+18884804286">(888) 480-4286</a>
     </div>
     <div class="header-main">
       <a href="index.html" class="logo">
         <img src="logo.jpeg" alt="Hello Projects Pro">
       </a>
       <nav class="header-nav">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="catalog.html" class="nav-link">Catalog</a>
+        <a href="index.html" class="nav-link">首页</a>
+        <a href="catalog.html" class="nav-link">产品目录</a>
+        <a href="quote.html" class="lang-switch">EN</a>
         <a href="quote-es.html" class="lang-switch">ES</a>
         <a href="quote-tl.html" class="lang-switch">TL</a>
-        <a href="quote-zh.html" class="lang-switch">中文</a>
-        <a href="quote.html" class="btn btn-blue">Get Free Quote</a>
-        <a href="https://www.salesdispatch.ai/login" class="nav-link" target="_blank" rel="noopener">Customer Access</a>
+        <a href="quote.html" class="btn btn-blue">免费报价</a>
+        <a href="https://www.salesdispatch.ai/login" class="nav-link" target="_blank" rel="noopener">客户登录</a>
       </nav>
     </div>
   </header>
@@ -444,123 +445,123 @@
   <!-- MAIN -->
   <main class="page-content">
     <div class="quote-container">
-      <h1>Get Your FREE Quote</h1>
-      <p class="sub">Fill out the form below and we'll get back to you within 1 hour.</p>
+      <h1>获取免费报价</h1>
+      <p class="sub">填写下方表格，我们将在 1 小时内回复您。</p>
 
       <form id="quoteForm" onsubmit="return submitQuote(event)">
         <div class="form-row">
           <div class="form-group">
-            <label>First Name *</label>
+            <label>名字 *</label>
             <input type="text" name="first_name" placeholder="John" required>
           </div>
           <div class="form-group">
-            <label>Last Name *</label>
+            <label>姓氏 *</label>
             <input type="text" name="last_name" placeholder="Smith" required>
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group">
-            <label>Phone Number *</label>
+            <label>电话号码 *</label>
             <input type="tel" name="phone" placeholder="(888) 480-4286" required>
           </div>
           <div class="form-group">
-            <label>Email</label>
+            <label>邮箱</label>
             <input type="email" name="email" placeholder="john@email.com">
           </div>
         </div>
 
         <div class="form-group">
-          <label>Street Address</label>
+          <label>街道地址</label>
           <input type="text" name="address" placeholder="123 Main St">
         </div>
 
         <div class="form-row-3">
           <div class="form-group">
-            <label>City</label>
+            <label>城市</label>
             <input type="text" name="city" placeholder="Los Angeles">
           </div>
           <div class="form-group">
-            <label>State</label>
+            <label>州</label>
             <input type="text" name="state" placeholder="CA" value="CA">
           </div>
           <div class="form-group">
-            <label>Zip Code</label>
+            <label>邮编</label>
             <input type="text" name="zip" placeholder="91335" maxlength="10" inputmode="numeric">
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group">
-            <label>Project Type *</label>
+            <label>项目类型 *</label>
             <select name="project_type" id="projectType" required>
-              <option value="">Select a service...</option>
-              <option value="Kitchen Remodeling">Kitchen Remodeling</option>
-              <option value="Bathroom Remodeling">Bathroom Remodeling</option>
-              <option value="Roofing">Roofing</option>
-              <option value="General Remodeling">General Remodeling</option>
-              <option value="Residential Electrical">Residential Electrical</option>
-              <option value="Landscaping">Landscaping</option>
-              <option value="Plumbing">Plumbing</option>
-              <option value="Painting">Painting</option>
-              <option value="Other">Other</option>
+              <option value="">选择服务…</option>
+              <option value="Kitchen Remodeling">厨房改造</option>
+              <option value="Bathroom Remodeling">浴室改造</option>
+              <option value="Roofing">屋顶工程</option>
+              <option value="General Remodeling">综合装修</option>
+              <option value="Residential Electrical">住宅电气</option>
+              <option value="Landscaping">景观维护</option>
+              <option value="Plumbing">水管</option>
+              <option value="Painting">油漆</option>
+              <option value="Other">其他</option>
             </select>
           </div>
           <div class="form-group">
-            <label>How Soon?</label>
+            <label>多久内？</label>
             <select name="timeframe">
-              <option value="">Select timeframe...</option>
-              <option value="ASAP">ASAP / Emergency</option>
-              <option value="Within 1 week">Within 1 week</option>
-              <option value="Within 1 month">Within 1 month</option>
-              <option value="1-3 months">1-3 months</option>
-              <option value="Just exploring">Just exploring</option>
+              <option value="">选择时间范围…</option>
+              <option value="ASAP">尽快 / 紧急</option>
+              <option value="Within 1 week">1 周内</option>
+              <option value="Within 1 month">1 个月内</option>
+              <option value="1-3 months">1-3 个月</option>
+              <option value="Just exploring">只是了解</option>
             </select>
           </div>
         </div>
 
         <div class="form-group">
-          <label>Best Time to Contact You?</label>
+          <label>最佳联系时间？</label>
           <select name="best_contact_time">
-            <option value="">Select preferred time...</option>
-            <option value="Morning (8am-12pm)">Morning (8am - 12pm)</option>
-            <option value="Afternoon (12pm-4pm)">Afternoon (12pm - 4pm)</option>
-            <option value="Evening (4pm-7pm)">Evening (4pm - 7pm)</option>
-            <option value="Anytime">Anytime works</option>
+            <option value="">选择偏好时间…</option>
+            <option value="Morning (8am-12pm)">上午 (8am - 12pm)</option>
+            <option value="Afternoon (12pm-4pm)">下午 (12pm - 4pm)</option>
+            <option value="Evening (4pm-7pm)">傍晚 (4pm - 7pm)</option>
+            <option value="Anytime">任何时间都行</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label>Tell Us About Your Project</label>
-          <textarea name="notes" rows="3" placeholder="Describe your project, dimensions, any special requirements..."></textarea>
+          <label>介绍一下您的项目</label>
+          <textarea name="notes" rows="3" placeholder="描述您的项目、尺寸、任何特殊要求…"></textarea>
         </div>
 
         <div class="consent-check">
           <input type="checkbox" id="tcpaConsent" name="tcpa_consent" required>
           <label for="tcpaConsent">
-            By checking this box, I give my express written consent to Hello Projects Pro to contact me by automated text messages and/or calls at the phone number provided, including for marketing purposes. I understand that consent is not a condition of any purchase. Message and data rates may apply. Message frequency varies. Reply STOP to opt out at any time. I have read and agree to the <a href="terms.html" target="_blank">Terms &amp; Conditions</a> and <a href="privacy.html" target="_blank">Privacy Policy</a>.
+            勾选此框即表示，我明确书面同意 Hello Projects Pro 通过所提供的电话号码，以自动短信和/或电话方式与我联系（包括营销目的）。我理解同意并非任何购买的条件。可能产生短信和数据费用。短信频率不定。随时回复 STOP 退订。我已阅读并同意 <a href="terms.html" target="_blank">条款与条件</a>和<a href="privacy.html" target="_blank">隐私政策</a>。
           </label>
         </div>
 
         <button type="submit" class="btn form-submit" id="submitBtn">
-          Get My Free Quote Now
+          立即获取免费报价
         </button>
 
-        <p class="form-note">Your information is secure and will never be shared with third parties for promotional purposes.</p>
+        <p class="form-note">您的信息安全，绝不会为推广目的分享给第三方。</p>
       </form>
 
       <div class="form-success" id="formSuccess">
         <img src="team-thankyou.png" alt="The Hello Projects Pro Team" class="team-photo">
-        <h3>Thank You for Choosing Hello Projects Pro!</h3>
-        <p>We've received your information and truly appreciate your trust. As a family-owned company, we believe in honest work at fair prices &mdash; no hidden fees, no surprises, no cutting corners. What we quote is what you pay, and we stand behind every project we deliver.</p>
-        <p>Your personal information is safe with us and will never be shared with third parties.</p>
-        <p>Our team is ready to assist you in both <strong style="color:#fff;">English</strong> and <strong style="color:#fff;">Spanish</strong>. We'll be in touch shortly &mdash; or feel free to reach out anytime!</p>
+        <h3>感谢您选择 Hello Projects Pro！</h3>
+        <p>我们已收到您的信息，非常感谢您的信任。作为家族企业，我们坚信以公道价格诚实做事——没有隐藏费用、没有意外、绝不偷工减料。报价即为您所付，我们为交付的每个项目负责。</p>
+        <p>您的个人信息在我们这里很安全，绝不会分享给第三方。</p>
+        <p>我们的团队可用<strong style="color:#fff;">英语</strong>和<strong style="color:#fff;">西班牙语</strong>为您服务。我们会尽快联系您——也欢迎随时联系我们！</p>
         <div class="contact-box">
           <span style="font-size: 20px;">&#128241;</span>
-          <span style="color: #94a3b8;">Call or text us:</span>
+          <span style="color: #94a3b8;">致电或短信联系我们：</span>
           <a href="tel:+18884804286">(888) 480-4286</a>
         </div>
-        <p class="signature">&mdash; The Hello Projects Pro Family</p>
+        <p class="signature">&mdash; Hello Projects Pro 大家庭</p>
       </div>
     </div>
   </main>
@@ -577,16 +578,16 @@
         </p>
       </div>
       <div>
-        <h4>Services</h4>
-        <p><a href="index.html#services">Kitchen Remodeling</a></p>
-        <p><a href="index.html#services">Bathroom Remodeling</a></p>
-        <p><a href="index.html#services">Roofing</a></p>
-        <p><a href="index.html#services">General Remodeling</a></p>
-        <p><a href="index.html#services">Residential Electrical</a></p>
-        <p><a href="index.html#services">Landscaping</a></p>
+        <h4>服务</h4>
+        <p><a href="index.html#services">厨房改造</a></p>
+        <p><a href="index.html#services">浴室改造</a></p>
+        <p><a href="index.html#services">屋顶工程</a></p>
+        <p><a href="index.html#services">综合装修</a></p>
+        <p><a href="index.html#services">住宅电气</a></p>
+        <p><a href="index.html#services">景观维护</a></p>
       </div>
       <div>
-        <h4>Service Areas</h4>
+        <h4>服务地区</h4>
         <p>Los Angeles, CA</p>
         <p>Reseda, CA</p>
         <p>Encino, CA</p>
@@ -595,7 +596,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2026 Hello Projects Pro. All rights reserved.</span>
+      <span>&copy; 2026 Hello Projects Pro. 版权所有。</span>
       <div>
         <a href="terms.html">Terms</a>
         <a href="privacy.html">Privacy</a>
@@ -621,7 +622,7 @@
       const formData = new FormData(form);
 
       btn.disabled = true;
-      btn.textContent = 'Submitting...';
+      btn.textContent = '提交中…';
 
       const payload = {
         first_name: formData.get('first_name'),
@@ -657,7 +658,7 @@
       } catch (err) {
         alert('Something went wrong. Please call us directly at (888) 480-4286.');
         btn.disabled = false;
-        btn.textContent = 'Get My Free Quote Now';
+        btn.textContent = '立即获取免费报价';
       }
       return false;
     }
