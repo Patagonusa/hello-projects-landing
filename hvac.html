@@ -273,7 +273,7 @@
   <!-- HEADER -->
   <header class="header">
     <div class="header-top">
-      <strong>Claim Your Discount</strong> &mdash; Call or Text Us Toll-Free <a href="tel:+18183225571">(818) 322-5571</a>
+      <strong>Claim Your Discount</strong> &mdash; Call or Text Us Toll-Free <a href="tel:+18884804286">(888) 480-4286</a>
     </div>
     <div class="header-main">
       <a href="index.html" class="logo"><img src="logo.jpeg" alt="Hello Projects Pro"></a>
@@ -438,7 +438,7 @@
       <div>
         <h4>Hello Projects Pro</h4>
         <p>Premier remodeling &amp; construction services. Licensed, bonded, and insured. CSLB #1135440.</p>
-        <p style="margin-top:12px;"><strong style="color:#fff;">Phone:</strong> <a href="tel:+18183225571">(818) 322-5571</a><br><strong style="color:#fff;">Email:</strong> <a href="mailto:info@helloprojectspro.com">info@helloprojectspro.com</a></p>
+        <p style="margin-top:12px;"><strong style="color:#fff;">Phone:</strong> <a href="tel:+18884804286">(888) 480-4286</a><br><strong style="color:#fff;">Email:</strong> <a href="mailto:info@helloprojectspro.com">info@helloprojectspro.com</a></p>
       </div>
       <div>
         <h4>Services</h4>
@@ -546,7 +546,7 @@ function init() {
           '<div class="product-specs">' +
             p.specs.map(function(s) { return '<span class="spec-chip">' + s + '</span>'; }).join('') +
           '</div>' +
-          '<a href="sms:+18886093009&body=' + encodeURIComponent('Hi! I\'m interested in the ' + p.name + '. Can I get a quote?') + '" class="product-cta" onclick="event.stopPropagation()">Text Us for a Quote</a>' +
+          '<a href="sms:+18884804286&body=' + encodeURIComponent('Hi! I\'m interested in the ' + p.name + '. Can I get a quote?') + '" class="product-cta" onclick="event.stopPropagation()">Text Us for a Quote</a>' +
         '</div>' +
       '</div>';
     }).join('');
@@ -604,7 +604,7 @@ function calculateBTU() {
   else rec = 'A 4+ ton central system or a 5-zone mini split system is recommended for this space.';
   document.getElementById('resultRec').textContent = rec;
 
-  document.getElementById('resultCta').href = 'sms:+18886093009&body=' + encodeURIComponent('Hi! I need HVAC for ' + sqft + ' sq ft (' + btu.toLocaleString() + ' BTU / ' + tons + ' tons). Can I get a quote?');
+  document.getElementById('resultCta').href = 'sms:+18884804286&body=' + encodeURIComponent('Hi! I need HVAC for ' + sqft + ' sq ft (' + btu.toLocaleString() + ' BTU / ' + tons + ' tons). Can I get a quote?');
 
   document.getElementById('calcResult').classList.add('active');
 }
@@ -623,7 +623,7 @@ function openLightbox(id) {
     (p.seer ? '<div class="lightbox-meta-row"><span class="lightbox-meta-label">Efficiency</span><span class="lightbox-meta-value">' + p.seer + ' SEER2</span></div>' : '') +
     (p.brand ? '<div class="lightbox-meta-row"><span class="lightbox-meta-label">Brand</span><span class="lightbox-meta-value">' + p.brand + '</span></div>' : '') +
     '<div class="lightbox-meta-row" style="margin-top:8px;"><span class="lightbox-meta-label" style="font-style:italic;">' + p.desc + '</span></div>';
-  document.getElementById('lightboxCta').href = 'sms:+18886093009&body=' + encodeURIComponent('Hi! I\'m interested in the ' + p.name + '. Can I get a quote?');
+  document.getElementById('lightboxCta').href = 'sms:+18884804286&body=' + encodeURIComponent('Hi! I\'m interested in the ' + p.name + '. Can I get a quote?');
   document.getElementById('lightbox').classList.add('active');
   document.body.style.overflow = 'hidden';
 }
@@ -661,7 +661,6 @@ document.querySelectorAll('.cat-nav-link').forEach(function(link) {
 
 init();
 </script>
-<script src="whatsapp-widget.js" defer></script>
 <script src="luna-chat.js" defer></script>
 </body>
 </html>

@@ -644,7 +644,7 @@
   <!-- HEADER -->
   <header class="header">
     <div class="header-top">
-      <strong>Claim Your Discount</strong> &mdash; Call or Text Us Toll-Free <a href="tel:+18183225571">(818) 322-5571</a>
+      <strong>Claim Your Discount</strong> &mdash; Call or Text Us Toll-Free <a href="tel:+18884804286">(888) 480-4286</a>
     </div>
     <div class="header-main">
       <a href="index.html" class="logo">
@@ -724,7 +724,7 @@
         <div id="lightboxMeta" class="lightbox-meta"></div>
         <div id="lightboxTags" class="lightbox-tags"></div>
         <a id="lightboxTextBtn" href="#" class="lightbox-cta">Text Us for a Quote</a>
-        <a href="tel:+18183225571" class="lightbox-call">Call (818) 322-5571</a>
+        <a href="tel:+18884804286" class="lightbox-call">Call (888) 480-4286</a>
       </div>
     </div>
   </div>
@@ -751,7 +751,7 @@
         </div>
         <div class="form-group">
           <label>Phone / Tel&eacute;fono *</label>
-          <input type="tel" id="qPhone" required placeholder="(555) 123-4567">
+          <input type="tel" id="qPhone" required placeholder="(888) 480-4286">
         </div>
         <div class="form-group">
           <label>Email (optional)</label>
@@ -781,7 +781,7 @@
         </div>
         <button type="submit" class="btn-send-quote" id="sendQuoteBtn">Send Quote Request / Enviar Solicitud</button>
       </form>
-      <p style="text-align:center;margin-top:12px;font-size:13px;color:#64748b;">Or text us directly at <a href="sms:+18886093009" style="color:#2563eb;font-weight:600;">(888) 609-3009</a></p>
+      <p style="text-align:center;margin-top:12px;font-size:13px;color:#64748b;">Or text us directly at <a href="sms:+18884804286" style="color:#2563eb;font-weight:600;">(888) 480-4286</a></p>
     </div>
   </div>
 
@@ -792,7 +792,7 @@
         <h4>Hello Projects Pro</h4>
         <p>Premier remodeling & construction services. Licensed, bonded, and insured. CSLB #1135440.</p>
         <p style="margin-top: 12px;">
-          <strong style="color: #fff;">Phone:</strong> <a href="tel:+18183225571">(818) 322-5571</a><br>
+          <strong style="color: #fff;">Phone:</strong> <a href="tel:+18884804286">(888) 480-4286</a><br>
           <strong style="color: #fff;">Email:</strong> <a href="mailto:info@helloprojectspro.com">info@helloprojectspro.com</a>
         </p>
       </div>
@@ -1273,7 +1273,7 @@ function openLightbox(id) {
   const tags = document.getElementById('lightboxTags');
   tags.innerHTML = p.tags.map(t => `<span class="lightbox-tag">${t}</span>`).join('');
 
-  document.getElementById('lightboxTextBtn').href = 'sms:+18886093009&body=' + encodeURIComponent('Hi, I\'m interested in ' + p.name + ' (' + p.category + ', ' + p.size + ', ' + p.finish + '). Can you help me with a quote?');
+  document.getElementById('lightboxTextBtn').href = 'sms:+18884804286&body=' + encodeURIComponent('Hi, I\'m interested in ' + p.name + ' (' + p.category + ', ' + p.size + ', ' + p.finish + '). Can you help me with a quote?');
 
   document.getElementById('lightbox').classList.add('active');
   document.body.style.overflow = 'hidden';
@@ -1408,7 +1408,7 @@ function sendQuoteRequest(event) {
 
   // Open SMS with the quote details
   var smsBody = encodeURIComponent(body);
-  window.location.href = 'sms:+18886093009&body=' + smsBody;
+  window.location.href = 'sms:+18884804286&body=' + smsBody;
 
   // Track event
   try {
@@ -1434,14 +1434,13 @@ init();
 }
 </style>
 <div id="text-us-float">
-  <a id="text-us-btn" href="sms:+18886093009&body=Hi%2C%20I%27m%20interested%20in%20a%20product%20from%20your%20catalog.%20Can%20you%20help%20me%20with%20a%20quote%3F" aria-label="Text Us">
+  <a id="text-us-btn" href="sms:+18884804286&body=Hi%2C%20I%27m%20interested%20in%20a%20product%20from%20your%20catalog.%20Can%20you%20help%20me%20with%20a%20quote%3F" aria-label="Text Us">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-    Text Us (888) 609-3009
+    Text Us (888) 480-4286
   </a>
 </div>
 
 <script src="tracking.js" defer></script>
-<script src="whatsapp-widget.js" defer></script>
 <script src="luna-chat.js" defer></script>
 </body>
 </html>

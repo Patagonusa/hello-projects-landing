@@ -108,7 +108,7 @@ All forms submit to the CRM webhook with:
 - **GA4:** G-KE7XWYKQ9F
 - **Meta Pixel:** 1782159502364871
 - **Events fired:** `roof_estimate_calculated`, `generate_lead`, `Lead` (Meta), `CompleteRegistration` (Meta)
-- **Tracking scripts:** `tracking.js`, `whatsapp-widget.js`, `luna-chat.js`
+- **Tracking scripts:** `tracking.js`, `luna-chat.js`
 
 ---
 

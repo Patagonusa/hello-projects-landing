@@ -62,14 +62,4 @@
     ga4Event('luna_auto_greet', { event_category: 'engagement' });
   });
 
-  // Track WhatsApp floating widget
-  window.addEventListener('whatsapp_click', function() {
-    ga4Event('whatsapp_click', { event_category: 'engagement' });
-    fbEvent('Contact', { content_name: 'WhatsApp Widget' });
-  });
-
-  window.addEventListener('whatsapp_widget_visible', function() {
-    ga4Event('whatsapp_widget_visible', { event_category: 'engagement' });
-  });
-
 })();
