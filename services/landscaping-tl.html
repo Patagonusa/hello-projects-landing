@@ -745,9 +745,11 @@
 
   
   <style>
-    .rj-banner{display:block;background:#dc2626;color:#fff;text-align:center;font-weight:800;padding:15px 20px;font-size:1.08rem;letter-spacing:.2px;text-decoration:none;box-shadow:0 3px 10px rgba(220,38,38,.35)}
-    .rj-banner:hover{background:#b91c1c}
+    .rj-banner{display:block;background:linear-gradient(90deg,#b91c1c,#ef4444,#b91c1c);background-size:200% 100%;color:#fff;text-align:center;font-weight:800;padding:22px 20px;font-size:1.4rem;letter-spacing:.3px;text-decoration:none;box-shadow:0 6px 22px rgba(220,38,38,.55);animation:rjpulse 1.8s ease-in-out infinite;transition:background-position .3s}
+    .rj-banner:hover{background-position:100% 0;animation:none}
     .rj-banner span{text-decoration:underline}
+    @keyframes rjpulse{0%,100%{box-shadow:0 6px 22px rgba(220,38,38,.5)}50%{box-shadow:0 8px 34px rgba(220,38,38,.9)}}
+    @media(max-width:600px){.rj-banner{font-size:1.12rem;padding:18px 14px}}
   </style>
   <a href="landscaping-real-jobs.html" class="rj-banner">&#128248; Tingnan ang <span>Tunay na Trabaho sa Landscaping</span> &mdash; totoong larawan ng mga natapos na proyekto &rarr;</a>
 
