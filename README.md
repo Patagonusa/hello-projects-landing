@@ -131,3 +131,27 @@ git push origin main    # GitHub
 git push render main    # Render deploy
 ```
 Auto-deploys on push to `render` remote. Static site, no build process.
+
+
+---
+
+## Session 2026-08-08 / 08-09 — Phone unification, galleries, multilanguage, promo video
+
+**Phone + WhatsApp**
+- Unified every phone number across the whole site (EN + ES) to the official **(888) 480-4286** (`tel:` links, display, `+1` forms). This is the Patagon Group main line (see PCRM IVR).
+- **Removed the WhatsApp widget entirely**: deleted `whatsapp-widget.js`, stripped its `<script>` from all 28 pages, and re-pointed the Luna-chat greetings + the sticky mobile call-bar (`pixel-enhancements.js` `PHONE_E164`) to the phone number.
+
+**Real Jobs Gallery** (`services/*-real-jobs.html`, EN + ES for all 6 trades)
+- Kitchen uses real customer photos in `images/real-jobs/`; the other 5 trades (bathroom, roofing, general, electrical, landscaping) use `images/services/*` as **placeholders — swap in real job photos** in that folder.
+- Each service page has a red banner linking to its gallery. Lightbox + SEO (canonical, hreflang, `ImageGallery` JSON-LD) + sitemap.
+
+**Multi-language (Filipino + Chinese, in progress by batches)**
+- Home: `index.html` (EN) · `es.html` (ES) · **`tl.html`** (Filipino/Tagalog) · **`zh.html`** (Chinese/Mandarin). Kitchen service page also done: `kitchen-remodeling-{tl,zh}.html`.
+- 4-language switcher (EN / ES / TL / 中文) that **omits the current language**; `hreflang` on all; CJK font stack on `zh`.
+- **Encoding gotcha:** `es.html` and the `-es` service pages are **cp1252** (not UTF-8) and use HTML entities for accents; ALWAYS read/decode with a cp1252 fallback and **pre-encode before writing** (a raw emoji/CJK char in a cp1252 write once truncated a page).
+- **Pending:** remaining service pages (bathroom/roofing/general/electrical/landscaping) in TL+ZH; galleries in TL+ZH; inner pages (quote/catalog/estimator/etc.). Filipino + Chinese chosen first.
+
+**Labor Day promo video popup** (all 4 home pages)
+- `videos/labor-day-roof-promo.mp4` shows ~1.2s after load, **plays 2 loops then auto-closes**, closable via the X or click-outside, shown **once per session** (`sessionStorage`). Tries to play with sound; if the browser blocks unmuted autoplay it falls back to muted + a **"Tap for sound"** button.
+
+**Known bug (TODO):** the website Luna **chat** wrongly rejects jobs ("we don't do plumbing/paving") — its system prompt must be broadened to capture the lead, never reject.
