@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <title>HVAC Catalog &amp; BTU Calculator | Hello Projects Pro</title>
+  <title>HVAC Systems sa Los Angeles | BTU Calculator | Hello Projects Pro</title>
   <meta name="description" content="Browse residential HVAC systems: mini splits, central AC, heat pumps, furnaces. Use our BTU calculator to find the right size for your home.">
   <link rel="canonical" href="https://helloprojectspro.com/hvac.html">
   <meta property="og:title" content="HVAC Catalog & BTU Calculator | Hello Projects Pro">
@@ -273,18 +273,18 @@
   <!-- HEADER -->
   <header class="header">
     <div class="header-top">
-      <strong>Claim Your Discount</strong> &mdash; Call or Text Us Toll-Free <a href="tel:+18884804286">(888) 480-4286</a>
+      <strong>Kunin ang Iyong Diskwento</strong> &mdash; Tumawag o Mag-text nang Libre <a href="tel:+18884804286">(888) 480-4286</a>
     </div>
     <div class="header-main">
       <a href="index.html" class="logo"><img src="logo.jpeg" alt="Hello Projects Pro"></a>
       <nav class="header-nav">
         <a href="index.html" class="nav-link">Home</a>
-        <a href="catalog.html" class="nav-link">Catalog</a>
+        <a href="catalog.html" class="nav-link">Katalogo</a>
         <a href="hvac.html" class="nav-link active">HVAC</a>
+        <a href="hvac.html" class="lang-switch">EN</a>
         <a href="hvac-es.html" class="lang-switch">ES</a>
-        <a href="hvac-tl.html" class="lang-switch">TL</a>
         <a href="hvac-zh.html" class="lang-switch">中文</a>
-        <a href="quote.html" class="btn btn-blue">Get Free Quote</a>
+        <a href="quote.html" class="btn btn-blue">Libreng Quote</a>
       </nav>
     </div>
   </header>
@@ -292,21 +292,21 @@
   <!-- HERO -->
   <section class="hvac-hero">
     <h1>HVAC Systems</h1>
-    <p>Residential heating &amp; cooling solutions. Mini splits, central AC, heat pumps, furnaces &amp; more.</p>
-    <a href="#calculator" class="btn btn-accent">Calculate Your BTU Needs</a>
+    <p>Solusyon sa heating at cooling ng bahay. Mini split, central AC, heat pump, furnace at iba pa.</p>
+    <a href="#calculator" class="btn btn-accent">Kalkulahin ang BTU Mo</a>
   </section>
 
   <!-- BTU CALCULATOR -->
   <div class="btu-calc" id="calculator">
     <h2><span class="icon">&#9992;</span> BTU Calculator</h2>
-    <p class="subtitle">Find the right size HVAC system for your space</p>
+    <p class="subtitle">Hanapin ang tamang sukat ng HVAC para sa espasyo mo</p>
     <div class="calc-grid">
       <div class="calc-field">
         <label>Square Footage</label>
         <input type="number" id="calcSqft" placeholder="e.g. 1500" min="100" max="10000">
       </div>
       <div class="calc-field">
-        <label>Ceiling Height</label>
+        <label>Taas ng Kisame</label>
         <select id="calcCeiling">
           <option value="8">Standard (8 ft)</option>
           <option value="9">9 ft</option>
@@ -317,45 +317,45 @@
       <div class="calc-field">
         <label>Climate Zone</label>
         <select id="calcClimate">
-          <option value="hot">Hot &amp; Humid (AZ, FL, TX, SoCal)</option>
-          <option value="warm">Warm (CA Coast, SE States)</option>
-          <option value="moderate">Moderate (Mid-Atlantic, NW)</option>
-          <option value="cold">Cold (Northern States)</option>
+          <option value="hot">Mainit at Humid (AZ, FL, TX, SoCal)</option>
+          <option value="warm">Mainit (CA Coast, SE States)</option>
+          <option value="moderate">Katamtaman (Mid-Atlantic, NW)</option>
+          <option value="cold">Malamig (Northern States)</option>
         </select>
       </div>
       <div class="calc-field">
         <label>Sun Exposure</label>
         <select id="calcSun">
           <option value="avg">Average</option>
-          <option value="high">High (lots of windows / south-facing)</option>
-          <option value="low">Low (shaded / north-facing)</option>
+          <option value="high">Mataas (maraming bintana / south-facing)</option>
+          <option value="low">Mababa (may lilim / north-facing)</option>
         </select>
       </div>
       <div class="calc-field">
         <label>Insulation Quality</label>
         <select id="calcInsulation">
           <option value="avg">Average</option>
-          <option value="good">Good (newer build / upgraded)</option>
-          <option value="poor">Poor (older home / no insulation)</option>
+          <option value="good">Maganda (bagong build / upgraded)</option>
+          <option value="poor">Mahina (lumang bahay / walang insulation)</option>
         </select>
       </div>
       <div class="calc-field">
-        <label>Number of Occupants</label>
+        <label>Bilang ng Nakatira</label>
         <select id="calcOccupants">
-          <option value="2">1-2 people</option>
-          <option value="4">3-4 people</option>
-          <option value="6">5-6 people</option>
-          <option value="8">7+ people</option>
+          <option value="2">1-2 tao</option>
+          <option value="4">3-4 tao</option>
+          <option value="6">5-6 tao</option>
+          <option value="8">7+ tao</option>
         </select>
       </div>
     </div>
-    <button class="calc-btn" onclick="calculateBTU()">Calculate BTU Requirement</button>
+    <button class="calc-btn" onclick="calculateBTU()">Kalkulahin ang BTU</button>
     <div class="calc-result" id="calcResult">
       <div class="result-btu" id="resultBtu"></div>
       <div class="result-tons" id="resultTons"></div>
       <div class="result-rec" id="resultRec"></div>
       <div class="result-cta">
-        <a id="resultCta" href="#" class="btn btn-green" style="width:100%;justify-content:center;font-size:15px;">Text Us for a Free HVAC Quote</a>
+        <a id="resultCta" href="#" class="btn btn-green" style="width:100%;justify-content:center;font-size:15px;">Mag-text para sa Libreng HVAC Quote</a>
       </div>
     </div>
   </div>
@@ -363,11 +363,11 @@
   <!-- CATEGORY NAV -->
   <nav class="cat-nav">
     <div class="cat-nav-inner">
-      <a href="#mini-splits" class="cat-nav-link active">Mini Splits</a>
+      <a href="#mini-splits" class="cat-nav-link active">Mini Split</a>
       <a href="#central-systems" class="cat-nav-link">Central Systems</a>
-      <a href="#furnaces" class="cat-nav-link">Furnaces</a>
-      <a href="#heat-pumps" class="cat-nav-link">Heat Pumps</a>
-      <a href="#air-handlers" class="cat-nav-link">Air Handlers</a>
+      <a href="#furnaces" class="cat-nav-link">Furnace</a>
+      <a href="#heat-pumps" class="cat-nav-link">Heat Pump</a>
+      <a href="#air-handlers" class="cat-nav-link">Air Handler</a>
     </div>
   </nav>
 
@@ -378,7 +378,7 @@
     <section class="product-section" id="mini-splits">
       <div class="section-head">
         <h2>Ductless Mini Split Systems</h2>
-        <p>Energy-efficient cooling &amp; heating without ductwork. Perfect for room additions, garages, or homes without ducts. Available in single-zone, multi-zone, and DIY options.</p>
+        <p>Energy-efficient na cooling at heating na walang ductwork. Perpekto para sa room addition, garahe, o bahay na walang duct.</p>
       </div>
       <div class="product-grid" id="gridMiniSplits"></div>
     </section>
@@ -386,8 +386,8 @@
     <!-- CENTRAL SYSTEMS -->
     <section class="product-section" id="central-systems">
       <div class="section-head">
-        <h2>Central Heating &amp; Cooling Systems</h2>
-        <p>Complete ducted systems for whole-home comfort. Includes condenser, air handler, and evaporator coil &mdash; everything you need for professional installation.</p>
+        <h2>Central Heating at Cooling Systems</h2>
+        <p>Kumpletong ducted system para sa buong bahay. Kasama ang condenser, air handler, at evaporator coil.</p>
       </div>
       <div class="product-grid" id="gridCentral"></div>
     </section>
@@ -395,8 +395,8 @@
     <!-- FURNACES -->
     <section class="product-section" id="furnaces">
       <div class="section-head">
-        <h2>Gas Furnaces</h2>
-        <p>High-efficiency residential gas furnaces. 80% to 96% AFUE ratings, single and two-stage burners, multi-speed and variable-speed blowers.</p>
+        <h2>Gas Furnace</h2>
+        <p>High-efficiency na residential gas furnace. 80% hanggang 96% AFUE, single at two-stage burner.</p>
       </div>
       <div class="product-grid" id="gridFurnaces"></div>
     </section>
@@ -404,8 +404,8 @@
     <!-- HEAT PUMPS -->
     <section class="product-section" id="heat-pumps">
       <div class="section-head">
-        <h2>Heat Pump Condensers</h2>
-        <p>All-electric heating &amp; cooling in one unit. High SEER2 ratings for maximum energy savings. Pairs with indoor air handler or existing ductwork.</p>
+        <h2>Heat Pump Condenser</h2>
+        <p>All-electric na heating at cooling sa isang unit. Mataas na SEER2 para sa energy savings.</p>
       </div>
       <div class="product-grid" id="gridHeatPumps"></div>
     </section>
@@ -413,8 +413,8 @@
     <!-- AIR HANDLERS -->
     <section class="product-section" id="air-handlers">
       <div class="section-head">
-        <h2>Air Handlers &amp; Evaporator Coils</h2>
-        <p>Indoor components that pair with your outdoor condenser or heat pump. Concealed duct, floor/ceiling, and horizontal cased options.</p>
+        <h2>Air Handler at Evaporator Coil</h2>
+        <p>Indoor components na kapareha ng outdoor condenser o heat pump. Concealed duct, floor/ceiling, at horizontal cased.</p>
       </div>
       <div class="product-grid" id="gridAirHandlers"></div>
     </section>
@@ -429,7 +429,7 @@
       <div class="lightbox-details">
         <h2 id="lightboxName"></h2>
         <div id="lightboxMeta" class="lightbox-meta"></div>
-        <a id="lightboxCta" href="#" class="lightbox-cta">Text Us for a Quote</a>
+        <a id="lightboxCta" href="#" class="lightbox-cta">Mag-text para sa Quote</a>
       </div>
     </div>
   </div>
@@ -439,25 +439,25 @@
     <div class="footer-grid">
       <div>
         <h4>Hello Projects Pro</h4>
-        <p>Premier remodeling &amp; construction services. Licensed, bonded, and insured. CSLB #1135440.</p>
+        <p>Nangungunang serbisyo sa remodeling at konstruksiyon. Lisensyado, bonded, at insured. CSLB #1135440.</p>
         <p style="margin-top:12px;"><strong style="color:#fff;">Phone:</strong> <a href="tel:+18884804286">(888) 480-4286</a><br><strong style="color:#fff;">Email:</strong> <a href="mailto:info@helloprojectspro.com">info@helloprojectspro.com</a></p>
       </div>
       <div>
-        <h4>Services</h4>
-        <p><a href="services/kitchen-remodeling.html">Kitchen Remodeling</a></p>
-        <p><a href="services/bathroom-remodeling.html">Bathroom Remodeling</a></p>
+        <h4>Mga Serbisyo</h4>
+        <p><a href="services/kitchen-remodeling.html">Remodeling ng Kusina</a></p>
+        <p><a href="services/bathroom-remodeling.html">Remodeling ng Banyo</a></p>
         <p><a href="services/roofing.html">Roofing</a></p>
-        <p><a href="services/general-remodeling.html">General Remodeling</a></p>
+        <p><a href="services/general-remodeling.html">Pangkalahatang Remodeling</a></p>
         <p><a href="services/electrical-services.html">Residential Electrical</a></p>
         <p><a href="services/landscaping.html">Landscaping</a></p>
       </div>
       <div>
-        <h4>Service Areas</h4>
+        <h4>Mga Lugar na Pinaglilingkuran</h4>
         <p>Los Angeles, CA</p><p>Reseda, CA</p><p>Encino, CA</p><p>Sherman Oaks, CA</p><p>Tarzana, CA</p>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2026 Hello Projects Pro. All rights reserved.</span>
+      <span>&copy; 2026 Hello Projects Pro. Nakalaan ang lahat ng karapatan.</span>
       <div><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></div>
     </div>
   </footer>
@@ -548,7 +548,7 @@ function init() {
           '<div class="product-specs">' +
             p.specs.map(function(s) { return '<span class="spec-chip">' + s + '</span>'; }).join('') +
           '</div>' +
-          '<a href="sms:+18884804286&body=' + encodeURIComponent('Hi! I\'m interested in the ' + p.name + '. Can I get a quote?') + '" class="product-cta" onclick="event.stopPropagation()">Text Us for a Quote</a>' +
+          '<a href="sms:+18884804286&body=' + encodeURIComponent('Hi! I\'m interested in the ' + p.name + '. Can I get a quote?') + '" class="product-cta" onclick="event.stopPropagation()">Mag-text para sa Quote</a>' +
         '</div>' +
       '</div>';
     }).join('');

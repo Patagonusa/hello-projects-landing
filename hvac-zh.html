@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <title>HVAC Catalog &amp; BTU Calculator | Hello Projects Pro</title>
+  <title>洛杉矶暖通空调（HVAC）| BTU 计算器 | Hello Projects Pro</title>
   <meta name="description" content="Browse residential HVAC systems: mini splits, central AC, heat pumps, furnaces. Use our BTU calculator to find the right size for your home.">
   <link rel="canonical" href="https://helloprojectspro.com/hvac.html">
-  <meta property="og:title" content="HVAC Catalog & BTU Calculator | Hello Projects Pro">
+  <meta property="og:title" content="HVAC Catalog & BTU 计算器 | Hello Projects Pro">
   <meta property="og:description" content="Find the perfect HVAC system for your home. Mini splits, central AC, heat pumps & more.">
   <meta property="og:url" content="https://helloprojectspro.com/hvac.html">
   <meta property="og:type" content="website">
@@ -267,95 +267,96 @@
       .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
     }
   </style>
+  <style>html[lang="zh"] body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",-apple-system,system-ui,sans-serif}</style>
 </head>
 <body>
 
   <!-- HEADER -->
   <header class="header">
     <div class="header-top">
-      <strong>Claim Your Discount</strong> &mdash; Call or Text Us Toll-Free <a href="tel:+18884804286">(888) 480-4286</a>
+      <strong>领取您的优惠</strong> &mdash; 免费电话或短信联系我们 <a href="tel:+18884804286">(888) 480-4286</a>
     </div>
     <div class="header-main">
       <a href="index.html" class="logo"><img src="logo.jpeg" alt="Hello Projects Pro"></a>
       <nav class="header-nav">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="catalog.html" class="nav-link">Catalog</a>
+        <a href="index.html" class="nav-link">首页</a>
+        <a href="catalog.html" class="nav-link">产品目录</a>
         <a href="hvac.html" class="nav-link active">HVAC</a>
+        <a href="hvac.html" class="lang-switch">EN</a>
         <a href="hvac-es.html" class="lang-switch">ES</a>
         <a href="hvac-tl.html" class="lang-switch">TL</a>
-        <a href="hvac-zh.html" class="lang-switch">中文</a>
-        <a href="quote.html" class="btn btn-blue">Get Free Quote</a>
+        <a href="quote.html" class="btn btn-blue">免费报价</a>
       </nav>
     </div>
   </header>
 
   <!-- HERO -->
   <section class="hvac-hero">
-    <h1>HVAC Systems</h1>
-    <p>Residential heating &amp; cooling solutions. Mini splits, central AC, heat pumps, furnaces &amp; more.</p>
-    <a href="#calculator" class="btn btn-accent">Calculate Your BTU Needs</a>
+    <h1>暖通空调系统（HVAC）</h1>
+    <p>住宅供暖与制冷解决方案。分体机、中央空调、热泵、燃气炉等。</p>
+    <a href="#calculator" class="btn btn-accent">计算您的 BTU 需求</a>
   </section>
 
   <!-- BTU CALCULATOR -->
   <div class="btu-calc" id="calculator">
-    <h2><span class="icon">&#9992;</span> BTU Calculator</h2>
-    <p class="subtitle">Find the right size HVAC system for your space</p>
+    <h2><span class="icon">&#9992;</span> BTU 计算器</h2>
+    <p class="subtitle">为您的空间找到合适尺寸的暖通系统</p>
     <div class="calc-grid">
       <div class="calc-field">
-        <label>Square Footage</label>
+        <label>面积（平方英尺）</label>
         <input type="number" id="calcSqft" placeholder="e.g. 1500" min="100" max="10000">
       </div>
       <div class="calc-field">
-        <label>Ceiling Height</label>
+        <label>层高</label>
         <select id="calcCeiling">
-          <option value="8">Standard (8 ft)</option>
+          <option value="8">标准 (8 ft)</option>
           <option value="9">9 ft</option>
           <option value="10">10 ft</option>
-          <option value="12">12 ft (Vaulted)</option>
+          <option value="12">12 ft（拱顶）</option>
         </select>
       </div>
       <div class="calc-field">
-        <label>Climate Zone</label>
+        <label>气候区</label>
         <select id="calcClimate">
-          <option value="hot">Hot &amp; Humid (AZ, FL, TX, SoCal)</option>
-          <option value="warm">Warm (CA Coast, SE States)</option>
-          <option value="moderate">Moderate (Mid-Atlantic, NW)</option>
-          <option value="cold">Cold (Northern States)</option>
+          <option value="hot">炎热潮湿 (AZ, FL, TX, 南加州)</option>
+          <option value="warm">温暖 (加州沿海, 东南部)</option>
+          <option value="moderate">温和 (中大西洋, 西北)</option>
+          <option value="cold">寒冷 (北部各州)</option>
         </select>
       </div>
       <div class="calc-field">
-        <label>Sun Exposure</label>
+        <label>日照</label>
         <select id="calcSun">
-          <option value="avg">Average</option>
-          <option value="high">High (lots of windows / south-facing)</option>
-          <option value="low">Low (shaded / north-facing)</option>
+          <option value="avg">平均</option>
+          <option value="high">高 (窗户多 / 朝南)</option>
+          <option value="low">低 (遮阴 / 朝北)</option>
         </select>
       </div>
       <div class="calc-field">
-        <label>Insulation Quality</label>
+        <label>隔热质量</label>
         <select id="calcInsulation">
-          <option value="avg">Average</option>
-          <option value="good">Good (newer build / upgraded)</option>
-          <option value="poor">Poor (older home / no insulation)</option>
+          <option value="avg">平均</option>
+          <option value="good">好 (较新 / 已升级)</option>
+          <option value="poor">差 (老房 / 无隔热)</option>
         </select>
       </div>
       <div class="calc-field">
-        <label>Number of Occupants</label>
+        <label>居住人数</label>
         <select id="calcOccupants">
-          <option value="2">1-2 people</option>
-          <option value="4">3-4 people</option>
-          <option value="6">5-6 people</option>
-          <option value="8">7+ people</option>
+          <option value="2">1-2 人</option>
+          <option value="4">3-4 人</option>
+          <option value="6">5-6 人</option>
+          <option value="8">7+ 人</option>
         </select>
       </div>
     </div>
-    <button class="calc-btn" onclick="calculateBTU()">Calculate BTU Requirement</button>
+    <button class="calc-btn" onclick="calculateBTU()">计算 BTU 需求</button>
     <div class="calc-result" id="calcResult">
       <div class="result-btu" id="resultBtu"></div>
       <div class="result-tons" id="resultTons"></div>
       <div class="result-rec" id="resultRec"></div>
       <div class="result-cta">
-        <a id="resultCta" href="#" class="btn btn-green" style="width:100%;justify-content:center;font-size:15px;">Text Us for a Free HVAC Quote</a>
+        <a id="resultCta" href="#" class="btn btn-green" style="width:100%;justify-content:center;font-size:15px;">发短信获取免费 HVAC 报价</a>
       </div>
     </div>
   </div>
@@ -363,11 +364,11 @@
   <!-- CATEGORY NAV -->
   <nav class="cat-nav">
     <div class="cat-nav-inner">
-      <a href="#mini-splits" class="cat-nav-link active">Mini Splits</a>
-      <a href="#central-systems" class="cat-nav-link">Central Systems</a>
-      <a href="#furnaces" class="cat-nav-link">Furnaces</a>
-      <a href="#heat-pumps" class="cat-nav-link">Heat Pumps</a>
-      <a href="#air-handlers" class="cat-nav-link">Air Handlers</a>
+      <a href="#mini-splits" class="cat-nav-link active">分体机</a>
+      <a href="#central-systems" class="cat-nav-link">中央系统</a>
+      <a href="#furnaces" class="cat-nav-link">燃气炉</a>
+      <a href="#heat-pumps" class="cat-nav-link">热泵</a>
+      <a href="#air-handlers" class="cat-nav-link">空气处理机</a>
     </div>
   </nav>
 
@@ -377,8 +378,8 @@
     <!-- MINI SPLITS -->
     <section class="product-section" id="mini-splits">
       <div class="section-head">
-        <h2>Ductless Mini Split Systems</h2>
-        <p>Energy-efficient cooling &amp; heating without ductwork. Perfect for room additions, garages, or homes without ducts. Available in single-zone, multi-zone, and DIY options.</p>
+        <h2>无管道分体机系统</h2>
+        <p>无需管道的节能制冷与供暖。适合加建房间、车库或无管道的住宅。提供单区、多区和 DIY 选项。</p>
       </div>
       <div class="product-grid" id="gridMiniSplits"></div>
     </section>
@@ -386,8 +387,8 @@
     <!-- CENTRAL SYSTEMS -->
     <section class="product-section" id="central-systems">
       <div class="section-head">
-        <h2>Central Heating &amp; Cooling Systems</h2>
-        <p>Complete ducted systems for whole-home comfort. Includes condenser, air handler, and evaporator coil &mdash; everything you need for professional installation.</p>
+        <h2>中央供暖与制冷系统</h2>
+        <p>完整的管道系统，带来全屋舒适。含冷凝器、空气处理机和蒸发器盘管——专业安装所需的一切。</p>
       </div>
       <div class="product-grid" id="gridCentral"></div>
     </section>
@@ -395,8 +396,8 @@
     <!-- FURNACES -->
     <section class="product-section" id="furnaces">
       <div class="section-head">
-        <h2>Gas Furnaces</h2>
-        <p>High-efficiency residential gas furnaces. 80% to 96% AFUE ratings, single and two-stage burners, multi-speed and variable-speed blowers.</p>
+        <h2>燃气炉</h2>
+        <p>高效住宅燃气炉。80% 至 96% AFUE，单级与两级燃烧器，多速与变速鼓风机。</p>
       </div>
       <div class="product-grid" id="gridFurnaces"></div>
     </section>
@@ -404,8 +405,8 @@
     <!-- HEAT PUMPS -->
     <section class="product-section" id="heat-pumps">
       <div class="section-head">
-        <h2>Heat Pump Condensers</h2>
-        <p>All-electric heating &amp; cooling in one unit. High SEER2 ratings for maximum energy savings. Pairs with indoor air handler or existing ductwork.</p>
+        <h2>热泵冷凝器</h2>
+        <p>全电动供暖与制冷一体机。高 SEER2 值，最大化节能。可搭配室内空气处理机或现有管道。</p>
       </div>
       <div class="product-grid" id="gridHeatPumps"></div>
     </section>
@@ -413,8 +414,8 @@
     <!-- AIR HANDLERS -->
     <section class="product-section" id="air-handlers">
       <div class="section-head">
-        <h2>Air Handlers &amp; Evaporator Coils</h2>
-        <p>Indoor components that pair with your outdoor condenser or heat pump. Concealed duct, floor/ceiling, and horizontal cased options.</p>
+        <h2>空气处理机与蒸发器盘管</h2>
+        <p>与室外冷凝器或热泵搭配的室内部件。暗装管道、落地/吊顶及卧式外壳选项。</p>
       </div>
       <div class="product-grid" id="gridAirHandlers"></div>
     </section>
@@ -429,7 +430,7 @@
       <div class="lightbox-details">
         <h2 id="lightboxName"></h2>
         <div id="lightboxMeta" class="lightbox-meta"></div>
-        <a id="lightboxCta" href="#" class="lightbox-cta">Text Us for a Quote</a>
+        <a id="lightboxCta" href="#" class="lightbox-cta">发短信获取报价</a>
       </div>
     </div>
   </div>
@@ -439,26 +440,26 @@
     <div class="footer-grid">
       <div>
         <h4>Hello Projects Pro</h4>
-        <p>Premier remodeling &amp; construction services. Licensed, bonded, and insured. CSLB #1135440.</p>
+        <p>顶级装修与建造服务。持牌、担保、投保。CSLB #1135440。</p>
         <p style="margin-top:12px;"><strong style="color:#fff;">Phone:</strong> <a href="tel:+18884804286">(888) 480-4286</a><br><strong style="color:#fff;">Email:</strong> <a href="mailto:info@helloprojectspro.com">info@helloprojectspro.com</a></p>
       </div>
       <div>
-        <h4>Services</h4>
-        <p><a href="services/kitchen-remodeling.html">Kitchen Remodeling</a></p>
-        <p><a href="services/bathroom-remodeling.html">Bathroom Remodeling</a></p>
-        <p><a href="services/roofing.html">Roofing</a></p>
-        <p><a href="services/general-remodeling.html">General Remodeling</a></p>
-        <p><a href="services/electrical-services.html">Residential Electrical</a></p>
-        <p><a href="services/landscaping.html">Landscaping</a></p>
+        <h4>服务</h4>
+        <p><a href="services/kitchen-remodeling.html">厨房改造</a></p>
+        <p><a href="services/bathroom-remodeling.html">浴室改造</a></p>
+        <p><a href="services/roofing.html">屋顶工程</a></p>
+        <p><a href="services/general-remodeling.html">综合装修</a></p>
+        <p><a href="services/electrical-services.html">住宅电气</a></p>
+        <p><a href="services/landscaping.html">景观维护</a></p>
       </div>
       <div>
-        <h4>Service Areas</h4>
+        <h4>服务地区</h4>
         <p>Los Angeles, CA</p><p>Reseda, CA</p><p>Encino, CA</p><p>Sherman Oaks, CA</p><p>Tarzana, CA</p>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2026 Hello Projects Pro. All rights reserved.</span>
-      <div><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></div>
+      <span>&copy; 2026 Hello Projects Pro. 版权所有。</span>
+      <div><a href="terms.html">条款</a><a href="privacy.html">隐私</a></div>
     </div>
   </footer>
 
@@ -548,7 +549,7 @@ function init() {
           '<div class="product-specs">' +
             p.specs.map(function(s) { return '<span class="spec-chip">' + s + '</span>'; }).join('') +
           '</div>' +
-          '<a href="sms:+18884804286&body=' + encodeURIComponent('Hi! I\'m interested in the ' + p.name + '. Can I get a quote?') + '" class="product-cta" onclick="event.stopPropagation()">Text Us for a Quote</a>' +
+          '<a href="sms:+18884804286&body=' + encodeURIComponent('Hi! I\'m interested in the ' + p.name + '. Can I get a quote?') + '" class="product-cta" onclick="event.stopPropagation()">发短信获取报价</a>' +
         '</div>' +
       '</div>';
     }).join('');
