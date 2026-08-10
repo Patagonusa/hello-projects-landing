@@ -417,6 +417,33 @@
       .footer-grid { grid-template-columns: 1fr; gap: 24px; }
       .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
     }
+  
+    /* Services dropdown */
+    .nav-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .nav-caret { font-size: 10px; margin-left: 4px; opacity: 0.85; transition: transform 0.2s; }
+    .nav-dropdown:hover .nav-caret { transform: rotate(180deg); }
+    .dropdown-menu {
+      position: absolute; top: calc(100% + 8px); left: 0; min-width: 250px;
+      background: #0c1a2e; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px;
+      padding: 8px; box-shadow: 0 22px 48px rgba(0,0,0,0.5);
+      opacity: 0; visibility: hidden; transform: translateY(8px);
+      transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s; z-index: 1200;
+    }
+    .nav-dropdown:hover .dropdown-menu, .nav-dropdown:focus-within .dropdown-menu {
+      opacity: 1; visibility: visible; transform: translateY(0);
+    }
+    .dropdown-menu a { display: block; padding: 11px 14px; border-radius: 8px; color: #cbd5e1;
+      text-decoration: none; font-size: 14px; font-weight: 500; white-space: nowrap; }
+    .dropdown-menu a:hover { background: rgba(96,165,250,0.16); color: #fff; }
+    .nav-langs { display: inline-flex; gap: 8px; align-items: center; }
+    @media (max-width: 900px) {
+      .nav-dropdown { width: 100%; flex-direction: column; align-items: stretch; }
+      .dropdown-menu { position: static; opacity: 1; visibility: visible; transform: none;
+        box-shadow: none; border: none; background: transparent; padding: 2px 0 8px 14px; min-width: 0; }
+      .nav-caret { display: none; }
+      .nav-langs { display: flex; gap: 8px; }
+    }
+
   </style>
 </head>
 <body>
@@ -430,13 +457,28 @@
         <img src="logo.jpeg" alt="Hello Projects Pro">
       </a>
       <nav class="header-nav">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="catalog.html" class="nav-link">Katalogo</a>
-        <a href="quote.html" class="lang-switch">EN</a>
-        <a href="quote-es.html" class="lang-switch">ES</a>
-        <a href="quote-zh.html" class="lang-switch">中文</a>
+        <a href="tl.html" class="nav-link">Home</a>
+        <div class="nav-dropdown">
+          <a href="services-tl.html" class="nav-link nav-drop-toggle" aria-haspopup="true" aria-expanded="false">Mga Serbisyo <span class="nav-caret">&#9662;</span></a>
+          <div class="dropdown-menu">
+            <a href="services/kitchen-remodeling-tl.html">Remodeling ng Kusina</a>
+            <a href="services/bathroom-remodeling-tl.html">Remodeling ng Banyo</a>
+            <a href="services/roofing-tl.html">Roofing at Calculator</a>
+            <a href="services/general-remodeling-tl.html">Pangkalahatang Remodeling</a>
+            <a href="services/electrical-services-tl.html">Electrical</a>
+            <a href="services/landscaping-tl.html">Landscaping</a>
+            <a href="hvac-tl.html">HVAC &amp; Cooling</a>
+          </div>
+        </div>
+        <a href="financing-tl.html" class="nav-link">Financing</a>
+        <a href="catalog-tl.html" class="nav-link">Katalogo</a>
         <a href="quote.html" class="btn btn-blue">Libreng Quote</a>
-        <a href="https://www.salesdispatch.ai/login" class="nav-link" target="_blank" rel="noopener">Customer Access</a>
+        <span class="nav-langs">
+          <a href="quote.html" class="lang-switch">EN</a>
+          <a href="quote-es.html" class="lang-switch">ES</a>
+          <a href="quote-zh.html" class="lang-switch">中文</a>
+        </span>
+        <a href="https://www.salesdispatch.ai/login" class="nav-link nav-access" target="_blank" rel="noopener">Customer Access</a>
       </nav>
     </div>
   </header>

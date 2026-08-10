@@ -487,6 +487,33 @@
       .other-grid { grid-template-columns: repeat(2, 1fr); }
       .hero-content { padding: 48px 0; }
     }
+  
+    /* Services dropdown */
+    .nav-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .nav-caret { font-size: 10px; margin-left: 4px; opacity: 0.85; transition: transform 0.2s; }
+    .nav-dropdown:hover .nav-caret { transform: rotate(180deg); }
+    .dropdown-menu {
+      position: absolute; top: calc(100% + 8px); left: 0; min-width: 250px;
+      background: #0c1a2e; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px;
+      padding: 8px; box-shadow: 0 22px 48px rgba(0,0,0,0.5);
+      opacity: 0; visibility: hidden; transform: translateY(8px);
+      transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s; z-index: 1200;
+    }
+    .nav-dropdown:hover .dropdown-menu, .nav-dropdown:focus-within .dropdown-menu {
+      opacity: 1; visibility: visible; transform: translateY(0);
+    }
+    .dropdown-menu a { display: block; padding: 11px 14px; border-radius: 8px; color: #cbd5e1;
+      text-decoration: none; font-size: 14px; font-weight: 500; white-space: nowrap; }
+    .dropdown-menu a:hover { background: rgba(96,165,250,0.16); color: #fff; }
+    .nav-langs { display: inline-flex; gap: 8px; align-items: center; }
+    @media (max-width: 900px) {
+      .nav-dropdown { width: 100%; flex-direction: column; align-items: stretch; }
+      .dropdown-menu { position: static; opacity: 1; visibility: visible; transform: none;
+        box-shadow: none; border: none; background: transparent; padding: 2px 0 8px 14px; min-width: 0; }
+      .nav-caret { display: none; }
+      .nav-langs { display: flex; gap: 8px; }
+    }
+
   </style>
   <style>html[lang="zh"] body{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",-apple-system,system-ui,sans-serif}</style>
 </head>
@@ -501,13 +528,28 @@
         <img src="../logo.jpeg" alt="Hello Projects Pro">
       </a>
       <nav class="header-nav">
-        <a href="../index.html" class="nav-link">首页</a>
-        <a href="../catalog.html" class="nav-link">产品目录</a>
-        <a href="bathroom-remodeling.html" class="lang-switch">EN</a>
-        <a href="bathroom-remodeling-es.html" class="lang-switch">ES</a>
-        <a href="bathroom-remodeling-tl.html" class="lang-switch">TL</a>
-        <a href="../quote.html?service=Bathroom+Remodeling" class="btn btn-blue">免费报价</a>
-        <a href="https://www.salesdispatch.ai/login" class="nav-link" target="_blank" rel="noopener">客户登录</a>
+        <a href="../zh.html" class="nav-link">&#39318;&#39029;</a>
+        <div class="nav-dropdown">
+          <a href="../services-zh.html" class="nav-link active nav-drop-toggle" aria-haspopup="true" aria-expanded="false">&#26381;&#21153; <span class="nav-caret">&#9662;</span></a>
+          <div class="dropdown-menu">
+            <a href="kitchen-remodeling-zh.html">&#21414;&#25151;&#25913;&#36896;</a>
+            <a href="bathroom-remodeling-zh.html">&#28020;&#23460;&#25913;&#36896;</a>
+            <a href="roofing-zh.html">&#23627;&#39030;&#24037;&#31243;&#19982;&#35745;&#31639;&#22120;</a>
+            <a href="general-remodeling-zh.html">&#32508;&#21512;&#35013;&#20462;</a>
+            <a href="electrical-services-zh.html">&#30005;&#27668;</a>
+            <a href="landscaping-zh.html">&#26223;&#35266;&#32500;&#25252;</a>
+            <a href="../hvac-zh.html">&#26262;&#36890;&#31354;&#35843;</a>
+          </div>
+        </div>
+        <a href="../financing-zh.html" class="nav-link">&#34701;&#36164;</a>
+        <a href="../catalog-zh.html" class="nav-link">&#20135;&#21697;&#30446;&#24405;</a>
+        <a href="../quote.html?service=Bathroom+Remodeling" class="btn btn-blue">&#20813;&#36153;&#25253;&#20215;</a>
+        <span class="nav-langs">
+          <a href="bathroom-remodeling.html" class="lang-switch">EN</a>
+          <a href="bathroom-remodeling-es.html" class="lang-switch">ES</a>
+          <a href="bathroom-remodeling-tl.html" class="lang-switch">TL</a>
+        </span>
+        <a href="https://www.salesdispatch.ai/login" class="nav-link nav-access" target="_blank" rel="noopener">&#23458;&#25143;&#30331;&#24405;</a>
       </nav>
     </div>
   </header>

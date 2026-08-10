@@ -310,6 +310,33 @@
       .footer-grid { grid-template-columns: 1fr; gap: 24px; }
       .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
     }
+  
+    /* Services dropdown */
+    .nav-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .nav-caret { font-size: 10px; margin-left: 4px; opacity: 0.85; transition: transform 0.2s; }
+    .nav-dropdown:hover .nav-caret { transform: rotate(180deg); }
+    .dropdown-menu {
+      position: absolute; top: calc(100% + 8px); left: 0; min-width: 250px;
+      background: #0c1a2e; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px;
+      padding: 8px; box-shadow: 0 22px 48px rgba(0,0,0,0.5);
+      opacity: 0; visibility: hidden; transform: translateY(8px);
+      transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s; z-index: 1200;
+    }
+    .nav-dropdown:hover .dropdown-menu, .nav-dropdown:focus-within .dropdown-menu {
+      opacity: 1; visibility: visible; transform: translateY(0);
+    }
+    .dropdown-menu a { display: block; padding: 11px 14px; border-radius: 8px; color: #cbd5e1;
+      text-decoration: none; font-size: 14px; font-weight: 500; white-space: nowrap; }
+    .dropdown-menu a:hover { background: rgba(96,165,250,0.16); color: #fff; }
+    .nav-langs { display: inline-flex; gap: 8px; align-items: center; }
+    @media (max-width: 900px) {
+      .nav-dropdown { width: 100%; flex-direction: column; align-items: stretch; }
+      .dropdown-menu { position: static; opacity: 1; visibility: visible; transform: none;
+        box-shadow: none; border: none; background: transparent; padding: 2px 0 8px 14px; min-width: 0; }
+      .nav-caret { display: none; }
+      .nav-langs { display: flex; gap: 8px; }
+    }
+
   </style>
 </head>
 <body>
@@ -325,12 +352,27 @@
       </a>
       <nav class="header-nav">
         <a href="../es.html" class="nav-link">Inicio</a>
-        <a href="../catalog.html" class="nav-link">Catálogo</a>
-        <a href="landscaping.html" class="lang-switch">EN</a>
-        <a href="landscaping-tl.html" class="lang-switch">TL</a>
-        <a href="landscaping-zh.html" class="lang-switch">&#20013;&#25991;</a>
-        <a href="../quote-es.html?service=Jardiner%C3%ADa" class="btn btn-blue">Estimado Gratis</a>
-        <a href="https://www.salesdispatch.ai/login" class="nav-link" target="_blank" rel="noopener">Acceso Cliente</a>
+        <div class="nav-dropdown">
+          <a href="../services-es.html" class="nav-link active nav-drop-toggle" aria-haspopup="true" aria-expanded="false">Servicios <span class="nav-caret">&#9662;</span></a>
+          <div class="dropdown-menu">
+            <a href="kitchen-remodeling-es.html">Remodelaci&oacute;n de Cocina</a>
+            <a href="bathroom-remodeling-es.html">Remodelaci&oacute;n de Ba&ntilde;o</a>
+            <a href="roofing-es.html">Techos y Calculadora</a>
+            <a href="general-remodeling-es.html">Remodelaci&oacute;n General</a>
+            <a href="electrical-services-es.html">Electricidad</a>
+            <a href="landscaping-es.html">Jardiner&iacute;a</a>
+            <a href="../hvac-es.html">Climatizaci&oacute;n (HVAC)</a>
+          </div>
+        </div>
+        <a href="../financing-es.html" class="nav-link">Financiamiento</a>
+        <a href="../catalog-es.html" class="nav-link">Cat&aacute;logo</a>
+        <a href="../quote-es.html?service=Jardiner%C3%ADa" class="btn btn-blue">Cotizaci&oacute;n Gratis</a>
+        <span class="nav-langs">
+          <a href="landscaping.html" class="lang-switch">EN</a>
+          <a href="landscaping-tl.html" class="lang-switch">TL</a>
+          <a href="landscaping-zh.html" class="lang-switch">&#20013;&#25991;</a>
+        </span>
+        <a href="https://www.salesdispatch.ai/login" class="nav-link nav-access" target="_blank" rel="noopener">Acceso Clientes</a>
       </nav>
     </div>
   </header>

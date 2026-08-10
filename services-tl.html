@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <title>Our Services | Hello Projects Pro</title>
-  <meta name="description" content="Hello Projects Pro — Licensed home improvement contractor & remodeling experts in Los Angeles. Kitchen, bathroom, roofing, general contractor near me. Free estimates, 0% financing. Call (888) 480-4286.">
+  <title>Aming mga Serbisyo | Hello Projects Pro</title>
+  <meta name="description" content="Hello Projects Pro — Lisensyadong kontratista sa home improvement at remodeling sa Los Angeles. Kusina, banyo, bubong, general contractor malapit sa iyo. Libreng estimate, 0% financing. Tumawag (888) 480-4286.">
   <link rel="canonical" href="https://helloprojectspro.com/">
   <link rel="alternate" hreflang="en" href="https://helloprojectspro.com/">
   <link rel="alternate" hreflang="es" href="https://helloprojectspro.com/es.html">
@@ -15,8 +15,8 @@
   <link rel="alternate" hreflang="zh" href="https://helloprojectspro.com/zh.html">
   <link rel="alternate" hreflang="x-default" href="https://helloprojectspro.com/">
   <!-- Open Graph -->
-  <meta property="og:title" content="Hello Projects Pro | Home Improvement & Remodeling Contractor Los Angeles">
-  <meta property="og:description" content="Licensed remodeling & construction experts in Los Angeles. Kitchen, bathroom, roofing, electrical, landscaping. Free estimates, 0% financing.">
+  <meta property="og:title" content="Hello Projects Pro | Kontratista sa Remodeling at Home Improvement sa Los Angeles">
+  <meta property="og:description" content="Lisensyadong eksperto sa remodeling at konstruksiyon sa Los Angeles. Kusina, banyo, bubong, kuryente, landscaping. Libreng estimate, 0% financing.">
   <meta property="og:url" content="https://helloprojectspro.com/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
@@ -25,8 +25,8 @@
   <meta property="og:site_name" content="Hello Projects Pro">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Hello Projects Pro | Home Improvement & Remodeling Contractor Los Angeles">
-  <meta name="twitter:description" content="Licensed remodeling & construction in Los Angeles. Free estimates, 0% financing. Call (888) 480-4286.">
+  <meta name="twitter:title" content="Hello Projects Pro | Kontratista sa Remodeling at Home Improvement sa Los Angeles">
+  <meta name="twitter:description" content="Lisensyadong remodeling at konstruksiyon sa Los Angeles. Libreng estimate, 0% financing. Tumawag (888) 480-4286.">
   <meta name="twitter:image" content="https://helloprojectspro.com/hero-bg.jpeg">
   <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-KE7XWYKQ9F"></script>
@@ -282,62 +282,6 @@
     .nav-link:hover {
       color: #fff;
       background: rgba(255,255,255,0.08);
-    }
-
-    /* Services dropdown */
-    .nav-dropdown { position: relative; display: inline-flex; align-items: center; }
-    .nav-caret { font-size: 10px; margin-left: 4px; opacity: 0.85; transition: transform 0.2s; }
-    .nav-dropdown:hover .nav-caret { transform: rotate(180deg); }
-    .dropdown-menu {
-      position: absolute;
-      top: calc(100% + 8px);
-      left: 0;
-      min-width: 250px;
-      background: #0c1a2e;
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 12px;
-      padding: 8px;
-      box-shadow: 0 22px 48px rgba(0,0,0,0.5);
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(8px);
-      transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
-      z-index: 1200;
-    }
-    .nav-dropdown:hover .dropdown-menu,
-    .nav-dropdown:focus-within .dropdown-menu {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-    .dropdown-menu a {
-      display: block;
-      padding: 11px 14px;
-      border-radius: 8px;
-      color: #cbd5e1;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      white-space: nowrap;
-    }
-    .dropdown-menu a:hover { background: rgba(96,165,250,0.16); color: #fff; }
-    .nav-langs { display: inline-flex; gap: 8px; align-items: center; }
-
-    @media (max-width: 900px) {
-      .nav-dropdown { width: 100%; flex-direction: column; align-items: stretch; }
-      .dropdown-menu {
-        position: static;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        box-shadow: none;
-        border: none;
-        background: transparent;
-        padding: 2px 0 8px 14px;
-        min-width: 0;
-      }
-      .nav-caret { display: none; }
-      .nav-langs { display: flex; gap: 8px; }
     }
 
     /* ===== HERO ===== */
@@ -755,23 +699,14 @@
 
     .why-icon {
       flex-shrink: 0;
-      width: 52px;
-      height: 52px;
-      background: linear-gradient(135deg, rgba(59,130,246,0.22), rgba(96,165,250,0.10));
-      border: 1px solid rgba(96,165,250,0.25);
-      border-radius: 14px;
+      width: 48px;
+      height: 48px;
+      background: rgba(59,130,246,0.2);
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-    .why-icon svg {
-      width: 26px;
-      height: 26px;
-      stroke: #7cb2ff;
-      fill: none;
-      stroke-width: 1.9;
-      stroke-linecap: round;
-      stroke-linejoin: round;
+      font-size: 22px;
     }
 
     .why-item h3 {
@@ -783,81 +718,6 @@
     .why-item p {
       font-size: 14px;
       color: #94a3b8;
-    }
-
-    /* ===== LICENSES & CREDENTIALS ===== */
-    .credentials { background: var(--white); padding: 72px 24px; }
-    .cred-grid {
-      max-width: 1100px;
-      margin: 28px auto 0;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 16px;
-    }
-    .cred-card {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 14px;
-      padding: 20px 18px;
-      text-align: center;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .cred-card:hover { transform: translateY(-3px); box-shadow: 0 12px 26px rgba(12,26,46,0.08); }
-    .cred-code {
-      display: inline-block;
-      font-size: 15px;
-      font-weight: 800;
-      color: var(--white);
-      background: var(--primary);
-      border-radius: 8px;
-      padding: 5px 12px;
-      margin-bottom: 10px;
-      letter-spacing: 0.3px;
-    }
-    .cred-card.is-license .cred-code { background: var(--blue); }
-    .cred-card h4 { font-size: 14px; font-weight: 700; color: var(--primary); margin-bottom: 3px; }
-    .cred-card p { font-size: 12px; color: #64748b; line-height: 1.4; }
-    .cred-verify {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 6px;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--blue);
-      text-decoration: none;
-    }
-    .cred-verify:hover { text-decoration: underline; }
-    .cred-foot {
-      max-width: 1100px;
-      margin: 22px auto 0;
-      text-align: center;
-      font-size: 13px;
-      color: #64748b;
-    }
-
-    /* ===== COST ESTIMATOR BAND ===== */
-    .estimator-band { background: var(--primary); padding: 64px 24px; }
-    .estimator-inner {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 40px;
-    }
-    .estimator-copy { max-width: 560px; }
-    .estimator-copy .section-label { margin-bottom: 8px; }
-    .estimator-copy h2 { color: var(--white); font-size: 32px; margin-bottom: 12px; }
-    .estimator-copy p { color: #94a3b8; font-size: 16px; margin-bottom: 24px; line-height: 1.6; }
-    .estimator-art svg {
-      width: 150px; height: 150px;
-      stroke: rgba(96,165,250,0.7); fill: none;
-      stroke-width: 1.2; stroke-linecap: round; stroke-linejoin: round;
-    }
-    @media (max-width: 760px) {
-      .estimator-inner { flex-direction: column-reverse; text-align: center; gap: 20px; }
-      .estimator-art svg { width: 96px; height: 96px; }
     }
 
     /* ===== FINANCING ===== */
@@ -1499,6 +1359,33 @@
       opacity: 1;
       transform: translateY(0);
     }
+  
+    /* Services dropdown */
+    .nav-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .nav-caret { font-size: 10px; margin-left: 4px; opacity: 0.85; transition: transform 0.2s; }
+    .nav-dropdown:hover .nav-caret { transform: rotate(180deg); }
+    .dropdown-menu {
+      position: absolute; top: calc(100% + 8px); left: 0; min-width: 250px;
+      background: #0c1a2e; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px;
+      padding: 8px; box-shadow: 0 22px 48px rgba(0,0,0,0.5);
+      opacity: 0; visibility: hidden; transform: translateY(8px);
+      transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s; z-index: 1200;
+    }
+    .nav-dropdown:hover .dropdown-menu, .nav-dropdown:focus-within .dropdown-menu {
+      opacity: 1; visibility: visible; transform: translateY(0);
+    }
+    .dropdown-menu a { display: block; padding: 11px 14px; border-radius: 8px; color: #cbd5e1;
+      text-decoration: none; font-size: 14px; font-weight: 500; white-space: nowrap; }
+    .dropdown-menu a:hover { background: rgba(96,165,250,0.16); color: #fff; }
+    .nav-langs { display: inline-flex; gap: 8px; align-items: center; }
+    @media (max-width: 900px) {
+      .nav-dropdown { width: 100%; flex-direction: column; align-items: stretch; }
+      .dropdown-menu { position: static; opacity: 1; visibility: visible; transform: none;
+        box-shadow: none; border: none; background: transparent; padding: 2px 0 8px 14px; min-width: 0; }
+      .nav-caret { display: none; }
+      .nav-langs { display: flex; gap: 8px; }
+    }
+
   </style>
 </head>
 <body>
@@ -1506,32 +1393,32 @@
   <!-- STICKY HEADER -->
   <header class="header">
     <div class="header-top">
-      <strong>Claim Your Discount</strong> &mdash; Call or Text Us Toll-Free <a href="tel:+18884804286">(888) 480-4286</a>
+      <strong>Kunin ang Iyong Diskwento</strong> &mdash; Tumawag o Mag-text nang Libre <a href="tel:+18884804286">(888) 480-4286</a>
     </div>
     <div class="header-main">
       <a href="index.html" class="logo">
         <img src="logo.jpeg" alt="Hello Projects Pro">
       </a>
       <nav class="header-nav">
-        <a href="index.html" class="nav-link">Home</a>
+        <a href="tl.html" class="nav-link">Home</a>
         <div class="nav-dropdown">
-          <a href="services.html" class="nav-link nav-drop-toggle" aria-haspopup="true" aria-expanded="false">Services <span class="nav-caret">&#9662;</span></a>
+          <a href="services-tl.html" class="nav-link active nav-drop-toggle" aria-haspopup="true" aria-expanded="false">Mga Serbisyo <span class="nav-caret">&#9662;</span></a>
           <div class="dropdown-menu">
-            <a href="services/kitchen-remodeling.html">Kitchen Remodeling</a>
-            <a href="services/bathroom-remodeling.html">Bathroom Remodeling</a>
-            <a href="services/roofing.html">Roofing &amp; Roof Calculator</a>
-            <a href="services/general-remodeling.html">General Remodeling</a>
-            <a href="services/electrical-services.html">Electrical</a>
-            <a href="services/landscaping.html">Landscaping</a>
-            <a href="hvac.html">HVAC &amp; Cooling</a>
+            <a href="services/kitchen-remodeling-tl.html">Remodeling ng Kusina</a>
+            <a href="services/bathroom-remodeling-tl.html">Remodeling ng Banyo</a>
+            <a href="services/roofing-tl.html">Roofing at Calculator</a>
+            <a href="services/general-remodeling-tl.html">Pangkalahatang Remodeling</a>
+            <a href="services/electrical-services-tl.html">Electrical</a>
+            <a href="services/landscaping-tl.html">Landscaping</a>
+            <a href="hvac-tl.html">HVAC &amp; Cooling</a>
           </div>
         </div>
-        <a href="financing.html" class="nav-link">Financing</a>
-        <a href="catalog.html" class="nav-link">Catalog</a>
-        <a href="quote.html" class="btn btn-blue">Get Free Quote</a>
+        <a href="financing-tl.html" class="nav-link">Financing</a>
+        <a href="catalog-tl.html" class="nav-link">Katalogo</a>
+        <a href="quote.html" class="btn btn-blue">Libreng Quote</a>
         <span class="nav-langs">
+          <a href="services.html" class="lang-switch">EN</a>
           <a href="services-es.html" class="lang-switch">ES</a>
-          <a href="services-tl.html" class="lang-switch">TL</a>
           <a href="services-zh.html" class="lang-switch">&#20013;&#25991;</a>
         </span>
         <a href="https://www.salesdispatch.ai/login" class="nav-link nav-access" target="_blank" rel="noopener">Customer Access</a>
@@ -1541,57 +1428,57 @@
   <!-- SERVICES with photos -->
   <section class="services" id="services" style="margin-top:130px">
     <div class="section-header fade-in">
-      <div class="section-label">What We Do</div>
-      <h2>Our Expert Services</h2>
-      <p>From small repairs to full-scale renovations, our licensed team handles it all.</p>
+      <div class="section-label">Ang Aming Ginagawa</div>
+      <h2>Aming Ekspertong Serbisyo</h2>
+      <p>Mula sa maliliit na ayos hanggang buong renovation, kaya ng aming lisensyadong team ang lahat.</p>
     </div>
     <div class="services-grid">
       <div class="service-card fade-in">
         <img class="service-img" src="kitchen.jpeg" alt="Kitchen Remodeling" loading="lazy">
         <div class="service-body">
-          <h3>Kitchen Remodeling</h3>
-          <p>Custom cabinets, countertops, flooring, and complete kitchen transformations.</p>
-          <a href="services/kitchen-remodeling.html" class="btn btn-blue">LEARN MORE</a>
+          <h3>Remodeling ng Kusina</h3>
+          <p>Pasadyang kabinet, countertop, sahig, at kumpletong pagbabago ng kusina.</p>
+          <a href="services/kitchen-remodeling-tl.html" class="btn btn-blue">MATUTO PA</a>
         </div>
       </div>
       <div class="service-card fade-in">
         <img class="service-img" src="bathroom.jpeg" alt="Bathroom Remodeling" loading="lazy">
         <div class="service-body">
-          <h3>Bathroom Remodeling</h3>
-          <p>Walk-in showers, tub-to-shower conversions, tile, vanities, and full bath renovations.</p>
-          <a href="services/bathroom-remodeling.html" class="btn btn-blue">LEARN MORE</a>
+          <h3>Remodeling ng Banyo</h3>
+          <p>Walk-in shower, tub-to-shower, tile, vanity, at buong renovation ng banyo.</p>
+          <a href="services/bathroom-remodeling.html" class="btn btn-blue">MATUTO PA</a>
         </div>
       </div>
       <div class="service-card fade-in">
         <img class="service-img" src="roofing.jpeg" alt="Roofing" loading="lazy">
         <div class="service-body">
           <h3>Roofing</h3>
-          <p>New roofs, repairs, re-roofing, leak detection, and storm damage restoration.</p>
-          <a href="services/roofing.html" class="btn btn-blue">LEARN MORE</a>
+          <p>Bagong bubong, pag-aayos, re-roofing, paghahanap ng tagas, at pagkumpuni sa sira ng bagyo.</p>
+          <a href="services/roofing.html" class="btn btn-blue">MATUTO PA</a>
         </div>
       </div>
       <div class="service-card fade-in">
         <img class="service-img" src="general-remodeling.jpeg" alt="General Remodeling" loading="lazy">
         <div class="service-body">
-          <h3>General Remodeling</h3>
-          <p>Flooring, windows, doors, painting, and whole-house renovations.</p>
-          <a href="services/general-remodeling.html" class="btn btn-blue">LEARN MORE</a>
+          <h3>Pangkalahatang Remodeling</h3>
+          <p>Sahig, bintana, pinto, pintura, at renovation ng buong bahay.</p>
+          <a href="services/general-remodeling.html" class="btn btn-blue">MATUTO PA</a>
         </div>
       </div>
       <div class="service-card fade-in">
         <img class="service-img" src="electrical.jpeg" alt="Residential Electrical" loading="lazy">
         <div class="service-body">
           <h3>Residential Electrical</h3>
-          <p>Panel upgrades, rewiring, lighting installation, EV chargers, and smart home electrical solutions.</p>
-          <a href="services/electrical-services.html" class="btn btn-blue">LEARN MORE</a>
+          <p>Panel upgrade, rewiring, ilaw, EV charger, at smart home electrical.</p>
+          <a href="services/electrical-services.html" class="btn btn-blue">MATUTO PA</a>
         </div>
       </div>
       <div class="service-card fade-in">
         <img class="service-img" src="landscaping.jpeg" alt="Landscaping" loading="lazy">
         <div class="service-body">
           <h3>Landscaping</h3>
-          <p>Patios, decks, fencing, concrete, landscaping, and backyard living spaces.</p>
-          <a href="services/landscaping.html" class="btn btn-blue">LEARN MORE</a>
+          <p>Patio, deck, bakod, semento, landscaping, at backyard living spaces.</p>
+          <a href="services/landscaping.html" class="btn btn-blue">MATUTO PA</a>
         </div>
       </div>
     </div>
@@ -1600,51 +1487,69 @@
   <!-- LICENSES & CREDENTIALS -->
   <section class="credentials">
     <div class="section-header fade-in">
-      <div class="section-label">Verified &amp; Accountable</div>
-      <h2>Licensed &amp; Credentialed</h2>
-      <p>Patagon Consulting Inc., DBA Hello Projects Pro &mdash; a fully licensed California contractor. Compliant with CA Bus.&nbsp;&amp; Prof. Code&nbsp;&sect;7159.</p>
+      <div class="section-label">Verified at Mapananagutan</div>
+      <h2>Lisensyado at May Kredensyal</h2>
+      <p>Patagon Consulting Inc., DBA Hello Projects Pro &mdash; ganap na lisensyadong kontratista sa California. Sumusunod sa CA Bus. &amp; Prof. Code &sect;7159.</p>
     </div>
     <div class="cred-grid">
       <div class="cred-card is-license fade-in">
         <span class="cred-code">CSLB #1135440</span>
         <h4>State Contractor License</h4>
-        <p>Active &amp; verifiable</p>
-        <a href="https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=1135440" target="_blank" rel="noopener" class="cred-verify">Verify on CSLB &rarr;</a>
+        <p>Aktibo at ma-verify</p>
+        <a href="https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=1135440" target="_blank" rel="noopener" class="cred-verify">I-verify sa CSLB &rarr;</a>
       </div>
-      <div class="cred-card fade-in">
-        <span class="cred-code">Class B</span>
-        <h4>General Building</h4>
-        <p>Full-scope remodels &amp; construction</p>
-      </div>
-      <div class="cred-card fade-in">
-        <span class="cred-code">C-10</span>
-        <h4>Electrical</h4>
-        <p>Panels, wiring, EV &amp; lighting</p>
-      </div>
-      <div class="cred-card fade-in">
-        <span class="cred-code">C-20</span>
-        <h4>HVAC</h4>
-        <p>Heating, ventilation &amp; A/C</p>
-      </div>
-      <div class="cred-card fade-in">
-        <span class="cred-code">C-39</span>
-        <h4>Roofing</h4>
-        <p>Re-roofs, repairs &amp; tear-offs</p>
-      </div>
-      <div class="cred-card fade-in">
-        <span class="cred-code">$1M / $2M</span>
-        <h4>Insured &amp; Bonded</h4>
-        <p>General liability + workers&rsquo; comp</p>
-      </div>
+      <div class="cred-card fade-in"><span class="cred-code">Class B</span><h4>General Building</h4><p>Buong remodel at konstruksyon</p></div>
+      <div class="cred-card fade-in"><span class="cred-code">C-10</span><h4>Electrical</h4><p>Panel, wiring, EV at ilaw</p></div>
+      <div class="cred-card fade-in"><span class="cred-code">C-20</span><h4>HVAC</h4><p>Heating, ventilation at A/C</p></div>
+      <div class="cred-card fade-in"><span class="cred-code">C-39</span><h4>Roofing</h4><p>Re-roof, repair at tear-off</p></div>
+      <div class="cred-card fade-in"><span class="cred-code">$1M / $2M</span><h4>Insured &amp; Bonded</h4><p>General liability + workers&rsquo; comp</p></div>
     </div>
-    <p class="cred-foot">Certificates of insurance &amp; bonding furnished upon request.</p>
+    <p class="cred-foot">Certificate ng insurance at bonding ay ibibigay kapag hiniling.</p>
   </section>
 
   <!-- CTA BANNER -->
   <section class="cta-banner">
-    <h2>Ready to Start Your Project?</h2>
-    <p>Get a free, no-obligation estimate today. We'll come to you!</p>
-    <a href="quote.html" class="btn btn-lg">Get My Free Quote</a>
+    <h2>Handa na Bang Simulan ang Iyong Proyekto?</h2>
+    <p>Kumuha ng libre at walang obligasyong estimate ngayon. Pupuntahan ka namin!</p>
+    <a href="quote.html" class="btn btn-lg">Kunin ang Libreng Quote</a>
+  </section>
+
+  <!-- STORY -->
+  <section class="story">
+    <div class="section-header fade-in">
+      <div class="section-label">Ang Aming Kuwento</div>
+      <h2>Nakaugat sa Komunidad</h2>
+    </div>
+    <div class="story-content fade-in">
+      <p>Hello Projects Pro was born from a simple belief: every homeowner deserves honest, high-quality work at a fair price. With over 25 years in the construction industry across Southern California, our team has completed thousands of projects ranging from small bathroom updates to full-scale custom homes.</p>
+      <p>We're not a faceless corporation. We're your neighbors in Los Angeles &mdash; licensed professionals who stake our reputation on every job. From the first phone call to the final walkthrough, you'll work directly with experienced contractors who treat your home like their own.</p>
+    </div>
+  </section>
+
+  <!-- ===== SOCIAL MEDIA ===== -->
+  <section class="social">
+    <h2>Sundan Kami</h2>
+    <div class="social-links">
+      <a href="https://www.instagram.com/helloprojectspro/" target="_blank" rel="noopener" class="social-link instagram">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        @helloprojectspro
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61569353840324" target="_blank" rel="noopener" class="social-link facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Hello Projects Pro
+      </a>
+      <a href="https://www.yelp.com/biz/hello-projects-pro-reseda-2" target="_blank" rel="noopener" class="social-link yelp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.16 12.594l-4.995 1.433c-.96.276-1.74-.8-1.176-1.63l2.905-4.308a1.072 1.072 0 011.596-.206 9.194 9.194 0 012.364 3.282 1.073 1.073 0 01-.694 1.429zm-1.737 5.39a1.073 1.073 0 01-1.282.855 9.194 9.194 0 01-3.592-1.722 1.072 1.072 0 01-.134-1.606l3.312-3.937c.635-.755 1.852-.24 1.838.776l-.142 5.634zm-7.737-.675l-1.545-4.973c-.297-.955.782-1.744 1.63-1.192l4.37 2.823a1.072 1.072 0 01.183 1.603 9.194 9.194 0 01-3.228 2.402 1.073 1.073 0 01-1.41-.663zm-1.898-6.093c.032 1.007-1.136 1.579-1.765.864L3.54 8.143a1.072 1.072 0 01.146-1.612A9.194 9.194 0 017.4 4.64a1.073 1.073 0 011.38.918l.005 5.658zm-2.41 7.703a1.072 1.072 0 01-.774-1.345 9.194 9.194 0 011.882-3.51 1.072 1.072 0 011.612-.078l3.77 3.478c.723.668.27 1.874-.685 1.822l-5.805-.367z"/></svg>
+        Yelp Reviews
+      </a>
+    </div>
+  </section>
+
+  <!-- QUOTE CTA -->
+  <section class="cta-banner" id="quote">
+    <h2>Kunin ang LIBRENG Quote Ngayon</h2>
+    <p>Sagutan ang mabilis na form at sasagutin ka namin sa loob ng 1 oras.</p>
+    <a href="quote.html" class="btn btn-lg">Humiling ng Libreng Quote</a>
   </section>
 
   <!-- FOOTER -->
@@ -1660,15 +1565,15 @@
       </div>
       <div>
         <h4>Services</h4>
-        <p><a href="services/kitchen-remodeling.html">Kitchen Remodeling</a></p>
-        <p><a href="services/bathroom-remodeling.html">Bathroom Remodeling</a></p>
+        <p><a href="services/kitchen-remodeling-tl.html">Remodeling ng Kusina</a></p>
+        <p><a href="services/bathroom-remodeling.html">Remodeling ng Banyo</a></p>
         <p><a href="services/roofing.html">Roofing</a></p>
-        <p><a href="services/general-remodeling.html">General Remodeling</a></p>
+        <p><a href="services/general-remodeling.html">Pangkalahatang Remodeling</a></p>
         <p><a href="services/electrical-services.html">Residential Electrical</a></p>
         <p><a href="services/landscaping.html">Landscaping</a></p>
       </div>
       <div>
-        <h4>Service Areas</h4>
+        <h4>Mga Lugar na Pinaglilingkuran</h4>
         <p>Los Angeles, CA</p>
         <p>Reseda, CA</p>
         <p>Encino, CA</p>
@@ -1677,9 +1582,9 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2026 Hello Projects Pro. All rights reserved.</span>
+      <span>&copy; 2026 Hello Projects Pro. Nakalaan ang lahat ng karapatan.</span>
       <div>
-        <a href="terms.html">Terms</a>
+        <a href="terms.html">Mga Tuntunin</a>
         <a href="privacy.html">Privacy</a>
       </div>
     </div>
@@ -1717,7 +1622,7 @@
       const btn = document.getElementById('galleryBtn');
       galleryExpanded = !galleryExpanded;
       hidden.forEach(el => el.style.display = galleryExpanded ? 'block' : 'none');
-      btn.textContent = galleryExpanded ? 'Show Less' : 'View Full Gallery (15 Photos)';
+      btn.textContent = galleryExpanded ? 'Bawasan' : 'Tingnan ang Buong Gallery (15 Larawan)';
     }
 
     function openLightbox(index) {
