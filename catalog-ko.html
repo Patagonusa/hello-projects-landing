@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <title>Product Catalog | Hello Projects Pro</title>
+  <link rel="alternate" hreflang="en" href="https://helloprojectspro.com/catalog.html">
+  <link rel="alternate" hreflang="es" href="https://helloprojectspro.com/catalog-es.html">
+  <link rel="alternate" hreflang="tl" href="https://helloprojectspro.com/catalog-tl.html">
+  <link rel="alternate" hreflang="zh" href="https://helloprojectspro.com/catalog-zh.html">
+  <meta name="description" content="Browse our curated selection of premium flooring, tile, and materials. Porcelain tile, hardwood, luxury vinyl, and more. Request a free quote from Hello Projects Pro.">
+  <link rel="canonical" href="https://helloprojectspro.com/catalog.html">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Product Catalog | Hello Projects Pro">
+  <meta property="og:description" content="Browse our curated selection of premium flooring, tile, and materials for your renovation project.">
+  <meta property="og:url" content="https://helloprojectspro.com/catalog.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://helloprojectspro.com/hero-bg.jpeg">
+  <meta property="og:site_name" content="Hello Projects Pro">
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KE7XWYKQ9F"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KE7XWYKQ9F');</script>
+  <!-- Meta Pixel -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1782159502364871');fbq('track','PageView');</script>
+  <!-- Leadpipe pixel (head for early fire) -->
+  <script src="https://leadpipe.aws53.cloud/p/d0a586f8-a409-4826-92fd-c2bacd0e2799.js" async></script>
+  <script src="/pixel-enhancements.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0c1a2e;
+      --primary-light: #142d4f;
+      --blue: #2563eb;
+      --blue-hover: #1d4ed8;
+      --blue-light: #3b82f6;
+      --sky: #60a5fa;
+      --navy: #1e3a5f;
+      --accent: #f59e0b;
+      --accent-hover: #d97706;
+      --green: #10b981;
+      --green-dark: #059669;
+      --text: #1e293b;
+      --text-light: #64748b;
+      --bg-light: #f0f7ff;
+      --white: #fff;
+      --shadow: 0 4px 20px rgba(12,26,46,0.1);
+      --shadow-lg: 0 10px 40px rgba(12,26,46,0.18);
+      --radius: 12px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background: #f8fafc;
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: var(--primary);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+    }
+
+    .header-top {
+      background: linear-gradient(90deg, var(--blue), var(--blue-light));
+      color: var(--white);
+      text-align: center;
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+    .header-top strong { font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
+    .header-top a {
+      color: #fff; text-decoration: none; font-weight: 800;
+      background: rgba(255,255,255,0.15); padding: 2px 10px; border-radius: 4px;
+      transition: background 0.2s;
+    }
+    .header-top a:hover { background: rgba(255,255,255,0.25); }
+
+    .header-main {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 8px 24px;
+    }
+
+    .logo { display: flex; align-items: center; text-decoration: none; }
+    .logo img { height: 72px; width: auto; }
+
+    .header-nav { display: flex; align-items: center; gap: 16px; }
+
+    .nav-link {
+      color: #cbd5e1; text-decoration: none; font-size: 14px; font-weight: 500;
+      padding: 8px 16px; border-radius: 6px; transition: all 0.2s;
+    }
+    .nav-link:hover { color: #fff; background: rgba(255,255,255,0.08); }
+    .nav-link.active { color: #fff; background: rgba(255,255,255,0.12); }
+
+    .lang-switch {
+      color: var(--sky); font-size: 13px; font-weight: 600; text-decoration: none;
+      border: 1px solid rgba(96,165,250,0.4); padding: 6px 12px; border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .lang-switch:hover { background: rgba(96,165,250,0.15); color: var(--white); }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 24px; border-radius: 8px; font-weight: 700; font-size: 14px;
+      text-decoration: none; border: none; cursor: pointer; transition: all 0.2s; white-space: nowrap;
+    }
+    .btn-blue { background: var(--blue); color: var(--white); }
+    .btn-blue:hover { background: var(--blue-hover); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(37,99,235,0.4); }
+    .btn-accent { background: var(--accent); color: var(--primary); }
+    .btn-accent:hover { background: var(--accent-hover); transform: translateY(-1px); }
+    .btn-green { background: var(--green); color: var(--white); }
+    .btn-green:hover { background: var(--green-dark); transform: translateY(-1px); }
+
+    /* ===== CATALOG HERO ===== */
+    .catalog-hero {
+      margin-top: 130px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--navy) 50%, var(--blue) 100%);
+      color: var(--white);
+      padding: 60px 24px 50px;
+      text-align: center;
+    }
+    .catalog-hero h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 42px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .catalog-hero p {
+      font-size: 18px;
+      color: #94a3b8;
+      max-width: 600px;
+      margin: 0 auto 24px;
+    }
+
+    /* ===== FILTERS ===== */
+    .filters-bar {
+      background: var(--white);
+      border-bottom: 1px solid #e2e8f0;
+      padding: 16px 24px;
+      position: sticky;
+      top: 130px;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .filters-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .filter-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .filter-select {
+      padding: 8px 32px 8px 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: inherit;
+      color: var(--text);
+      background: var(--white);
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748b' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      min-width: 160px;
+    }
+    .filter-select:focus {
+      outline: none;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+    }
+    .search-input {
+      flex: 1;
+      min-width: 200px;
+      padding: 8px 12px 8px 36px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: inherit;
+      color: var(--text);
+      background: var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E") no-repeat 10px center;
+    }
+    .search-input:focus {
+      outline: none;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+    }
+    .result-count {
+      font-size: 13px;
+      color: var(--text-light);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    /* ===== PRODUCT GRID ===== */
+    .catalog-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 32px 24px 80px;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .product-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    .product-image-wrap {
+      position: relative;
+      width: 100%;
+      padding-top: 100%;
+      overflow: hidden;
+      background: #f1f5f9;
+    }
+    .product-image-wrap img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .product-card:hover .product-image-wrap img {
+      transform: scale(1.05);
+    }
+    .product-badges {
+      position: absolute;
+      top: 10px; left: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      z-index: 2;
+    }
+    .badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .badge-category {
+      background: var(--blue);
+      color: var(--white);
+    }
+    .badge-finish {
+      background: rgba(0,0,0,0.6);
+      color: var(--white);
+      backdrop-filter: blur(4px);
+    }
+    .badge-outdoor {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .product-info {
+      padding: 16px;
+    }
+    .product-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+    .product-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+    .detail-chip {
+      font-size: 12px;
+      padding: 3px 8px;
+      background: #f1f5f9;
+      color: var(--text-light);
+      border-radius: 4px;
+      font-weight: 500;
+    }
+    .product-material {
+      font-size: 13px;
+      color: var(--text-light);
+      margin-bottom: 12px;
+    }
+    .product-quote-btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background: var(--blue);
+      color: var(--white);
+      text-align: center;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .product-quote-btn:hover {
+      background: var(--blue-hover);
+    }
+
+    /* ===== LIGHTBOX ===== */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 2000;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox-close {
+      position: absolute;
+      top: 20px; right: 24px;
+      background: none; border: none;
+      color: #fff; font-size: 36px;
+      cursor: pointer; opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+    .lightbox-close:hover { opacity: 1; }
+    .lightbox-content {
+      max-width: 900px;
+      width: 100%;
+      display: flex;
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      max-height: 90vh;
+    }
+    .lightbox-img {
+      flex: 1;
+      min-width: 0;
+      background: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      max-height: 80vh;
+    }
+    .lightbox-details {
+      width: 340px;
+      padding: 32px 28px;
+      overflow-y: auto;
+      flex-shrink: 0;
+    }
+    .lightbox-details h2 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+    .lightbox-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .lightbox-meta-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+    }
+    .lightbox-meta-label {
+      color: var(--text-light);
+      font-weight: 500;
+    }
+    .lightbox-meta-value {
+      color: var(--text);
+      font-weight: 600;
+    }
+    .lightbox-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 24px;
+    }
+    .lightbox-tag {
+      font-size: 11px;
+      padding: 4px 10px;
+      background: var(--bg-light);
+      color: var(--blue);
+      border-radius: 20px;
+      font-weight: 600;
+    }
+    .lightbox-cta {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background: var(--blue);
+      color: var(--white);
+      text-align: center;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-bottom: 10px;
+    }
+    .lightbox-cta:hover { background: var(--blue-hover); }
+    .lightbox-call {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background: transparent;
+      color: var(--blue);
+      text-align: center;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 10px;
+      border: 2px solid var(--blue);
+      transition: all 0.2s;
+    }
+    .lightbox-call:hover { background: var(--blue); color: var(--white); }
+
+    /* ===== NO RESULTS ===== */
+    .no-results {
+      text-align: center;
+      padding: 80px 24px;
+      color: var(--text-light);
+    }
+    .no-results h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--primary);
+      color: #64748b;
+      padding: 48px 24px 24px;
+      max-width: 100%;
+    }
+    .footer-grid {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+      margin-bottom: 32px;
+    }
+    .footer h4 {
+      color: var(--white); font-size: 16px; font-weight: 700;
+      margin-bottom: 16px; letter-spacing: 0.5px;
+    }
+    .footer p, .footer a { font-size: 14px; line-height: 2; }
+    .footer a { color: #64748b; text-decoration: none; transition: color 0.2s; }
+    .footer a:hover { color: var(--sky); }
+    .footer-bottom {
+      max-width: 1200px; margin: 0 auto;
+      border-top: 1px solid #1e293b;
+      padding-top: 16px;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 13px; color: #334155;
+    }
+    .footer-bottom a { color: #4a6080; margin-left: 16px; }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 768px) {
+      .header-main { padding: 8px 16px; }
+      .logo img { height: 52px; }
+      .header-nav { gap: 10px; }
+      .btn { padding: 10px 16px; font-size: 13px; }
+      .catalog-hero { margin-top: 110px; padding: 40px 16px 32px; }
+      .catalog-hero h1 { font-size: 28px; }
+      .catalog-hero p { font-size: 15px; }
+      .filters-bar { top: 110px; padding: 12px 16px; }
+      .filters-inner { gap: 8px; }
+      .filter-select { min-width: 130px; font-size: 13px; }
+      .search-input { min-width: 100%; }
+      .product-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .product-info { padding: 10px; }
+      .product-name { font-size: 13px; }
+      .detail-chip { font-size: 10px; }
+      .catalog-container { padding: 16px 12px 60px; }
+      .lightbox { padding: 16px; }
+      .lightbox-content { flex-direction: column; max-height: 95vh; }
+      .lightbox-img { max-height: 50vh; }
+      .lightbox-details { width: 100%; padding: 20px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .product-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .product-info { padding: 8px; }
+      .product-name { font-size: 12px; }
+      .product-details { display: none; }
+      .product-quote-btn { font-size: 11px; padding: 8px; }
+      .filter-group { width: 100%; }
+      .filter-select { width: 100%; }
+    }
+
+    /* ===== SELECTION CART ===== */
+    .selection-bar {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 500;
+      background: var(--primary);
+      color: var(--white);
+      padding: 12px 24px;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+    }
+    .selection-bar.active { display: block; }
+    .selection-bar-inner {
+      max-width: 1400px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    }
+    .selection-thumbs {
+      display: flex; gap: 6px; overflow-x: auto; flex: 1;
+    }
+    .selection-thumb {
+      width: 44px; height: 44px; border-radius: 8px; overflow: hidden; position: relative; flex-shrink: 0; border: 2px solid rgba(255,255,255,0.3);
+    }
+    .selection-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .selection-thumb .remove-btn {
+      position: absolute; top: -4px; right: -4px; background: #ef4444; color: #fff; border: none;
+      width: 18px; height: 18px; border-radius: 50%; font-size: 12px; cursor: pointer; line-height: 16px; text-align: center; padding: 0;
+    }
+    .selection-count { font-size: 14px; font-weight: 700; white-space: nowrap; }
+    .btn-submit-selection {
+      background: var(--accent); color: var(--primary); padding: 10px 20px; border-radius: 8px;
+      font-weight: 700; font-size: 14px; border: none; cursor: pointer; white-space: nowrap; transition: all 0.2s;
+    }
+    .btn-submit-selection:hover { background: var(--accent-hover); transform: translateY(-1px); }
+
+    .product-card .select-check {
+      position: absolute; top: 10px; right: 10px; z-index: 3;
+      width: 28px; height: 28px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.6);
+      background: rgba(0,0,0,0.3); color: transparent; font-size: 16px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; transition: all 0.2s; backdrop-filter: blur(4px);
+    }
+    .product-card .select-check:hover { border-color: #fff; background: rgba(37,99,235,0.5); }
+    .product-card.selected .select-check {
+      background: var(--blue); border-color: var(--blue); color: #fff;
+    }
+    .product-card.selected { ring: 3px solid var(--blue); box-shadow: 0 0 0 3px rgba(37,99,235,0.3), var(--shadow-lg); }
+
+    /* ===== SUBMIT MODAL ===== */
+    .submit-modal {
+      display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 2000; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
+      align-items: center; justify-content: center; padding: 20px;
+    }
+    .submit-modal.active { display: flex; }
+    .submit-modal-content {
+      background: var(--white); border-radius: 16px; max-width: 600px; width: 100%;
+      max-height: 90vh; overflow-y: auto; padding: 32px;
+    }
+    .submit-modal h2 { font-size: 22px; font-weight: 800; margin-bottom: 4px; }
+    .submit-modal .subtitle { color: var(--text-light); font-size: 14px; margin-bottom: 20px; }
+    .selected-products-list { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .selected-product-chip {
+      display: flex; align-items: center; gap: 6px; background: #f1f5f9; border-radius: 8px; padding: 4px 10px 4px 4px;
+    }
+    .selected-product-chip img { width: 32px; height: 32px; border-radius: 6px; object-fit: cover; }
+    .selected-product-chip span { font-size: 12px; font-weight: 600; color: var(--text); }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+    .form-group input, .form-group textarea {
+      width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 8px;
+      font-size: 14px; font-family: inherit;
+    }
+    .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(37,99,235,0.15); }
+    .photo-upload-area {
+      border: 2px dashed #d1d5db; border-radius: 12px; padding: 24px; text-align: center;
+      cursor: pointer; transition: all 0.2s; background: #f8fafc;
+    }
+    .photo-upload-area:hover { border-color: var(--blue); background: #f0f7ff; }
+    .photo-upload-area p { color: var(--text-light); font-size: 14px; margin: 0; }
+    .photo-upload-area .upload-icon { font-size: 32px; margin-bottom: 8px; }
+    .photo-previews { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .photo-preview { width: 64px; height: 64px; border-radius: 8px; overflow: hidden; position: relative; }
+    .photo-preview img { width: 100%; height: 100%; object-fit: cover; }
+    .photo-preview .remove-photo {
+      position: absolute; top: 2px; right: 2px; background: #ef4444; color: #fff; border: none;
+      width: 18px; height: 18px; border-radius: 50%; font-size: 11px; cursor: pointer; line-height: 16px;
+    }
+    .btn-send-quote {
+      width: 100%; padding: 14px; background: var(--blue); color: #fff; border: none; border-radius: 10px;
+      font-size: 16px; font-weight: 700; cursor: pointer; transition: all 0.2s; margin-top: 8px;
+    }
+    .btn-send-quote:hover { background: var(--blue-hover); }
+    .btn-send-quote:disabled { background: #94a3b8; cursor: not-allowed; }
+
+    @media (max-width: 768px) {
+      .selection-bar-inner { flex-wrap: wrap; }
+      .selection-thumbs { max-width: 100%; }
+      .submit-modal-content { padding: 20px; }
+    }
+
+    /* Lazy loading fade */
+    .product-image-wrap img {
+      opacity: 0;
+      transition: opacity 0.4s, transform 0.3s;
+    }
+    .product-image-wrap img.loaded { opacity: 1; }
+  
+    /* Services dropdown */
+    .nav-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .nav-caret { font-size: 10px; margin-left: 4px; opacity: 0.85; transition: transform 0.2s; }
+    .nav-dropdown:hover .nav-caret { transform: rotate(180deg); }
+    .dropdown-menu {
+      position: absolute; top: calc(100% + 8px); left: 0; min-width: 250px;
+      background: #0c1a2e; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px;
+      padding: 8px; box-shadow: 0 22px 48px rgba(0,0,0,0.5);
+      opacity: 0; visibility: hidden; transform: translateY(8px);
+      transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s; z-index: 1200;
+    }
+    .nav-dropdown:hover .dropdown-menu, .nav-dropdown:focus-within .dropdown-menu {
+      opacity: 1; visibility: visible; transform: translateY(0);
+    }
+    .dropdown-menu a { display: block; padding: 11px 14px; border-radius: 8px; color: #cbd5e1;
+      text-decoration: none; font-size: 14px; font-weight: 500; white-space: nowrap; }
+    .dropdown-menu a:hover { background: rgba(96,165,250,0.16); color: #fff; }
+    .nav-langs { display: inline-flex; gap: 8px; align-items: center; }
+    @media (max-width: 900px) {
+      .nav-dropdown { width: 100%; flex-direction: column; align-items: stretch; }
+      .dropdown-menu { position: static; opacity: 1; visibility: visible; transform: none;
+        box-shadow: none; border: none; background: transparent; padding: 2px 0 8px 14px; min-width: 0; }
+      .nav-caret { display: none; }
+      .nav-langs { display: flex; gap: 8px; }
+    }
+
+  </style>
+  <style>html[lang="ko"] body{font-family:"Malgun Gothic","Apple SD Gothic Neo","Noto Sans KR",-apple-system,system-ui,sans-serif}</style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-top">
+      <strong>할인 받으세요</strong> &mdash; 무료 전화 또는 문자 <a href="tel:+18884804286">(888) 480-4286</a>
+    </div>
+    <div class="header-main">
+      <a href="index.html" class="logo">
+        <img src="logo.jpeg" alt="Hello Projects Pro">
+      </a>
+      <nav class="header-nav">
+        <a href="ko.html" class="nav-link">홈</a>
+        <div class="nav-dropdown">
+          <a href="services-ko.html" class="nav-link nav-drop-toggle" aria-haspopup="true" aria-expanded="false">서비스 <span class="nav-caret">&#9662;</span></a>
+          <div class="dropdown-menu">
+            <a href="services/kitchen-remodeling-ko.html">주방 리모델링</a>
+            <a href="services/bathroom-remodeling-ko.html">욕실 리모델링</a>
+            <a href="services/roofing-ko.html">지붕 및 계산기</a>
+            <a href="services/general-remodeling-ko.html">종합 리모델링</a>
+            <a href="services/electrical-services-ko.html">전기</a>
+            <a href="services/landscaping-ko.html">조경</a>
+            <a href="hvac-ko.html">냉난방 (HVAC)</a>
+          </div>
+        </div>
+        <a href="financing-ko.html" class="nav-link">파이낸싱</a>
+        <a href="catalog-ko.html" class="nav-link active">카탈로그</a>
+        <a href="quote.html" class="btn btn-blue">무료 견적</a>
+        <span class="nav-langs">
+          <a href="index.html" class="lang-switch">EN</a>
+          <a href="es.html" class="lang-switch">ES</a>
+          <a href="tl.html" class="lang-switch">TL</a>
+          <a href="zh.html" class="lang-switch">中文</a>
+        </span>
+        <a href="https://www.salesdispatch.ai/login" class="nav-link nav-access" target="_blank" rel="noopener">고객 로그인</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CATALOG HERO -->
+  <section class="catalog-hero">
+    <h1>Materials Catalog</h1>
+    <p>Browse our curated selection of premium flooring and tile. Find the perfect look for your renovation project.</p>
+    <div style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:12px;padding:16px 24px;max-width:700px;margin:0 auto 20px;backdrop-filter:blur(4px);">
+      <p style="color:#fff;font-size:15px;font-weight:600;margin-bottom:4px;">Select up to 10 products + upload photos of your space for a custom quote!</p>
+      <p style="color:#94a3b8;font-size:14px;margin:0;">Seleccione hasta 10 productos + suba fotos de su espacio para una cotizaci&oacute;n personalizada.</p>
+    </div>
+    <a href="#" onclick="openSubmitModal();return false;" class="btn btn-accent" style="font-size:15px;" id="heroSubmitBtn">Submit My Selection (<span id="heroCount">0</span>/10)</a>
+  </section>
+
+  <!-- FILTERS -->
+  <div class="filters-bar">
+    <div class="filters-inner">
+      <div class="filter-group">
+        <select id="filterCategory" class="filter-select" onchange="applyFilters()">
+          <option value="">All Categories</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <select id="filterFinish" class="filter-select" onchange="applyFilters()">
+          <option value="">All Finishes</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <select id="filterColor" class="filter-select" onchange="applyFilters()">
+          <option value="">All Colors</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <select id="filterUse" class="filter-select" onchange="applyFilters()">
+          <option value="">Indoor/Outdoor</option>
+          <option value="Indoor">Indoor Only</option>
+          <option value="Indoor/Outdoor">Indoor & Outdoor</option>
+          <option value="Outdoor">Outdoor Only</option>
+        </select>
+      </div>
+      <input type="text" id="searchInput" class="search-input" placeholder="Search products..." oninput="applyFilters()">
+      <span id="resultCount" class="result-count"></span>
+    </div>
+  </div>
+
+  <!-- PRODUCT GRID -->
+  <div class="catalog-container">
+    <div id="productGrid" class="product-grid"></div>
+    <div id="noResults" class="no-results" style="display:none;">
+      <h3>No products match your filters</h3>
+      <p>Try adjusting your search or filter criteria.</p>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox" onclick="if(event.target===this)closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <div class="lightbox-content">
+      <div class="lightbox-img">
+        <img id="lightboxImg" src="" alt="">
+      </div>
+      <div class="lightbox-details">
+        <h2 id="lightboxName"></h2>
+        <div id="lightboxMeta" class="lightbox-meta"></div>
+        <div id="lightboxTags" class="lightbox-tags"></div>
+        <a id="lightboxTextBtn" href="#" class="lightbox-cta">Text Us for a Quote</a>
+        <a href="tel:+18884804286" class="lightbox-call">Call (888) 480-4286</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SELECTION BAR -->
+  <div id="selectionBar" class="selection-bar">
+    <div class="selection-bar-inner">
+      <div id="selectionThumbs" class="selection-thumbs"></div>
+      <span id="selectionCount" class="selection-count">0/10 selected</span>
+      <button class="btn-submit-selection" onclick="openSubmitModal()">Submit Selection</button>
+    </div>
+  </div>
+
+  <!-- SUBMIT MODAL -->
+  <div id="submitModal" class="submit-modal" onclick="if(event.target===this)closeSubmitModal()">
+    <div class="submit-modal-content">
+      <h2>Submit Your Selection</h2>
+      <p class="subtitle">We'll prepare a personalized quote. / Le prepararemos una cotizaci&oacute;n personalizada.</p>
+      <div id="selectedProductsList" class="selected-products-list"></div>
+      <form id="quoteForm" onsubmit="sendQuoteRequest(event)">
+        <div class="form-group">
+          <label>Your Name / Su Nombre *</label>
+          <input type="text" id="qName" required placeholder="John Doe">
+        </div>
+        <div class="form-group">
+          <label>Phone / Tel&eacute;fono *</label>
+          <input type="tel" id="qPhone" required placeholder="(888) 480-4286">
+        </div>
+        <div class="form-group">
+          <label>Email (optional)</label>
+          <input type="email" id="qEmail" placeholder="you@email.com">
+        </div>
+        <div class="form-group">
+          <label>Approximate Area (sq ft) / &Aacute;rea Aproximada</label>
+          <input type="text" id="qArea" placeholder="e.g. 500 sqft">
+        </div>
+        <div class="form-group">
+          <label>Room / Habitaci&oacute;n</label>
+          <input type="text" id="qRoom" placeholder="Kitchen, Bathroom, Living Room...">
+        </div>
+        <div class="form-group">
+          <label>Upload Photos of Your Space / Suba Fotos de Su Espacio</label>
+          <div class="photo-upload-area" onclick="document.getElementById('photoInput').click()">
+            <div class="upload-icon">&#128247;</div>
+            <p>Click to upload photos (up to 5)</p>
+            <p style="font-size:12px;color:#94a3b8;">Haga clic para subir fotos (hasta 5)</p>
+          </div>
+          <input type="file" id="photoInput" accept="image/*" multiple style="display:none" onchange="handlePhotoUpload(event)">
+          <div id="photoPreviews" class="photo-previews"></div>
+        </div>
+        <div class="form-group">
+          <label>Notes / Notas</label>
+          <textarea id="qNotes" rows="3" placeholder="Tell us about your project..."></textarea>
+        </div>
+        <button type="submit" class="btn-send-quote" id="sendQuoteBtn">Send Quote Request / Enviar Solicitud</button>
+      </form>
+      <p style="text-align:center;margin-top:12px;font-size:13px;color:#64748b;">Or text us directly at <a href="sms:+18884804286" style="color:#2563eb;font-weight:600;">(888) 480-4286</a></p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <h4>Hello Projects Pro</h4>
+        <p>Premier remodeling & construction services. Licensed, bonded, and insured. CSLB #1135440.</p>
+        <p style="margin-top: 12px;">
+          <strong style="color: #fff;">Phone:</strong> <a href="tel:+18884804286">(888) 480-4286</a><br>
+          <strong style="color: #fff;">Email:</strong> <a href="mailto:info@helloprojectspro.com">info@helloprojectspro.com</a>
+        </p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <p><a href="services/kitchen-remodeling.html">주방 리모델링</a></p>
+        <p><a href="services/bathroom-remodeling.html">욕실 리모델링</a></p>
+        <p><a href="services/roofing.html">지붕</a></p>
+        <p><a href="services/general-remodeling.html">종합 리모델링</a></p>
+        <p><a href="services/electrical-services.html">주거용 전기</a></p>
+        <p><a href="services/landscaping.html">조경</a></p>
+      </div>
+      <div>
+        <h4>Service Areas</h4>
+        <p>Los Angeles, CA</p>
+        <p>Reseda, CA</p>
+        <p>Encino, CA</p>
+        <p>Sherman Oaks, CA</p>
+        <p>Tarzana, CA</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Hello Projects Pro. All rights reserved.</span>
+      <div>
+        <a href="terms.html">약관</a>
+        <a href="privacy.html">개인정보</a>
+      </div>
+    </div>
+  </footer>
+
+<script>
+// ===== CATALOG DATA (embedded) =====
+const PRODUCTS = [
+  {id:1,image:"IMG_5497",name:"Bianco Onex",category:"Large Format Porcelain",finish:"Polished",size:'32"x64"',material:"Porcelain",color:"Grey",use:"Indoor",brand:"",tags:["marble-look"]},
+  {id:2,image:"IMG_5498",name:"Alicante Gris",category:"Large Format Porcelain",finish:"Polished",size:'32"x64"',material:"Porcelain",color:"White",use:"Indoor",brand:"",tags:["marble-look","veined"]},
+  {id:3,image:"IMG_5499",name:"Monaco Noir",category:"Large Format Porcelain",finish:"High Gloss",size:'32"x64"',material:"Porcelain",color:"Black",use:"Indoor",brand:"",tags:["marble-look","dark"]},
+  {id:4,image:"IMG_5500",name:"Genoa Classique",category:"Large Format Porcelain",finish:"Polished",size:'32"x64"',material:"Porcelain",color:"White",use:"Indoor",brand:"",tags:["marble-look","cream"]},
+  {id:5,image:"IMG_5501",name:"Astrella Bianco",category:"Large Format Porcelain",finish:"Matte",size:'24"x48"',material:"Porcelain",color:"White",use:"Indoor/Outdoor",brand:"",tags:["marble-look"]},
+  {id:6,image:"IMG_5503",name:"Mylos Greige",category:"Large Format Porcelain",finish:"High Gloss",size:'24"x48"',material:"Porcelain",color:"Greige",use:"Indoor",brand:"",tags:["onyx-look"]},
+  {id:7,image:"IMG_5504",name:"Aventura Gris II",category:"Large Format Porcelain",finish:"Matte",size:'24"x48"',material:"Porcelain",color:"Grey",use:"Indoor/Outdoor",brand:"",tags:["concrete-look"]},
+  {id:8,image:"IMG_5505",name:"Cortina",category:"Large Format Porcelain",finish:"Matte",size:'30"x60"',material:"Porcelain",color:"White",use:"Indoor",brand:"Maxxso",tags:["marble-look"]},
+  {id:9,image:"IMG_5506",name:"Marina Menta",category:"Large Format Porcelain",finish:"Polished",size:'24"x48"',material:"Porcelain",color:"White",use:"Indoor",brand:"Viviano",tags:["marble-look","gold"]},
+  {id:10,image:"IMG_5510",name:"Coral Bay",category:"Large Format Porcelain",finish:"Matte",size:'24"x48"',material:"Porcelain",color:"Cream",use:"Indoor",brand:"Castille",tags:["travertine-look"]},
+  {id:11,image:"IMG_5511",name:"Chastain Ivory",category:"Large Format Porcelain",finish:"Matte",size:'24"x48"',material:"Porcelain",color:"Ivory",use:"Indoor",brand:"Castille",tags:["stone-look"]},
+  {id:12,image:"IMG_5512",name:"Vita Bella",category:"Large Format Porcelain",finish:"Polished",size:'24"x48"',material:"Porcelain",color:"Blue",use:"Indoor",brand:"Maximo",tags:["onyx-look","turquoise"]},
+  {id:13,image:"IMG_5513",name:"Rialto Grand",category:"Large Format Porcelain",finish:"Polished",size:'24"x48"',material:"Porcelain",color:"White",use:"Indoor",brand:"Maximo",tags:["marble-look","dramatic"]},
+  {id:14,image:"IMG_5514",name:"Belize Azul",category:"Large Format Porcelain",finish:"High Gloss",size:'24"x48"',material:"Porcelain",color:"Blue",use:"Indoor",brand:"Maximo",tags:["marble-look","dark"]},
+  {id:15,image:"IMG_5515",name:"Monaco",category:"Large Format Porcelain",finish:"Polished",size:'24"x48"',material:"Porcelain",color:"White",use:"Indoor",brand:"Maximo",tags:["marble-look","gold"]},
+  {id:16,image:"IMG_5516",name:"Fiume Enza",category:"Large Format Porcelain",finish:"Matte",size:'32"x60"',material:"Porcelain",color:"Cream",use:"Indoor/Outdoor",brand:"",tags:["marble-look"]},
+  {id:17,image:"IMG_5517",name:"Emilia II",category:"Large Format Porcelain",finish:"Polished",size:'24"x46"',material:"Porcelain",color:"White",use:"Indoor",brand:"",tags:["marble-look","multicolor"]},
+  {id:18,image:"IMG_5518",name:"Carbone Ash",category:"Large Format Porcelain",finish:"Matte",size:'24"x48"',material:"Porcelain",color:"Dark Grey",use:"Indoor/Outdoor",brand:"",tags:["stone-look","outdoor"]},
+  {id:19,image:"IMG_5519",name:"Cali Sand II",category:"Large Format Porcelain",finish:"Matte",size:'24"x48"',material:"Porcelain",color:"Sand",use:"Indoor",brand:"",tags:["concrete-look"]},
+  {id:20,image:"IMG_5520",name:"Juneau Mist",category:"Large Format Porcelain",finish:"Polished",size:'24"x48"',material:"Porcelain",color:"Grey",use:"Indoor",brand:"Viviano",tags:["onyx-look"]},
+  {id:21,image:"IMG_5521",name:"Tower Gray",category:"Large Format Porcelain",finish:"Matte",size:'24"x48"',material:"Porcelain",color:"Grey",use:"Indoor/Outdoor",brand:"",tags:["concrete-look"]},
+  {id:22,image:"IMG_5522",name:"Celeste Azul",category:"Standard Porcelain",finish:"Matte",size:'16"x48"',material:"Porcelain",color:"White",use:"Indoor",brand:"Maximo",tags:["marble-look","blue"]},
+  {id:23,image:"IMG_5523",name:"Alessia Bianca",category:"Large Format Porcelain",finish:"High Gloss",size:'24"x48"',material:"Porcelain",color:"Cream",use:"Indoor",brand:"",tags:["onyx-look"]},
+  {id:24,image:"IMG_5524",name:"Perimeter Gray",category:"Large Format Porcelain",finish:"Polished",size:'24"x48"',material:"Porcelain",color:"Grey",use:"Indoor",brand:"",tags:["solid-color"]},
+  {id:25,image:"IMG_5526",name:"Cavalier Gray",category:"Large Format Porcelain",finish:"Matte",size:'24"x48"',material:"Porcelain",color:"Grey",use:"Indoor",brand:"",tags:["marble-look"]},
+  {id:26,image:"IMG_5527",name:"Harmony White",category:"Large Format Porcelain",finish:"Polished",size:'24"x48"',material:"Porcelain",color:"White",use:"Indoor",brand:"",tags:["marble-look"]},
+  {id:27,image:"IMG_5528",name:"Napoli Sands",category:"Large Format Porcelain",finish:"Matte",size:'24"x48"',material:"Porcelain",color:"Sand",use:"Indoor",brand:"Maximo",tags:["stone-look"]},
+  {id:28,image:"IMG_5529",name:"Bellevue Contemporary",category:"Large Format Porcelain",finish:"Matte",size:'24"x48"',material:"Porcelain",color:"Grey",use:"Indoor",brand:"",tags:["concrete-look"]},
+  {id:29,image:"IMG_5530",name:"Giardini Gray",category:"Large Format Porcelain",finish:"Polished",size:'24"x48"',material:"Porcelain",color:"Grey",use:"Indoor",brand:"Viviano",tags:["linear"]},
+  {id:30,image:"IMG_5531",name:"Sienna Bianca",category:"Large Format Porcelain",finish:"High Gloss",size:'24"x48"',material:"Porcelain",color:"White",use:"Indoor",brand:"",tags:["marble-look"]},
+  {id:31,image:"IMG_5532",name:"Lucerne Blanco",category:"Large Format Porcelain",finish:"Polished",size:'24"x48"',material:"Porcelain",color:"White",use:"Indoor",brand:"Maximo",tags:["onyx-look"]},
+  {id:32,image:"IMG_5533",name:"Altair Stone II",category:"Large Format Porcelain",finish:"Matte",size:'24"x48"',material:"Porcelain",color:"Cream",use:"Indoor",brand:"",tags:["stone-look","usa"]},
+  {id:33,image:"IMG_5534",name:"Luna Pearl",category:"Large Format Porcelain",finish:"Matte",size:'30"x30"',material:"Porcelain",color:"White",use:"Indoor/Outdoor",brand:"",tags:["stone-look"]},
+  {id:34,image:"IMG_5536",name:"Emilia II",category:"Standard Porcelain",finish:"Polished",size:'12"x24"',material:"Porcelain",color:"White",use:"Indoor",brand:"",tags:["marble-look","multicolor"]},
+  {id:35,image:"IMG_5537",name:"Alto Bianco",category:"Standard Porcelain",finish:"High Gloss",size:'12"x24"',material:"Porcelain",color:"White",use:"Indoor",brand:"",tags:["marble-look"]},
+  {id:36,image:"IMG_5538",name:"Alto Bianco Stone",category:"Standard Porcelain",finish:"Matte",size:'12"x24"',material:"Porcelain",color:"White",use:"Indoor/Outdoor",brand:"",tags:["stone-look"]},
+  {id:37,image:"IMG_5540",name:"Alto Bianco II",category:"Large Format Porcelain",finish:"Polished",size:'24"x48"',material:"Porcelain",color:"White",use:"Indoor",brand:"",tags:["marble-look"]},
+  {id:38,image:"IMG_5541",name:"Tauleto Bianco",category:"Standard Porcelain",finish:"Matte",size:'12"x24"',material:"Porcelain",color:"White",use:"Indoor/Outdoor",brand:"Castille",tags:["stone-look"]},
+  {id:39,image:"IMG_5542",name:"Tauleto Bianco Polished",category:"Standard Porcelain",finish:"High Gloss",size:'12"x24"',material:"Porcelain",color:"White",use:"Indoor",brand:"",tags:["marble-look"]},
+  {id:40,image:"IMG_5543",name:"Belucci Bianca",category:"Standard Porcelain",finish:"Matte",size:'12"x24"',material:"Porcelain",color:"White",use:"Indoor/Outdoor",brand:"",tags:["marble-look"]},
+  {id:41,image:"IMG_5544",name:"Belucci Bianca Polished",category:"Standard Porcelain",finish:"High Gloss",size:'12"x24"',material:"Porcelain",color:"White",use:"Indoor",brand:"",tags:["marble-look"]},
+  {id:42,image:"IMG_5546",name:"Andover White III",category:"Standard Porcelain",finish:"Matte",size:'24"x24"',material:"Porcelain",color:"White",use:"Indoor",brand:"",tags:["marble-look","usa"]},
+  {id:43,image:"IMG_5547",name:"Andover White II",category:"Large Format Porcelain",finish:"Polished",size:'24"x48"',material:"Porcelain",color:"White",use:"Indoor",brand:"",tags:["marble-look"]},
+  {id:44,image:"IMG_5549",name:"Andover White",category:"Standard Porcelain",finish:"Polished",size:'12"x24"',material:"Porcelain",color:"White",use:"Indoor",brand:"",tags:["marble-look"]},
+  {id:45,image:"IMG_5550",name:"Romana Bianca",category:"Standard Porcelain",finish:"Matte",size:'12"x24"',material:"Porcelain",color:"White",use:"Indoor/Outdoor",brand:"",tags:["marble-look","gold"]},
+  {id:46,image:"IMG_5551",name:"Verona Greige II",category:"Standard Porcelain",finish:"High Gloss",size:'12"x24"',material:"Porcelain",color:"Greige",use:"Indoor",brand:"",tags:["stone-look"]},
+  {id:47,image:"IMG_5552",name:"Perla Venata",category:"Standard Porcelain",finish:"Polished",size:'12"x24"',material:"Porcelain",color:"Cream",use:"Indoor",brand:"",tags:["marble-look"]},
+  {id:48,image:"IMG_5553",name:"Regency Grey",category:"Large Format Porcelain",finish:"Matte",size:'16"x48"',material:"Porcelain",color:"Grey",use:"Indoor/Outdoor",brand:"Maximo",tags:["marble-look"]},
+  {id:49,image:"IMG_5554",name:"Onyx Noir",category:"Standard Porcelain",finish:"Polished",size:'12"x24"',material:"Porcelain",color:"Black",use:"Indoor",brand:"Maximo",tags:["marble-look","dark"]},
+  {id:50,image:"IMG_5555",name:"Alessia Bianca",category:"Standard Porcelain",finish:"Polished",size:'12"x24"',material:"Porcelain",color:"Cream",use:"Indoor",brand:"",tags:["onyx-look"]},
+  {id:51,image:"IMG_5556",name:"Summit Creek",category:"Standard Porcelain",finish:"Matte",size:'12"x24"',material:"Porcelain",color:"Grey",use:"Indoor/Outdoor",brand:"",tags:["stone-look"]},
+  {id:52,image:"IMG_5557",name:"Cavalier Ivory",category:"Standard Porcelain",finish:"Matte",size:'12"x24"',material:"Porcelain",color:"Ivory",use:"Indoor/Outdoor",brand:"",tags:["stone-look"]},
+  {id:53,image:"IMG_5558",name:"San Sonora Polished",category:"Standard Porcelain",finish:"Polished",size:'12"x24"',material:"Porcelain",color:"White",use:"Indoor",brand:"",tags:["marble-look","linear"]},
+  {id:54,image:"IMG_5559",name:"San Sonora Matte",category:"Standard Porcelain",finish:"Matte",size:'12"x24"',material:"Porcelain",color:"White",use:"Indoor",brand:"",tags:["marble-look","linear"]},
+  {id:55,image:"IMG_5560",name:"Fairbanks Gray",category:"Standard Porcelain",finish:"Matte",size:'12"x24"',material:"Porcelain",color:"Grey",use:"Indoor/Outdoor",brand:"",tags:["stone-look"]},
+  {id:56,image:"IMG_5561",name:"Harmony White",category:"Standard Porcelain",finish:"High Gloss",size:'12"x24"',material:"Porcelain",color:"White",use:"Indoor",brand:"",tags:["marble-look"]},
+  {id:57,image:"IMG_5562",name:"Talesa Grigio",category:"Standard Porcelain",finish:"High Gloss",size:'12"x24"',material:"Porcelain",color:"Grey",use:"Indoor",brand:"",tags:["marble-look"]},
+  {id:58,image:"IMG_5566",name:"Everest White Matte",category:"Standard Porcelain",finish:"Matte",size:'12"x24"',material:"Porcelain",color:"White",use:"Indoor",brand:"",tags:["contemporary"]},
+  {id:59,image:"IMG_5567",name:"Everest White Polished",category:"Standard Porcelain",finish:"Polished",size:'12"x24"',material:"Porcelain",color:"White",use:"Indoor",brand:"",tags:["contemporary"]},
+  {id:60,image:"IMG_5569",name:"Luxe Earth",category:"Standard Porcelain",finish:"Matte",size:'12"x12"',material:"Porcelain",color:"Brown",use:"Indoor",brand:"Vetta",tags:["solid-color"]},
+  {id:61,image:"IMG_5570",name:"Concept Gray",category:"Contemporary Tile",finish:"Matte",size:'12"x24"',material:"Porcelain",color:"Grey",use:"Indoor/Outdoor",brand:"",tags:["concrete-look"]},
+  {id:62,image:"IMG_5571",name:"Concept Grey Large",category:"Contemporary Tile",finish:"Matte",size:'24"x48"',material:"Porcelain",color:"Grey",use:"Indoor/Outdoor",brand:"",tags:["concrete-look"]},
+  {id:63,image:"IMG_5572",name:"District Gray",category:"Contemporary Tile",finish:"Matte",size:'12"x24"',material:"Porcelain",color:"Grey",use:"Indoor/Outdoor",brand:"",tags:["concrete-look"]},
+  {id:64,image:"IMG_5573",name:"Lenox White",category:"Contemporary Tile",finish:"Matte",size:'12"x24"',material:"Porcelain",color:"White",use:"Indoor/Outdoor",brand:"",tags:["contemporary"]},
+  {id:65,image:"IMG_5574",name:"Luxe Sky",category:"Large Format Porcelain",finish:"Matte",size:'24"x48"',material:"Porcelain",color:"Blue",use:"Indoor",brand:"Vetta",tags:["solid-color"]},
+  {id:66,image:"IMG_5575",name:"Luxe Sand",category:"Large Format Porcelain",finish:"Matte",size:'24"x48"',material:"Porcelain",color:"Sand",use:"Indoor",brand:"Vetta",tags:["solid-color"]},
+  {id:67,image:"IMG_5578",name:"Super Saltillo Sealed",category:"Specialty Tile",finish:"Sealed",size:'12" Mixed',material:"Saltillo",color:"Terracotta",use:"Indoor",brand:"",tags:["rustic","saltillo"]},
+  {id:68,image:"IMG_5579",name:"Stoval Grey II",category:"Standard Porcelain",finish:"Matte",size:'12"x24"',material:"Porcelain",color:"Grey",use:"Indoor/Outdoor",brand:"",tags:["slate-look"]},
+  {id:69,image:"IMG_5580",name:"Basin Night",category:"Standard Porcelain",finish:"Matte",size:'12"x24"',material:"Porcelain",color:"Dark Grey",use:"Indoor/Outdoor",brand:"",tags:["stone-look","dark"]},
+  {id:70,image:"IMG_5581",name:"Seville",category:"Standard Porcelain",finish:"Matte",size:'12"x24"',material:"Porcelain",color:"White",use:"Indoor",brand:"Castille",tags:["marble-look"]},
+  {id:71,image:"IMG_5582",name:"Serrano Multicolor",category:"Outdoor Tile",finish:"Textured",size:'12"x24"',material:"Porcelain",color:"Multicolor",use:"Indoor/Outdoor",brand:"",tags:["slate-look","outdoor"]},
+  {id:72,image:"IMG_5583",name:"Artic Ice",category:"Large Format Porcelain",finish:"Matte",size:'30"x30"',material:"Porcelain",color:"Grey",use:"Indoor/Outdoor",brand:"",tags:["concrete-look"]},
+  {id:73,image:"IMG_5584",name:"Milano Night",category:"Contemporary Tile",finish:"Matte",size:'12"x24"',material:"Porcelain",color:"Black",use:"Indoor/Outdoor",brand:"",tags:["solid-color","dark"]},
+  {id:74,image:"IMG_5585",name:"Monterey White",category:"Standard Porcelain",finish:"Polished",size:'12"x24"',material:"Porcelain",color:"White",use:"Indoor",brand:"Castille",tags:["marble-look"]},
+  {id:75,image:"IMG_5587",name:"Luzon Decor",category:"Large Format Porcelain",finish:"Textured",size:'32"x32"',material:"Porcelain",color:"Grey",use:"Indoor/Outdoor",brand:"",tags:["industrial"]},
+  {id:76,image:"IMG_5588",name:"Manhattan Steel",category:"Standard Porcelain",finish:"High Gloss",size:'12"x24"',material:"Porcelain",color:"Dark Grey",use:"Indoor",brand:"",tags:["industrial"]},
+  {id:77,image:"IMG_5589",name:"Sundance II",category:"Contemporary Tile",finish:"Matte",size:'12"x24"',material:"Porcelain",color:"Cream",use:"Indoor/Outdoor",brand:"",tags:["concrete-look"]},
+  {id:78,image:"IMG_5590",name:"Copper Cotto",category:"Contemporary Tile",finish:"Matte",size:'12"x24"',material:"Porcelain",color:"Brown",use:"Indoor",brand:"",tags:["rustic"]},
+  {id:79,image:"IMG_5591",name:"Modelo Beige",category:"Ceramic Tile",finish:"Matte",size:'12"x12"',material:"Ceramic",color:"Beige",use:"Indoor",brand:"",tags:["stone-look"]},
+  {id:80,image:"IMG_5592",name:"Modelo Gray",category:"Ceramic Tile",finish:"Matte",size:'12"x24"',material:"Ceramic",color:"Grey",use:"Indoor",brand:"",tags:["stone-look"]},
+  {id:81,image:"IMG_5593",name:"Phoenix Sand",category:"Standard Porcelain",finish:"Matte",size:'12"x24"',material:"Porcelain",color:"Sand",use:"Indoor/Outdoor",brand:"",tags:["stone-look"]},
+  {id:82,image:"IMG_5594",name:"Mira Grey",category:"Standard Porcelain",finish:"Matte",size:'12"x24"',material:"Porcelain",color:"Grey",use:"Indoor/Outdoor",brand:"",tags:["travertine-look"]},
+  {id:83,image:"IMG_5596",name:"Forum Silver",category:"Standard Porcelain",finish:"Matte",size:'12"x24"',material:"Porcelain",color:"Grey",use:"Indoor/Outdoor",brand:"",tags:["travertine-look"]},
+  {id:84,image:"IMG_5597",name:"Forum Ivory",category:"Standard Porcelain",finish:"Matte",size:'12"x24"',material:"Porcelain",color:"Ivory",use:"Indoor/Outdoor",brand:"",tags:["travertine-look"]},
+  {id:85,image:"IMG_5599",name:"Mix Aran II Antislip",category:"Outdoor Tile",finish:"Anti-Slip",size:'12"x24"',material:"Porcelain",color:"Grey",use:"Indoor/Outdoor",brand:"",tags:["outdoor","anti-slip"]},
+  {id:86,image:"IMG_5600",name:"Deva Gris",category:"Outdoor Tile",finish:"Textured",size:'12"x24"',material:"Porcelain",color:"Grey",use:"Indoor/Outdoor",brand:"",tags:["flagstone"]},
+  {id:87,image:"IMG_5601",name:"Deva Blanco",category:"Outdoor Tile",finish:"Textured",size:'17"x26"',material:"Porcelain",color:"White",use:"Indoor/Outdoor",brand:"",tags:["flagstone"]},
+  {id:88,image:"IMG_5602",name:"Deva Beige",category:"Outdoor Tile",finish:"Textured",size:'17"x26"',material:"Porcelain",color:"Beige",use:"Indoor/Outdoor",brand:"",tags:["flagstone"]},
+  {id:89,image:"IMG_5603",name:"Stone Multi Paver II",category:"Outdoor Tile",finish:"Textured",size:'24"x24"',material:"Porcelain",color:"Grey",use:"Outdoor",brand:"Castille",tags:["paver"]},
+  {id:90,image:"IMG_5604",name:"Pearl Quartzite Paver",category:"Outdoor Tile",finish:"Matte",size:'24"x24"',material:"Porcelain",color:"White",use:"Outdoor",brand:"",tags:["paver","quartzite"]},
+  {id:91,image:"IMG_5605",name:"New York Soho",category:"Specialty Tile",finish:"Textured",size:'4"x8"',material:"Porcelain",color:"Grey",use:"Indoor/Outdoor",brand:"",tags:["brick-look"]},
+  {id:92,image:"IMG_5606",name:"Soft Ash",category:"Wood Look Tile",finish:"Matte",size:'8"x48"',material:"Porcelain",color:"Grey",use:"Indoor/Outdoor",brand:"",tags:["wood-plank","weathered"]},
+  {id:93,image:"IMG_5607",name:"Truewood Cream",category:"Wood Look Tile",finish:"Matte",size:'10"x24"',material:"Porcelain",color:"Cream",use:"Indoor/Outdoor",brand:"",tags:["wood-plank"]},
+  {id:94,image:"IMG_5608",name:"Austel Brown II",category:"Wood Look Tile",finish:"Matte",size:'8"x48"',material:"Porcelain",color:"Brown",use:"Indoor/Outdoor",brand:"",tags:["wood-plank","weathered"]},
+  {id:95,image:"IMG_5609",name:"Navarro Beige",category:"Wood Look Tile",finish:"Matte",size:'10"x40"',material:"Porcelain",color:"Beige",use:"Indoor/Outdoor",brand:"",tags:["wood-plank"]},
+  {id:96,image:"IMG_5611",name:"Monroe Bay",category:"Wood Look Tile",finish:"Matte",size:'8"x48"',material:"Porcelain",color:"Brown",use:"Indoor",brand:"Castille",tags:["wood-plank"]},
+  {id:97,image:"IMG_5612",name:"Lumber Gray",category:"Wood Look Tile",finish:"Matte",size:'6"x36"',material:"Porcelain",color:"Grey",use:"Indoor/Outdoor",brand:"",tags:["wood-plank","weathered"]},
+  {id:98,image:"IMG_5614",name:"Sucre Blanco",category:"Wood Look Tile",finish:"Matte",size:'8"x48"',material:"Ceramic",color:"White",use:"Indoor/Outdoor",brand:"",tags:["wood-plank"]},
+  {id:99,image:"IMG_5616",name:"Sierra Beige",category:"Wood Look Tile",finish:"Matte",size:'8"x48"',material:"Porcelain",color:"Beige",use:"Indoor/Outdoor",brand:"",tags:["wood-plank"]},
+  {id:100,image:"IMG_5617",name:"Carpenter Ash",category:"Wood Look Tile",finish:"Matte",size:'9"x48"',material:"Porcelain",color:"Natural",use:"Indoor",brand:"Castille",tags:["wood-plank"]},
+  {id:101,image:"IMG_5618",name:"Triton Natural",category:"Wood Look Tile",finish:"Matte",size:'8"x24"',material:"Ceramic",color:"Natural",use:"Indoor",brand:"",tags:["wood-plank"]},
+  {id:102,image:"IMG_5619",name:"Triton Classic",category:"Wood Look Tile",finish:"Matte",size:'8"x24"',material:"Ceramic",color:"Grey",use:"Indoor",brand:"",tags:["wood-plank"]},
+  {id:103,image:"IMG_5631",name:"Andare Natural",category:"Wood Look Tile",finish:"Matte",size:'10"x60"',material:"Porcelain",color:"Natural",use:"Indoor/Outdoor",brand:"Maximo",tags:["wood-plank","large-format"]},
+  {id:104,image:"IMG_5632",name:"Andare Beige",category:"Wood Look Tile",finish:"Matte",size:'10"x60"',material:"Porcelain",color:"Beige",use:"Indoor/Outdoor",brand:"Maximo",tags:["wood-plank","large-format"]},
+  {id:105,image:"IMG_5634",name:"Woodville Natural",category:"Wood Look Tile",finish:"Matte",size:'10"x60"',material:"Porcelain",color:"Natural",use:"Indoor/Outdoor",brand:"",tags:["wood-plank","large-format"]},
+  {id:106,image:"IMG_5635",name:"Montpelier Oak",category:"Wood Look Tile",finish:"Matte",size:'10"x60"',material:"Porcelain",color:"Natural",use:"Indoor/Outdoor",brand:"",tags:["wood-plank","large-format"]},
+  {id:107,image:"IMG_5637",name:"Canterbury Chestnut",category:"Wood Look Tile",finish:"Matte",size:'10"x60"',material:"Porcelain",color:"Brown",use:"Indoor/Outdoor",brand:"",tags:["wood-plank","large-format"]},
+  {id:108,image:"IMG_5640",name:"NuCore Light Oak",category:"Luxury Vinyl Plank",finish:"Embossed",size:"XL Plank",material:"Rigid Core Vinyl",color:"Natural",use:"Indoor",brand:"NuCore",tags:["waterproof","wide-plank"]},
+  {id:109,image:"IMG_5641",name:"NuCore Warm Brown",category:"Luxury Vinyl Plank",finish:"Embossed",size:"Plank",material:"Rigid Core Vinyl",color:"Brown",use:"Indoor",brand:"NuCore",tags:["waterproof"]},
+  {id:110,image:"IMG_5642",name:"NuCore White Wash",category:"Luxury Vinyl Plank",finish:"Embossed",size:"Plank",material:"Rigid Core Vinyl",color:"Grey",use:"Indoor",brand:"NuCore",tags:["waterproof"]},
+  {id:111,image:"IMG_5643",name:"NuCore Maison Chateau",category:"Luxury Vinyl Plank",finish:"Embossed",size:"Plank",material:"Rigid Core Vinyl",color:"Natural",use:"Indoor",brand:"NuCore",tags:["waterproof"]},
+  {id:112,image:"IMG_5645",name:"NuCore Natural Oak",category:"Luxury Vinyl Plank",finish:"Embossed",size:"Plank",material:"Rigid Core Vinyl",color:"Natural",use:"Indoor",brand:"NuCore",tags:["waterproof"]},
+  {id:113,image:"IMG_5650",name:"NuCore Premium Oak",category:"Luxury Vinyl Plank",finish:"Embossed",size:"Plank",material:"Rigid Core Vinyl",color:"Natural",use:"Indoor",brand:"NuCore",tags:["waterproof","premium"]},
+  {id:114,image:"IMG_5651",name:"NuCore Whispercore Grey",category:"Luxury Vinyl Plank",finish:"Embossed",size:"9x60 XL",material:"Rigid Core Vinyl",color:"Grey",use:"Indoor",brand:"NuCore",tags:["waterproof","whispercore","quiet"]},
+  {id:115,image:"IMG_5652",name:"NuCore Midnight Oak",category:"Luxury Vinyl Plank",finish:"Embossed",size:"8x60 XL",material:"Rigid Core Vinyl",color:"Dark Brown",use:"Indoor",brand:"NuCore",tags:["waterproof","whispercore","dark"]},
+  {id:116,image:"IMG_5653",name:"NuCore Greenwood Shores",category:"Luxury Vinyl Plank",finish:"Embossed",size:"9\" Wide",material:"Rigid Core Vinyl",color:"Cream",use:"Indoor",brand:"NuCore",tags:["waterproof","wide-plank"]},
+  {id:117,image:"IMG_5655",name:"NuCore First Snow",category:"Luxury Vinyl Plank",finish:"Embossed",size:"9\" Wide",material:"Rigid Core Vinyl",color:"White",use:"Indoor",brand:"NuCore",tags:["waterproof"]},
+  {id:118,image:"IMG_5638",name:"Optimax Natural Oak",category:"Laminate Flooring",finish:"Embossed",size:"Plank",material:"Laminate",color:"Natural",use:"Indoor",brand:"Optimax",tags:["performance"]},
+  {id:119,image:"IMG_5626",name:"AquaGuard Dark Walnut",category:"Laminate Flooring",finish:"Glossy",size:"Plank",material:"Laminate",color:"Dark Brown",use:"Indoor",brand:"AquaGuard",tags:["waterproof"]},
+  {id:120,image:"IMG_5620",name:"AquaGuard White Wood",category:"Laminate Flooring",finish:"Textured",size:"Plank",material:"Laminate",color:"White",use:"Indoor",brand:"AquaGuard",tags:["waterproof"]},
+  {id:121,image:"IMG_5656",name:"Engineered Oak Natural",category:"Engineered Hardwood",finish:"Natural",size:"Wide Plank",material:"Engineered Hardwood",color:"Natural",use:"Indoor",brand:"",tags:["real-wood"]},
+  {id:122,image:"IMG_5658",name:"Engineered Oak Grey Wash",category:"Engineered Hardwood",finish:"Wire Brushed",size:"Wide Plank",material:"Engineered Hardwood",color:"Grey",use:"Indoor",brand:"",tags:["real-wood"]},
+  {id:123,image:"IMG_5659",name:"Engineered Honey Oak",category:"Engineered Hardwood",finish:"Natural",size:"Wide Plank",material:"Engineered Hardwood",color:"Natural",use:"Indoor",brand:"",tags:["real-wood"]},
+  {id:124,image:"IMG_5660",name:"Engineered Grey Oak",category:"Engineered Hardwood",finish:"Natural",size:"Wide Plank",material:"Engineered Hardwood",color:"Grey",use:"Indoor",brand:"",tags:["real-wood"]},
+  {id:125,image:"IMG_5661",name:"Engineered Rustic Hickory",category:"Engineered Hardwood",finish:"Natural",size:"Wide Plank",material:"Engineered Hardwood",color:"Natural",use:"Indoor",brand:"",tags:["real-wood","rustic"]},
+  {id:126,image:"IMG_5662",name:"Bruce Traditional Oak",category:"Engineered Hardwood",finish:"Natural",size:"Standard",material:"Engineered Hardwood",color:"Brown",use:"Indoor",brand:"Bruce",tags:["real-wood","classic"]},
+  {id:127,image:"IMG_5664",name:"Engineered Dark Walnut",category:"Engineered Hardwood",finish:"Glossy",size:"Standard",material:"Engineered Hardwood",color:"Dark Brown",use:"Indoor",brand:"",tags:["real-wood","exotic"]},
+  {id:128,image:"IMG_5665",name:"Engineered Natural Wide",category:"Engineered Hardwood",finish:"Natural",size:"Wide Plank",material:"Engineered Hardwood",color:"Natural",use:"Indoor",brand:"",tags:["real-wood"]},
+  {id:129,image:"IMG_5667",name:"Herringbone Oak",category:"Engineered Hardwood",finish:"Natural",size:"Herringbone",material:"Engineered Hardwood",color:"Natural",use:"Indoor",brand:"Woodland Reserve",tags:["herringbone","real-wood"]},
+  {id:130,image:"IMG_5670",name:"Distressed Hickory",category:"Engineered Hardwood",finish:"Hand Scraped",size:"Standard",material:"Engineered Hardwood",color:"Dark Brown",use:"Indoor",brand:"",tags:["real-wood","distressed"]},
+  {id:131,image:"IMG_5671",name:"Athena Hickory",category:"Engineered Hardwood",finish:"Wire Brushed",size:"Wide Plank",material:"Engineered Hardwood",color:"Natural",use:"Indoor",brand:"",tags:["real-wood"]},
+  {id:132,image:"IMG_5677",name:"Exotic Acacia",category:"Solid Hardwood",finish:"Natural",size:"Standard",material:"Solid Hardwood",color:"Multicolor",use:"Indoor",brand:"",tags:["real-wood","exotic"]},
+  {id:133,image:"IMG_5679",name:"White Oak Natural",category:"Solid Hardwood",finish:"Natural",size:"Standard",material:"Solid Hardwood",color:"Natural",use:"Indoor",brand:"",tags:["real-wood"]},
+  {id:134,image:"IMG_5680",name:"Santos Mahogany",category:"Solid Hardwood",finish:"High Gloss",size:"Standard",material:"Solid Hardwood",color:"Dark Brown",use:"Indoor",brand:"",tags:["real-wood","exotic"]},
+  {id:135,image:"IMG_5681",name:"Red Oak Natural",category:"Solid Hardwood",finish:"Natural",size:"Standard",material:"Solid Hardwood",color:"Natural",use:"Indoor",brand:"",tags:["real-wood","classic"]},
+  {id:136,image:"IMG_5683",name:"Natural Bamboo",category:"Specialty Tile",finish:"Natural",size:"Standard",material:"Bamboo",color:"Natural",use:"Indoor",brand:"",tags:["eco-friendly"]},
+  {id:137,image:"IMG_5629",name:"White Double Vanity",category:"Bathroom Vanity",finish:"Painted",size:'60"',material:"Wood/Quartz",color:"White",use:"Bathroom",brand:"",tags:["double-sink","quartz-top"]},
+  // ===== NEW PRODUCTS (Home Improvement Catalog Expansion) =====
+  // --- Bathroom Vanities ---
+  {id:138,image:"IMG_5714",name:"Everdean 30\" White Vanity Combo",category:"Bathroom Vanity",finish:"White",size:'30"',material:"Wood",color:"White",use:"Indoor",brand:"Glacier Bay",tags:["vanity-combo","cultured-marble-top","shaker-style"]},
+  {id:139,image:"IMG_5715",name:"Everdean 24\" Pearl Gray Vanity Combo",category:"Bathroom Vanity",finish:"Pearl Gray",size:'24"',material:"Wood",color:"Pearl Gray",use:"Indoor",brand:"Glacier Bay",tags:["vanity-combo","cultured-marble-top","shaker-style"]},
+  {id:140,image:"IMG_5716",name:"Everdean 48\" Pearl Gray Vanity Combo",category:"Bathroom Vanity",finish:"Pearl Gray",size:'48"',material:"Wood",color:"Pearl Gray",use:"Indoor",brand:"Glacier Bay",tags:["vanity-combo","cultured-marble-top","2-drawers"]},
+  {id:141,image:"IMG_5717",name:"Everdean 36\" Pearl Gray Vanity Combo",category:"Bathroom Vanity",finish:"Pearl Gray",size:'36"',material:"Wood",color:"Pearl Gray",use:"Indoor",brand:"Glacier Bay",tags:["vanity-combo","cultured-marble-top","shaker-style"]},
+  {id:142,image:"IMG_5719",name:"Fernhill 18\" Sage Green Vanity Combo",category:"Bathroom Vanity",finish:"Sage Green",size:'18"',material:"Wood",color:"Sage Green",use:"Indoor",brand:"Glacier Bay",tags:["vanity-combo","beadboard","gold-hardware","compact"]},
+  {id:143,image:"IMG_5720",name:"Brindle 24\" White Vanity Combo",category:"Bathroom Vanity",finish:"White",size:'24"',material:"Wood",color:"White",use:"Indoor",brand:"Glacier Bay",tags:["vanity-combo","modern","storage"]},
+  {id:144,image:"IMG_5721",name:"Pinecreek 24\" Natural Oak Vanity Combo",category:"Bathroom Vanity",finish:"Natural Oak",size:'24"',material:"Wood",color:"Natural Oak",use:"Indoor",brand:"Glacier Bay",tags:["vanity-combo","wood-grain","matte-black-hardware"]},
+  {id:145,image:"IMG_5722",name:"Clady 30\" White Vanity Combo",category:"Bathroom Vanity",finish:"White",size:'30"',material:"Wood",color:"White",use:"Indoor",brand:"Glacier Bay",tags:["vanity-combo","shaker-style","brushed-nickel-hardware"]},
+  {id:146,image:"IMG_5723",name:"Clady 30\" Deep Blue Vanity Combo",category:"Bathroom Vanity",finish:"Deep Blue",size:'30"',material:"Wood",color:"Deep Blue",use:"Indoor",brand:"Glacier Bay",tags:["vanity-combo","shaker-style","brushed-gold-hardware"]},
+  {id:147,image:"IMG_5724",name:"Clady 24\" Deep Blue Vanity Combo",category:"Bathroom Vanity",finish:"Deep Blue",size:'24"',material:"Wood",color:"Deep Blue",use:"Indoor",brand:"Glacier Bay",tags:["vanity-combo","shaker-style","brushed-gold-hardware"]},
+  {id:148,image:"IMG_5729",name:"Canfield 30\" White Vanity Combo",category:"Bathroom Vanity",finish:"White",size:'30"',material:"Wood",color:"White",use:"Indoor",brand:"Glacier Bay",tags:["vanity-combo","shaker-style","matte-black-hardware"]},
+  {id:149,image:"IMG_5730",name:"Cranwood 30\" Natural Oak Vanity Combo",category:"Bathroom Vanity",finish:"Natural Oak",size:'30"',material:"Wood",color:"Natural Oak",use:"Indoor",brand:"Glacier Bay",tags:["vanity-combo","wood-grain","matte-black-hardware"]},
+  // --- Artificial Turf ---
+  {id:150,image:"IMG_5744",name:"Prairie 12' Artificial Turf",category:"Artificial Turf",finish:"Green",size:"12ft",material:"Synthetic",color:"Green",use:"Outdoor",brand:"TrafficMaster",tags:["artificial-grass","pet-friendly","uv-protected"]},
+  {id:153,image:"IMG_5747",name:"Premium Pet Turf",category:"Artificial Turf",finish:"Green",size:"12ft",material:"Synthetic",color:"Green",use:"Outdoor",brand:"LifeProof",tags:["artificial-grass","pet-turf","antimicrobial","stain-resistant"]},
+  // --- Carpet ---
+  {id:154,image:"IMG_5748",name:"Elevations Stone Beige Indoor/Outdoor Carpet",category:"Carpet",finish:"Stone Beige",size:"12ft",material:"Polyester",color:"Beige",use:"Indoor/Outdoor",brand:"TrafficMaster",tags:["carpet","indoor-outdoor","stain-resistant"]},
+  {id:156,image:"IMG_5750",name:"Viking Loop Carpet",category:"Carpet",finish:"Charcoal",size:"12ft",material:"Synthetic",color:"Charcoal",use:"Indoor",brand:"TrafficMaster",tags:["carpet","loop","commercial-grade"]},
+  // --- Kitchen Sinks ---
+  {id:157,image:"IMG_5753",name:"Cursiva Undermount Kitchen Sink",category:"Kitchen Sink",finish:"Stainless Steel",size:'33"',material:"Stainless Steel",color:"Silver",use:"Indoor",brand:"Kohler",tags:["undermount","single-bowl","workstation"]},
+  {id:158,image:"IMG_5754",name:"Dolancourt 33\" Workstation Kitchen Sink",category:"Kitchen Sink",finish:"Stainless Steel",size:'33"',material:"Stainless Steel",color:"Silver",use:"Indoor",brand:"Glacier Bay",tags:["dual-mount","single-bowl","workstation","all-in-one"]},
+  {id:159,image:"IMG_5756",name:"Dolancourt 25\" Single Bowl Kitchen Sink",category:"Kitchen Sink",finish:"Stainless Steel",size:'25"',material:"Stainless Steel",color:"Silver",use:"Indoor",brand:"Glacier Bay",tags:["dual-mount","single-bowl","compact"]},
+  {id:160,image:"IMG_5757",name:"Dolancourt 33\" Double Bowl Kitchen Sink",category:"Kitchen Sink",finish:"Stainless Steel",size:'33"',material:"Stainless Steel",color:"Silver",use:"Indoor",brand:"Glacier Bay",tags:["dual-mount","double-bowl"]},
+  {id:161,image:"IMG_5760",name:"Cursiva Workstation Double Bowl Sink",category:"Kitchen Sink",finish:"Stainless Steel",size:'33"',material:"Stainless Steel",color:"Silver",use:"Indoor",brand:"Kohler",tags:["undermount","double-bowl","workstation","accessories-included"]},
+  {id:162,image:"IMG_5762",name:"33\" Single Bowl Dual Mount Kitchen Sink",category:"Kitchen Sink",finish:"Stainless Steel",size:'33"',material:"Stainless Steel",color:"Silver",use:"Indoor",brand:"Glacier Bay",tags:["dual-mount","single-bowl","faucet-included"]},
+  {id:163,image:"IMG_5763",name:"Bratten 33\" Drop-In Kitchen Sink",category:"Kitchen Sink",finish:"Stainless Steel",size:'33"',material:"18-Gauge Stainless Steel",color:"Silver",use:"Indoor",brand:"Glacier Bay",tags:["drop-in","single-bowl","18-gauge","bottom-grid"]},
+  {id:164,image:"IMG_5764",name:"33\" Double Bowl Top Mount Kitchen Sink",category:"Kitchen Sink",finish:"Stainless Steel",size:'33"',material:"Stainless Steel",color:"Silver",use:"Indoor",brand:"Glacier Bay",tags:["top-mount","double-bowl"]},
+  {id:165,image:"IMG_5766",name:"25\" Single Bowl Top Mount Kitchen Sink",category:"Kitchen Sink",finish:"Stainless Steel",size:'25"',material:"Stainless Steel",color:"Silver",use:"Indoor",brand:"Glacier Bay",tags:["top-mount","single-bowl","compact"]},
+  // --- Kitchen Cabinets (Unfinished) ---
+  {id:166,image:"IMG_5767",name:"Shaker B15 Base Cabinet Unfinished",category:"Kitchen Cabinet",finish:"Unfinished",size:'15"W x 34.5"H x 24"D',material:"Wood",color:"Natural",use:"Indoor",brand:"Hampton Bay",tags:["base-cabinet","unfinished","shaker","ready-to-assemble"]},
+  {id:167,image:"IMG_5768",name:"Shaker B12 Base Cabinet Unfinished",category:"Kitchen Cabinet",finish:"Unfinished",size:'12"W x 34.5"H x 24"D',material:"Wood",color:"Natural",use:"Indoor",brand:"Hampton Bay",tags:["base-cabinet","unfinished","shaker","narrow"]},
+  {id:168,image:"IMG_5769",name:"Shaker W18 Wall Cabinet Unfinished",category:"Kitchen Cabinet",finish:"Unfinished",size:'18"W x 30"H x 12"D',material:"Wood",color:"Natural",use:"Indoor",brand:"Hampton Bay",tags:["wall-cabinet","unfinished","shaker"]},
+  {id:169,image:"IMG_5770",name:"Shaker W24 Wall Cabinet Unfinished",category:"Kitchen Cabinet",finish:"Unfinished",size:'24"W x 30"H x 12"D',material:"Wood",color:"Natural",use:"Indoor",brand:"Hampton Bay",tags:["wall-cabinet","unfinished","shaker"]},
+  {id:170,image:"IMG_5771",name:"Shaker B24 Base Cabinet Unfinished",category:"Kitchen Cabinet",finish:"Unfinished",size:'24"W x 34.5"H x 24"D',material:"Wood",color:"Natural",use:"Indoor",brand:"Hampton Bay",tags:["base-cabinet","unfinished","shaker"]},
+  {id:171,image:"IMG_5773",name:"Shaker W30 Wall Cabinet Unfinished",category:"Kitchen Cabinet",finish:"Unfinished",size:'30"W x 30"H x 12"D',material:"Wood",color:"Natural",use:"Indoor",brand:"Hampton Bay",tags:["wall-cabinet","unfinished","shaker"]},
+  {id:172,image:"IMG_5774",name:"Shaker W36 Wall Cabinet Unfinished",category:"Kitchen Cabinet",finish:"Unfinished",size:'36"W x 30"H x 12"D',material:"Wood",color:"Natural",use:"Indoor",brand:"Hampton Bay",tags:["wall-cabinet","unfinished","shaker"]},
+  {id:173,image:"IMG_5775",name:"Shaker BLS36 Lazy Susan Corner Cabinet Unfinished",category:"Kitchen Cabinet",finish:"Unfinished",size:'36"W x 34.5"H x 24"D',material:"Wood",color:"Natural",use:"Indoor",brand:"Hampton Bay",tags:["base-cabinet","lazy-susan","corner","unfinished","shaker"]},
+  {id:174,image:"IMG_5776",name:"Shaker P24 Pantry Cabinet Unfinished",category:"Kitchen Cabinet",finish:"Unfinished",size:'24"W x 84"H x 24"D',material:"Wood",color:"Natural",use:"Indoor",brand:"Hampton Bay",tags:["pantry-cabinet","tall","unfinished","shaker"]},
+  // --- Kitchen Cabinets (Satin White) ---
+  {id:175,image:"IMG_5777",name:"Shaker W30 Wall Cabinet Satin White",category:"Kitchen Cabinet",finish:"Satin White",size:'30"W x 30"H x 12"D',material:"Wood",color:"White",use:"Indoor",brand:"Hampton Bay",tags:["wall-cabinet","satin-white","shaker"]},
+  {id:176,image:"IMG_5778",name:"Shaker W36 Wall Cabinet Satin White",category:"Kitchen Cabinet",finish:"Satin White",size:'36"W x 30"H x 12"D',material:"Wood",color:"White",use:"Indoor",brand:"Hampton Bay",tags:["wall-cabinet","satin-white","shaker"]},
+  {id:177,image:"IMG_5779",name:"Shaker SB36 Sink Base Cabinet Satin White",category:"Kitchen Cabinet",finish:"Satin White",size:'36"W x 34.5"H x 24"D',material:"Wood",color:"White",use:"Indoor",brand:"Hampton Bay",tags:["sink-base","satin-white","shaker"]},
+  {id:178,image:"IMG_5780",name:"Shaker SB30 Sink Base Cabinet Satin White",category:"Kitchen Cabinet",finish:"Satin White",size:'30"W x 34.5"H x 24"D',material:"Wood",color:"White",use:"Indoor",brand:"Hampton Bay",tags:["sink-base","satin-white","shaker"]},
+  {id:179,image:"IMG_5781",name:"Shaker DB24 Drawer Base Cabinet Satin White",category:"Kitchen Cabinet",finish:"Satin White",size:'24"W x 34.5"H x 24"D',material:"Wood",color:"White",use:"Indoor",brand:"Hampton Bay",tags:["drawer-base","satin-white","shaker"]},
+  {id:180,image:"IMG_5782",name:"Shaker B30 Base Cabinet Satin White",category:"Kitchen Cabinet",finish:"Satin White",size:'30"W x 34.5"H x 24"D',material:"Wood",color:"White",use:"Indoor",brand:"Hampton Bay",tags:["base-cabinet","satin-white","shaker"]},
+  {id:181,image:"IMG_5783",name:"Shaker B24 Base Cabinet Satin White",category:"Kitchen Cabinet",finish:"Satin White",size:'24"W x 34.5"H x 24"D',material:"Wood",color:"White",use:"Indoor",brand:"Hampton Bay",tags:["base-cabinet","satin-white","shaker"]},
+  {id:182,image:"IMG_5784",name:"Shaker W18 Wall Cabinet Satin White",category:"Kitchen Cabinet",finish:"Satin White",size:'18"W x 30"H x 12"D',material:"Wood",color:"White",use:"Indoor",brand:"Hampton Bay",tags:["wall-cabinet","satin-white","shaker"]},
+  {id:183,image:"IMG_5785",name:"Shaker W15 Wall Cabinet Satin White",category:"Kitchen Cabinet",finish:"Satin White",size:'15"W x 30"H x 12"D',material:"Wood",color:"White",use:"Indoor",brand:"Hampton Bay",tags:["wall-cabinet","satin-white","shaker"]},
+  {id:184,image:"IMG_5786",name:"Shaker W12 Wall Cabinet Satin White",category:"Kitchen Cabinet",finish:"Satin White",size:'12"W x 30"H x 12"D',material:"Wood",color:"White",use:"Indoor",brand:"Hampton Bay",tags:["wall-cabinet","satin-white","shaker","narrow"]},
+  {id:185,image:"IMG_5787",name:"Shaker B15 Base Cabinet Satin White",category:"Kitchen Cabinet",finish:"Satin White",size:'15"W x 34.5"H x 24"D',material:"Wood",color:"White",use:"Indoor",brand:"Hampton Bay",tags:["base-cabinet","satin-white","shaker"]},
+  {id:186,image:"IMG_5788",name:"Shaker W24 Wall Cabinet Satin White",category:"Kitchen Cabinet",finish:"Satin White",size:'24"W x 30"H x 12"D',material:"Wood",color:"White",use:"Indoor",brand:"Hampton Bay",tags:["wall-cabinet","satin-white","shaker"]},
+  {id:187,image:"IMG_5789",name:"Shaker DB18 Drawer Base Cabinet Satin White",category:"Kitchen Cabinet",finish:"Satin White",size:'18"W x 34.5"H x 24"D',material:"Wood",color:"White",use:"Indoor",brand:"Hampton Bay",tags:["drawer-base","satin-white","shaker"]},
+  {id:188,image:"IMG_5792",name:"Shaker BLS36 Lazy Susan Corner Cabinet Satin White",category:"Kitchen Cabinet",finish:"Satin White",size:'36"W x 34.5"H x 25.5"D',material:"Wood",color:"White",use:"Indoor",brand:"Hampton Bay",tags:["base-cabinet","lazy-susan","corner","satin-white","shaker"]},
+  // --- Windows ---
+  {id:189,image:"IMG_5798",name:"Single Hung Vinyl Window",category:"Window",finish:"White",size:'36" x 48"',material:"Vinyl",color:"White",use:"Indoor/Outdoor",brand:"Ply Gem",tags:["single-hung","energy-efficient","new-construction"]},
+  {id:194,image:"IMG_5835",name:"Trinsic Double Hung Window",category:"Window",finish:"Gray",size:"Standard",material:"Fiberglass",color:"Gray",use:"Indoor/Outdoor",brand:"Milgard",tags:["double-hung","fiberglass","energy-efficient"]},
+  // --- Exterior Doors ---
+  {id:198,image:"IMG_5837",name:"Premium Woodgrain Fiberglass Entry Door",category:"Exterior Door",finish:"Dark Woodgrain",size:'36" x 80"',material:"Fiberglass",color:"Brown",use:"Outdoor",brand:"Masonite",tags:["entry-door","fiberglass","woodgrain","premium","prehung"]},
+  {id:199,image:"IMG_5838",name:"Performance Door System Entry Door",category:"Exterior Door",finish:"Black",size:'36" x 80"',material:"Fiberglass",color:"Black",use:"Outdoor",brand:"Masonite",tags:["entry-door","performance","energy-efficient","prehung"]},
+  {id:200,image:"IMG_5841",name:"Masonite Half Lite Steel Prehung Entry Door",category:"Exterior Door",finish:"White",size:'36" x 80"',material:"Steel",color:"White",use:"Outdoor",brand:"Masonite",tags:["entry-door","steel","glass-lite","prehung","half-lite"]},
+  {id:201,image:"IMG_5842",name:"Masonite Full Lite Decorative Glass Steel Entry Door",category:"Exterior Door",finish:"White",size:'36" x 80"',material:"Steel",color:"White",use:"Outdoor",brand:"Masonite",tags:["entry-door","steel","decorative-glass","prehung"]},
+  {id:202,image:"IMG_5844",name:"6-Panel Steel Entry Door",category:"Exterior Door",finish:"White",size:'36" x 80"',material:"Steel",color:"White",use:"Outdoor",brand:"Masonite",tags:["entry-door","steel","6-panel","prehung","classic"]},
+  {id:203,image:"IMG_5847",name:"Craftsman Fiberglass Entry Door",category:"Exterior Door",finish:"White",size:'36" x 80"',material:"Fiberglass",color:"White",use:"Outdoor",brand:"Masonite",tags:["entry-door","fiberglass","craftsman","3-panel","prehung"]},
+  {id:204,image:"IMG_5848",name:"Masonite 6-Panel Steel Prehung Entry Door 32\"",category:"Exterior Door",finish:"White",size:'32" x 80"',material:"Steel",color:"White",use:"Outdoor",brand:"Masonite",tags:["entry-door","steel","6-panel","prehung","32-inch"]},
+  // --- Interior Doors ---
+  {id:205,image:"IMG_5849",name:"Masonite 6-Panel Prehung Interior Door",category:"Interior Door",finish:"Primed White",size:'32" x 80"',material:"Composite",color:"White",use:"Indoor",brand:"Masonite",tags:["6-panel","inswing","prehung","primed"]},
+  {id:206,image:"IMG_5852",name:"LIF Fireproof Rated Steel Prehung Door",category:"Exterior Door",finish:"Silver",size:'36" x 80"',material:"Steel",color:"Silver",use:"Indoor/Outdoor",brand:"",tags:["steel","prehung","fireproof","commercial-grade"]},
+  // --- Skylights ---
+  {id:207,image:"IMG_5808",name:"10\" Sun Tunnel Skylight THR 010",category:"Skylight",finish:"Silver",size:'10"',material:"Aluminum",color:"Silver",use:"Indoor/Outdoor",brand:"VELUX",tags:["sun-tunnel","rigid-tunnel","pitched-flashing","natural-light"]},
+  {id:209,image:"IMG_5815",name:"Fixed Skylight 21x45",category:"Skylight",finish:"Silver",size:'21" x 45"',material:"Aluminum/Glass",color:"Silver",use:"Indoor/Outdoor",brand:"VELUX",tags:["fixed-skylight","tempered-glass","natural-light"]},
+  // --- Insulation ---
+  {id:211,image:"IMG_5820",name:"Window & Door Spray Foam Insulation",category:"Insulation",finish:"Yellow",size:"20 oz",material:"Polyurethane Foam",color:"Yellow",use:"Indoor/Outdoor",brand:"Great Stuff",tags:["spray-foam","sealant","energy-efficient"]},
+  // --- Kitchen Faucets ---
+  {id:212,image:"IMG_5856",name:"Oletto Pull-Down Kitchen Faucet",category:"Kitchen Faucet",finish:"Stainless Steel",size:"Single Handle",material:"Stainless Steel",color:"Silver",use:"Indoor",brand:"Kraus",tags:["pull-down","single-handle","high-arc"]},
+  {id:213,image:"IMG_5857",name:"Align Pull-Down Kitchen Faucet",category:"Kitchen Faucet",finish:"Chrome",size:"Single Handle",material:"Metal",color:"Silver",use:"Indoor",brand:"Moen",tags:["pull-down","single-handle","modern","high-arc"]},
+  {id:214,image:"IMG_5858",name:"Sleek Pull-Down Kitchen Faucet",category:"Kitchen Faucet",finish:"Matte Black",size:"Single Handle",material:"Metal",color:"Black",use:"Indoor",brand:"Moen",tags:["pull-down","single-handle","matte-black","modern"]},
+  {id:215,image:"IMG_5859",name:"Semi-Professional Kitchen Faucet",category:"Kitchen Faucet",finish:"Matte Black",size:"Single Handle",material:"Metal",color:"Black",use:"Indoor",brand:"Kohler",tags:["semi-professional","pull-down","spring-spout"]},
+  {id:216,image:"IMG_5860",name:"Simplice Pull-Down Kitchen Faucet",category:"Kitchen Faucet",finish:"Brushed Brass",size:"Single Handle",material:"Metal",color:"Brushed Gold",use:"Indoor",brand:"Kohler",tags:["pull-down","single-handle","brushed-gold"]},
+  {id:217,image:"IMG_5861",name:"Weymouth Pull-Down Kitchen Faucet",category:"Kitchen Faucet",finish:"Brushed Gold",size:"Single Handle",material:"Metal",color:"Gold",use:"Indoor",brand:"Moen",tags:["pull-down","single-handle","brushed-gold","traditional"]},
+  {id:218,image:"IMG_5863",name:"Matte Black Pull-Down Kitchen Faucet",category:"Kitchen Faucet",finish:"Matte Black",size:"Single Handle",material:"Metal",color:"Black",use:"Indoor",brand:"Kohler",tags:["pull-down","single-handle","matte-black"]},
+  // --- Bathroom Faucets ---
+  {id:219,image:"IMG_5862",name:"Centerset Bathroom Faucet Brushed Nickel",category:"Bathroom Faucet",finish:"Brushed Nickel",size:'4" Centerset',material:"Metal",color:"Brushed Nickel",use:"Indoor",brand:"Glacier Bay",tags:["centerset","two-handle"]},
+  {id:220,image:"IMG_5867",name:"Ashlen Bath Faucet Set Matte Black",category:"Bathroom Faucet",finish:"Matte Black",size:'4" Centerset',material:"Metal",color:"Black",use:"Indoor",brand:"Moen",tags:["centerset","matte-black","accessories-collection"]},
+  {id:221,image:"IMG_5868",name:"Willamette Centerset Bathroom Faucet",category:"Bathroom Faucet",finish:"Chrome",size:'4" Centerset',material:"Metal",color:"Chrome",use:"Indoor",brand:"Kohler",tags:["centerset","two-handle","chrome"]},
+  {id:222,image:"IMG_5870",name:"Arvo Centerset Bathroom Faucet",category:"Bathroom Faucet",finish:"Brushed Nickel",size:'4" Centerset',material:"Metal",color:"Brushed Nickel",use:"Indoor",brand:"Delta",tags:["centerset","two-handle","brushed-nickel"]},
+  {id:223,image:"IMG_5871",name:"Centerset Bathroom Faucet Matte Black",category:"Bathroom Faucet",finish:"Matte Black",size:'4" Centerset',material:"Metal",color:"Black",use:"Indoor",brand:"Glacier Bay",tags:["centerset","two-handle","matte-black"]},
+  {id:224,image:"IMG_5872",name:"Genta Centerset Bathroom Faucet Brushed Gold",category:"Bathroom Faucet",finish:"Brushed Gold",size:'4" Centerset',material:"Metal",color:"Brushed Gold",use:"Indoor",brand:"Moen",tags:["centerset","single-handle","brushed-gold"]},
+  {id:225,image:"IMG_5873",name:"Centerset Bathroom Faucet High-Arc Brushed Nickel",category:"Bathroom Faucet",finish:"Brushed Nickel",size:'4" Centerset',material:"Metal",color:"Brushed Nickel",use:"Indoor",brand:"Glacier Bay",tags:["centerset","single-handle","high-arc"]},
+  // --- Shower Fixtures ---
+  {id:226,image:"IMG_5865",name:"Chrome Shower Faucet Trim Kit",category:"Showerhead",finish:"Chrome",size:"Single Handle",material:"Metal",color:"Chrome",use:"Indoor",brand:"Moen",tags:["shower-faucet","valve-trim","tub-shower"]},
+  {id:227,image:"IMG_5866",name:"Shower Faucet Trim Kit Brushed Gold",category:"Showerhead",finish:"Brushed Gold",size:"Single Handle",material:"Metal",color:"Brushed Gold",use:"Indoor",brand:"Kohler",tags:["shower-faucet","valve-trim","rain-showerhead"]},
+  // --- Furnace ---
+  {id:228,image:"IMG_5854",name:"Monterey 25,000 BTU Top-Vent Furnace",category:"Furnace",finish:"White",size:"25,000 BTU",material:"Steel",color:"White",use:"Indoor",brand:"Williams",tags:["top-vent","natural-gas","wall-mount","heating"]},
+  // --- Engineered Hardwood ---
+  {id:229,image:"IMG_5884",name:"Engineered Hardwood Medium Brown Oak",category:"Engineered Hardwood",finish:"Wire Brushed",size:"Wide Plank",material:"Engineered Wood",color:"Medium Brown",use:"Indoor",brand:"Home Decorators",tags:["real-wood","oak","click-lock"]},
+  {id:230,image:"IMG_5887",name:"Engineered Hardwood Multi-Tone Brown",category:"Engineered Hardwood",finish:"Wire Brushed",size:"Wide Plank",material:"Engineered Wood",color:"Multi-Tone Brown",use:"Indoor",brand:"Home Decorators",tags:["real-wood","walnut","acacia"]},
+  {id:231,image:"IMG_5890",name:"Engineered Hardwood Charcoal Gray",category:"Engineered Hardwood",finish:"Wire Brushed",size:"Wide Plank",material:"Engineered Wood",color:"Charcoal Gray",use:"Indoor",brand:"Home Decorators",tags:["real-wood","dark","wide-plank"]},
+  // --- Laminate Flooring ---
+  {id:232,image:"IMG_5888",name:"Pergo Laminate Medium Oak",category:"Laminate Flooring",finish:"Embossed",size:"Plank",material:"HDF Laminate",color:"Medium Oak",use:"Indoor",brand:"Pergo",tags:["wood-look","oak","click-lock"]},
+  {id:233,image:"IMG_5889",name:"Pergo Laminate Dark Brown Oak",category:"Laminate Flooring",finish:"Embossed",size:"Plank",material:"HDF Laminate",color:"Dark Brown",use:"Indoor",brand:"Pergo",tags:["wood-look","dark","oak"]},
+  // --- Flooring Underlayment ---
+  {id:234,image:"IMG_5892",name:"Cork Foam Waterproof Underlayment",category:"Flooring Underlayment",finish:"N/A",size:"100 sq ft Roll",material:"Cork Foam",color:"Gray",use:"Indoor",brand:"Eco Cork Foam",tags:["underlayment","waterproof","sound-reduction"]},
+  // --- Waterproof Luxury Vinyl ---
+  {id:235,image:"IMG_5894",name:"Waterproof Vinyl Plank Warm Oak",category:"Waterproof Luxury Vinyl",finish:"Embossed",size:"Plank",material:"Luxury Vinyl",color:"Warm Oak",use:"Indoor",brand:"TrafficMaster",tags:["waterproof","LVP","wood-look","click-lock"]},
+  {id:236,image:"IMG_5895",name:"Waterproof Vinyl Plank Dark Gray Oak",category:"Waterproof Luxury Vinyl",finish:"Embossed",size:"Plank",material:"Luxury Vinyl",color:"Dark Gray",use:"Indoor",brand:"TrafficMaster",tags:["waterproof","LVP","wood-look","dark"]},
+  {id:238,image:"IMG_5898",name:"Lasso Pine Vinyl Plank",category:"Waterproof Luxury Vinyl",finish:"Embossed",size:"Plank",material:"Luxury Vinyl",color:"Light Pine",use:"Indoor",brand:"Home Decorators",tags:["waterproof","LVP","pine","light-wood"]},
+  {id:239,image:"IMG_5900",name:"Pelican Gray Vinyl Plank",category:"Waterproof Luxury Vinyl",finish:"Embossed",size:"Plank",material:"Luxury Vinyl",color:"Dark Gray",use:"Indoor",brand:"Home Decorators",tags:["waterproof","LVP","gray","dark"]},
+  {id:240,image:"IMG_5902",name:"Mountain Brook Marble Porcelain Tile",category:"Standard Porcelain",finish:"Polished",size:'12"x24"',material:"Porcelain",color:"White",use:"Indoor",brand:"Lifeproof",tags:["marble-look","gray-veining","waterproof"]},
+  // --- Lifeproof Waterproof Vinyl ---
+  {id:241,image:"IMG_5904",name:"Logan Mill Hickory",category:"Waterproof Luxury Vinyl",finish:"Embossed",size:"Plank",material:"Luxury Vinyl",color:"Dark Brown",use:"Indoor",brand:"Lifeproof",tags:["waterproof","LVP","hickory","XL-planks"]},
+  {id:242,image:"IMG_5905",name:"Butler Hickory",category:"Waterproof Luxury Vinyl",finish:"Embossed",size:"Plank",material:"Luxury Vinyl",color:"Medium Brown",use:"Indoor",brand:"Lifeproof",tags:["waterproof","LVP","hickory","XL-planks"]},
+  {id:243,image:"IMG_5907",name:"Reddwood Forest",category:"Waterproof Luxury Vinyl",finish:"Smooth",size:"Plank",material:"Luxury Vinyl",color:"Reddish Brown",use:"Indoor",brand:"Lifeproof",tags:["waterproof","LVP","redwood"]},
+  {id:244,image:"IMG_5908",name:"Rustin Hickory",category:"Waterproof Luxury Vinyl",finish:"Embossed",size:"Plank",material:"Luxury Vinyl",color:"Weathered Brown",use:"Indoor",brand:"Lifeproof",tags:["waterproof","LVP","hickory","distressed","rustic"]},
+  {id:245,image:"IMG_5909",name:"Spring Mill Hickory",category:"Waterproof Luxury Vinyl",finish:"Embossed",size:"Plank",material:"Luxury Vinyl",color:"Dark Gray Brown",use:"Indoor",brand:"Lifeproof",tags:["waterproof","LVP","hickory","XL-planks"]},
+  {id:246,image:"IMG_5910",name:"Overlook Slate",category:"Waterproof Luxury Vinyl",finish:"Smooth",size:"Plank",material:"Luxury Vinyl",color:"Dark Charcoal",use:"Indoor",brand:"Lifeproof",tags:["waterproof","LVP","slate","stone-look"]},
+  {id:248,image:"IMG_5914",name:"Sundance Canyon Hickory",category:"Waterproof Luxury Vinyl",finish:"Embossed",size:"Plank",material:"Luxury Vinyl",color:"Warm Brown",use:"Indoor",brand:"Lifeproof",tags:["waterproof","LVP","hickory","XL-planks"]},
+  {id:249,image:"IMG_5916",name:"Pecan Oak",category:"Waterproof Luxury Vinyl",finish:"Embossed",size:"Plank",material:"Luxury Vinyl",color:"Medium Brown",use:"Indoor",brand:"Lifeproof",tags:["waterproof","LVP","oak","XL-planks"]},
+  {id:250,image:"IMG_5919",name:"Mill Valley Oak",category:"Waterproof Luxury Vinyl",finish:"Embossed",size:"Plank",material:"Luxury Vinyl",color:"Natural Oak",use:"Indoor",brand:"Lifeproof",tags:["waterproof","LVP","oak","XL-planks"]},
+  {id:251,image:"IMG_5920",name:"Longwood Lane Hickory",category:"Waterproof Luxury Vinyl",finish:"Embossed",size:"Plank",material:"Luxury Vinyl",color:"Light Brown",use:"Indoor",brand:"Lifeproof",tags:["waterproof","LVP","hickory","XL-planks"]},
+  {id:252,image:"IMG_5921",name:"Copperstone Forest",category:"Waterproof Luxury Vinyl",finish:"Embossed",size:"Plank",material:"Luxury Vinyl",color:"Weathered Gray",use:"Indoor",brand:"Lifeproof",tags:["waterproof","LVP","distressed"]},
+  {id:253,image:"IMG_5922",name:"Redondo Maple",category:"Waterproof Luxury Vinyl",finish:"Embossed",size:"Plank",material:"Luxury Vinyl",color:"Light Gray",use:"Indoor",brand:"Lifeproof",tags:["waterproof","LVP","maple","light"]},
+  {id:254,image:"IMG_5923",name:"Harvest Rose Oak",category:"Waterproof Luxury Vinyl",finish:"Embossed",size:"Plank",material:"Luxury Vinyl",color:"Light Warm Brown",use:"Indoor",brand:"Lifeproof",tags:["waterproof","LVP","oak","XL-planks"]},
+  {id:255,image:"IMG_5924",name:"Grand Mill Maple",category:"Waterproof Luxury Vinyl",finish:"Smooth",size:"Plank",material:"Luxury Vinyl",color:"Light Blonde",use:"Indoor",brand:"Lifeproof",tags:["waterproof","LVP","maple","light"]},
+  {id:256,image:"IMG_5925",name:"Corbin Oak",category:"Waterproof Luxury Vinyl",finish:"Embossed",size:"Plank",material:"Luxury Vinyl",color:"Weathered Gray",use:"Indoor",brand:"Lifeproof",tags:["waterproof","LVP","oak","gray"]},
+  {id:257,image:"IMG_5926",name:"Silver Sky Oak",category:"Waterproof Luxury Vinyl",finish:"Embossed",size:"Plank",material:"Luxury Vinyl",color:"Gray Brown",use:"Indoor",brand:"Lifeproof",tags:["waterproof","LVP","oak","gray"]},
+  {id:258,image:"IMG_5927",name:"Laurel Creek Oak",category:"Waterproof Luxury Vinyl",finish:"Embossed",size:"Plank",material:"Luxury Vinyl",color:"Light Gray",use:"Indoor",brand:"Lifeproof",tags:["waterproof","LVP","oak","light-gray"]},
+  // ===== ADDITIONAL PRODUCTS (multi-product images) =====
+  // --- Vanity Collections (Home Decorators) ---
+  {id:259,image:"IMG_5725",name:"Ridge Collection 24\" Vanity",category:"Bathroom Vanity",finish:"White",size:'24"',material:"Wood",color:"White",use:"Indoor",brand:"Home Decorators",tags:["vanity","soft-close","matte-black-hardware"]},
+  {id:260,image:"IMG_5725",name:"Ridge Collection 30\" Vanity",category:"Bathroom Vanity",finish:"White",size:'30"',material:"Wood",color:"White",use:"Indoor",brand:"Home Decorators",tags:["vanity","soft-close","matte-black-hardware"]},
+  {id:261,image:"IMG_5725",name:"Ridge Collection 36\" Vanity",category:"Bathroom Vanity",finish:"White",size:'36"',material:"Wood",color:"White",use:"Indoor",brand:"Home Decorators",tags:["vanity","soft-close","matte-black-hardware"]},
+  {id:262,image:"IMG_5725",name:"Ridge Collection 48\" Vanity",category:"Bathroom Vanity",finish:"White",size:'48"',material:"Wood",color:"White",use:"Indoor",brand:"Home Decorators",tags:["vanity","soft-close","matte-black-hardware"]},
+  {id:263,image:"IMG_5725",name:"Ridge Collection 60\" Double Vanity",category:"Bathroom Vanity",finish:"White",size:'60"',material:"Wood",color:"White",use:"Indoor",brand:"Home Decorators",tags:["vanity","double-sink","soft-close"]},
+  {id:264,image:"IMG_5726",name:"Craye Collection 24\" Vanity",category:"Bathroom Vanity",finish:"Deep Blue",size:'24"',material:"Wood",color:"Deep Blue",use:"Indoor",brand:"Home Decorators",tags:["vanity","online-only"]},
+  {id:265,image:"IMG_5726",name:"Craye Collection 30\" Vanity",category:"Bathroom Vanity",finish:"Deep Blue",size:'30"',material:"Wood",color:"Deep Blue",use:"Indoor",brand:"Home Decorators",tags:["vanity","online-only"]},
+  {id:266,image:"IMG_5726",name:"Craye Collection 36\" Vanity",category:"Bathroom Vanity",finish:"Deep Blue",size:'36"',material:"Wood",color:"Deep Blue",use:"Indoor",brand:"Home Decorators",tags:["vanity","online-only"]},
+  {id:267,image:"IMG_5726",name:"Craye Collection 48\" Vanity",category:"Bathroom Vanity",finish:"Deep Blue",size:'48"',material:"Wood",color:"Deep Blue",use:"Indoor",brand:"Home Decorators",tags:["vanity","online-only"]},
+  {id:268,image:"IMG_5726",name:"Craye Collection 60\" Double Vanity",category:"Bathroom Vanity",finish:"Deep Blue",size:'60"',material:"Wood",color:"Deep Blue",use:"Indoor",brand:"Home Decorators",tags:["vanity","double-sink","online-only"]},
+  {id:269,image:"IMG_5727",name:"Winsome Collection 24\" Vanity",category:"Bathroom Vanity",finish:"Natural Wood",size:'24"',material:"Wood",color:"Oak",use:"Indoor",brand:"Home Decorators",tags:["vanity","natural-wood"]},
+  {id:270,image:"IMG_5727",name:"Winsome Collection 30\" Vanity",category:"Bathroom Vanity",finish:"Natural Wood",size:'30"',material:"Wood",color:"Oak",use:"Indoor",brand:"Home Decorators",tags:["vanity","natural-wood"]},
+  {id:271,image:"IMG_5727",name:"Winsome Collection 36\" Vanity",category:"Bathroom Vanity",finish:"Natural Wood",size:'36"',material:"Wood",color:"Oak",use:"Indoor",brand:"Home Decorators",tags:["vanity","natural-wood"]},
+  {id:272,image:"IMG_5727",name:"Winsome Collection 48\" Vanity",category:"Bathroom Vanity",finish:"Natural Wood",size:'48"',material:"Wood",color:"Oak",use:"Indoor",brand:"Home Decorators",tags:["vanity","natural-wood"]},
+  {id:273,image:"IMG_5727",name:"Winsome Collection 60\" Double Vanity",category:"Bathroom Vanity",finish:"Natural Wood",size:'60"',material:"Wood",color:"Oak",use:"Indoor",brand:"Home Decorators",tags:["vanity","double-sink","natural-wood"]},
+  // --- Additional Carpet ---
+  {id:277,image:"IMG_5747",name:"Elevations Ocean Blue Indoor/Outdoor Carpet",category:"Carpet",finish:"Blue",size:"12ft",material:"Polyester",color:"Ocean Blue",use:"Indoor/Outdoor",brand:"TrafficMaster",tags:["carpet","indoor-outdoor","stain-resistant"]},
+  {id:279,image:"IMG_5750",name:"Whitfield Bayfront Texture Carpet",category:"Carpet",finish:"Multicolor",size:"12ft",material:"Polyester",color:"Beige Multi",use:"Indoor",brand:"TrafficMaster",tags:["carpet","texture","multicolor"]},
+  {id:280,image:"IMG_5750",name:"Belmore Sand Texture Carpet",category:"Carpet",finish:"Sand",size:"12ft",material:"Polyester",color:"Sand",use:"Indoor",brand:"TrafficMaster",tags:["carpet","texture","residential"]},
+  // --- Additional Sink ---
+  // --- Cabinet Hardware ---
+  // --- Additional Windows ---
+  // --- Additional Skylights ---
+  // --- Additional Insulation ---
+  // --- Additional Exterior Doors ---
+  {id:301,image:"IMG_5840",name:"Masonite Premium Smooth 6-Panel Fiberglass Entry Door",category:"Exterior Door",finish:"Primed White",size:'36" x 80"',material:"Fiberglass",color:"White",use:"Outdoor",brand:"Masonite",tags:["entry-door","smooth","paintable","prehung"]},
+  {id:302,image:"IMG_5843",name:"Masonite Craftsman Entry Door with Sidelite",category:"Exterior Door",finish:"White",size:'36" x 80"',material:"Steel",color:"White",use:"Outdoor",brand:"Masonite",tags:["entry-door","craftsman","sidelite","prehung"]},
+  {id:303,image:"IMG_5843",name:"Masonite Halifax Fan Lite Steel Entry Door",category:"Exterior Door",finish:"White",size:'36" x 80"',material:"Steel",color:"White",use:"Outdoor",brand:"Masonite",tags:["entry-door","fan-lite","decorative-glass","prehung"]},
+  {id:304,image:"IMG_5845",name:"Masonite 2-Panel Arch Top Steel Entry Door",category:"Exterior Door",finish:"White",size:'36" x 80"',material:"Steel",color:"White",use:"Outdoor",brand:"Masonite",tags:["entry-door","arch-top","2-panel","prehung"]},
+  {id:305,image:"IMG_5846",name:"Masonite Winslow 3-Panel Entry Door 30\"",category:"Exterior Door",finish:"White",size:'30" x 80"',material:"Steel",color:"White",use:"Outdoor",brand:"Masonite",tags:["entry-door","craftsman","3-panel","30-inch"]},
+  {id:306,image:"IMG_5846",name:"Masonite Camber Top Half Lite Entry Door",category:"Exterior Door",finish:"White",size:'32" x 80"',material:"Steel",color:"White",use:"Outdoor",brand:"Masonite",tags:["entry-door","camber-top","half-lite","decorative-glass"]},
+  // --- Additional Interior Doors ---
+  {id:307,image:"IMG_5850",name:"Masonite Half Lite Steel Entry Door 36\"",category:"Interior Door",finish:"Primed White",size:'36" x 80"',material:"Composite",color:"White",use:"Indoor",brand:"Masonite",tags:["6-panel","prehung","primed"]},
+  {id:308,image:"IMG_5851",name:"Masonite Lincoln Park Flat Panel Interior Door",category:"Interior Door",finish:"Primed White",size:'30" x 80"',material:"Composite",color:"White",use:"Indoor",brand:"Masonite",tags:["flat-panel","prehung","primed"]},
+  {id:309,image:"IMG_5851",name:"Masonite Winslow 3-Panel Craftsman Interior Door",category:"Interior Door",finish:"Primed White",size:'32" x 80"',material:"Composite",color:"White",use:"Indoor",brand:"Masonite",tags:["3-panel","craftsman","prehung"]},
+  // --- Additional Kitchen Faucets ---
+  {id:310,image:"IMG_5856",name:"Noell Pull-Down Kitchen Faucet",category:"Kitchen Faucet",finish:"Stainless Steel",size:"Single Handle",material:"Metal",color:"Silver",use:"Indoor",brand:"Moen",tags:["pull-down","single-handle","spot-resist"]},
+  {id:311,image:"IMG_5856",name:"Market Pull-Down Kitchen Faucet",category:"Kitchen Faucet",finish:"Chrome",size:"Single Handle",material:"Metal",color:"Chrome",use:"Indoor",brand:"Glacier Bay",tags:["pull-down","single-handle","budget"]},
+  {id:312,image:"IMG_5857",name:"Leland Pull-Down Kitchen Faucet",category:"Kitchen Faucet",finish:"Stainless Steel",size:"Single Handle",material:"Metal",color:"Silver",use:"Indoor",brand:"Delta",tags:["pull-down","single-handle","spotshield"]},
+  {id:313,image:"IMG_5857",name:"Fairbury 2S Pull-Down Kitchen Faucet",category:"Kitchen Faucet",finish:"Stainless Steel",size:"Single Handle",material:"Metal",color:"Silver",use:"Indoor",brand:"American Standard",tags:["pull-down","single-handle"]},
+  {id:314,image:"IMG_5857",name:"Brenner Pull-Down Kitchen Faucet",category:"Kitchen Faucet",finish:"Stainless Steel",size:"Single Handle",material:"Metal",color:"Silver",use:"Indoor",brand:"Glacier Bay",tags:["pull-down","single-handle"]},
+  {id:315,image:"IMG_5858",name:"Exemplar Pull-Down Kitchen Faucet Matte Black",category:"Kitchen Faucet",finish:"Matte Black",size:"Single Handle",material:"Metal",color:"Black",use:"Indoor",brand:"Delta",tags:["pull-down","single-handle","matte-black"]},
+  {id:316,image:"IMG_5858",name:"Paulina Pull-Down Kitchen Faucet Matte Black",category:"Kitchen Faucet",finish:"Matte Black",size:"Single Handle",material:"Metal",color:"Black",use:"Indoor",brand:"Glacier Bay",tags:["pull-down","single-handle","matte-black"]},
+  {id:317,image:"IMG_5858",name:"Tommaso Spring Pull-Down Kitchen Faucet",category:"Kitchen Faucet",finish:"Chrome",size:"Single Handle",material:"Metal",color:"Chrome",use:"Indoor",brand:"Glacier Bay",tags:["spring-spout","pull-down","commercial-style"]},
+  {id:318,image:"IMG_5859",name:"Sous Semi-Pro Kitchen Faucet",category:"Kitchen Faucet",finish:"Stainless Steel",size:"Single Handle",material:"Metal",color:"Silver",use:"Indoor",brand:"Kohler",tags:["semi-professional","spring-spout","pull-down"]},
+  {id:319,image:"IMG_5859",name:"Align Spring Bar Faucet Brushed Gold",category:"Kitchen Faucet",finish:"Brushed Gold",size:"Single Handle",material:"Metal",color:"Gold",use:"Indoor",brand:"Moen",tags:["spring-spout","bar-faucet","brushed-gold"]},
+  {id:320,image:"IMG_5859",name:"Indi Spring Pull-Down Kitchen Faucet",category:"Kitchen Faucet",finish:"Matte Black",size:"Single Handle",material:"Metal",color:"Black",use:"Indoor",brand:"Moen",tags:["spring-spout","pull-down","matte-black"]},
+  {id:321,image:"IMG_5860",name:"Edwyn Pull-Down Kitchen Faucet",category:"Kitchen Faucet",finish:"Stainless Steel",size:"Single Handle",material:"Metal",color:"Silver",use:"Indoor",brand:"Moen",tags:["pull-down","single-handle","spot-resist"]},
+  {id:322,image:"IMG_5860",name:"Purist Pull-Down Kitchen Faucet",category:"Kitchen Faucet",finish:"Stainless Steel",size:"Single Handle",material:"Metal",color:"Silver",use:"Indoor",brand:"Kohler",tags:["pull-down","single-handle","minimalist"]},
+  {id:323,image:"IMG_5861",name:"Trinsic Pull-Down Kitchen Faucet Champagne Bronze",category:"Kitchen Faucet",finish:"Champagne Bronze",size:"Single Handle",material:"Metal",color:"Bronze",use:"Indoor",brand:"Delta",tags:["pull-down","single-handle","champagne-bronze"]},
+  {id:324,image:"IMG_5861",name:"Saybrook Pull-Down Kitchen Faucet",category:"Kitchen Faucet",finish:"Stainless Steel",size:"Single Handle",material:"Metal",color:"Silver",use:"Indoor",brand:"American Standard",tags:["pull-down","single-handle"]},
+  // --- Additional Bathroom Faucets ---
+  {id:329,image:"IMG_5862",name:"Adler Centerset Bathroom Faucet Brushed Nickel",category:"Bathroom Faucet",finish:"Brushed Nickel",size:'4" Centerset',material:"Metal",color:"Brushed Nickel",use:"Indoor",brand:"Moen",tags:["centerset","two-handle"]},
+  {id:330,image:"IMG_5862",name:"Colony PRO Centerset Faucet Brushed Nickel",category:"Bathroom Faucet",finish:"Brushed Nickel",size:'4" Centerset',material:"Metal",color:"Brushed Nickel",use:"Indoor",brand:"American Standard",tags:["centerset","two-handle"]},
+  // --- Showerheads ---
+  // --- Additional Flooring ---
+];
+
+// ===== SELECTION STATE =====
+var selectedProducts = [];
+var uploadedPhotos = [];
+var MAX_SELECTION = 10;
+var MAX_PHOTOS = 5;
+
+// ===== INIT =====
+function init() {
+  populateFilters();
+  renderProducts(PRODUCTS);
+}
+
+function populateFilters() {
+  const cats = [...new Set(PRODUCTS.map(p => p.category))].sort();
+  const finishes = [...new Set(PRODUCTS.map(p => p.finish))].sort();
+  const colors = [...new Set(PRODUCTS.map(p => p.color))].sort();
+
+  const catSel = document.getElementById('filterCategory');
+  cats.forEach(c => { const o = document.createElement('option'); o.value = c; o.textContent = c; catSel.appendChild(o); });
+
+  const finSel = document.getElementById('filterFinish');
+  finishes.forEach(f => { const o = document.createElement('option'); o.value = f; o.textContent = f; finSel.appendChild(o); });
+
+  const colSel = document.getElementById('filterColor');
+  colors.forEach(c => { const o = document.createElement('option'); o.value = c; o.textContent = c; colSel.appendChild(o); });
+}
+
+function applyFilters() {
+  const cat = document.getElementById('filterCategory').value;
+  const fin = document.getElementById('filterFinish').value;
+  const col = document.getElementById('filterColor').value;
+  const use = document.getElementById('filterUse').value;
+  const search = document.getElementById('searchInput').value.toLowerCase().trim();
+
+  let filtered = PRODUCTS.filter(p => {
+    if (cat && p.category !== cat) return false;
+    if (fin && p.finish !== fin) return false;
+    if (col && p.color !== col) return false;
+    if (use && !p.use.includes(use)) return false;
+    if (search) {
+      const haystack = [p.name, p.category, p.material, p.color, p.finish, p.brand, p.size, ...p.tags].join(' ').toLowerCase();
+      if (!haystack.includes(search)) return false;
+    }
+    return true;
+  });
+
+  renderProducts(filtered);
+}
+
+function renderProducts(products) {
+  const grid = document.getElementById('productGrid');
+  const noRes = document.getElementById('noResults');
+  const countEl = document.getElementById('resultCount');
+
+  countEl.textContent = products.length + ' product' + (products.length !== 1 ? 's' : '');
+
+  if (products.length === 0) {
+    grid.innerHTML = '';
+    noRes.style.display = 'block';
+    return;
+  }
+  noRes.style.display = 'none';
+
+  grid.innerHTML = products.map(p => {
+    var isSelected = selectedProducts.some(s => s.id === p.id);
+    return `
+    <div class="product-card${isSelected ? ' selected' : ''}" onclick="openLightbox(${p.id})">
+      <div class="product-image-wrap">
+        <img data-src="catalog/${p.image}.jpg" alt="${p.name}" onload="this.classList.add('loaded')">
+        <button class="select-check" onclick="event.stopPropagation();toggleSelect(${p.id})" title="Select">${isSelected ? '&#10003;' : ''}</button>
+        <div class="product-badges">
+          <span class="badge badge-category">${p.category.replace('Large Format ','').replace('Standard ','')}</span>
+          ${p.use.includes('Outdoor') ? '<span class="badge badge-outdoor">Outdoor</span>' : ''}
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">${p.name}</div>
+        <div class="product-details">
+          <span class="detail-chip">${p.size}</span>
+          <span class="detail-chip">${p.finish}</span>
+          <span class="detail-chip">${p.material}</span>
+        </div>
+        <div class="product-material">${p.color}${p.brand ? ' &bull; ' + p.brand : ''}</div>
+        <button class="product-quote-btn" onclick="event.stopPropagation();toggleSelect(${p.id})">${isSelected ? '&#10003; Selected' : '+ Add to Selection'}</button>
+      </div>
+    </div>`;
+  }).join('');
+
+  // Lazy load images
+  const imgs = grid.querySelectorAll('img[data-src]');
+  const imgObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.src = e.target.dataset.src;
+        imgObs.unobserve(e.target);
+      }
+    });
+  }, { rootMargin: '200px' });
+  imgs.forEach(img => imgObs.observe(img));
+}
+
+function openLightbox(id) {
+  const p = PRODUCTS.find(x => x.id === id);
+  if (!p) return;
+
+  document.getElementById('lightboxImg').src = 'catalog/' + p.image + '.jpg';
+  document.getElementById('lightboxName').textContent = p.name;
+
+  const meta = document.getElementById('lightboxMeta');
+  meta.innerHTML = `
+    <div class="lightbox-meta-row"><span class="lightbox-meta-label">Category</span><span class="lightbox-meta-value">${p.category}</span></div>
+    <div class="lightbox-meta-row"><span class="lightbox-meta-label">Size</span><span class="lightbox-meta-value">${p.size}</span></div>
+    <div class="lightbox-meta-row"><span class="lightbox-meta-label">Finish</span><span class="lightbox-meta-value">${p.finish}</span></div>
+    <div class="lightbox-meta-row"><span class="lightbox-meta-label">Material</span><span class="lightbox-meta-value">${p.material}</span></div>
+    <div class="lightbox-meta-row"><span class="lightbox-meta-label">Color</span><span class="lightbox-meta-value">${p.color}</span></div>
+    <div class="lightbox-meta-row"><span class="lightbox-meta-label">Use</span><span class="lightbox-meta-value">${p.use}</span></div>
+    ${p.brand ? '<div class="lightbox-meta-row"><span class="lightbox-meta-label">Brand</span><span class="lightbox-meta-value">' + p.brand + '</span></div>' : ''}
+  `;
+
+  const tags = document.getElementById('lightboxTags');
+  tags.innerHTML = p.tags.map(t => `<span class="lightbox-tag">${t}</span>`).join('');
+
+  document.getElementById('lightboxTextBtn').href = 'sms:+18884804286&body=' + encodeURIComponent('Hi, I\'m interested in ' + p.name + ' (' + p.category + ', ' + p.size + ', ' + p.finish + '). Can you help me with a quote?');
+
+  document.getElementById('lightbox').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { closeLightbox(); closeSubmitModal(); }
+});
+
+// ===== PRODUCT SELECTION =====
+function toggleSelect(id) {
+  var idx = selectedProducts.findIndex(s => s.id === id);
+  if (idx >= 0) {
+    selectedProducts.splice(idx, 1);
+  } else {
+    if (selectedProducts.length >= MAX_SELECTION) {
+      alert('Maximum 10 products. Remove one to add another.\nM\u00e1ximo 10 productos. Elimine uno para agregar otro.');
+      return;
+    }
+    var p = PRODUCTS.find(x => x.id === id);
+    if (p) selectedProducts.push(p);
+  }
+  updateSelectionUI();
+  applyFilters(); // re-render cards with selection state
+}
+
+function updateSelectionUI() {
+  var bar = document.getElementById('selectionBar');
+  var thumbs = document.getElementById('selectionThumbs');
+  var countEl = document.getElementById('selectionCount');
+  var heroCount = document.getElementById('heroCount');
+
+  if (selectedProducts.length > 0) {
+    bar.classList.add('active');
+    countEl.textContent = selectedProducts.length + '/10 selected';
+    heroCount.textContent = selectedProducts.length;
+    thumbs.innerHTML = selectedProducts.map(p =>
+      '<div class="selection-thumb">' +
+      '<img src="catalog/' + p.image + '.jpg" alt="' + p.name + '">' +
+      '<button class="remove-btn" onclick="toggleSelect(' + p.id + ')">&times;</button>' +
+      '</div>'
+    ).join('');
+  } else {
+    bar.classList.remove('active');
+    heroCount.textContent = '0';
+  }
+}
+
+// ===== SUBMIT MODAL =====
+function openSubmitModal() {
+  if (selectedProducts.length === 0) {
+    alert('Please select at least 1 product first.\nPor favor seleccione al menos 1 producto.');
+    return;
+  }
+  var list = document.getElementById('selectedProductsList');
+  list.innerHTML = selectedProducts.map(p =>
+    '<div class="selected-product-chip">' +
+    '<img src="catalog/' + p.image + '.jpg" alt="' + p.name + '">' +
+    '<span>' + p.name + '</span>' +
+    '</div>'
+  ).join('');
+  document.getElementById('submitModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeSubmitModal() {
+  document.getElementById('submitModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// ===== PHOTO UPLOAD =====
+function handlePhotoUpload(event) {
+  var files = Array.from(event.target.files);
+  var remaining = MAX_PHOTOS - uploadedPhotos.length;
+  files.slice(0, remaining).forEach(function(file) {
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      uploadedPhotos.push({ name: file.name, data: e.target.result });
+      renderPhotoPreviews();
+    };
+    reader.readAsDataURL(file);
+  });
+  if (files.length > remaining) {
+    alert('Maximum 5 photos. / M\u00e1ximo 5 fotos.');
+  }
+}
+
+function removePhoto(idx) {
+  uploadedPhotos.splice(idx, 1);
+  renderPhotoPreviews();
+}
+
+function renderPhotoPreviews() {
+  var container = document.getElementById('photoPreviews');
+  container.innerHTML = uploadedPhotos.map(function(photo, i) {
+    return '<div class="photo-preview">' +
+      '<img src="' + photo.data + '" alt="Photo">' +
+      '<button class="remove-photo" onclick="removePhoto(' + i + ')">&times;</button>' +
+      '</div>';
+  }).join('');
+}
+
+// ===== SEND QUOTE =====
+function sendQuoteRequest(event) {
+  event.preventDefault();
+  var name = document.getElementById('qName').value.trim();
+  var phone = document.getElementById('qPhone').value.trim();
+  var email = document.getElementById('qEmail').value.trim();
+  var area = document.getElementById('qArea').value.trim();
+  var room = document.getElementById('qRoom').value.trim();
+  var notes = document.getElementById('qNotes').value.trim();
+
+  var productList = selectedProducts.map(function(p) {
+    return p.name + ' (' + p.category + ', ' + p.size + ')';
+  }).join('\n');
+
+  var body = 'CATALOG QUOTE REQUEST\n' +
+    '---\n' +
+    'Name: ' + name + '\n' +
+    'Phone: ' + phone + '\n' +
+    (email ? 'Email: ' + email + '\n' : '') +
+    (area ? 'Area: ' + area + '\n' : '') +
+    (room ? 'Room: ' + room + '\n' : '') +
+    '\nProducts (' + selectedProducts.length + '):\n' + productList +
+    (notes ? '\n\nNotes: ' + notes : '') +
+    (uploadedPhotos.length > 0 ? '\n\n[' + uploadedPhotos.length + ' photos attached - will send via text]' : '');
+
+  // Open SMS with the quote details
+  var smsBody = encodeURIComponent(body);
+  window.location.href = 'sms:+18884804286&body=' + smsBody;
+
+  // Track event
+  try {
+    if (window.fbq) fbq('track', 'Lead', { content_name: 'Catalog Quote', content_category: 'Quote Request', value: selectedProducts.length });
+    if (window.gtag) gtag('event', 'generate_lead', { event_category: 'catalog', event_label: 'quote_request', value: selectedProducts.length });
+  } catch(e) {}
+
+  closeSubmitModal();
+}
+
+init();
+</script>
+
+<!-- Text Us Floating Button -->
+<style>
+#text-us-float{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);z-index:9996;font-family:'Inter',-apple-system,sans-serif;display:block;}
+#text-us-btn{display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,#2563eb,#3b82f6);color:#fff;text-decoration:none;padding:12px 24px;border-radius:50px;font-size:14px;font-weight:700;box-shadow:0 4px 20px rgba(37,99,235,0.35);transition:all 0.25s;border:none;cursor:pointer;}
+#text-us-btn:hover{background:linear-gradient(135deg,#1d4ed8,#2563eb);transform:translateY(-2px);box-shadow:0 6px 28px rgba(37,99,235,0.45);}
+#text-us-btn svg{width:20px;height:20px;flex-shrink:0;}
+@media(max-width:768px){
+  #text-us-float{bottom:16px;}
+  #text-us-btn{padding:10px 18px;font-size:13px;}
+}
+</style>
+<div id="text-us-float">
+  <a id="text-us-btn" href="sms:+18884804286&body=Hi%2C%20I%27m%20interested%20in%20a%20product%20from%20your%20catalog.%20Can%20you%20help%20me%20with%20a%20quote%3F" aria-label="Text Us">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+    Text Us (888) 480-4286
+  </a>
+</div>
+
+<script src="tracking.js" defer></script>
+<script src="luna-chat.js" defer></script>
+  <script src="mobile-nav.js" defer></script>
+</body>
+</html>
