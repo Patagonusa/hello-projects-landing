@@ -350,4 +350,57 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+
+  <!-- Financing -->
+  <url>
+    <loc>https://helloprojectspro.com/financing.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helloprojectspro.com/financing.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://helloprojectspro.com/financing-es.html" />
+    <xhtml:link rel="alternate" hreflang="tl" href="https://helloprojectspro.com/financing-tl.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://helloprojectspro.com/financing-zh.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://helloprojectspro.com/financing-ko.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://helloprojectspro.com/financing-es.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helloprojectspro.com/financing.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://helloprojectspro.com/financing-es.html" />
+    <xhtml:link rel="alternate" hreflang="tl" href="https://helloprojectspro.com/financing-tl.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://helloprojectspro.com/financing-zh.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://helloprojectspro.com/financing-ko.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://helloprojectspro.com/financing-tl.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helloprojectspro.com/financing.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://helloprojectspro.com/financing-es.html" />
+    <xhtml:link rel="alternate" hreflang="tl" href="https://helloprojectspro.com/financing-tl.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://helloprojectspro.com/financing-zh.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://helloprojectspro.com/financing-ko.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://helloprojectspro.com/financing-zh.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helloprojectspro.com/financing.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://helloprojectspro.com/financing-es.html" />
+    <xhtml:link rel="alternate" hreflang="tl" href="https://helloprojectspro.com/financing-tl.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://helloprojectspro.com/financing-zh.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://helloprojectspro.com/financing-ko.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://helloprojectspro.com/financing-ko.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helloprojectspro.com/financing.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://helloprojectspro.com/financing-es.html" />
+    <xhtml:link rel="alternate" hreflang="tl" href="https://helloprojectspro.com/financing-tl.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://helloprojectspro.com/financing-zh.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://helloprojectspro.com/financing-ko.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
