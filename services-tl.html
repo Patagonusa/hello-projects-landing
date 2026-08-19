@@ -1498,46 +1498,6 @@
 
   <script src="tracking.js" defer></script>
 <script src="luna-chat.js" defer></script>
-  <!-- Labor Day promo video popup -->
-  <div id="promoModal" class="promo-modal" style="display:none" onclick="if(event.target===this)closePromo()">
-    <div class="promo-box">
-      <button class="promo-close" onclick="closePromo()" aria-label="Close">&times;</button>
-      <button id="promoUnmute" class="promo-unmute" style="display:none" onclick="unmutePromo()">&#128266; Tap for sound</button>
-      <video id="promoVideo" class="promo-video" muted playsinline preload="auto" onclick="unmutePromo()">
-        <source src="videos/labor-day-roof-promo.mp4" type="video/mp4">
-      </video>
-    </div>
-  </div>
-  <style>
-    .promo-modal{position:fixed;inset:0;background:rgba(8,15,26,.82);display:flex;align-items:center;justify-content:center;z-index:100000;padding:16px}
-    .promo-box{position:relative;max-width:520px;width:100%;background:#000;border-radius:14px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.55)}
-    .promo-video{width:100%;height:auto;display:block;cursor:pointer}
-    .promo-close{position:absolute;top:8px;right:10px;z-index:3;width:38px;height:38px;border-radius:50%;background:rgba(0,0,0,.6);color:#fff;border:0;font-size:26px;line-height:34px;text-align:center;cursor:pointer}
-    .promo-close:hover{background:rgba(0,0,0,.9)}
-    .promo-unmute{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);z-index:3;background:#dc2626;color:#fff;border:0;border-radius:24px;padding:10px 18px;font-size:.95rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.45)}
-    .promo-unmute:hover{background:#b91c1c}
-  </style>
-  <script>
-    (function(){
-      var loops=0, MAX=2, DELAY=1200;
-      function closePromo(){var m=document.getElementById('promoModal');if(!m)return;m.style.display='none';var v=document.getElementById('promoVideo');if(v){try{v.pause();}catch(e){}}}
-      function unmutePromo(){var v=document.getElementById('promoVideo');if(v){v.muted=false;v.volume=1;var p=v.play();if(p&&p.catch)p.catch(function(){});}var b=document.getElementById('promoUnmute');if(b)b.style.display='none';}
-      window.closePromo=closePromo; window.unmutePromo=unmutePromo;
-      window.addEventListener('load',function(){
-        try{ if(sessionStorage.getItem('hppPromoSeen'))return; }catch(e){}
-        setTimeout(function(){
-          var m=document.getElementById('promoModal'), v=document.getElementById('promoVideo'), b=document.getElementById('promoUnmute');
-          if(!m||!v)return;
-          try{ sessionStorage.setItem('hppPromoSeen','1'); }catch(e){}
-          m.style.display='flex';
-          v.addEventListener('ended',function(){ loops++; if(loops<MAX){ v.currentTime=0; var pp=v.play(); if(pp&&pp.catch)pp.catch(function(){}); } else { closePromo(); } });
-          v.muted=false;
-          var p=v.play();
-          if(p&&p.catch){ p.catch(function(){ v.muted=true; if(b)b.style.display='block'; var p2=v.play(); if(p2&&p2.catch)p2.catch(function(){}); }); }
-        }, DELAY);
-      });
-    })();
-  </script>
   <script src="mobile-nav.js" defer></script>
 </body>
 </html>
