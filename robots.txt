@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# Unlisted internal sales page - shared by hand, keep it out of search.
+Disallow: /adu-portfolio-x7k92m.html
+Disallow: /images/adu/
+
 Sitemap: https://helloprojectspro.com/sitemap.xml
