@@ -6,7 +6,7 @@
 <!-- Unlisted: not in the nav, not in sitemap.xml, blocked in robots.txt.
      Reachable only by someone who has the link. -->
 <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-<title>ADU Projects | Hello Projects Pro</title>
+<title>ADU Examples | Hello Projects Pro</title>
 <link rel="icon" href="favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -109,8 +109,8 @@
 </header>
 
 <section class="hero">
-  <h1>ADU &amp; Garage Conversion Projects</h1>
-  <p>A selection of completed accessory dwelling units and garage conversions — framing and foundation through finished interiors, kitchens, baths and exteriors.</p>
+  <h1>ADU &amp; Garage Conversion Examples</h1>
+  <p>Reference examples of accessory dwelling units and garage conversions &mdash; layouts, finishes and configurations to look through together while we scope your project.</p>
   <div class="count" id="count"></div>
 </section>
 
@@ -135,11 +135,11 @@
   const photos = Array.from({length: TOTAL}, (_, i) => `images/adu/adu-${String(i + 1).padStart(2, '0')}.jpg`);
 
   const grid = document.getElementById('grid');
-  document.getElementById('count').textContent = `${TOTAL} project photos`;
+  document.getElementById('count').textContent = `${TOTAL} reference photos`;
 
   grid.innerHTML = photos.map((src, i) => `
-    <button class="tile" data-i="${i}" aria-label="Open photo ${i + 1}">
-      <img src="${src}" alt="ADU project photo ${i + 1}" loading="lazy" decoding="async">
+    <button class="tile" data-i="${i}" aria-label="Open example ${i + 1}">
+      <img src="${src}" alt="ADU example ${i + 1}" loading="lazy" decoding="async">
     </button>`).join('');
 
   const lb = document.getElementById('lb');
@@ -150,7 +150,7 @@
   const show = (i) => {
     idx = (i + photos.length) % photos.length;
     lbimg.src = photos[idx];
-    lbimg.alt = `ADU project photo ${idx + 1}`;
+    lbimg.alt = `ADU example ${idx + 1}`;
     counter.textContent = `${idx + 1} / ${photos.length}`;
   };
 
