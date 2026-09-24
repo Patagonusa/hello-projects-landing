@@ -778,6 +778,16 @@
     .rjx-item:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(12,26,46,.2)}
     .rjx-item img{width:100%;height:250px;object-fit:cover;display:block}
     .rjx-item figcaption{padding:.85rem 1rem;font-size:.9rem;color:#334155;font-weight:600;line-height:1.35}
+    .rjx-ba{padding:56px 20px;background:#fff}
+    .rjx-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1.5rem;border-radius:14px;overflow:hidden;box-shadow:0 6px 20px rgba(12,26,46,.12);background:#fff}
+    .rjx-pair figure{margin:0;position:relative;cursor:pointer}
+    .rjx-pair img{width:100%;height:300px;object-fit:cover;display:block}
+    .rjx-tag{position:absolute;top:10px;left:10px;font-size:.72rem;font-weight:800;letter-spacing:1px;padding:4px 10px;border-radius:20px;color:#fff}
+    .rjx-tag.b{background:#64748b}
+    .rjx-tag.a{background:#dc2626}
+    .rjx-pair-cap{grid-column:1/-1;padding:.85rem 1rem;font-size:.9rem;color:#334155;font-weight:600;border-top:1px solid #e2e8f0}
+    .rjx-build{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem}
+    @media(max-width:640px){.rjx-pair{grid-template-columns:1fr}.rjx-pair img{height:240px}}
     #rjxlb{position:fixed;inset:0;background:rgba(8,15,26,.93);display:none;align-items:center;justify-content:center;z-index:99999;padding:24px}
     #rjxlb.open{display:flex}
     #rjxlb img{max-width:95vw;max-height:90vh;border-radius:10px}
@@ -793,35 +803,95 @@
     </div>
   </section>
 
+  <section class="rjx-ba">
+    <div class="rjx-wrap">
+      <h2 class="rjx-title">Before &amp; After</h2>
+      <p class="rjx-sub">A Los Angeles home where every walkway, side yard and courtyard was torn out and rebuilt in brick pavers. Photographed on the survey in August and again the day we finished in September.</p>
+        <div class="rjx-pair">
+          <figure onclick="rjxO('../images/real-jobs/landscape-before-01.jpeg')">
+            <span class="rjx-tag b">BEFORE</span>
+            <img src="../images/real-jobs/landscape-before-01.jpeg" alt="The side yard at the condensers" loading="lazy">
+          </figure>
+          <figure onclick="rjxO('../images/real-jobs/landscape-after-01.jpeg')">
+            <span class="rjx-tag a">AFTER</span>
+            <img src="../images/real-jobs/landscape-after-01.jpeg" alt="The side yard at the condensers" loading="lazy">
+          </figure>
+          <div class="rjx-pair-cap"><strong>The side yard at the condensers.</strong> Worn, uneven brick that had settled around the A/C units &mdash; relaid on a compacted base in multi-tone pavers, with the run kept clear for service access.</div>
+        </div>
+        <div class="rjx-pair">
+          <figure onclick="rjxO('../images/real-jobs/landscape-before-02.jpeg')">
+            <span class="rjx-tag b">BEFORE</span>
+            <img src="../images/real-jobs/landscape-before-02.jpeg" alt="The long side walkway" loading="lazy">
+          </figure>
+          <figure onclick="rjxO('../images/real-jobs/landscape-after-02.jpeg')">
+            <span class="rjx-tag a">AFTER</span>
+            <img src="../images/real-jobs/landscape-after-02.jpeg" alt="The long side walkway" loading="lazy">
+          </figure>
+          <div class="rjx-pair-cap"><strong>The long side walkway.</strong> A narrow path of cracked brick and bare dirt down the side of the house, rebuilt full width with a brick soldier-course border holding the edge.</div>
+        </div>
+        <div class="rjx-pair">
+          <figure onclick="rjxO('../images/real-jobs/landscape-before-03.jpeg')">
+            <span class="rjx-tag b">BEFORE</span>
+            <img src="../images/real-jobs/landscape-before-03.jpeg" alt="The courtyard and the tree" loading="lazy">
+          </figure>
+          <figure onclick="rjxO('../images/real-jobs/landscape-after-03.jpeg')">
+            <span class="rjx-tag a">AFTER</span>
+            <img src="../images/real-jobs/landscape-after-03.jpeg" alt="The courtyard and the tree" loading="lazy">
+          </figure>
+          <div class="rjx-pair-cap"><strong>The courtyard and the tree.</strong> Bare dirt and loose stepping stones around the tree. It now sits in a raised brick planter with the paving run right up to it.</div>
+        </div>
+    </div>
+  </section>
+
   <section class="rjx-sec">
     <div class="rjx-wrap">
-      <h2 class="rjx-title">Landscaping Projects We&rsquo;ve Completed</h2>
-      <p class="rjx-sub">Every photo is an actual Hello Projects Pro outdoor project, built by our licensed crews.</p>
+      <h2 class="rjx-title">How It Was Built</h2>
+      <p class="rjx-sub">The part you stop seeing once the pavers go down &mdash; and the part that decides whether they are still flat in five years.</p>
+      <div class="rjx-build">
+          <figure class="rjx-item" onclick="rjxO('../images/real-jobs/landscape-build-01.jpeg')">
+            <img src="../images/real-jobs/landscape-build-01.jpeg" alt="New drainage line trenched in along the wall before paving" loading="lazy">
+            <figcaption>Drainage trenched and piped before a single paver was laid &mdash; water goes away from the house, not under the paving.</figcaption>
+          </figure>
+          <figure class="rjx-item" onclick="rjxO('../images/real-jobs/landscape-build-02.jpeg')">
+            <img src="../images/real-jobs/landscape-build-02.jpeg" alt="Compacted aggregate base ready for the pavers" loading="lazy">
+            <figcaption>Graded and plate-compacted aggregate base. Pavers laid on loose fill are what sinking and rocking come from.</figcaption>
+          </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="rjx-ba">
+    <div class="rjx-wrap">
+      <h2 class="rjx-title">The Finished Hardscape</h2>
+      <p class="rjx-sub">The same project, finished. Every photo on this page is our own work &mdash; no stock photography.</p>
       <div class="rjx-grid">
-          <figure class="rjx-item" onclick="rjxO('../images/services/landscape-patio.jpeg')">
-            <img src="../images/services/landscape-patio.jpeg" alt="New patio construction" loading="lazy">
-            <figcaption>New patio</figcaption>
+          <figure class="rjx-item" onclick="rjxO('../images/real-jobs/landscape-01.jpeg')">
+            <img src="../images/real-jobs/landscape-01.jpeg" alt="Finished brick paver courtyard with a raised brick planter border" loading="lazy">
+            <figcaption>Paver courtyard &bull; raised brick planter</figcaption>
           </figure>
-          <figure class="rjx-item" onclick="rjxO('../images/services/landscape-deck.jpeg')">
-            <img src="../images/services/landscape-deck.jpeg" alt="Custom deck build" loading="lazy">
-            <figcaption>Custom deck</figcaption>
+          <figure class="rjx-item" onclick="rjxO('../images/real-jobs/landscape-02.jpeg')">
+            <img src="../images/real-jobs/landscape-02.jpeg" alt="Paver courtyard looking back toward the house and stone retaining wall" loading="lazy">
+            <figcaption>Full courtyard &bull; laid to the retaining wall</figcaption>
           </figure>
-          <figure class="rjx-item" onclick="rjxO('../images/services/landscape-pergola.jpeg')">
-            <img src="../images/services/landscape-pergola.jpeg" alt="Pergola installation" loading="lazy">
-            <figcaption>Pergola</figcaption>
+          <figure class="rjx-item" onclick="rjxO('../images/real-jobs/landscape-03.jpeg')">
+            <img src="../images/real-jobs/landscape-03.jpeg" alt="Brick planter and paver walkway along the side of the house" loading="lazy">
+            <figcaption>Planter wall &bull; walkway to match</figcaption>
           </figure>
-          <figure class="rjx-item" onclick="rjxO('../images/services/landscape-fence.jpeg')">
-            <img src="../images/services/landscape-fence.jpeg" alt="New fencing" loading="lazy">
-            <figcaption>New fencing</figcaption>
+          <figure class="rjx-item" onclick="rjxO('../images/real-jobs/landscape-04.jpeg')">
+            <img src="../images/real-jobs/landscape-04.jpeg" alt="Raised brick planter built around the existing tree in the finished courtyard" loading="lazy">
+            <figcaption>Tree kept &bull; planter built around it</figcaption>
           </figure>
-          <figure class="rjx-item" onclick="rjxO('../images/services/landscape-concrete.jpeg')">
-            <img src="../images/services/landscape-concrete.jpeg" alt="Concrete & hardscape" loading="lazy">
-            <figcaption>Concrete & hardscape</figcaption>
+          <figure class="rjx-item" onclick="rjxO('../images/real-jobs/landscape-05.jpeg')">
+            <img src="../images/real-jobs/landscape-05.jpeg" alt="Finished courtyard paving with potted plants and the rear gate" loading="lazy">
+            <figcaption>Courtyard &bull; gate to gate paving</figcaption>
           </figure>
-          <figure class="rjx-item" onclick="rjxO('../images/services/landscape-outdoor.jpeg')">
-            <img src="../images/services/landscape-outdoor.jpeg" alt="Backyard living space" loading="lazy">
-            <figcaption>Backyard living space</figcaption>
+          <figure class="rjx-item" onclick="rjxO('../images/real-jobs/landscape-06.jpeg')">
+            <img src="../images/real-jobs/landscape-06.jpeg" alt="Long brick paver walkway running down the side of the house" loading="lazy">
+            <figcaption>Side walkway &bull; running bond pavers</figcaption>
           </figure>
+      </div>
+      <div style="text-align:center;margin-top:2.25rem;">
+        <a href="../quote.html?service=Landscaping" class="rjx-btn primary">Start Your Outdoor Project</a>
       </div>
     </div>
   </section>
@@ -830,7 +900,7 @@
   <script>function rjxO(s){document.getElementById("rjxi").src=s;document.getElementById("rjxlb").classList.add("open")}function rjxC(){document.getElementById("rjxlb").classList.remove("open")}document.addEventListener("keydown",function(e){if(e.key==="Escape")rjxC()});</script>
 
     <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"ImageGallery","name":"Real Landscaping Jobs — Hello Projects Pro","url":"https://helloprojectspro.com/services/landscaping-real-jobs.html","image":["https://helloprojectspro.com/images/services/landscape-patio.jpeg","https://helloprojectspro.com/images/services/landscape-deck.jpeg","https://helloprojectspro.com/images/services/landscape-pergola.jpeg","https://helloprojectspro.com/images/services/landscape-fence.jpeg","https://helloprojectspro.com/images/services/landscape-concrete.jpeg","https://helloprojectspro.com/images/services/landscape-outdoor.jpeg"]}
+  {"@context":"https://schema.org","@type":"ImageGallery","name":"Real Landscaping Jobs — Hello Projects Pro","url":"https://helloprojectspro.com/services/landscaping-real-jobs.html","image":["https://helloprojectspro.com/images/real-jobs/landscape-01.jpeg","https://helloprojectspro.com/images/real-jobs/landscape-02.jpeg","https://helloprojectspro.com/images/real-jobs/landscape-03.jpeg","https://helloprojectspro.com/images/real-jobs/landscape-04.jpeg","https://helloprojectspro.com/images/real-jobs/landscape-05.jpeg","https://helloprojectspro.com/images/real-jobs/landscape-06.jpeg","https://helloprojectspro.com/images/real-jobs/landscape-after-01.jpeg","https://helloprojectspro.com/images/real-jobs/landscape-after-02.jpeg","https://helloprojectspro.com/images/real-jobs/landscape-after-03.jpeg"]}
   </script>
 <!-- FOOTER -->
   <footer class="footer">
