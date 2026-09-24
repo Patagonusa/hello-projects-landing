@@ -344,7 +344,9 @@
     .hero {
       margin-top: 130px;
       min-height: 560px;
-      background: url('hero-bg.jpeg') center center / cover no-repeat;
+      /* The poster is the fallback: it paints instantly, it is what shows on
+         reduced-motion, and it stays put if autoplay is refused. */
+      background: url('video/hero-poster.jpg') center center / cover no-repeat;
       color: var(--white);
       padding: 80px 24px 100px;
       text-align: center;
@@ -352,12 +354,25 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      overflow: hidden;
     }
+
+    /* The work itself, moving, behind the headline. */
+    .hero-video {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      filter: brightness(1.12) saturate(1.05);
+    }
+    @media (prefers-reduced-motion: reduce) { .hero-video { display: none; } }
 
     .hero::before {
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 1;
       background: linear-gradient(
         180deg,
         rgba(12,26,46,0.75) 0%,
@@ -367,10 +382,78 @@
     }
 
     .hero-content {
-      max-width: 800px;
+      max-width: 1120px;
       margin: 0 auto;
       position: relative;
-      z-index: 1;
+      z-index: 2;
+      display: grid;
+      gap: 40px;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      text-align: left;
+    }
+    .hero-copy { max-width: 620px; }
+
+    /* ===== HERO ESTIMATE FORM ===== */
+    .hero-form {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 22px 22px 18px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+      text-align: left;
+      color: #0c1a2e;
+    }
+    .hero-form h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 19px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .hero-form .sub { font-size: 13px; color: #5a6a7e; margin-bottom: 14px; }
+    .hero-form, .hero-form * { box-sizing: border-box; }
+    .hero-form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .hero-form input,
+    .hero-form select {
+      width: 100%;
+      padding: 11px 12px;
+      margin-bottom: 10px;
+      border: 1px solid #d7dee8;
+      border-radius: 9px;
+      font-size: 15px;
+      font-family: inherit;
+      color: #0c1a2e;
+      background: #fff;
+    }
+    .hero-form input:focus, .hero-form select:focus {
+      outline: none; border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+    }
+    .hero-form button {
+      width: 100%;
+      padding: 13px;
+      border: 0;
+      border-radius: 9px;
+      background: #f97316;
+      color: #fff;
+      font-weight: 800;
+      font-size: 16px;
+      font-family: inherit;
+      cursor: pointer;
+    }
+    .hero-form button:disabled { opacity: 0.6; cursor: default; }
+    .hero-form .consent {
+      display: flex; gap: 8px; align-items: flex-start;
+      font-size: 11px; line-height: 1.45; color: #5a6a7e; margin: 4px 0 12px;
+    }
+    .hero-form .consent input { width: auto; margin: 2px 0 0; }
+    .hero-form .done { display: none; text-align: center; padding: 18px 4px; }
+    .hero-form .done h3 { color: #15803d; }
+    @media (max-width: 900px) {
+      .hero-content { grid-template-columns: 1fr; text-align: center; width: 100%; }
+      .hero-copy { margin: 0 auto; }
+      .hero-form { text-align: left; max-width: 100%; }
+    }
+    @media (max-width: 420px) {
+      .hero-form .row { grid-template-columns: 1fr; }
     }
 
     .hero-badge {
@@ -1379,17 +1462,114 @@
 
   <!-- HERO with Mountain Background -->
   <section class="hero">
+    <!-- Silent, muted, playsinline — the only kind of autoplay a browser allows.
+         Phones get the 9:16 encode so nothing is cropped away. -->
+    <video class="hero-video" id="heroVideo" autoplay muted loop playsinline
+           preload="metadata" poster="video/hero-poster.jpg" aria-hidden="true" tabindex="-1"></video>
     <div class="hero-content">
-      <div class="hero-badge">Licensed &bull; Bonded &bull; Insured &mdash; CSLB #1135440</div>
-      <div class="hero-company">Hello Projects Pro</div>
-      <h1>Built on Experience.<br><span>Trusted for Results.</span></h1>
-      <p>Premier remodeling & construction services in the Los Angeles area. From kitchens to rooftops, we make your home vision a reality.</p>
-      <div class="hero-btns">
-        <a href="quote.html" class="btn btn-blue btn-lg">Get Your FREE Quote</a>
-        <a href="tel:+18884804286" class="btn btn-accent btn-lg">Call (888) 480-4286</a>
+      <div class="hero-copy">
+        <div class="hero-badge">Licensed &bull; Bonded &bull; Insured &mdash; CSLB #1135440</div>
+        <div class="hero-company">Hello Projects Pro</div>
+        <h1>Built on Experience.<br><span>Trusted for Results.</span></h1>
+        <p>Premier remodeling &amp; construction services in the Los Angeles area. From kitchens to rooftops, we make your home vision a reality.</p>
+        <div class="hero-btns">
+          <a href="tel:+18884804286" class="btn btn-accent btn-lg">Call (888) 480-4286</a>
+          <a href="quote.html" class="btn btn-blue btn-lg">Full estimate form</a>
+        </div>
+      </div>
+
+      <!-- The estimate request, on the page itself. The long version at
+           quote.html still exists for anyone who wants to give more detail. -->
+      <div class="hero-form" id="heroFormWrap">
+        <form id="heroForm" onsubmit="return submitHeroForm(event)">
+          <h3>Get your free estimate</h3>
+          <p class="sub">Two minutes, no obligation. We call to confirm the details.</p>
+          <div class="row">
+            <input type="text" name="first_name" placeholder="First name" autocomplete="given-name" required>
+            <input type="text" name="last_name" placeholder="Last name" autocomplete="family-name" required>
+          </div>
+          <input type="tel" name="phone" placeholder="Phone number" autocomplete="tel" required>
+          <div class="row">
+            <input type="text" name="zip" placeholder="ZIP code" inputmode="numeric" maxlength="10" autocomplete="postal-code" required>
+            <select name="project_type" required>
+              <option value="">What do you need?</option>
+              <option>Kitchen Remodeling</option>
+              <option>Bathroom Remodeling</option>
+              <option>Roofing</option>
+              <option>Windows &amp; Doors</option>
+              <option>Flooring</option>
+              <option>HVAC</option>
+              <option>Solar &amp; Energy Efficiency</option>
+              <option>ADU / Addition</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <label class="consent">
+            <input type="checkbox" name="tcpa_consent" required>
+            <span>I agree to be contacted by phone, text or email about my project. Reply STOP to opt out. Consent is not a condition of purchase.</span>
+          </label>
+          <button type="submit" id="heroFormBtn">Get my free estimate</button>
+        </form>
+        <div class="done" id="heroFormDone">
+          <h3>Got it &mdash; thank you.</h3>
+          <p class="sub">Someone from Hello Projects Pro will call you shortly. Need us sooner? Call (888) 480-4286.</p>
+        </div>
       </div>
     </div>
   </section>
+
+  <script>
+    // Phones get the tall encode, everyone else the wide one. Chosen once, in
+    // JS, because Chrome ignores <source media> on video.
+    (function () {
+      var v = document.getElementById('heroVideo');
+      if (!v) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      v.src = window.matchMedia('(max-width: 640px)').matches
+        ? 'video/hero-loop-mobile.mp4' : 'video/hero-loop.mp4';
+      var go = v.play();
+      if (go && go.catch) go.catch(function () { /* blocked: the poster stays */ });
+    })();
+
+    // Same CRM webhook and payload shape as quote.html, tagged so the shorter
+    // hero form can be told apart from the full one in reporting.
+    async function submitHeroForm(e) {
+      e.preventDefault();
+      var form = document.getElementById('heroForm');
+      var btn = document.getElementById('heroFormBtn');
+      var data = new FormData(form);
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      var payload = {
+        first_name: data.get('first_name'),
+        last_name: data.get('last_name'),
+        phone: data.get('phone'),
+        zip: data.get('zip') || null,
+        project_type: data.get('project_type'),
+        source: 'Landing Page',
+        form_name: 'Hello Projects Pro Landing Hero',
+        campaign: 'HPP Landing Page',
+        is_homeowner: 'Yes',
+        consent: 'yes',
+        page_path: window.location.pathname
+      };
+      try {
+        var r = await fetch('https://patagon-crm.onrender.com/api/webhooks/lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        if (!r.ok) throw new Error('server');
+        form.style.display = 'none';
+        document.getElementById('heroFormDone').style.display = 'block';
+      } catch (err) {
+        alert('Something went wrong. Please call us at (888) 480-4286.');
+        btn.disabled = false;
+        btn.textContent = 'Get my free estimate';
+      }
+      return false;
+    }
+  </script>
 
   <!-- STATS -->
   <section class="stats">
