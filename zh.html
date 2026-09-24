@@ -288,7 +288,9 @@
     .hero {
       margin-top: 130px;
       min-height: 560px;
-      background: url('hero-bg.jpeg') center center / cover no-repeat;
+      /* The poster is the fallback: it paints instantly, it is what shows on
+         reduced-motion, and it stays put if autoplay is refused. */
+      background: url('video/hero-poster.jpg') center center / cover no-repeat;
       color: var(--white);
       padding: 80px 24px 100px;
       text-align: center;
@@ -296,12 +298,25 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      overflow: hidden;
     }
+
+    /* The work itself, moving, behind the headline. */
+    .hero-video {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      filter: brightness(1.12) saturate(1.05);
+    }
+    @media (prefers-reduced-motion: reduce) { .hero-video { display: none; } }
 
     .hero::before {
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 1;
       background: linear-gradient(
         180deg,
         rgba(12,26,46,0.75) 0%,
@@ -311,10 +326,85 @@
     }
 
     .hero-content {
-      max-width: 800px;
+      max-width: 1120px;
       margin: 0 auto;
       position: relative;
-      z-index: 1;
+      z-index: 2;
+      display: grid;
+      gap: 40px;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      text-align: left;
+      width: 100%;
+    }
+    .hero-copy { max-width: 620px; }
+
+    /* ===== HERO ESTIMATE FORM ===== */
+    .hero-form {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px 22px 20px;
+      box-shadow: var(--shadow-lg);
+      text-align: left;
+      color: var(--text);
+    }
+    .hero-form, .hero-form * { box-sizing: border-box; }
+    .hero-form h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .hero-form .sub { font-size: 13px; color: var(--text-light); margin-bottom: 16px; }
+    .hero-form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .hero-form input,
+    .hero-form select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 10px;
+      border: 1px solid #cbd7e6;
+      border-radius: 9px;
+      font-size: 15px;
+      font-family: inherit;
+      color: var(--text);
+      background: var(--white);
+    }
+    .hero-form input::placeholder { color: var(--text-light); }
+    .hero-form input:focus, .hero-form select:focus {
+      outline: none;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.16);
+    }
+    .hero-form button {
+      width: 100%;
+      padding: 14px;
+      border: 0;
+      border-radius: 9px;
+      background: var(--accent);
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 16px;
+      font-family: 'Poppins', sans-serif;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .hero-form button:hover { background: var(--accent-hover); }
+    .hero-form button:disabled { opacity: 0.6; cursor: default; }
+    .hero-form .consent {
+      display: flex; gap: 8px; align-items: flex-start;
+      font-size: 11px; line-height: 1.5; color: var(--text-light); margin: 2px 0 14px;
+    }
+    .hero-form .consent input { width: auto; margin: 3px 0 0; accent-color: var(--blue); }
+    .hero-form .done { display: none; text-align: center; padding: 20px 4px; }
+    .hero-form .done h3 { color: var(--green-dark); }
+    @media (max-width: 900px) {
+      .hero-content { grid-template-columns: 1fr; text-align: center; }
+      .hero-copy { margin: 0 auto; }
+      .hero-form { text-align: left; max-width: 100%; }
+    }
+    @media (max-width: 420px) {
+      .hero-form .row { grid-template-columns: 1fr; }
     }
 
     .hero-badge {
@@ -1267,17 +1357,113 @@
 
   <!-- HERO with Mountain Background -->
   <section class="hero">
+    <!-- Silent, muted, playsinline — the only kind of autoplay a browser allows.
+         Phones get the 9:16 encode so nothing is cropped away. -->
+    <video class="hero-video" id="heroVideo" autoplay muted loop playsinline
+           preload="metadata" poster="video/hero-poster.jpg" aria-hidden="true" tabindex="-1"></video>
     <div class="hero-content">
-      <div class="hero-badge">持牌 &bull; 担保 &bull; 投保 &mdash; CSLB #1135440</div>
-      <div class="hero-company">Hello Projects Pro</div>
-      <h1>根基于经验。<br><span>用成果赢得信任。</span></h1>
-      <p>洛杉矶地区顶级的装修与建造服务。从厨房到屋顶，我们让您的家居愿景成真。</p>
-      <div class="hero-btns">
-        <a href="quote.html" class="btn btn-blue btn-lg">获取免费报价</a>
-        <a href="tel:+18884804286" class="btn btn-accent btn-lg">致电 (888) 480-4286</a>
+      <div class="hero-copy">
+        <div class="hero-badge">持牌 &bull; 担保 &bull; 投保 &mdash; CSLB #1135440</div>
+        <div class="hero-company">Hello Projects Pro</div>
+        <h1>根基于经验。<br><span>用成果赢得信任。</span></h1>
+        <p>洛杉矶地区顶级的装修与建造服务。从厨房到屋顶，我们让您的家居愿景成真。</p>
+        <div class="hero-btns">
+          <a href="tel:+18884804286" class="btn btn-accent btn-lg">致电 (888) 480-4286</a>
+          <a href="quote-zh.html" class="btn btn-blue btn-lg">完整表格</a>
+        </div>
+      </div>
+
+      <div class="hero-form" id="heroFormWrap">
+        <form id="heroForm" onsubmit="return submitHeroForm(event)">
+          <h3>获取免费报价</h3>
+          <p class="sub">两分钟，无需承诺。我们会致电确认细节。</p>
+          <div class="row">
+            <input type="text" name="first_name" placeholder="名" autocomplete="given-name" required>
+            <input type="text" name="last_name" placeholder="姓" autocomplete="family-name" required>
+          </div>
+          <input type="tel" name="phone" placeholder="电话号码" autocomplete="tel" required>
+          <div class="row">
+            <input type="text" name="zip" placeholder="邮政编码" inputmode="numeric" maxlength="10" autocomplete="postal-code" required>
+            <select name="project_type" required>
+              <option value="">您需要什么？</option>
+              <option>厨房改造</option>
+              <option>浴室改造</option>
+              <option>屋顶</option>
+              <option>门窗</option>
+              <option>地板</option>
+              <option>暖通空调</option>
+              <option>太阳能与节能</option>
+              <option>ADU / 加建</option>
+              <option>其他</option>
+            </select>
+          </div>
+          <label class="consent">
+            <input type="checkbox" name="tcpa_consent" required>
+            <span>我同意通过电话、短信或电子邮件就我的项目与我联系。回复 STOP 可退订。同意并非购买条件。</span>
+          </label>
+          <button type="submit" id="heroFormBtn">获取免费报价</button>
+        </form>
+        <div class="done" id="heroFormDone">
+          <h3>已收到 &mdash; 谢谢。</h3>
+          <p class="sub">Hello Projects Pro 会尽快与您联系。需要更快？请致电 (888) 480-4286。</p>
+        </div>
       </div>
     </div>
   </section>
+
+  <script>
+    // Phones get the tall encode, everyone else the wide one. Chosen in JS
+    // because Chrome ignores <source media> on video.
+    (function () {
+      var v = document.getElementById('heroVideo');
+      if (!v) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      v.src = window.matchMedia('(max-width: 640px)').matches
+        ? 'video/hero-loop-mobile.mp4' : 'video/hero-loop.mp4';
+      var go = v.play();
+      if (go && go.catch) go.catch(function () { /* blocked: the poster stays */ });
+    })();
+
+    // Same CRM webhook and payload shape as the quote page, tagged by language
+    // so the CRM answers in the language the visitor was reading.
+    async function submitHeroForm(e) {
+      e.preventDefault();
+      var form = document.getElementById('heroForm');
+      var btn = document.getElementById('heroFormBtn');
+      var data = new FormData(form);
+      btn.disabled = true;
+      btn.textContent = '发送中&hellip;'.replace('&hellip;', '\u2026');
+      var payload = {
+        first_name: data.get('first_name'),
+        last_name: data.get('last_name'),
+        phone: data.get('phone'),
+        zip: data.get('zip') || null,
+        project_type: data.get('project_type'),
+        source: 'Landing Page',
+        form_name: 'Hello Projects Pro Landing Hero (zh)',
+        campaign: 'HPP Landing Page',
+        language: 'zh',
+        is_homeowner: 'Yes',
+        consent: 'yes',
+        page_path: window.location.pathname
+      };
+      try {
+        var r = await fetch('https://patagon-crm.onrender.com/api/webhooks/lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        if (!r.ok) throw new Error('server');
+        form.style.display = 'none';
+        document.getElementById('heroFormDone').style.display = 'block';
+      } catch (err) {
+        alert('出现问题，请致电 (888) 480-4286。'.replace(/&[a-z]+;/g, ''));
+        btn.disabled = false;
+        btn.textContent = '获取免费报价';
+      }
+      return false;
+    }
+  </script>
 
   <!-- STATS -->
   <section class="stats">

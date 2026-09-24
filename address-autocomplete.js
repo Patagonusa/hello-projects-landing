@@ -1,150 +1,155 @@
-// Google Places autocomplete for inputs marked with data-address-autocomplete
+// Address autocomplete for inputs marked with data-address-autocomplete.
 //
-// Setup (one-time per landing site):
-//   1. Get a key from console.cloud.google.com — enable "Places API (New)" + "Maps JavaScript API"
-//   2. Restrict the key to your domains (helloprojectspro.com, jbc-landing.onrender.com, etc.)
-//   3. Add to each calculator <head>:
-//        <meta name="google-places-key" content="AIza...">
+// This used to load Google's browser library with a key in a meta tag. That key
+// is restricted to the Address Validation API, so the library answered
+// ApiTargetBlockedMapError and the field silently never autocompleted — which
+// is what "the address doesn't work" looked like from the outside.
 //
-// Without a key, the input behaves as plain text — no autocomplete, no errors.
+// It now asks the CRM instead: /api/address/suggest for the list, and
+// /api/address/resolve to split the chosen line into street / city / state /
+// ZIP, canonicalised by Google's Address Validation API. The key stays on the
+// server, there is no referrer allowlist to maintain per domain, and nothing
+// here breaks when Google changes its browser SDK.
 //
-// Per-input setup:
+// Per-input setup, unchanged:
 //   <input type="text" name="address" data-address-autocomplete>
-// Sibling inputs named city/state/zip in the same <form> auto-populate on selection.
-// Or set explicit targets:
-//   <input type="text" data-autocomplete-target="street">
-//   <input type="text" data-autocomplete-target="city">
-//   <input type="text" data-autocomplete-target="state">
-//   <input type="text" data-autocomplete-target="zip">
+// Sibling inputs named city / state / zip in the same <form> fill themselves in.
+// Or point at them explicitly:
+//   <input data-autocomplete-target="city">   (street | city | state | zip)
+//
+// If the CRM cannot be reached the field stays a plain text box. An estimate
+// request must never be blocked by an address lookup.
 (function () {
   if (window.__addressAutocompleteLoaded) return;
   window.__addressAutocompleteLoaded = true;
 
-  function getKey() {
-    var m = document.querySelector('meta[name="google-places-key"]');
-    if (m && m.content && m.content.trim()) return m.content.trim();
-    if (typeof window.GOOGLE_PLACES_API_KEY === 'string' && window.GOOGLE_PLACES_API_KEY) return window.GOOGLE_PLACES_API_KEY;
-    return null;
-  }
+  var API = 'https://patagon-crm.onrender.com/api/address';
+  var MIN_CHARS = 4;
+  var DEBOUNCE = 250;
 
-  function findTarget(form, kind, scope) {
-    if (form) {
-      var explicit = form.querySelector('[data-autocomplete-target="' + kind + '"]');
-      if (explicit) return explicit;
-      var byName = form.querySelector('[name="' + kind + '"]');
-      if (byName) return byName;
+  var css = [
+    '.aa-wrap{position:relative}',
+    '.aa-list{position:absolute;left:0;right:0;top:100%;z-index:60;background:#fff;',
+    'border:1px solid #cbd7e6;border-radius:9px;margin-top:4px;overflow:hidden;',
+    'box-shadow:0 10px 30px rgba(12,26,46,0.18);max-height:240px;overflow-y:auto}',
+    '.aa-item{display:block;width:100%;text-align:left;border:0;background:none;',
+    'padding:10px 12px;font:inherit;font-size:14px;color:#1e293b;cursor:pointer}',
+    '.aa-item:hover,.aa-item.aa-on{background:#f0f7ff}',
+  ].join('');
+  var style = document.createElement('style');
+  style.textContent = css;
+  document.head.appendChild(style);
+
+  function targets(input) {
+    var form = input.form || document;
+    function pick(name) {
+      return form.querySelector('[data-autocomplete-target="' + name + '"]') ||
+             form.querySelector('[name="' + name + '"]');
     }
-    if (scope) {
-      var bn = scope.querySelector('[data-autocomplete-target="' + kind + '"]');
-      if (bn) return bn;
-    }
-    return null;
+    return { city: pick('city'), state: pick('state'), zip: pick('zip') };
   }
 
-  function ensureHidden(form, name) {
-    if (!form) return null;
-    var h = document.createElement('input');
-    h.type = 'hidden';
-    h.name = name;
-    h.setAttribute('data-autocomplete-injected', '1');
-    form.appendChild(h);
-    return h;
-  }
-
-  function setVal(el, value) {
-    if (!el || value == null) return;
+  function setValue(el, value) {
+    if (!el || !value) return;
     el.value = value;
-    try { el.dispatchEvent(new Event('input', { bubbles: true })); } catch (_) {}
-    try { el.dispatchEvent(new Event('change', { bubbles: true })); } catch (_) {}
-    try { el.dispatchEvent(new Event('blur', { bubbles: true })); } catch (_) {}
+    el.dispatchEvent(new Event('input', { bubbles: true }));
+    el.dispatchEvent(new Event('change', { bubbles: true }));
   }
 
-  function applyPlace(input, place) {
-    if (!place || !place.address_components) return;
-    var parts = { streetNumber: '', route: '', city: '', state: '', zip: '', country: '' };
-    place.address_components.forEach(function (c) {
-      var t = c.types || [];
-      if (t.indexOf('street_number') >= 0) parts.streetNumber = c.long_name;
-      else if (t.indexOf('route') >= 0) parts.route = c.short_name || c.long_name;
-      else if (t.indexOf('locality') >= 0 || t.indexOf('postal_town') >= 0) parts.city = c.long_name;
-      else if (!parts.city && t.indexOf('sublocality') >= 0) parts.city = c.long_name;
-      else if (t.indexOf('administrative_area_level_1') >= 0) parts.state = c.short_name;
-      else if (t.indexOf('postal_code') >= 0) parts.zip = c.short_name;
-      else if (t.indexOf('country') >= 0) parts.country = c.short_name;
-    });
-    var street = (parts.streetNumber + ' ' + parts.route).trim();
-    var form = input.form || input.closest('form');
+  function wire(input) {
+    if (input.__aaWired) return;
+    input.__aaWired = true;
+    input.setAttribute('autocomplete', 'off');
 
-    setVal(input, street || place.formatted_address || input.value);
-    var streetEl = findTarget(form, 'street', input.parentElement);
-    var cityEl = findTarget(form, 'city', input.parentElement) || ensureHidden(form, 'city');
-    var stateEl = findTarget(form, 'state', input.parentElement) || ensureHidden(form, 'state');
-    var zipEl = findTarget(form, 'zip', input.parentElement) || ensureHidden(form, 'zip');
-    if (streetEl && streetEl !== input) setVal(streetEl, street);
-    setVal(cityEl, parts.city);
-    setVal(stateEl, parts.state);
-    setVal(zipEl, parts.zip);
+    var wrap = document.createElement('div');
+    wrap.className = 'aa-wrap';
+    input.parentNode.insertBefore(wrap, input);
+    wrap.appendChild(input);
 
-    try {
-      input.dispatchEvent(new CustomEvent('addressselected', {
-        bubbles: true,
-        detail: { street: street, city: parts.city, state: parts.state, zip: parts.zip, country: parts.country, place: place }
-      }));
-    } catch (_) {}
-  }
+    var list = document.createElement('div');
+    list.className = 'aa-list';
+    list.style.display = 'none';
+    wrap.appendChild(list);
 
-  function wireInputs() {
-    var inputs = document.querySelectorAll('input[data-address-autocomplete]');
-    if (!inputs.length || !window.google || !google.maps || !google.maps.places) return;
-    Array.prototype.forEach.call(inputs, function (input) {
-      if (input.__autocompleteWired) return;
-      input.__autocompleteWired = true;
-      try {
-        var ac = new google.maps.places.Autocomplete(input, {
-          types: ['address'],
-          componentRestrictions: { country: ['us'] },
-          fields: ['address_components', 'formatted_address', 'geometry'],
-        });
-        ac.addListener('place_changed', function () { applyPlace(input, ac.getPlace()); });
-        // Suppress browser autofill dropdown competing with Places suggestions
-        input.setAttribute('autocomplete', 'new-password');
-      } catch (e) {
-        // Places not loaded — leave as plain text input
-      }
-    });
-  }
+    var items = [];
+    var highlight = -1;
+    var timer = null;
+    var seq = 0;
 
-  function loadGoogleMaps(key) {
-    if (window.google && google.maps && google.maps.places) { wireInputs(); return; }
-    var existing = document.querySelector('script[data-google-maps-loader]');
-    if (existing) return;
-    window.__gmapsAutocompleteInit = function () { wireInputs(); };
-    var s = document.createElement('script');
-    s.async = true;
-    s.defer = true;
-    s.setAttribute('data-google-maps-loader', '1');
-    s.src = 'https://maps.googleapis.com/maps/api/js?key=' + encodeURIComponent(key)
-      + '&libraries=places&callback=__gmapsAutocompleteInit&loading=async';
-    document.head.appendChild(s);
-  }
+    function close() { list.style.display = 'none'; list.innerHTML = ''; items = []; highlight = -1; }
 
-  function init() {
-    if (!document.querySelector('input[data-address-autocomplete]')) return;
-    var key = getKey();
-    if (!key) {
-      // No key configured — input remains a normal text field. Surface a one-time console hint.
-      if (!window.__autocompleteKeyWarned) {
-        window.__autocompleteKeyWarned = true;
-        console.info('[address-autocomplete] No Google Places key found (add <meta name="google-places-key" content="..."> to enable).');
-      }
-      return;
+    function choose(text) {
+      input.value = text;
+      close();
+      var t = targets(input);
+      fetch(API + '/resolve?q=' + encodeURIComponent(text))
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          if (d && d.address) input.value = d.address;
+          setValue(t.city, d && d.city);
+          setValue(t.state, d && d.state);
+          setValue(t.zip, d && d.zip);
+        })
+        .catch(function () { /* the typed line stands */ });
     }
-    loadGoogleMaps(key);
+
+    function render(suggestions) {
+      items = suggestions || [];
+      highlight = -1;
+      if (!items.length) return close();
+      list.innerHTML = '';
+      items.forEach(function (s, i) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'aa-item';
+        b.textContent = s.text;
+        b.addEventListener('mousedown', function (e) { e.preventDefault(); });
+        b.addEventListener('click', function () { choose(s.text); });
+        b.addEventListener('mouseenter', function () { mark(i); });
+        list.appendChild(b);
+      });
+      list.style.display = 'block';
+    }
+
+    function mark(i) {
+      highlight = i;
+      Array.prototype.forEach.call(list.children, function (el, j) {
+        el.classList.toggle('aa-on', j === i);
+      });
+    }
+
+    input.addEventListener('input', function () {
+      var q = input.value.trim();
+      clearTimeout(timer);
+      if (q.length < MIN_CHARS) return close();
+      var mine = ++seq;
+      timer = setTimeout(function () {
+        fetch(API + '/suggest?q=' + encodeURIComponent(q))
+          .then(function (r) { return r.json(); })
+          .then(function (d) { if (mine === seq) render(d && d.suggestions); })
+          .catch(function () { if (mine === seq) close(); });
+      }, DEBOUNCE);
+    });
+
+    input.addEventListener('keydown', function (e) {
+      if (list.style.display === 'none' || !items.length) return;
+      if (e.key === 'ArrowDown') { e.preventDefault(); mark((highlight + 1) % items.length); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); mark(highlight <= 0 ? items.length - 1 : highlight - 1); }
+      else if (e.key === 'Enter') { e.preventDefault(); choose(items[highlight >= 0 ? highlight : 0].text); }
+      else if (e.key === 'Escape') { close(); }
+    });
+
+    input.addEventListener('blur', function () { setTimeout(close, 150); });
+  }
+
+  function wireAll() {
+    var inputs = document.querySelectorAll('[data-address-autocomplete]');
+    Array.prototype.forEach.call(inputs, wire);
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', wireAll);
   } else {
-    init();
+    wireAll();
   }
 })();
