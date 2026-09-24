@@ -580,6 +580,15 @@
     .rjx-item:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(12,26,46,.2)}
     .rjx-item img{width:100%;height:250px;object-fit:cover;display:block}
     .rjx-item figcaption{padding:.85rem 1rem;font-size:.9rem;color:#334155;font-weight:600;line-height:1.35}
+    .rjx-ba{padding:56px 20px;background:#fff}
+    .rjx-ba .rjx-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1.5rem;border-radius:14px;overflow:hidden;box-shadow:0 6px 20px rgba(12,26,46,.12);background:#fff}
+    .rjx-ba figure{margin:0;position:relative;cursor:pointer}
+    .rjx-ba img{width:100%;height:300px;object-fit:cover;display:block}
+    .rjx-tag{position:absolute;top:10px;left:10px;font-size:.72rem;font-weight:800;letter-spacing:1px;padding:4px 10px;border-radius:20px;color:#fff}
+    .rjx-tag.b{background:#64748b}
+    .rjx-tag.a{background:#dc2626}
+    .rjx-pair-cap{grid-column:1/-1;padding:.85rem 1rem;font-size:.9rem;color:#334155;font-weight:600;border-top:1px solid #e2e8f0}
+    @media(max-width:640px){.rjx-ba .rjx-pair{grid-template-columns:1fr}.rjx-ba img{height:240px}}
     #rjxlb{position:fixed;inset:0;background:rgba(8,15,26,.93);display:none;align-items:center;justify-content:center;z-index:99999;padding:24px}
     #rjxlb.open{display:flex}
     #rjxlb img{max-width:95vw;max-height:90vh;border-radius:10px}
@@ -595,35 +604,78 @@
     </div>
   </section>
 
+  <section class="rjx-ba">
+    <div class="rjx-wrap">
+      <h2 class="rjx-title">Before &amp; After</h2>
+      <p class="rjx-sub">A primary bathroom in Los Angeles, photographed before we started and again the day we finished. Same room, same angles.</p>
+        <div class="rjx-pair">
+          <figure onclick="rjxO('../images/real-jobs/bathroom-before-01.jpeg')">
+            <span class="rjx-tag b">BEFORE</span>
+            <img src="../images/real-jobs/bathroom-before-01.jpeg" alt="The whole room before the remodel" loading="lazy">
+          </figure>
+          <figure onclick="rjxO('../images/real-jobs/bathroom-after-01.jpeg')">
+            <span class="rjx-tag a">AFTER</span>
+            <img src="../images/real-jobs/bathroom-after-01.jpeg" alt="The whole room after the remodel" loading="lazy">
+          </figure>
+          <div class="rjx-pair-cap"><strong>The whole room.</strong> Tan walls, a framed sliding-door enclosure and a tiled tub deck &mdash; rebuilt with a frameless glass shower, a backlit mirror and quartz counters.</div>
+        </div>
+        <div class="rjx-pair">
+          <figure onclick="rjxO('../images/real-jobs/bathroom-before-02.jpeg')">
+            <span class="rjx-tag b">BEFORE</span>
+            <img src="../images/real-jobs/bathroom-before-02.jpeg" alt="The shower before the remodel" loading="lazy">
+          </figure>
+          <figure onclick="rjxO('../images/real-jobs/bathroom-after-02.jpeg')">
+            <span class="rjx-tag a">AFTER</span>
+            <img src="../images/real-jobs/bathroom-after-02.jpeg" alt="The shower after the remodel" loading="lazy">
+          </figure>
+          <div class="rjx-pair-cap"><strong>The shower.</strong> The old framed enclosure came out. In its place, a frameless glass walk-in with full-height porcelain and a pebble stone floor.</div>
+        </div>
+        <div class="rjx-pair">
+          <figure onclick="rjxO('../images/real-jobs/bathroom-before-03.jpeg')">
+            <span class="rjx-tag b">BEFORE</span>
+            <img src="../images/real-jobs/bathroom-before-03.jpeg" alt="The soaking tub before the remodel" loading="lazy">
+          </figure>
+          <figure onclick="rjxO('../images/real-jobs/bathroom-after-03.jpeg')">
+            <span class="rjx-tag a">AFTER</span>
+            <img src="../images/real-jobs/bathroom-after-03.jpeg" alt="The soaking tub after the remodel" loading="lazy">
+          </figure>
+          <div class="rjx-pair-cap"><strong>The soaking tub.</strong> Same tub location, new surround: large-format porcelain replacing the dated tile deck, with the plantation shutters kept.</div>
+        </div>
+    </div>
+  </section>
+
   <section class="rjx-sec">
     <div class="rjx-wrap">
-      <h2 class="rjx-title">Bathroom Projects We&rsquo;ve Completed</h2>
-      <p class="rjx-sub">Every photo is an actual Hello Projects Pro bathroom, finished by our licensed crews.</p>
+      <h2 class="rjx-title">The Finished Bathroom</h2>
+      <p class="rjx-sub">Details from the same project. Every photo on this page is our own work &mdash; no stock photography.</p>
       <div class="rjx-grid">
-          <figure class="rjx-item" onclick="rjxO('../images/services/bathroom-shower.jpeg')">
-            <img src="../images/services/bathroom-shower.jpeg" alt="Walk-in glass shower remodel" loading="lazy">
-            <figcaption>Walk-in glass shower</figcaption>
+          <figure class="rjx-item" onclick="rjxO('../images/real-jobs/bathroom-01.jpeg')">
+            <img src="../images/real-jobs/bathroom-01.jpeg" alt="Large-format porcelain shower wall with copper veining and a pebble stone floor" loading="lazy">
+            <figcaption>Large-format porcelain walls &bull; pebble stone floor</figcaption>
           </figure>
-          <figure class="rjx-item" onclick="rjxO('../images/services/bathroom-vanity.jpeg')">
-            <img src="../images/services/bathroom-vanity.jpeg" alt="Custom vanity and storage" loading="lazy">
-            <figcaption>Custom vanity & storage</figcaption>
+          <figure class="rjx-item" onclick="rjxO('../images/real-jobs/bathroom-02.jpeg')">
+            <img src="../images/real-jobs/bathroom-02.jpeg" alt="Built-in tile shower niche with brushed nickel handheld shower fitting" loading="lazy">
+            <figcaption>Built-in tile niche &bull; brushed nickel fittings</figcaption>
           </figure>
-          <figure class="rjx-item" onclick="rjxO('../images/services/bathroom-luxury.jpeg')">
-            <img src="../images/services/bathroom-luxury.jpeg" alt="Full luxury bathroom remodel" loading="lazy">
-            <figcaption>Full luxury bath remodel</figcaption>
+          <figure class="rjx-item" onclick="rjxO('../images/real-jobs/bathroom-03.jpeg')">
+            <img src="../images/real-jobs/bathroom-03.jpeg" alt="Double vanity with white quartz countertop and a new bulb light bar" loading="lazy">
+            <figcaption>Double vanity &bull; quartz countertop &bull; new lighting</figcaption>
           </figure>
-          <figure class="rjx-item" onclick="rjxO('../images/services/bathroom-tile.jpeg')">
-            <img src="../images/services/bathroom-tile.jpeg" alt="Designer tile work" loading="lazy">
-            <figcaption>Designer tile work</figcaption>
+          <figure class="rjx-item" onclick="rjxO('../images/real-jobs/bathroom-04.jpeg')">
+            <img src="../images/real-jobs/bathroom-04.jpeg" alt="Full-width frameless mirror above a double vanity with refinished cabinets" loading="lazy">
+            <figcaption>Full-width mirror &bull; refinished cabinetry</figcaption>
           </figure>
-          <figure class="rjx-item" onclick="rjxO('../images/services/bathroom-bathtub.jpeg')">
-            <img src="../images/services/bathroom-bathtub.jpeg" alt="New bathtub installation" loading="lazy">
-            <figcaption>New bathtub & surround</figcaption>
+          <figure class="rjx-item" onclick="rjxO('../images/real-jobs/bathroom-05.jpeg')">
+            <img src="../images/real-jobs/bathroom-05.jpeg" alt="Close view of the shower niche and book-matched porcelain tile" loading="lazy">
+            <figcaption>Shower niche &bull; book-matched tile</figcaption>
           </figure>
-          <figure class="rjx-item" onclick="rjxO('../images/services/bathroom-accessible.jpeg')">
-            <img src="../images/services/bathroom-accessible.jpeg" alt="Accessible ADA bathroom" loading="lazy">
-            <figcaption>Accessible / ADA bath</figcaption>
+          <figure class="rjx-item" onclick="rjxO('../images/real-jobs/bathroom-06.jpeg')">
+            <img src="../images/real-jobs/bathroom-06.jpeg" alt="Finished primary bathroom with a frameless glass shower, lit mirror and soaking tub" loading="lazy">
+            <figcaption>Frameless glass shower &bull; lit mirror &bull; soaking tub</figcaption>
           </figure>
+      </div>
+      <div style="text-align:center;margin-top:2.25rem;">
+        <a href="../quote.html?service=Bathroom+Remodeling" class="rjx-btn primary">Start Your Bathroom Project</a>
       </div>
     </div>
   </section>
@@ -632,7 +684,7 @@
   <script>function rjxO(s){document.getElementById("rjxi").src=s;document.getElementById("rjxlb").classList.add("open")}function rjxC(){document.getElementById("rjxlb").classList.remove("open")}document.addEventListener("keydown",function(e){if(e.key==="Escape")rjxC()});</script>
 
     <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"ImageGallery","name":"Real Bathroom Remodels — Hello Projects Pro","url":"https://helloprojectspro.com/services/bathroom-real-jobs.html","image":["https://helloprojectspro.com/images/services/bathroom-shower.jpeg","https://helloprojectspro.com/images/services/bathroom-vanity.jpeg","https://helloprojectspro.com/images/services/bathroom-luxury.jpeg","https://helloprojectspro.com/images/services/bathroom-tile.jpeg","https://helloprojectspro.com/images/services/bathroom-bathtub.jpeg","https://helloprojectspro.com/images/services/bathroom-accessible.jpeg"]}
+  {"@context":"https://schema.org","@type":"ImageGallery","name":"Real Bathroom Remodels — Hello Projects Pro","url":"https://helloprojectspro.com/services/bathroom-real-jobs.html","image":["https://helloprojectspro.com/images/real-jobs/bathroom-01.jpeg","https://helloprojectspro.com/images/real-jobs/bathroom-02.jpeg","https://helloprojectspro.com/images/real-jobs/bathroom-03.jpeg","https://helloprojectspro.com/images/real-jobs/bathroom-04.jpeg","https://helloprojectspro.com/images/real-jobs/bathroom-05.jpeg","https://helloprojectspro.com/images/real-jobs/bathroom-06.jpeg","https://helloprojectspro.com/images/real-jobs/bathroom-after-01.jpeg","https://helloprojectspro.com/images/real-jobs/bathroom-after-02.jpeg","https://helloprojectspro.com/images/real-jobs/bathroom-after-03.jpeg"]}
   </script>
 <!-- Footer -->
   <footer class="footer">
