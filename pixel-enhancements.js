@@ -484,4 +484,65 @@
     if (Date.now() - PAGE_LOAD_AT < DWELL_PAGEHIDE_MS) return;
     showExitModal();
   });
+
+  // ── Lead-form guard (2026-10-24) ─────────────────────────────────────────
+  // Every page posts its form straight to CRM /api/webhooks/lead with its own
+  // code, so instead of editing each page we wrap fetch for that one URL:
+  //  - add attribution (UTMs, fbclid, Meta _fbc/_fbp, landing page,
+  //    fingerprint) so the CRM and Meta CAPI can match the lead to the ad;
+  //  - retry once on a network/5xx error, and if the CRM still did not accept
+  //    the lead, throw — the page's own catch then shows its "call us"
+  //    message instead of a success screen (the lead used to be lost silently);
+  //  - a SMOKETEST submission mutes the browser pixel for a few seconds so a
+  //    test never reaches Meta as a conversion.
+  (function guardLeadForms() {
+    if (!window.fetch || window.__leadFormGuard) return;
+    window.__leadFormGuard = true;
+    var origFetch = window.fetch.bind(window);
+    var LEAD_URL = /\/api\/webhooks\/lead\/?(\?|$)/;
+    function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
+    function muteMeta(ms) {
+      var real = window.fbq, realGtag = window.gtag;
+      if (typeof real === 'function') window.fbq = function () {};
+      if (typeof realGtag === 'function') window.gtag = function () {};
+      setTimeout(function () { if (real) window.fbq = real; if (realGtag) window.gtag = realGtag; }, ms);
+    }
+    window.fetch = function (input, init) {
+      var url = typeof input === 'string' ? input : (input && input.url) || '';
+      if (!LEAD_URL.test(url) || !init || String(init.method || 'GET').toUpperCase() !== 'POST' || typeof init.body !== 'string') {
+        return origFetch(input, init);
+      }
+      var body;
+      try { body = JSON.parse(init.body); } catch (_) { return origFetch(input, init); }
+      var extra = {
+        landing_page: location.pathname,
+        page_url: location.href.split('#')[0].slice(0, 500),
+        utm_source: qs('utm_source'), utm_medium: qs('utm_medium'), utm_campaign: qs('utm_campaign'),
+        utm_content: qs('utm_content'), utm_term: qs('utm_term'),
+        fbclid: qs('fbclid'), gclid: qs('gclid'),
+        fbc: getCookie('_fbc'), fbp: getCookie('_fbp'),
+        fingerprint: fp, brand: BRAND
+      };
+      for (var k in extra) if (extra[k] && body[k] == null) body[k] = extra[k];
+      var isSmoke = /^smoketest$/i.test(String(body.first_name || body.firstName || '').trim()) || body.smoke_test === true;
+      var next = {};
+      for (var key in init) next[key] = init[key];
+      next.body = JSON.stringify(body);
+
+      function attempt(n) {
+        return origFetch(input, next).then(function (res) {
+          if (res.status >= 500 && n === 0) return sleep(1500).then(function () { return attempt(1); });
+          return res;
+        }, function (err) {
+          if (n === 0) return sleep(1500).then(function () { return attempt(1); });
+          throw err;
+        });
+      }
+      return attempt(0).then(function (res) {
+        if (!res.ok) throw new Error('Lead was not accepted (HTTP ' + res.status + ')');
+        if (isSmoke) muteMeta(10000);
+        return res;
+      });
+    };
+  })();
 })();
