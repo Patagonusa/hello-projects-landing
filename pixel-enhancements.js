@@ -356,7 +356,8 @@
     submit: 'Enviarmelo',
     close: 'Cerrar',
     thanks: '¡Listo! Te enviaremos el estimado en breve.',
-    invalid: 'Ingresa un número válido de 10 dígitos.'
+    invalid: 'Ingresa un número válido de 10 dígitos.',
+    consent: 'Al tocar, aceptas recibir mensajes de texto sobre tu estimado de Hello Projects Pro y General Builders, incluso automatizados. No es condición de compra. Pueden aplicar tarifas de mensajes y datos. Responde STOP para cancelar.'
   } : {
     heading: 'Wait! Text me a copy of my estimate',
     sub: 'We\'ll text your estimate and next steps. No spam.',
@@ -364,7 +365,8 @@
     submit: 'Text it to me',
     close: 'Close',
     thanks: 'Got it! Your estimate is on the way.',
-    invalid: 'Please enter a valid 10-digit phone number.'
+    invalid: 'Please enter a valid 10-digit phone number.',
+    consent: 'By tapping, you agree to receive texts about your estimate from Hello Projects Pro and General Builders, including automated texts. Consent is not a condition of purchase. Msg & data rates may apply. Reply STOP to opt out.'
   };
 
   function injectModalStyles() {
@@ -382,6 +384,7 @@
       + '.exit-modal button.exit-submit:hover{background:' + BRAND_COLORS.accentHover + '}'
       + '.exit-modal button.exit-submit:disabled{opacity:.6;cursor:wait}'
       + '.exit-msg{margin-top:10px;font-size:13px;min-height:18px}'
+      + '.exit-modal .exit-consent{margin:8px 0 0;font-size:10.5px;line-height:1.35;color:#64748b;text-align:left}'
       + '.exit-msg.err{color:#dc2626}.exit-msg.ok{color:#059669}'
       + '@keyframes exitFade{from{opacity:0}to{opacity:1}}'
       + '@keyframes exitPop{from{opacity:0;transform:scale(.92) translateY(8px)}to{opacity:1;transform:none}}';
@@ -424,6 +427,7 @@
       +       'pattern="[0-9\\-\\(\\) ]{10,}" required aria-label="' + COPY.placeholder + '">'
       +     '<button type="submit" class="exit-submit">' + COPY.submit + '</button>'
       +     '<div class="exit-msg" aria-live="polite"></div>'
+      +     '<p class="exit-consent">' + COPY.consent + '</p>'
       +   '</form>'
       + '</div>';
     document.body.appendChild(overlay);
