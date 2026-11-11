@@ -80,14 +80,6 @@
     <priority>0.8</priority>
   </url>
 
-  <url>
-    <loc>https://helloprojectspro.com/services/landscaping.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://helloprojectspro.com/services/landscaping.html" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://helloprojectspro.com/services/landscaping-es.html" />
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
   <!-- Service Pages ES -->
   <url>
     <loc>https://helloprojectspro.com/services/kitchen-remodeling-es.html</loc>
@@ -125,14 +117,6 @@
     <loc>https://helloprojectspro.com/services/electrical-services-es.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://helloprojectspro.com/services/electrical-services.html" />
     <xhtml:link rel="alternate" hreflang="es" href="https://helloprojectspro.com/services/electrical-services-es.html" />
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://helloprojectspro.com/services/landscaping-es.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://helloprojectspro.com/services/landscaping.html" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://helloprojectspro.com/services/landscaping-es.html" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -211,16 +195,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://helloprojectspro.com/services/landscaping-real-jobs.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://helloprojectspro.com/services/landscaping-real-jobs-es.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://helloprojectspro.com/services/kitchen-remodeling-tl.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -267,16 +241,6 @@
   </url>
   <url>
     <loc>https://helloprojectspro.com/services/electrical-services-zh.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://helloprojectspro.com/services/landscaping-tl.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://helloprojectspro.com/services/landscaping-zh.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
